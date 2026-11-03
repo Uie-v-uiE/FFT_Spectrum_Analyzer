@@ -5,7 +5,7 @@
 # vmap work sim/work 
 # Modifying modelsim.ini
 # Model Technology ModelSim SE-64 vlog 2020.4 Compiler 2020.10 Oct 13 2020
-# Start time: 02:55:20 on Nov 04,2026
+# Start time: 07:13:00 on Nov 04,2026
 # vlog rtl/fft_cmult3.v rtl/fft_stage.v rtl/fft_reorder.v rtl/fft_top.v tb/tb_fft_top.v 
 # -- Compiling module fft_cmult3
 # -- Compiling module fft_stage
@@ -22,10 +22,10 @@
 # 
 # Top level modules:
 # 	tb_fft_top
-# End time: 02:55:20 on Nov 04,2026, Elapsed time: 0:00:00
+# End time: 07:13:00 on Nov 04,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 7
 # vsim work.tb_fft_top "+INFILE=vectors/all_N4096_in.hex" "+OUTFILE=vectors/all_N4096_out.hex" -gM_P=12 -gNAT_P=0 
-# Start time: 02:55:20 on Nov 04,2026
+# Start time: 07:13:00 on Nov 04,2026
 # ** Note: (vsim-3812) Design is being optimized...
 # //  ModelSim SE-64 2020.4 Oct 13 2020
 # //
@@ -92,5 +92,5 @@
 # FFT TOP SELF-CHECK FAIL (M=12, 26625 errors)
 # ** Note: $finish    : tb/tb_fft_top.v(227)
 #    Time: 2703445 ns  Iteration: 1  Instance: /tb_fft_top
-# End time: 02:55:24 on Nov 04,2026, Elapsed time: 0:00:04
+# End time: 07:13:03 on Nov 04,2026, Elapsed time: 0:00:03
 # Errors: 0, Warnings: 0

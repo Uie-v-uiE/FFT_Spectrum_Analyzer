@@ -9,27 +9,27 @@ Reading pref.tcl
 # vmap work sim/work 
 # Modifying modelsim.ini
 # Model Technology ModelSim SE-64 vlog 2020.4 Compiler 2020.10 Oct 13 2020
-# Start time: 02:51:48 on Nov 04,2026
+# Start time: 07:10:47 on Nov 04,2026
 # vlog rtl/fft_cmult3.v rtl/fft_stage.v rtl/fft_reorder.v rtl/fft_top.v tb/tb_fft_top.v 
 # -- Compiling module fft_cmult3
 # -- Compiling module fft_stage
 # -- Compiling module fft_reorder
 # -- Compiling module fft_top
 # -- Compiling module tb_fft_top
-# ** Warning: tb/tb_fft_top.v(191): (vlog-2643) Unterminated string literal continues onto next line.
-# ** Warning: tb/tb_fft_top.v(197): (vlog-2643) Unterminated string literal continues onto next line.
-# ** Warning: tb/tb_fft_top.v(201): (vlog-2643) Unterminated string literal continues onto next line.
-# ** Warning: tb/tb_fft_top.v(205): (vlog-2643) Unterminated string literal continues onto next line.
-# ** Warning: tb/tb_fft_top.v(209): (vlog-2643) Unterminated string literal continues onto next line.
-# ** Warning: tb/tb_fft_top.v(213): (vlog-2643) Unterminated string literal continues onto next line.
-# ** Warning: tb/tb_fft_top.v(217): (vlog-2643) Unterminated string literal continues onto next line.
+# ** Warning: tb/tb_fft_top.v(193): (vlog-2643) Unterminated string literal continues onto next line.
+# ** Warning: tb/tb_fft_top.v(199): (vlog-2643) Unterminated string literal continues onto next line.
+# ** Warning: tb/tb_fft_top.v(203): (vlog-2643) Unterminated string literal continues onto next line.
+# ** Warning: tb/tb_fft_top.v(207): (vlog-2643) Unterminated string literal continues onto next line.
+# ** Warning: tb/tb_fft_top.v(211): (vlog-2643) Unterminated string literal continues onto next line.
+# ** Warning: tb/tb_fft_top.v(215): (vlog-2643) Unterminated string literal continues onto next line.
+# ** Warning: tb/tb_fft_top.v(219): (vlog-2643) Unterminated string literal continues onto next line.
 # 
 # Top level modules:
 # 	tb_fft_top
-# End time: 02:51:48 on Nov 04,2026, Elapsed time: 0:00:00
+# End time: 07:10:48 on Nov 04,2026, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 7
 # vsim -c work.tb_fft_top "+INFILE=vectors/all_N64_in.hex" "+OUTFILE=vectors/all_N64_out.hex" -do "run -all; quit -f" -gM_P=6 -gNAT_P=0 
-# Start time: 02:51:49 on Nov 04,2026
+# Start time: 07:10:48 on Nov 04,2026
 # ** Note: (vsim-3813) Design is being optimized due to module recompilation...
 # //  ModelSim SE-64 2020.4 Oct 13 2020
 # //
@@ -79,16 +79,16 @@ Reading pref.tcl
 # CYC t=1105000 L0: p=37 fh=0 x=(3901,-19615) out=(14142,51394) v=1
 # CYC t=1115000 L0: p=38 fh=0 x=(-7653,-18477) out=(3901,45921) v=1
 # TB: aligned (deterministic off=0)
-# TB mismatch at 480: got 040408f4 exp 0c0408f4
-# TB mismatch at 481: got 06cc08ca exp fecc08ca
-# TB mismatch at 482: got 0b68047d exp 0b680c7d
-# TB mismatch at 483: got 0500ff2f exp 0500f72f
-# TB mismatch at 484: got ec10fd5c exp f1b80304
-# TB mismatch at 485: got fe56030c exp f8aefd64
-# TB mismatch at 486: got 0ceef670 exp 0745fc19
-# TB mismatch at 487: got ff3010d6 exp 04d90b2d
-# FFT TOP SELF-CHECK FAIL (M=6, 32 errors)
-# ** Note: $finish    : tb/tb_fft_top.v(225)
+# TB mismatch at 56: got 00000000 exp 00004e20
+# TB mismatch at 57: got 00004e20 exp 00000000
+# TB mismatch at 68: got 00000000 exp 00004e20
+# TB mismatch at 69: got 00004e20 exp 00000000
+# TB mismatch at 162: got 00000000 exp 1e3223da
+# TB mismatch at 163: got 1e3223da exp 00000000
+# TB mismatch at 176: got 00000000 exp 00002ee0
+# TB mismatch at 177: got 00002ee0 exp 00000000
+# FFT TOP SELF-CHECK FAIL (M=6, 701 errors)
+# ** Note: $finish    : tb/tb_fft_top.v(227)
 #    Time: 16725 ns  Iteration: 1  Instance: /tb_fft_top
-# End time: 02:51:50 on Nov 04,2026, Elapsed time: 0:00:01
+# End time: 07:10:48 on Nov 04,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0

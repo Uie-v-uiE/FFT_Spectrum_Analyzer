@@ -120,7 +120,7 @@ module fft_stage #(
         // 地址 = p_j+1(mod D):在 t−1 拍取 j(t)−1,一拍延迟后 rom_q@t = tw[j(t)];
         // 显式 mod D 钳位:fh 拍的 p_j 回绕值会越界,行为仿真产生 X 并沿复乘传播。
         localparam [PW-1:0] D_M1 = D - 1;
-        wire [PW-1:0] a_idx = (p_j == D_M1) ? {PW{1'b0}} : p_j + 1'b1;
+        wire [PW-1:0] a_idx = (p_j + 1'b1) & D_M1;   // mod D,D=2^k:全地址域钳位,杜绝越界 X
         always @(posedge clk) if (en) rom_q <= rom[a_idx];
         assign tw_re = rom_q[17:0];
         assign tw_im = rom_q[35:18];

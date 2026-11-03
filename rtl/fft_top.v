@@ -27,7 +27,7 @@ module fft_top #(
     input  wire             m_axis_tready
 );
     localparam N  = 1 << M;
-    localparam NFIRST = 3*N;                // cyc+1 ≥ 3N ⟺ 首个门控输出 = 流下标 3N−1(帧 2 块起点)
+    localparam NFIRST = 3*N;                // cyc(滞后1) +1 ≥ 3N ⟺ 首个门控 = 流下标 3N−1(帧2块起点)
 
     function integer clog2p1(input integer v);
         integer vv;
