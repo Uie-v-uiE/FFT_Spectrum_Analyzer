@@ -1,0 +1,96 @@
+# do sim/_case.do
+# ** Warning: (vlib-34) Library already exists at "sim/work".
+# Errors: 0, Warnings: 1
+# Model Technology ModelSim SE-64 vmap 2020.4 Lib Mapping Utility 2020.10 Oct 13 2020
+# vmap work sim/work 
+# Modifying modelsim.ini
+# Model Technology ModelSim SE-64 vlog 2020.4 Compiler 2020.10 Oct 13 2020
+# Start time: 02:55:20 on Nov 04,2026
+# vlog rtl/fft_cmult3.v rtl/fft_stage.v rtl/fft_reorder.v rtl/fft_top.v tb/tb_fft_top.v 
+# -- Compiling module fft_cmult3
+# -- Compiling module fft_stage
+# -- Compiling module fft_reorder
+# -- Compiling module fft_top
+# -- Compiling module tb_fft_top
+# ** Warning: tb/tb_fft_top.v(193): (vlog-2643) Unterminated string literal continues onto next line.
+# ** Warning: tb/tb_fft_top.v(199): (vlog-2643) Unterminated string literal continues onto next line.
+# ** Warning: tb/tb_fft_top.v(203): (vlog-2643) Unterminated string literal continues onto next line.
+# ** Warning: tb/tb_fft_top.v(207): (vlog-2643) Unterminated string literal continues onto next line.
+# ** Warning: tb/tb_fft_top.v(211): (vlog-2643) Unterminated string literal continues onto next line.
+# ** Warning: tb/tb_fft_top.v(215): (vlog-2643) Unterminated string literal continues onto next line.
+# ** Warning: tb/tb_fft_top.v(219): (vlog-2643) Unterminated string literal continues onto next line.
+# 
+# Top level modules:
+# 	tb_fft_top
+# End time: 02:55:20 on Nov 04,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 7
+# vsim work.tb_fft_top "+INFILE=vectors/all_N4096_in.hex" "+OUTFILE=vectors/all_N4096_out.hex" -gM_P=12 -gNAT_P=0 
+# Start time: 02:55:20 on Nov 04,2026
+# ** Note: (vsim-3812) Design is being optimized...
+# //  ModelSim SE-64 2020.4 Oct 13 2020
+# //
+# //  Copyright 1991-2020 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  ModelSim SE-64 and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# Loading work.tb_fft_top(fast)
+# Loading work.fft_stage(fast)
+# Loading work.fft_stage(fast__1)
+# Loading work.fft_stage(fast__2)
+# Loading work.fft_stage(fast__3)
+# Loading work.fft_stage(fast__4)
+# Loading work.fft_stage(fast__5)
+# Loading work.fft_stage(fast__6)
+# Loading work.fft_stage(fast__7)
+# Loading work.fft_stage(fast__8)
+# Loading work.fft_stage(fast__9)
+# Loading work.fft_stage(fast__10)
+# Loading work.fft_stage(fast__11)
+# TB: M=12 in=98304 exp=90112 gap=0 natural=0 seed=7
+# PROBE t=155000 L5 cap#0 val=00000000 (pre-edge valid)
+# PROBE t=165000 L5 cap#1 val=00000000 (pre-edge valid)
+# PROBE t=175000 L5 cap#2 val=00000000 (pre-edge valid)
+# PROBE t=185000 L5 cap#3 val=00000000 (pre-edge valid)
+# PROBE t=195000 L5 cap#4 val=00000000 (pre-edge valid)
+# PROBE t=205000 L5 cap#5 val=00000000 (pre-edge valid)
+# PROBE t=215000 L5 cap#6 val=00000000 (pre-edge valid)
+# PROBE t=225000 L5 cap#7 val=00000000 (pre-edge valid)
+# PROBE t=235000 L5 cap#8 val=00000000 (pre-edge valid)
+# PROBE t=245000 L5 cap#9 val=00000000 (pre-edge valid)
+# PROBE t=255000 L5 cap#10 val=00000000 (pre-edge valid)
+# PROBE t=265000 L5 cap#11 val=00000000 (pre-edge valid)
+# PROBE t=275000 L5 cap#12 val=00000000 (pre-edge valid)
+# PROBE t=285000 L5 cap#13 val=00000000 (pre-edge valid)
+# PROBE t=295000 L5 cap#14 val=00000000 (pre-edge valid)
+# PROBE t=305000 L5 cap#15 val=00000000 (pre-edge valid)
+# CYC t=1035000 L0: p=94 fh=1 x=(13202,15023) out=(0,0) v=1
+# CYC t=1045000 L0: p=95 fh=1 x=(13317,14921) out=(0,0) v=1
+# CYC t=1055000 L0: p=96 fh=1 x=(13431,14819) out=(0,0) v=1
+# CYC t=1065000 L0: p=97 fh=1 x=(13544,14715) out=(0,0) v=1
+# CYC t=1075000 L0: p=98 fh=1 x=(13656,14611) out=(0,0) v=1
+# CYC t=1085000 L0: p=99 fh=1 x=(13768,14506) out=(0,0) v=1
+# CYC t=1095000 L0: p=100 fh=1 x=(13879,14400) out=(0,0) v=1
+# CYC t=1105000 L0: p=101 fh=1 x=(13989,14293) out=(0,0) v=1
+# CYC t=1115000 L0: p=102 fh=1 x=(14098,14185) out=(0,0) v=1
+# TB: aligned (deterministic off=0)
+# TB mismatch at 26624: got fe8200f6 exp fea20076
+# TB mismatch at 26625: got ffc701fc exp fe67023c
+# TB mismatch at 26626: got fe6cff26 exp feacff46
+# TB mismatch at 26627: got ff6800aa exp ff6800ca
+# TB mismatch at 26628: got 0077febb exp 009bff0c
+# TB mismatch at 26629: got 005fffbb exp fffbff2a
+# TB mismatch at 26630: got fd6efea1 exp fe2cfe84
+# TB mismatch at 26631: got 00be0159 exp 004000b6
+# TB FAIL: stream ended early at exp 73728
+# FFT TOP SELF-CHECK FAIL (M=12, 26625 errors)
+# ** Note: $finish    : tb/tb_fft_top.v(227)
+#    Time: 2703445 ns  Iteration: 1  Instance: /tb_fft_top
+# End time: 02:55:24 on Nov 04,2026, Elapsed time: 0:00:04
+# Errors: 0, Warnings: 0

@@ -1,0 +1,94 @@
+Reading pref.tcl
+
+# 2020.4
+
+# do sim/fft_noise.do
+# ** Warning: (vlib-34) Library already exists at "sim/work".
+# Errors: 0, Warnings: 1
+# Model Technology ModelSim SE-64 vmap 2020.4 Lib Mapping Utility 2020.10 Oct 13 2020
+# vmap work sim/work 
+# Modifying modelsim.ini
+# Model Technology ModelSim SE-64 vlog 2020.4 Compiler 2020.10 Oct 13 2020
+# Start time: 02:33:07 on Nov 04,2026
+# vlog rtl/fft_cmult3.v rtl/fft_stage.v rtl/fft_reorder.v rtl/fft_top.v tb/tb_fft_top.v 
+# -- Compiling module fft_cmult3
+# -- Compiling module fft_stage
+# -- Compiling module fft_reorder
+# -- Compiling module fft_top
+# -- Compiling module tb_fft_top
+# ** Warning: tb/tb_fft_top.v(191): (vlog-2643) Unterminated string literal continues onto next line.
+# ** Warning: tb/tb_fft_top.v(197): (vlog-2643) Unterminated string literal continues onto next line.
+# ** Warning: tb/tb_fft_top.v(201): (vlog-2643) Unterminated string literal continues onto next line.
+# ** Warning: tb/tb_fft_top.v(205): (vlog-2643) Unterminated string literal continues onto next line.
+# ** Warning: tb/tb_fft_top.v(209): (vlog-2643) Unterminated string literal continues onto next line.
+# ** Warning: tb/tb_fft_top.v(213): (vlog-2643) Unterminated string literal continues onto next line.
+# ** Warning: tb/tb_fft_top.v(217): (vlog-2643) Unterminated string literal continues onto next line.
+# 
+# Top level modules:
+# 	tb_fft_top
+# End time: 02:33:07 on Nov 04,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 7
+# vsim -c work.tb_fft_top "+INFILE=vectors/only_noise_in.hex" "+OUTFILE=vectors/only_noise_out.hex" -do "run -all; quit -f" -gM_P=6 -gNAT_P=0 
+# Start time: 02:33:08 on Nov 04,2026
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# //  ModelSim SE-64 2020.4 Oct 13 2020
+# //
+# //  Copyright 1991-2020 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  ModelSim SE-64 and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# Loading work.tb_fft_top(fast)
+# Loading work.fft_stage(fast)
+# Loading work.fft_stage(fast__1)
+# Loading work.fft_stage(fast__2)
+# Loading work.fft_stage(fast__3)
+# Loading work.fft_stage(fast__4)
+# Loading work.fft_stage(fast__5)
+# run -all
+# TB: M=6 in=192 exp=192 gap=0 natural=0 seed=7
+# PROBE t=155000 L5 cap#0 val=xxxxxxxx (pre-edge valid)
+# PROBE t=165000 L5 cap#1 val=xxxxxxxx (pre-edge valid)
+# PROBE t=175000 L5 cap#2 val=xxxxxxxx (pre-edge valid)
+# PROBE t=185000 L5 cap#3 val=xxxxxxxx (pre-edge valid)
+# PROBE t=195000 L5 cap#4 val=xxxxxxxx (pre-edge valid)
+# PROBE t=205000 L5 cap#5 val=xxxxxxxx (pre-edge valid)
+# PROBE t=215000 L5 cap#6 val=xxxxxxxx (pre-edge valid)
+# PROBE t=225000 L5 cap#7 val=xxxxxxxx (pre-edge valid)
+# PROBE t=235000 L5 cap#8 val=xxxxxxxx (pre-edge valid)
+# PROBE t=245000 L5 cap#9 val=xxxxxxxx (pre-edge valid)
+# PROBE t=255000 L5 cap#10 val=xxxxxxxx (pre-edge valid)
+# PROBE t=265000 L5 cap#11 val=xxxxxxxx (pre-edge valid)
+# PROBE t=275000 L5 cap#12 val=xxxxxxxx (pre-edge valid)
+# PROBE t=285000 L5 cap#13 val=xxxxxxxx (pre-edge valid)
+# PROBE t=295000 L5 cap#14 val=xxxxxxxx (pre-edge valid)
+# PROBE t=305000 L5 cap#15 val=xxxxxxxx (pre-edge valid)
+# CYC t=1035000 L0: p=30 fh=1 x=(-13198,-31361) out=(58718,4125) v=1
+# CYC t=1045000 L0: p=31 fh=1 x=(-9137,22496) out=(24374,56355) v=1
+# CYC t=1055000 L0: p=32 fh=0 x=(-6175,13015) out=(62526,13043) v=1
+# CYC t=1065000 L0: p=33 fh=0 x=(-8040,8687) out=(46573,19636) v=1
+# CYC t=1075000 L0: p=34 fh=0 x=(4574,-5549) out=(57564,15447) v=1
+# CYC t=1085000 L0: p=35 fh=0 x=(-5808,17961) out=(15610,49424) v=1
+# CYC t=1095000 L0: p=36 fh=0 x=(-32301,31298) out=(10332,61858) v=1
+# CYC t=1105000 L0: p=37 fh=0 x=(-26455,-3243) out=(52765,12472) v=1
+# CYC t=1115000 L0: p=38 fh=0 x=(-24254,26029) out=(52385,6859) v=1
+# TB: aligned (deterministic off=0)
+# TB mismatch at 0: got 0360ed0c exp 00ad0006
+# TB mismatch at 1: got 14e00f6e exp 07110ad2
+# TB mismatch at 2: got 0bcc04a8 exp 0f88fc19
+# TB mismatch at 3: got fd0a01c2 exp 00e0f5fd
+# TB mismatch at 4: got 0d10f320 exp 08650550
+# TB mismatch at 5: got 02daf4ae exp 0cc10f8c
+# TB mismatch at 6: got f1e6fde1 exp ef3cfab2
+# TB mismatch at 7: got 1618fb81 exp fa2200b4
+# FFT TOP SELF-CHECK FAIL (M=6, 192 errors)
+# ** Note: $finish    : tb/tb_fft_top.v(225)
+#    Time: 3985 ns  Iteration: 1  Instance: /tb_fft_top
+# End time: 02:33:09 on Nov 04,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0

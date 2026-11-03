@@ -1,0 +1,2 @@
+tests: 0:tone, 1:twotone, 2:noise, 3:corner, 4:impulse, 5:dc
+total_frames 24; export = warm frames 2..3 per test
