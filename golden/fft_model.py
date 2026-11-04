@@ -113,6 +113,7 @@ class Level:
         self.diff_pipe = DLine(self.Lc)         # 复乘/旋转 + 舍入后的 diff 路
         self.fh_hist = DLine(self.Lc)           # 相位(前半拍标志)延迟 Lc,SR 口选择用
         self.sr = DLine(self.S) if self.S > 0 else None
+        self.sr_rd_log = []; self.sr_wr_log = []
         self.p = 0
         self.out = (0, 0)
 
@@ -165,6 +166,8 @@ class Level:
             self.fh_hist.push((1, 0) if fh_now else (0, 0))
             if self.sr is not None:
                 self.sr.push(raw_f if fh_f[0] else diff_f)   # fh_f 是元组,取标志位
+                self.sr_rd_log.append(sr_f)                  # SR 读写日志(逐拍对账用)
+                self.sr_wr_log.append(raw_f if fh_f[0] else diff_f)
             self.out = out_raw
             self.p = 0 if p == self.R - 1 else p + 1
         return self.out

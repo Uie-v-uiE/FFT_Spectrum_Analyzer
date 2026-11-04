@@ -56,6 +56,9 @@ module fft_cmult3 #(
     wire signed [PW-1:0] sim = k2 + k3;
     wire signed [PW-1:0] sre_b = sre + {{(PW-1){1'b0}}, sre[RSH]} + {{(PW-RSH+1){1'b0}}, {(RSH-1){1'b1}}};
     wire signed [PW-1:0] sim_b = sim + {{(PW-1){1'b0}}, sim[RSH]} + {{(PW-RSH+1){1'b0}}, {(RSH-1){1'b1}}};
+    initial begin
+        y_re = {AW{1'b0}}; y_im = {AW{1'b0}}; y_valid = 1'b0;  // 沿前组合读(sr_in)会采到未初始化 X 写进 SR
+    end
     always @(posedge clk) if (en) begin
         y_re    <= sre_b[PW-1:RSH];
         y_im    <= sim_b[PW-1:RSH];

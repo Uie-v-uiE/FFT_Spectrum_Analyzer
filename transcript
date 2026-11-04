@@ -5,7 +5,7 @@
 # vmap work sim/work 
 # Modifying modelsim.ini
 # Model Technology ModelSim SE-64 vlog 2020.4 Compiler 2020.10 Oct 13 2020
-# Start time: 23:13:20 on Nov 04,2026
+# Start time: 01:49:35 on Nov 05,2026
 # vlog rtl/fft_cmult3.v rtl/fft_stage.v rtl/fft_reorder.v rtl/fft_top.v tb/tb_fft_top.v 
 # -- Compiling module fft_cmult3
 # -- Compiling module fft_stage
@@ -22,10 +22,10 @@
 # 
 # Top level modules:
 # 	tb_fft_top
-# End time: 23:13:20 on Nov 04,2026, Elapsed time: 0:00:00
+# End time: 01:49:35 on Nov 05,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 7
 # vsim -c work.tb_fft_top "+INFILE=vectors/only_noise_in.hex" "+OUTFILE=vectors/only_noise_out.hex" -do "run -all; quit -f" -gM_P=6 -gNAT_P=0 
-# Start time: 23:13:20 on Nov 04,2026
+# Start time: 01:49:35 on Nov 05,2026
 # ** Note: (vsim-3813) Design is being optimized due to module recompilation...
 # //  ModelSim SE-64 2020.4 Oct 13 2020
 # //
@@ -56,37 +56,37 @@
 # CYC t=125000 L0: p=3 fh=1 x=(-22433,21232) out=(0,0) v=1
 # CYC t=135000 L0: p=4 fh=1 x=(8612,13463) out=(0,0) v=1
 # CYC t=145000 L0: p=5 fh=1 x=(7466,-10534) out=(0,0) v=1
-# PROBE t=155000 L5 cap#0 val=xxxxxxxx (pre-edge valid)
+# PROBE t=155000 L5 cap#0 val=00000000 (pre-edge valid)
 # CYC t=155000 L0: p=6 fh=1 x=(-24961,27941) out=(0,0) v=1
-# PROBE t=165000 L5 cap#1 val=xxxxxxxx (pre-edge valid)
+# PROBE t=165000 L5 cap#1 val=00000000 (pre-edge valid)
 # CYC t=165000 L0: p=7 fh=1 x=(17723,28996) out=(0,0) v=1
-# PROBE t=175000 L5 cap#2 val=xxxxxxxx (pre-edge valid)
+# PROBE t=175000 L5 cap#2 val=00000000 (pre-edge valid)
 # CYC t=175000 L0: p=8 fh=1 x=(13561,17875) out=(0,0) v=1
-# PROBE t=185000 L5 cap#3 val=xxxxxxxx (pre-edge valid)
+# PROBE t=185000 L5 cap#3 val=00000000 (pre-edge valid)
 # CYC t=185000 L0: p=9 fh=1 x=(-23454,-26073) out=(0,0) v=1
-# PROBE t=195000 L5 cap#4 val=xxxxxxxx (pre-edge valid)
+# PROBE t=195000 L5 cap#4 val=00000000 (pre-edge valid)
 # CYC t=195000 L0: p=10 fh=1 x=(27374,-24717) out=(0,0) v=1
-# PROBE t=205000 L5 cap#5 val=xxxxxxxx (pre-edge valid)
+# PROBE t=205000 L5 cap#5 val=00000000 (pre-edge valid)
 # CYC t=205000 L0: p=11 fh=1 x=(-16395,16553) out=(0,0) v=1
-# PROBE t=215000 L5 cap#6 val=xxxxxxxx (pre-edge valid)
+# PROBE t=215000 L5 cap#6 val=00000000 (pre-edge valid)
 # CYC t=215000 L0: p=12 fh=1 x=(8843,4730) out=(0,0) v=1
-# PROBE t=225000 L5 cap#7 val=xxxxxxxx (pre-edge valid)
+# PROBE t=225000 L5 cap#7 val=00000000 (pre-edge valid)
 # CYC t=225000 L0: p=13 fh=1 x=(-6659,6871) out=(0,0) v=1
-# PROBE t=235000 L5 cap#8 val=xxxxxxxx (pre-edge valid)
+# PROBE t=235000 L5 cap#8 val=00000000 (pre-edge valid)
 # CYC t=235000 L0: p=14 fh=1 x=(-17348,-1196) out=(0,0) v=1
-# PROBE t=245000 L5 cap#9 val=xxxxxxxx (pre-edge valid)
+# PROBE t=245000 L5 cap#9 val=00000000 (pre-edge valid)
 # CYC t=245000 L0: p=15 fh=1 x=(7155,1748) out=(0,0) v=1
-# PROBE t=255000 L5 cap#10 val=xxxxxxxx (pre-edge valid)
+# PROBE t=255000 L5 cap#10 val=00000000 (pre-edge valid)
 # CYC t=255000 L0: p=16 fh=1 x=(2074,27609) out=(0,0) v=1
-# PROBE t=265000 L5 cap#11 val=xxxxxxxx (pre-edge valid)
+# PROBE t=265000 L5 cap#11 val=00000000 (pre-edge valid)
 # CYC t=265000 L0: p=17 fh=1 x=(5770,31370) out=(0,0) v=1
-# PROBE t=275000 L5 cap#12 val=xxxxxxxx (pre-edge valid)
+# PROBE t=275000 L5 cap#12 val=00000000 (pre-edge valid)
 # CYC t=275000 L0: p=18 fh=1 x=(22112,21748) out=(0,0) v=1
-# PROBE t=285000 L5 cap#13 val=xxxxxxxx (pre-edge valid)
+# PROBE t=285000 L5 cap#13 val=00000000 (pre-edge valid)
 # CYC t=285000 L0: p=19 fh=1 x=(4185,-22771) out=(0,0) v=1
-# PROBE t=295000 L5 cap#14 val=xxxxxxxx (pre-edge valid)
+# PROBE t=295000 L5 cap#14 val=00000000 (pre-edge valid)
 # CYC t=295000 L0: p=20 fh=1 x=(25818,-25886) out=(0,0) v=1
-# PROBE t=305000 L5 cap#15 val=xxxxxxxx (pre-edge valid)
+# PROBE t=305000 L5 cap#15 val=00000000 (pre-edge valid)
 # CYC t=305000 L0: p=21 fh=1 x=(23158,-11132) out=(0,0) v=1
 # CYC t=315000 L0: p=22 fh=1 x=(12300,9919) out=(0,0) v=1
 # CYC t=325000 L0: p=23 fh=1 x=(-17776,10602) out=(0,0) v=1
@@ -96,7 +96,7 @@
 # CYC t=365000 L0: p=27 fh=1 x=(-12507,-23096) out=(0,0) v=1
 # CYC t=375000 L0: p=28 fh=1 x=(-22140,6021) out=(0,0) v=1
 # CYC t=385000 L0: p=29 fh=1 x=(29282,-18102) out=(0,0) v=1
-# CYC t=395000 L0: p=30 fh=1 x=(-21100,25707) out=(x,x) v=1
+# CYC t=395000 L0: p=30 fh=1 x=(-21100,25707) out=(0,0) v=1
 # CYC t=405000 L0: p=31 fh=1 x=(25000,-32010) out=(0,0) v=1
 # CYC t=415000 L0: p=32 fh=0 x=(31146,-29257) out=(0,0) v=1
 # CYC t=425000 L0: p=33 fh=0 x=(4963,-25667) out=(19602,57196) v=1
@@ -477,5 +477,5 @@
 # FFT TOP SELF-CHECK FAIL (M=6, 192 errors)
 # ** Note: $finish    : tb/tb_fft_top.v(232)
 #    Time: 3985 ns  Iteration: 1  Instance: /tb_fft_top
-# End time: 23:13:21 on Nov 04,2026, Elapsed time: 0:00:01
+# End time: 01:49:36 on Nov 05,2026, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
