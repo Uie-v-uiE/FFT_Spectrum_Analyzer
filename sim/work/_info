@@ -10,192 +10,126 @@ z2
 cModel Technology
 Z0 dD:/Xilinx/Harness/Project/new_prj/k5p-fft-accelerator
 T_opt
-!s110 1793747579
-VbkbZ2>gP4_6?zXLMV6<>X0
-Z1 04 10 4 work tb_fft_top fast 0
-=1-00e04c167f20-6aea6a7a-342-10c
-o-quiet -auto_acc_if_foreign -work work -g M_P=10 -g NAT_P=0
-Z2 tCvgOpt 0
-n@_opt
-Z3 OL;O;2020.4;71
-R0
-T_opt1
-!s110 1793818075
-VjNlJ13m`<C>En=`nFofnE1
-R1
-=1-00e04c167f20-6aeb7ddb-e6-1f2c
+!s110 1793818891
+VhSAB[KN>j<4lYSPN]gQ8V0
+04 10 4 work tb_fft_top fast 0
+=1-00e04c167f20-6aeb810a-3bf-699c
 o-quiet -auto_acc_if_foreign -work work -g M_P=6 -g NAT_P=0
-R2
-n@_opt1
-R3
-T_opt2
-!s110 1793747581
-Vd`G0:<Z3n_=Yfn=S?WFDD2
-R1
-=1-00e04c167f20-6aea6a7d-a2-4dd0
-o-quiet -auto_acc_if_foreign -work work -g M_P=12 -g NAT_P=0
-R2
-n@_opt2
-R3
-R0
+Z1 tCvgOpt 0
+n@_opt
+OL;O;2020.4;71
 vfft_cmult3
-Z4 !s110 1793818074
+Z2 !s110 1793818890
 !i10b 1
 !s100 f6GPeHPzEakajV^5MV0MK3
-Z5 !s11b Dg1SIo80bB@j0V0VzS_@n1
+Z3 !s11b Dg1SIo80bB@j0V0VzS_@n1
 ICl0gCFECf?ekB>;K4JX5d3
 R0
 w1793814574
 8rtl/fft_cmult3.v
 Frtl/fft_cmult3.v
-!i122 161
+!i122 0
 L0 8 60
-Z6 VDg1SIo80bB@j0V0VzS_@n1
-Z7 OL;L;2020.4;71
+Z4 VDg1SIo80bB@j0V0VzS_@n1
+Z5 OL;L;2020.4;71
 r1
 !s85 0
 31
-Z8 !s108 1793818074.000000
-Z9 !s107 tb/tb_fft_top.v|rtl/fft_top.v|rtl/fft_reorder.v|rtl/fft_stage.v|rtl/fft_cmult3.v|
-Z10 !s90 rtl/fft_cmult3.v|rtl/fft_stage.v|rtl/fft_reorder.v|rtl/fft_top.v|tb/tb_fft_top.v|
+Z6 !s108 1793818890.000000
+Z7 !s107 tb/tb_fft_top.v|rtl/fft_top.v|rtl/fft_reorder.v|rtl/fft_stage.v|rtl/fft_cmult3.v|
+Z8 !s90 rtl/fft_cmult3.v|rtl/fft_stage.v|rtl/fft_reorder.v|rtl/fft_top.v|tb/tb_fft_top.v|
 !i113 0
-Z11 o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
-R2
+Z9 o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R1
 vfft_reorder
-R4
+R2
 !i10b 1
 !s100 D5bflNazoYe713KY1f41D1
-R5
+R3
 I`9gb06ACR4He1KXZT><FI0
 R0
 w1793725805
 8rtl/fft_reorder.v
 Frtl/fft_reorder.v
-!i122 161
+!i122 0
 L0 6 90
-R6
-R7
+R4
+R5
 r1
 !s85 0
 31
+R6
+R7
 R8
-R9
-R10
 !i113 0
-R11
-R2
+R9
+R1
 vfft_stage
-R4
+R2
 !i10b 1
-!s100 lc=3CC<QoDF>>IDNRDj<E2
-R5
-I>cCNc9ofKQ^mn;Bgc1O@c1
+!s100 =ldQ6>L6GH@bjEHfTO0Vz1
+R3
+IDB2L?WeS`9kCgW6CSe=B32
 R0
-w1793818073
+w1793818503
 8rtl/fft_stage.v
 Frtl/fft_stage.v
-!i122 161
-L0 17 197
-R6
-R7
+!i122 0
+L0 17 205
+R4
+R5
 r1
 !s85 0
 31
+R6
+R7
 R8
-R9
-R10
 !i113 0
-R11
-R2
+R9
+R1
 vfft_top
-R4
+R2
 !i10b 1
 !s100 Jzh@M5QQe3chJe;^XXNWK2
-R5
+R3
 IW[^0z5n_?X8L`:gHdk4Oa2
 R0
-w1793817810
+Z10 w1793818333
 8rtl/fft_top.v
 Frtl/fft_top.v
-!i122 161
+!i122 0
 L0 13 101
-R6
-R7
-r1
-!s85 0
-31
-R8
-R9
-R10
-!i113 0
-R11
-R2
-vtb_dbg_cmult
-!s110 1793727482
-!i10b 1
-!s100 :J0RldKA>_OHVjjFX9AOf2
-R5
-I3z;oBI9XfKOl7jDiW0U231
-R0
-w1793727026
-8tb/tb_dbg_cmult.v
-Ftb/tb_dbg_cmult.v
-!i122 11
-L0 3 47
-R6
-R7
-r1
-!s85 0
-31
-!s108 1793727482.000000
-!s107 tb/tb_dbg_cmult.v|rtl/fft_cmult3.v|
-!s90 rtl/fft_cmult3.v|tb/tb_dbg_cmult.v|
-!i113 0
-R11
-R2
-vtb_fft_cmult3
-!s110 1793728465
-!i10b 1
-!s100 d:6dI[ACK7DY;<MYdUziX1
-R5
-IjYHnG1Jg7[8R:Q3058RlH2
-R0
-w1793727619
-8tb/tb_fft_cmult3.v
-Ftb/tb_fft_cmult3.v
-!i122 24
-L0 5 92
-R6
-R7
-r1
-!s85 0
-31
-!s108 1793728465.000000
-!s107 tb/tb_fft_cmult3.v|rtl/fft_cmult3.v|
-!s90 rtl/fft_cmult3.v|tb/tb_fft_cmult3.v|
-!i113 0
-R11
-R2
-vtb_fft_top
 R4
+R5
+r1
+!s85 0
+31
+R6
+R7
+R8
+!i113 0
+R9
+R1
+vtb_fft_top
+R2
 !i10b 1
 !s100 i6I3daW]QP>8IE2Q5=L^n1
-R5
+R3
 If[If;f^ZZoKU<N7BC3fSJ1
 R0
-w1793817431
+R10
 8tb/tb_fft_top.v
 Ftb/tb_fft_top.v
-!i122 161
+!i122 0
 L0 8 234
-R6
-R7
+R4
+R5
 r1
 !s85 0
 31
+R6
+R7
 R8
-R9
-R10
 !i113 0
-R11
-R2
+R9
+R1

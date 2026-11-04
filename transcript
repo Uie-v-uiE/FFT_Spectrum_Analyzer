@@ -1,11 +1,9 @@
 # do sim/fft_noise.do
-# ** Warning: (vlib-34) Library already exists at "sim/work".
-# Errors: 0, Warnings: 1
 # Model Technology ModelSim SE-64 vmap 2020.4 Lib Mapping Utility 2020.10 Oct 13 2020
 # vmap work sim/work 
 # Modifying modelsim.ini
 # Model Technology ModelSim SE-64 vlog 2020.4 Compiler 2020.10 Oct 13 2020
-# Start time: 02:47:54 on Nov 05,2026
+# Start time: 03:01:30 on Nov 05,2026
 # vlog rtl/fft_cmult3.v rtl/fft_stage.v rtl/fft_reorder.v rtl/fft_top.v tb/tb_fft_top.v 
 # -- Compiling module fft_cmult3
 # -- Compiling module fft_stage
@@ -22,11 +20,11 @@
 # 
 # Top level modules:
 # 	tb_fft_top
-# End time: 02:47:54 on Nov 05,2026, Elapsed time: 0:00:00
+# End time: 03:01:30 on Nov 05,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 7
 # vsim -c work.tb_fft_top "+INFILE=vectors/only_noise_in.hex" "+OUTFILE=vectors/only_noise_out.hex" -do "run -all; quit -f" -gM_P=6 -gNAT_P=0 
-# Start time: 02:47:55 on Nov 05,2026
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Start time: 03:01:30 on Nov 05,2026
+# ** Note: (vsim-3812) Design is being optimized...
 # //  ModelSim SE-64 2020.4 Oct 13 2020
 # //
 # //  Copyright 1991-2020 Mentor Graphics Corporation
@@ -160,23 +158,23 @@
 # CYC t=1005000 L0: p=27 fh=1 x=(10225,-29798) out=(52495,12174) v=1
 # CYC t=1015000 L0: p=28 fh=1 x=(28079,-31176) out=(10115,20321) v=1
 # CYC t=1025000 L0: p=29 fh=1 x=(-18543,14738) out=(62889,50718) v=1
-# L1I t=1035000 fh_sel=0 raw_f=00000000 diff_f=cbce438b sr_front=ee4a16cd out=0a62e012
+# L1I t=1035000 fh_sel=0 raw_f=00000000 diff_f=cbce438b sr_front=3dc9416cd out=0a62e012
 # CYC t=1035000 L0: p=30 fh=1 x=(-13198,-31361) out=(58718,4125) v=1
-# L1I t=1045000 fh_sel=0 raw_f=00000000 diff_f=38111acb sr_front=38f5d159 out=e9d41375
+# L1I t=1045000 fh_sel=0 raw_f=00000000 diff_f=38111acb sr_front=071ebd159 out=e9d41375
 # CYC t=1045000 L0: p=31 fh=1 x=(-9137,22496) out=(24374,56355) v=1
-# L1I t=1055000 fh_sel=0 raw_f=00000000 diff_f=e059f5ef sr_front=34ecb498 out=4c16d6be
+# L1I t=1055000 fh_sel=0 raw_f=00000000 diff_f=e059f5ef sr_front=069d9b498 out=4c16d6be
 # CYC t=1055000 L0: p=32 fh=0 x=(-6175,13015) out=(62526,13043) v=1
-# L1I t=1065000 fh_sel=0 raw_f=00000000 diff_f=fa99fe9e sr_front=ffa13345 out=34ecb498
+# L1I t=1065000 fh_sel=0 raw_f=00000000 diff_f=fa99fe9e sr_front=3ff423345 out=34ecb498
 # CYC t=1065000 L0: p=33 fh=0 x=(-8040,8687) out=(46573,19636) v=1
-# L1I t=1075000 fh_sel=0 raw_f=00000000 diff_f=13d0018f sr_front=336e146a out=ffa13345
+# L1I t=1075000 fh_sel=0 raw_f=00000000 diff_f=13d0018f sr_front=066dc146a out=ffa13345
 # CYC t=1075000 L0: p=34 fh=0 x=(4574,-5549) out=(57564,15447) v=1
-# L1I t=1085000 fh_sel=1 raw_f=f43e32f3 diff_f=2057c0d3 sr_front=f995e80c out=336e146a
+# L1I t=1085000 fh_sel=1 raw_f=f43e32f3 diff_f=2057c0d3 sr_front=3f32be80c out=336e146a
 # CYC t=1085000 L0: p=35 fh=0 x=(-5808,17961) out=(15610,49424) v=1
-# L1I t=1095000 fh_sel=1 raw_f=b5ed4cb4 diff_f=26a0fab8 sr_front=ccc1cdb5 out=f995e80c
+# L1I t=1095000 fh_sel=1 raw_f=b5ed4cb4 diff_f=26a0fab8 sr_front=39983cdb5 out=f995e80c
 # CYC t=1095000 L0: p=36 fh=0 x=(-32301,31298) out=(10332,61858) v=1
-# L1I t=1105000 fh_sel=1 raw_f=e0dc3c57 diff_f=2dc8fd5b sr_front=e511f299 out=ccc1cdb5
+# L1I t=1105000 fh_sel=1 raw_f=e0dc3c57 diff_f=2dc8fd5b sr_front=3ca23f299 out=ccc1cdb5
 # CYC t=1105000 L0: p=37 fh=0 x=(-26455,-3243) out=(52765,12472) v=1
-# L1I t=1115000 fh_sel=1 raw_f=3cfac110 diff_f=d927fd7c sr_front=273a354f out=e511f299
+# L1I t=1115000 fh_sel=1 raw_f=3cfac110 diff_f=d927fd7c sr_front=04e74354f out=e511f299
 # CYC t=1115000 L0: p=38 fh=0 x=(-24254,26029) out=(52385,6859) v=1
 # CYC t=1125000 L0: p=39 fh=0 x=(-29252,-20765) out=(57186,27570) v=1
 # CYC t=1135000 L0: p=40 fh=0 x=(-3410,12363) out=(39268,55562) v=1
@@ -466,16 +464,16 @@
 # CYC t=3975000 L0: p=0 fh=1 x=(0,0) out=(0,0) v=1
 # CYC t=3985000 L0: p=0 fh=1 x=(0,0) out=(0,0) v=1
 # TB: aligned (deterministic off=0)
-# TB mismatch at 0: got f96efbbc exp 00ad0006
-# TB mismatch at 1: got 0963027f exp 07110ad2
-# TB mismatch at 2: got fc9714eb exp 0f88fc19
-# TB mismatch at 3: got 0b1509ae exp 00e0f5fd
-# TB mismatch at 4: got 076fec6a exp 08650550
-# TB mismatch at 5: got ed94f724 exp 0cc10f8c
-# TB mismatch at 6: got ec58edb8 exp ef3cfab2
-# TB mismatch at 7: got 0ebc00a0 exp fa2200b4
+# TB mismatch at 0: got 00000000 exp 00ad0006
+# TB mismatch at 1: got 0ccced94 exp 07110ad2
+# TB mismatch at 2: got 00000000 exp 0f88fc19
+# TB mismatch at 3: got 03a61d44 exp 00e0f5fd
+# TB mismatch at 4: got 00000000 exp 08650550
+# TB mismatch at 5: got 013c096c exp 0cc10f8c
+# TB mismatch at 6: got 00000000 exp ef3cfab2
+# TB mismatch at 7: got 0c480d52 exp fa2200b4
 # FFT TOP SELF-CHECK FAIL (M=6, 192 errors)
 # ** Note: $finish    : tb/tb_fft_top.v(232)
 #    Time: 3985 ns  Iteration: 1  Instance: /tb_fft_top
-# End time: 02:47:55 on Nov 05,2026, Elapsed time: 0:00:00
+# End time: 03:01:31 on Nov 05,2026, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
