@@ -1,0 +1,8 @@
+L0 ND=2 fd=31
+L0 ND=3 fd=None
+L0 ND=4 fd=32
+L1 ND=2:15 ND=3:None
+L2 ND=2:14 ND=3:None
+L3 ND=2:3 ND=3:None
+L4 ND=2:2 ND=3:2
+L5 ND=2:1 ND=3:1

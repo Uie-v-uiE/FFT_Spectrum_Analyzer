@@ -9,27 +9,27 @@ Reading pref.tcl
 # vmap work sim/work 
 # Modifying modelsim.ini
 # Model Technology ModelSim SE-64 vlog 2020.4 Compiler 2020.10 Oct 13 2020
-# Start time: 01:49:35 on Nov 05,2026
+# Start time: 02:00:16 on Nov 05,2026
 # vlog rtl/fft_cmult3.v rtl/fft_stage.v rtl/fft_reorder.v rtl/fft_top.v tb/tb_fft_top.v 
 # -- Compiling module fft_cmult3
 # -- Compiling module fft_stage
 # -- Compiling module fft_reorder
 # -- Compiling module fft_top
 # -- Compiling module tb_fft_top
-# ** Warning: tb/tb_fft_top.v(198): (vlog-2643) Unterminated string literal continues onto next line.
-# ** Warning: tb/tb_fft_top.v(204): (vlog-2643) Unterminated string literal continues onto next line.
-# ** Warning: tb/tb_fft_top.v(208): (vlog-2643) Unterminated string literal continues onto next line.
-# ** Warning: tb/tb_fft_top.v(212): (vlog-2643) Unterminated string literal continues onto next line.
-# ** Warning: tb/tb_fft_top.v(216): (vlog-2643) Unterminated string literal continues onto next line.
-# ** Warning: tb/tb_fft_top.v(220): (vlog-2643) Unterminated string literal continues onto next line.
-# ** Warning: tb/tb_fft_top.v(224): (vlog-2643) Unterminated string literal continues onto next line.
+# ** Warning: tb/tb_fft_top.v(205): (vlog-2643) Unterminated string literal continues onto next line.
+# ** Warning: tb/tb_fft_top.v(211): (vlog-2643) Unterminated string literal continues onto next line.
+# ** Warning: tb/tb_fft_top.v(215): (vlog-2643) Unterminated string literal continues onto next line.
+# ** Warning: tb/tb_fft_top.v(219): (vlog-2643) Unterminated string literal continues onto next line.
+# ** Warning: tb/tb_fft_top.v(223): (vlog-2643) Unterminated string literal continues onto next line.
+# ** Warning: tb/tb_fft_top.v(227): (vlog-2643) Unterminated string literal continues onto next line.
+# ** Warning: tb/tb_fft_top.v(231): (vlog-2643) Unterminated string literal continues onto next line.
 # 
 # Top level modules:
 # 	tb_fft_top
-# End time: 01:49:35 on Nov 05,2026, Elapsed time: 0:00:00
+# End time: 02:00:16 on Nov 05,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 7
 # vsim -c work.tb_fft_top "+INFILE=vectors/only_noise_in.hex" "+OUTFILE=vectors/only_noise_out.hex" -do "run -all; quit -f" -gM_P=6 -gNAT_P=0 
-# Start time: 01:49:35 on Nov 05,2026
+# Start time: 02:00:16 on Nov 05,2026
 # ** Note: (vsim-3813) Design is being optimized due to module recompilation...
 # //  ModelSim SE-64 2020.4 Oct 13 2020
 # //
@@ -53,98 +53,174 @@ Reading pref.tcl
 # Loading work.fft_stage(fast__5)
 # run -all
 # TB: M=6 in=192 exp=192 gap=0 natural=0 seed=7
+# L1SRRD k=0 srf=00000000 srin=00000000
 # CYC t=85000 L0: p=0 fh=1 x=(0,0) out=(0,0) v=0
 # CYC t=95000 L0: p=0 fh=1 x=(8058,12578) out=(0,0) v=0
+# L1SRRD k=1 srf=00000000 srin=00000000
+# L1SRRD k=2 srf=00000000 srin=00000000
 # CYC t=105000 L0: p=1 fh=1 x=(30855,-17749) out=(0,0) v=1
 # CYC t=115000 L0: p=2 fh=1 x=(-14807,11620) out=(0,0) v=1
+# L1SRRD k=3 srf=00000000 srin=00000000
+# L1SRRD k=4 srf=00000000 srin=00000000
 # CYC t=125000 L0: p=3 fh=1 x=(-22433,21232) out=(0,0) v=1
 # CYC t=135000 L0: p=4 fh=1 x=(8612,13463) out=(0,0) v=1
+# L1SRRD k=5 srf=00000000 srin=00000000
+# L1SRRD k=6 srf=00000000 srin=00000000
 # CYC t=145000 L0: p=5 fh=1 x=(7466,-10534) out=(0,0) v=1
 # PROBE t=155000 L5 cap#0 val=00000000 (pre-edge valid)
 # CYC t=155000 L0: p=6 fh=1 x=(-24961,27941) out=(0,0) v=1
+# L1SRRD k=7 srf=00000000 srin=00000000
+# L1SRRD k=8 srf=00000000 srin=00000000
 # PROBE t=165000 L5 cap#1 val=00000000 (pre-edge valid)
 # CYC t=165000 L0: p=7 fh=1 x=(17723,28996) out=(0,0) v=1
 # PROBE t=175000 L5 cap#2 val=00000000 (pre-edge valid)
 # CYC t=175000 L0: p=8 fh=1 x=(13561,17875) out=(0,0) v=1
+# L1SRRD k=9 srf=00000000 srin=00000000
+# L1SRRD k=10 srf=00000000 srin=00000000
 # PROBE t=185000 L5 cap#3 val=00000000 (pre-edge valid)
 # CYC t=185000 L0: p=9 fh=1 x=(-23454,-26073) out=(0,0) v=1
 # PROBE t=195000 L5 cap#4 val=00000000 (pre-edge valid)
 # CYC t=195000 L0: p=10 fh=1 x=(27374,-24717) out=(0,0) v=1
+# L1SRRD k=11 srf=00000000 srin=00000000
+# L1SRRD k=12 srf=00000000 srin=00000000
 # PROBE t=205000 L5 cap#5 val=00000000 (pre-edge valid)
 # CYC t=205000 L0: p=11 fh=1 x=(-16395,16553) out=(0,0) v=1
 # PROBE t=215000 L5 cap#6 val=00000000 (pre-edge valid)
 # CYC t=215000 L0: p=12 fh=1 x=(8843,4730) out=(0,0) v=1
+# L1SRRD k=13 srf=00000000 srin=00000000
+# L1SRRD k=14 srf=00000000 srin=00000000
 # PROBE t=225000 L5 cap#7 val=00000000 (pre-edge valid)
 # CYC t=225000 L0: p=13 fh=1 x=(-6659,6871) out=(0,0) v=1
 # PROBE t=235000 L5 cap#8 val=00000000 (pre-edge valid)
 # CYC t=235000 L0: p=14 fh=1 x=(-17348,-1196) out=(0,0) v=1
+# L1SRRD k=15 srf=00000000 srin=00000000
+# L1SRRD k=16 srf=00000000 srin=00000000
 # PROBE t=245000 L5 cap#9 val=00000000 (pre-edge valid)
 # CYC t=245000 L0: p=15 fh=1 x=(7155,1748) out=(0,0) v=1
 # PROBE t=255000 L5 cap#10 val=00000000 (pre-edge valid)
 # CYC t=255000 L0: p=16 fh=1 x=(2074,27609) out=(0,0) v=1
+# L1SRRD k=17 srf=00000000 srin=00000000
+# L1SRRD k=18 srf=00000000 srin=00000000
 # PROBE t=265000 L5 cap#11 val=00000000 (pre-edge valid)
 # CYC t=265000 L0: p=17 fh=1 x=(5770,31370) out=(0,0) v=1
 # PROBE t=275000 L5 cap#12 val=00000000 (pre-edge valid)
 # CYC t=275000 L0: p=18 fh=1 x=(22112,21748) out=(0,0) v=1
+# L1SRRD k=19 srf=00000000 srin=00000000
+# L1SRRD k=20 srf=00000000 srin=00000000
 # PROBE t=285000 L5 cap#13 val=00000000 (pre-edge valid)
 # CYC t=285000 L0: p=19 fh=1 x=(4185,-22771) out=(0,0) v=1
 # PROBE t=295000 L5 cap#14 val=00000000 (pre-edge valid)
 # CYC t=295000 L0: p=20 fh=1 x=(25818,-25886) out=(0,0) v=1
+# L1SRRD k=21 srf=00000000 srin=00000000
+# L1SRRD k=22 srf=00000000 srin=00000000
 # PROBE t=305000 L5 cap#15 val=00000000 (pre-edge valid)
 # CYC t=305000 L0: p=21 fh=1 x=(23158,-11132) out=(0,0) v=1
 # CYC t=315000 L0: p=22 fh=1 x=(12300,9919) out=(0,0) v=1
+# L1SRRD k=23 srf=00000000 srin=00000000
+# L1SRRD k=24 srf=00000000 srin=00000000
 # CYC t=325000 L0: p=23 fh=1 x=(-17776,10602) out=(0,0) v=1
 # CYC t=335000 L0: p=24 fh=1 x=(-14286,20765) out=(0,0) v=1
+# L1SRRD k=25 srf=00000000 srin=00000000
+# L1SRRD k=26 srf=00000000 srin=00000000
 # CYC t=345000 L0: p=25 fh=1 x=(-20088,3643) out=(0,0) v=1
 # CYC t=355000 L0: p=26 fh=1 x=(32316,-29340) out=(0,0) v=1
+# L1SRRD k=27 srf=00000000 srin=00000000
+# L1SRRD k=28 srf=00000000 srin=00000000
 # CYC t=365000 L0: p=27 fh=1 x=(-12507,-23096) out=(0,0) v=1
 # CYC t=375000 L0: p=28 fh=1 x=(-22140,6021) out=(0,0) v=1
+# L1SRRD k=29 srf=00000000 srin=00000000
+# L1SRRD k=30 srf=00000000 srin=00000000
 # CYC t=385000 L0: p=29 fh=1 x=(29282,-18102) out=(0,0) v=1
 # CYC t=395000 L0: p=30 fh=1 x=(-21100,25707) out=(0,0) v=1
+# L1SRRD k=31 srf=00000000 srin=00000000
+# L1SRRD k=32 srf=00000000 srin=00000000
 # CYC t=405000 L0: p=31 fh=1 x=(25000,-32010) out=(0,0) v=1
 # CYC t=415000 L0: p=32 fh=0 x=(31146,-29257) out=(0,0) v=1
+# L1SRRD k=33 srf=00000000 srin=00000000
+# L1SRRD k=34 srf=00000000 srin=00000000
 # CYC t=425000 L0: p=33 fh=0 x=(4963,-25667) out=(19602,57196) v=1
 # CYC t=435000 L0: p=34 fh=0 x=(18594,-14250) out=(17909,43828) v=1
+# L1SRRD k=35 srf=00000000 srin=00000000
+# L1SRRD k=36 srf=00000000 srin=00000000
 # CYC t=445000 L0: p=35 fh=0 x=(12078,-15786) out=(1894,64221) v=1
 # CYC t=455000 L0: p=36 fh=0 x=(20735,-15985) out=(60358,2723) v=1
+# L1SRRD k=37 srf=00000000 srin=4c92df6c
+# L1SRRD k=38 srf=00000000 srin=45f5ab34
 # CYC t=465000 L0: p=37 fh=0 x=(-32500,5726) out=(14674,64275) v=1
 # CYC t=475000 L0: p=38 fh=0 x=(-31904,23353) out=(53019,63132) v=1
+# L1SRRD k=39 srf=00000000 srin=0766fadd
+# L1SRRD k=40 srf=00000000 srin=ebc60aa3
 # CYC t=485000 L0: p=39 fh=0 x=(-17445,-15128) out=(37104,25647) v=1
 # CYC t=495000 L0: p=40 fh=0 x=(696,-27615) out=(139,6934) v=1
+# L1SRRD k=41 srf=00000000 srin=3952fb13
+# L1SRRD k=42 srf=00000000 srin=cf1bf69c
 # CYC t=505000 L0: p=41 fh=0 x=(-7818,-15257) out=(7128,60666) v=1
 # CYC t=515000 L0: p=42 fh=0 x=(-31827,9234) out=(49900,44871) v=1
+# L1SRRD k=43 srf=00000000 srin=90f0642f
+# L1SRRD k=44 srf=00000000 srin=008b1b16
 # CYC t=525000 L0: p=43 fh=0 x=(1132,24825) out=(63310,57794) v=1
 # CYC t=535000 L0: p=44 fh=0 x=(5575,20617) out=(57904,20689) v=1
+# L1SRRD k=45 srf=00000000 srin=1bd8ecfa
+# L1SRRD k=46 srf=00000000 srin=c2ecaf47
 # CYC t=545000 L0: p=45 fh=0 x=(-15199,-5195) out=(7209,12674) v=1
 # CYC t=555000 L0: p=46 fh=0 x=(390,32066) out=(54607,838) v=1
+# L1SRRD k=47 srf=00000000 srin=f74ee1c2
+# L1SRRD k=48 srf=00000000 srin=e23050d1
 # CYC t=565000 L0: p=47 fh=0 x=(-29979,-14710) out=(57057,15435) v=1
 # CYC t=575000 L0: p=48 fh=0 x=(11806,-5347) out=(54124,59055) v=1
+# L1SRRD k=49 srf=00000000 srin=1c293182
+# L1SRRD k=50 srf=4c92df6c srin=d54f0346
 # CYC t=585000 L0: p=49 fh=0 x=(-8537,963) out=(6940,11131) v=1
 # CYC t=595000 L0: p=50 fh=0 x=(-16456,10338) out=(64152,16166) v=1
+# L1SRRD k=51 srf=45f5ab34 srin=108fe1db
+# L1SRRD k=52 srf=0766fadd srin=136410c3
 # CYC t=605000 L0: p=51 fh=0 x=(-10829,12875) out=(2828,16043) v=1
 # CYC t=615000 L0: p=52 fh=0 x=(20744,-19166) out=(62214,60588) v=1
+# L1SRRD k=53 srf=ebc60aa3 srin=2567e654
+# L1SRRD k=54 srf=3952fb13 srin=486ed76e
 # CYC t=625000 L0: p=53 fh=0 x=(-5907,-21553) out=(23281,43010) v=1
 # CYC t=635000 L0: p=54 fh=0 x=(-17578,5369) out=(8626,49194) v=1
+# L1SRRD k=55 srf=cf1bf69c srin=16afe6bd
+# L1SRRD k=56 srf=90f0642f srin=f187054f
 # CYC t=645000 L0: p=55 fh=0 x=(6269,6833) out=(62897,7644) v=1
 # CYC t=655000 L0: p=56 fh=0 x=(-6651,10403) out=(59782,8718) v=1
+# L1SRRD k=57 srf=008b1b16 srin=d332005d
+# L1SRRD k=58 srf=1bd8ecfa srin=dd3fdccf
 # CYC t=665000 L0: p=57 fh=0 x=(3675,12627) out=(55068,15584) v=1
 # CYC t=675000 L0: p=58 fh=0 x=(-2898,-23586) out=(57330,8135) v=1
+# L1SRRD k=59 srf=c2ecaf47 srin=dcd6cda0
+# L1SRRD k=60 srf=f74ee1c2 srin=012c0bf8
 # CYC t=685000 L0: p=59 fh=0 x=(-13825,22284) out=(14709,39073) v=1
 # CYC t=695000 L0: p=60 fh=0 x=(-15690,-23385) out=(52370,65130) v=1
+# L1SRRD k=61 srf=e23050d1 srin=17c22f0a
+# L1SRRD k=62 srf=1c293182 srin=36d5132f
 # CYC t=705000 L0: p=61 fh=0 x=(13838,-14165) out=(46621,56854) v=1
 # CYC t=715000 L0: p=62 fh=0 x=(30294,17208) out=(21560,49402) v=1
+# L1SRRD k=63 srf=d54f0346 srin=fd89cec2
+# L1SRRD k=64 srf=108fe1db srin=e01fe3bf
 # CYC t=725000 L0: p=63 fh=0 x=(16452,-6640) out=(4597,21458) v=1
 # CYC t=735000 L0: p=0 fh=1 x=(-31751,26257) out=(20726,46211) v=1
+# L1SRRD k=65 srf=136410c3 srin=c0e6ecfd
+# L1SRRD k=66 srf=2567e654 srin=37c5d31c
 # CYC t=745000 L0: p=1 fh=1 x=(-7905,22207) out=(53992,20917) v=1
 # CYC t=755000 L0: p=2 fh=1 x=(26645,-26676) out=(12496,5209) v=1
+# L1SRRD k=67 srf=486ed76e srin=11f553d2
+# L1SRRD k=68 srf=16afe6bd srin=50f6b483
 # CYC t=765000 L0: p=3 fh=1 x=(26471,-25317) out=(46633,9428) v=1
 # CYC t=775000 L0: p=4 fh=1 x=(6759,-6353) out=(43651,12703) v=1
+# L1SRRD k=69 srf=f187054f srin=d2e851b5
+# L1SRRD k=70 srf=d332005d srin=30d01459
 # CYC t=785000 L0: p=5 fh=1 x=(153,16961) out=(54301,11284) v=1
 # CYC t=795000 L0: p=6 fh=1 x=(7554,29112) out=(21456,2250) v=1
+# L1SRRD k=71 srf=dd3fdccf srin=b62924d4
+# L1SRRD k=72 srf=dcd6cda0 srin=aa83319f
 # CYC t=805000 L0: p=7 fh=1 x=(-23283,816) out=(1612,3836) v=1
 # CYC t=815000 L0: p=8 fh=1 x=(28758,13079) out=(65133,28209) v=1
+# L1SRRD k=73 srf=012c0bf8 srin=d41d2c14
+# L1SRRD k=74 srf=17c22f0a srin=53d008ca
 # CYC t=825000 L0: p=9 fh=1 x=(27775,-31585) out=(54001,20632) v=1
 # CYC t=835000 L0: p=10 fh=1 x=(22293,18238) out=(64757,56062) v=1
+# L1SRRD k=75 srf=36d5132f srin=064c0efc
 # CYC t=845000 L0: p=11 fh=1 x=(19730,27174) out=(30560,15181) v=1
 # CYC t=855000 L0: p=12 fh=1 x=(15321,8512) out=(65053,55858) v=1
 # CYC t=865000 L0: p=13 fh=1 x=(-6309,-12751) out=(7964,64006) v=1
@@ -164,23 +240,23 @@ Reading pref.tcl
 # CYC t=1005000 L0: p=27 fh=1 x=(10225,-29798) out=(52495,12174) v=1
 # CYC t=1015000 L0: p=28 fh=1 x=(28079,-31176) out=(10115,20321) v=1
 # CYC t=1025000 L0: p=29 fh=1 x=(-18543,14738) out=(62889,50718) v=1
-# L1I t=1035000 fh_sel=0 raw_f=00000000 diff_f=d9fc4c6e sr_front=ee4a16cd out=0a62e012
+# L1I t=1035000 fh_sel=0 raw_f=00000000 diff_f=bfa23810 sr_front=ee4a16cd out=0a62e012
 # CYC t=1035000 L0: p=30 fh=1 x=(-13198,-31361) out=(58718,4125) v=1
-# L1I t=1045000 fh_sel=0 raw_f=00000000 diff_f=3c380f57 sr_front=38f5d159 out=e9d41375
+# L1I t=1045000 fh_sel=0 raw_f=00000000 diff_f=31c32538 sr_front=ec80413c out=e9d41375
 # CYC t=1045000 L0: p=31 fh=1 x=(-9137,22496) out=(24374,56355) v=1
-# L1I t=1055000 fh_sel=0 raw_f=00000000 diff_f=defefc4e sr_front=e71e4b54 out=4c16d6be
+# L1I t=1055000 fh_sel=0 raw_f=00000000 diff_f=e2eceff4 sr_front=429ec05e out=ec80413c
 # CYC t=1055000 L0: p=32 fh=0 x=(-6175,13015) out=(62526,13043) v=1
-# L1I t=1065000 fh_sel=0 raw_f=00000000 diff_f=fa6fffb3 sr_front=09a3325b out=edae3f24
+# L1I t=1065000 fh_sel=0 raw_f=00000000 diff_f=faf9fd97 sr_front=f5a23236 out=429ec05e
 # CYC t=1065000 L0: p=33 fh=0 x=(-8040,8687) out=(46573,19636) v=1
-# L1I t=1075000 fh_sel=0 raw_f=00000000 diff_f=13bcfdaa sr_front=366c09fd out=09a3325b
+# L1I t=1075000 fh_sel=1 raw_f=5f36dc23 diff_f=c6a5328c sr_front=2e751e0e out=f5a23236
 # CYC t=1075000 L0: p=34 fh=0 x=(4574,-5549) out=(57564,15447) v=1
-# L1I t=1085000 fh_sel=0 raw_f=00000000 diff_f=040ff2c4 sr_front=f508e9c2 out=366c09fd
+# L1I t=1085000 fh_sel=1 raw_f=f43e32f3 diff_f=319dcf75 sr_front=fe61e741 out=2e751e0e
 # CYC t=1085000 L0: p=35 fh=0 x=(-5808,17961) out=(15610,49424) v=1
-# L1I t=1095000 fh_sel=1 raw_f=b5ed4cb4 diff_f=29dbf2d4 sr_front=c3edd8ac out=f508e9c2
+# L1I t=1095000 fh_sel=1 raw_f=b5ed4cb4 diff_f=227ffff4 sr_front=d78cc4ad out=fe61e741
 # CYC t=1095000 L0: p=36 fh=0 x=(-32301,31298) out=(10332,61858) v=1
-# L1I t=1105000 fh_sel=1 raw_f=e0dc3c57 diff_f=2edfefa8 sr_front=e2f8f81c out=c3edd8ac
+# L1I t=1105000 fh_sel=1 raw_f=e0dc3c57 diff_f=28ac08f7 sr_front=e832ed99 out=d78cc4ad
 # CYC t=1105000 L0: p=37 fh=0 x=(-26455,-3243) out=(52765,12472) v=1
-# L1I t=1115000 fh_sel=1 raw_f=3cfac110 diff_f=d6fb0508 sr_front=30df2ca2 out=e2f8f81c
+# L1I t=1115000 fh_sel=1 raw_f=3cfac110 diff_f=dc5ef75f sr_front=1c133bf0 out=e832ed99
 # CYC t=1115000 L0: p=38 fh=0 x=(-24254,26029) out=(52385,6859) v=1
 # CYC t=1125000 L0: p=39 fh=0 x=(-29252,-20765) out=(57186,27570) v=1
 # CYC t=1135000 L0: p=40 fh=0 x=(-3410,12363) out=(39268,55562) v=1
@@ -470,16 +546,16 @@ Reading pref.tcl
 # CYC t=3975000 L0: p=0 fh=1 x=(0,0) out=(0,0) v=1
 # CYC t=3985000 L0: p=0 fh=1 x=(0,0) out=(0,0) v=1
 # TB: aligned (deterministic off=0)
-# TB mismatch at 0: got 0360ed0c exp 00ad0006
-# TB mismatch at 1: got 14e00f6e exp 07110ad2
-# TB mismatch at 2: got 0bcc04a8 exp 0f88fc19
-# TB mismatch at 3: got fd0a01c2 exp 00e0f5fd
-# TB mismatch at 4: got 0d10f320 exp 08650550
-# TB mismatch at 5: got 02daf4ae exp 0cc10f8c
-# TB mismatch at 6: got f1e6fde1 exp ef3cfab2
-# TB mismatch at 7: got 1618fb81 exp fa2200b4
+# TB mismatch at 0: got 031ef5c8 exp 00ad0006
+# TB mismatch at 1: got 148c0ef2 exp 07110ad2
+# TB mismatch at 2: got 10b4007e exp 0f88fc19
+# TB mismatch at 3: got f8b8fdaa exp 00e0f5fd
+# TB mismatch at 4: got 1479f6a6 exp 08650550
+# TB mismatch at 5: got 03b1f1bc exp 0cc10f8c
+# TB mismatch at 6: got f102fa4e exp ef3cfab2
+# TB mismatch at 7: got 0ebcfe80 exp fa2200b4
 # FFT TOP SELF-CHECK FAIL (M=6, 192 errors)
-# ** Note: $finish    : tb/tb_fft_top.v(232)
+# ** Note: $finish    : tb/tb_fft_top.v(239)
 #    Time: 3985 ns  Iteration: 1  Instance: /tb_fft_top
-# End time: 01:49:36 on Nov 05,2026, Elapsed time: 0:00:01
+# End time: 02:00:16 on Nov 05,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
