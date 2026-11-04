@@ -9,27 +9,27 @@ Reading pref.tcl
 # vmap work sim/work 
 # Modifying modelsim.ini
 # Model Technology ModelSim SE-64 vlog 2020.4 Compiler 2020.10 Oct 13 2020
-# Start time: 07:06:15 on Nov 04,2026
+# Start time: 23:07:21 on Nov 04,2026
 # vlog rtl/fft_cmult3.v rtl/fft_stage.v rtl/fft_reorder.v rtl/fft_top.v tb/tb_fft_top.v 
 # -- Compiling module fft_cmult3
 # -- Compiling module fft_stage
 # -- Compiling module fft_reorder
 # -- Compiling module fft_top
 # -- Compiling module tb_fft_top
-# ** Warning: tb/tb_fft_top.v(193): (vlog-2643) Unterminated string literal continues onto next line.
 # ** Warning: tb/tb_fft_top.v(199): (vlog-2643) Unterminated string literal continues onto next line.
-# ** Warning: tb/tb_fft_top.v(203): (vlog-2643) Unterminated string literal continues onto next line.
-# ** Warning: tb/tb_fft_top.v(207): (vlog-2643) Unterminated string literal continues onto next line.
-# ** Warning: tb/tb_fft_top.v(211): (vlog-2643) Unterminated string literal continues onto next line.
-# ** Warning: tb/tb_fft_top.v(215): (vlog-2643) Unterminated string literal continues onto next line.
-# ** Warning: tb/tb_fft_top.v(219): (vlog-2643) Unterminated string literal continues onto next line.
+# ** Warning: tb/tb_fft_top.v(205): (vlog-2643) Unterminated string literal continues onto next line.
+# ** Warning: tb/tb_fft_top.v(209): (vlog-2643) Unterminated string literal continues onto next line.
+# ** Warning: tb/tb_fft_top.v(213): (vlog-2643) Unterminated string literal continues onto next line.
+# ** Warning: tb/tb_fft_top.v(217): (vlog-2643) Unterminated string literal continues onto next line.
+# ** Warning: tb/tb_fft_top.v(221): (vlog-2643) Unterminated string literal continues onto next line.
+# ** Warning: tb/tb_fft_top.v(225): (vlog-2643) Unterminated string literal continues onto next line.
 # 
 # Top level modules:
 # 	tb_fft_top
-# End time: 07:06:15 on Nov 04,2026, Elapsed time: 0:00:00
+# End time: 23:07:22 on Nov 04,2026, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 7
 # vsim -c work.tb_fft_top "+INFILE=vectors/only_noise_in.hex" "+OUTFILE=vectors/only_noise_out.hex" -do "run -all; quit -f" -gM_P=6 -gNAT_P=0 
-# Start time: 07:06:15 on Nov 04,2026
+# Start time: 23:07:22 on Nov 04,2026
 # ** Note: (vsim-3812) Design is being optimized...
 # //  ModelSim SE-64 2020.4 Oct 13 2020
 # //
@@ -53,31 +53,422 @@ Reading pref.tcl
 # Loading work.fft_stage(fast__5)
 # run -all
 # TB: M=6 in=192 exp=192 gap=0 natural=0 seed=7
+# CYC t=85000 L0: p=0 fh=1 x=(0,0) out=(0,0) v=0
+# CYC t=95000 L0: p=0 fh=1 x=(8058,12578) out=(0,0) v=0
+# CYC t=105000 L0: p=1 fh=1 x=(30855,-17749) out=(0,0) v=1
+# CYC t=115000 L0: p=2 fh=1 x=(-14807,11620) out=(0,0) v=1
+# CYC t=125000 L0: p=3 fh=1 x=(-22433,21232) out=(0,0) v=1
+# CYC t=135000 L0: p=4 fh=1 x=(8612,13463) out=(0,0) v=1
+# CYC t=145000 L0: p=5 fh=1 x=(7466,-10534) out=(0,0) v=1
 # PROBE t=155000 L5 cap#0 val=xxxxxxxx (pre-edge valid)
+# CYC t=155000 L0: p=6 fh=1 x=(-24961,27941) out=(0,0) v=1
 # PROBE t=165000 L5 cap#1 val=xxxxxxxx (pre-edge valid)
+# CYC t=165000 L0: p=7 fh=1 x=(17723,28996) out=(0,0) v=1
 # PROBE t=175000 L5 cap#2 val=xxxxxxxx (pre-edge valid)
+# CYC t=175000 L0: p=8 fh=1 x=(13561,17875) out=(0,0) v=1
 # PROBE t=185000 L5 cap#3 val=xxxxxxxx (pre-edge valid)
+# CYC t=185000 L0: p=9 fh=1 x=(-23454,-26073) out=(0,0) v=1
 # PROBE t=195000 L5 cap#4 val=xxxxxxxx (pre-edge valid)
+# CYC t=195000 L0: p=10 fh=1 x=(27374,-24717) out=(0,0) v=1
 # PROBE t=205000 L5 cap#5 val=xxxxxxxx (pre-edge valid)
+# CYC t=205000 L0: p=11 fh=1 x=(-16395,16553) out=(0,0) v=1
 # PROBE t=215000 L5 cap#6 val=xxxxxxxx (pre-edge valid)
+# CYC t=215000 L0: p=12 fh=1 x=(8843,4730) out=(0,0) v=1
 # PROBE t=225000 L5 cap#7 val=xxxxxxxx (pre-edge valid)
+# CYC t=225000 L0: p=13 fh=1 x=(-6659,6871) out=(0,0) v=1
 # PROBE t=235000 L5 cap#8 val=xxxxxxxx (pre-edge valid)
+# CYC t=235000 L0: p=14 fh=1 x=(-17348,-1196) out=(0,0) v=1
 # PROBE t=245000 L5 cap#9 val=xxxxxxxx (pre-edge valid)
+# CYC t=245000 L0: p=15 fh=1 x=(7155,1748) out=(0,0) v=1
 # PROBE t=255000 L5 cap#10 val=xxxxxxxx (pre-edge valid)
+# CYC t=255000 L0: p=16 fh=1 x=(2074,27609) out=(0,0) v=1
 # PROBE t=265000 L5 cap#11 val=xxxxxxxx (pre-edge valid)
+# CYC t=265000 L0: p=17 fh=1 x=(5770,31370) out=(0,0) v=1
 # PROBE t=275000 L5 cap#12 val=xxxxxxxx (pre-edge valid)
+# CYC t=275000 L0: p=18 fh=1 x=(22112,21748) out=(0,0) v=1
 # PROBE t=285000 L5 cap#13 val=xxxxxxxx (pre-edge valid)
+# CYC t=285000 L0: p=19 fh=1 x=(4185,-22771) out=(0,0) v=1
 # PROBE t=295000 L5 cap#14 val=xxxxxxxx (pre-edge valid)
+# CYC t=295000 L0: p=20 fh=1 x=(25818,-25886) out=(0,0) v=1
 # PROBE t=305000 L5 cap#15 val=xxxxxxxx (pre-edge valid)
+# CYC t=305000 L0: p=21 fh=1 x=(23158,-11132) out=(0,0) v=1
+# CYC t=315000 L0: p=22 fh=1 x=(12300,9919) out=(0,0) v=1
+# CYC t=325000 L0: p=23 fh=1 x=(-17776,10602) out=(0,0) v=1
+# CYC t=335000 L0: p=24 fh=1 x=(-14286,20765) out=(0,0) v=1
+# CYC t=345000 L0: p=25 fh=1 x=(-20088,3643) out=(0,0) v=1
+# CYC t=355000 L0: p=26 fh=1 x=(32316,-29340) out=(0,0) v=1
+# CYC t=365000 L0: p=27 fh=1 x=(-12507,-23096) out=(0,0) v=1
+# CYC t=375000 L0: p=28 fh=1 x=(-22140,6021) out=(0,0) v=1
+# CYC t=385000 L0: p=29 fh=1 x=(29282,-18102) out=(0,0) v=1
+# CYC t=395000 L0: p=30 fh=1 x=(-21100,25707) out=(x,x) v=1
+# CYC t=405000 L0: p=31 fh=1 x=(25000,-32010) out=(0,0) v=1
+# CYC t=415000 L0: p=32 fh=0 x=(31146,-29257) out=(0,0) v=1
+# CYC t=425000 L0: p=33 fh=0 x=(4963,-25667) out=(19602,57196) v=1
+# CYC t=435000 L0: p=34 fh=0 x=(18594,-14250) out=(17909,43828) v=1
+# CYC t=445000 L0: p=35 fh=0 x=(12078,-15786) out=(1894,64221) v=1
+# CYC t=455000 L0: p=36 fh=0 x=(20735,-15985) out=(60358,2723) v=1
+# CYC t=465000 L0: p=37 fh=0 x=(-32500,5726) out=(14674,64275) v=1
+# CYC t=475000 L0: p=38 fh=0 x=(-31904,23353) out=(53019,63132) v=1
+# CYC t=485000 L0: p=39 fh=0 x=(-17445,-15128) out=(37104,25647) v=1
+# CYC t=495000 L0: p=40 fh=0 x=(696,-27615) out=(139,6934) v=1
+# CYC t=505000 L0: p=41 fh=0 x=(-7818,-15257) out=(7128,60666) v=1
+# CYC t=515000 L0: p=42 fh=0 x=(-31827,9234) out=(49900,44871) v=1
+# CYC t=525000 L0: p=43 fh=0 x=(1132,24825) out=(63310,57794) v=1
+# CYC t=535000 L0: p=44 fh=0 x=(5575,20617) out=(57904,20689) v=1
+# CYC t=545000 L0: p=45 fh=0 x=(-15199,-5195) out=(7209,12674) v=1
+# CYC t=555000 L0: p=46 fh=0 x=(390,32066) out=(54607,838) v=1
+# CYC t=565000 L0: p=47 fh=0 x=(-29979,-14710) out=(57057,15435) v=1
+# CYC t=575000 L0: p=48 fh=0 x=(11806,-5347) out=(54124,59055) v=1
+# CYC t=585000 L0: p=49 fh=0 x=(-8537,963) out=(6940,11131) v=1
+# CYC t=595000 L0: p=50 fh=0 x=(-16456,10338) out=(64152,16166) v=1
+# CYC t=605000 L0: p=51 fh=0 x=(-10829,12875) out=(2828,16043) v=1
+# CYC t=615000 L0: p=52 fh=0 x=(20744,-19166) out=(62214,60588) v=1
+# CYC t=625000 L0: p=53 fh=0 x=(-5907,-21553) out=(23281,43010) v=1
+# CYC t=635000 L0: p=54 fh=0 x=(-17578,5369) out=(8626,49194) v=1
+# CYC t=645000 L0: p=55 fh=0 x=(6269,6833) out=(62897,7644) v=1
+# CYC t=655000 L0: p=56 fh=0 x=(-6651,10403) out=(59782,8718) v=1
+# CYC t=665000 L0: p=57 fh=0 x=(3675,12627) out=(55068,15584) v=1
+# CYC t=675000 L0: p=58 fh=0 x=(-2898,-23586) out=(57330,8135) v=1
+# CYC t=685000 L0: p=59 fh=0 x=(-13825,22284) out=(14709,39073) v=1
+# CYC t=695000 L0: p=60 fh=0 x=(-15690,-23385) out=(52370,65130) v=1
+# CYC t=705000 L0: p=61 fh=0 x=(13838,-14165) out=(46621,56854) v=1
+# CYC t=715000 L0: p=62 fh=0 x=(30294,17208) out=(21560,49402) v=1
+# CYC t=725000 L0: p=63 fh=0 x=(16452,-6640) out=(4597,21458) v=1
+# CYC t=735000 L0: p=0 fh=1 x=(-31751,26257) out=(20726,46211) v=1
+# CYC t=745000 L0: p=1 fh=1 x=(-7905,22207) out=(53992,20917) v=1
+# CYC t=755000 L0: p=2 fh=1 x=(26645,-26676) out=(12496,5209) v=1
+# CYC t=765000 L0: p=3 fh=1 x=(26471,-25317) out=(46633,9428) v=1
+# CYC t=775000 L0: p=4 fh=1 x=(6759,-6353) out=(43651,12703) v=1
+# CYC t=785000 L0: p=5 fh=1 x=(153,16961) out=(54301,11284) v=1
+# CYC t=795000 L0: p=6 fh=1 x=(7554,29112) out=(21456,2250) v=1
+# CYC t=805000 L0: p=7 fh=1 x=(-23283,816) out=(1612,3836) v=1
+# CYC t=815000 L0: p=8 fh=1 x=(28758,13079) out=(65133,28209) v=1
+# CYC t=825000 L0: p=9 fh=1 x=(27775,-31585) out=(54001,20632) v=1
+# CYC t=835000 L0: p=10 fh=1 x=(22293,18238) out=(64757,56062) v=1
+# CYC t=845000 L0: p=11 fh=1 x=(19730,27174) out=(30560,15181) v=1
+# CYC t=855000 L0: p=12 fh=1 x=(15321,8512) out=(65053,55858) v=1
+# CYC t=865000 L0: p=13 fh=1 x=(-6309,-12751) out=(7964,64006) v=1
+# CYC t=875000 L0: p=14 fh=1 x=(-18873,23114) out=(61002,5837) v=1
+# CYC t=885000 L0: p=15 fh=1 x=(-4176,-16677) out=(14581,53593) v=1
+# CYC t=895000 L0: p=16 fh=1 x=(18735,18775) out=(59166,19284) v=1
+# CYC t=905000 L0: p=17 fh=1 x=(-10309,-17639) out=(49058,60670) v=1
+# CYC t=915000 L0: p=18 fh=1 x=(19193,16615) out=(49705,5629) v=1
+# CYC t=925000 L0: p=19 fh=1 x=(-14129,7181) out=(56179,17800) v=1
+# CYC t=935000 L0: p=20 fh=1 x=(-28554,-31860) out=(14876,12357) v=1
+# CYC t=945000 L0: p=21 fh=1 x=(-20688,23855) out=(2133,3630) v=1
+# CYC t=955000 L0: p=22 fh=1 x=(-29320,22443) out=(54090,10360) v=1
+# CYC t=965000 L0: p=23 fh=1 x=(15130,-23369) out=(55345,11157) v=1
+# CYC t=975000 L0: p=24 fh=1 x=(-30110,-22546) out=(6170,55047) v=1
+# CYC t=985000 L0: p=25 fh=1 x=(31160,17248) out=(64572,59173) v=1
+# CYC t=995000 L0: p=26 fh=1 x=(16102,10146) out=(12034,61471) v=1
+# CYC t=1005000 L0: p=27 fh=1 x=(10225,-29798) out=(52495,12174) v=1
+# CYC t=1015000 L0: p=28 fh=1 x=(28079,-31176) out=(10115,20321) v=1
+# CYC t=1025000 L0: p=29 fh=1 x=(-18543,14738) out=(62889,50718) v=1
+# L1I t=1035000 fh_sel=0 raw_f=00000000 diff_f=d9fc4c6e sr_front=ee4a16cd add_re=1375 out=0a62e012
 # CYC t=1035000 L0: p=30 fh=1 x=(-13198,-31361) out=(58718,4125) v=1
+# L1I t=1045000 fh_sel=0 raw_f=00000000 diff_f=3c380f57 sr_front=38f5d159 add_re=d6be out=e9d41375
 # CYC t=1045000 L0: p=31 fh=1 x=(-9137,22496) out=(24374,56355) v=1
+# L1I t=1055000 fh_sel=0 raw_f=00000000 diff_f=defefc4e sr_front=e71e4b54 add_re=3f24 out=4c16d6be
 # CYC t=1055000 L0: p=32 fh=0 x=(-6175,13015) out=(62526,13043) v=1
+# L1I t=1065000 fh_sel=0 raw_f=00000000 diff_f=fa6fffb3 sr_front=09a3325b add_re=3f88 out=edae3f24
 # CYC t=1065000 L0: p=33 fh=0 x=(-8040,8687) out=(46573,19636) v=1
+# L1I t=1075000 fh_sel=0 raw_f=00000000 diff_f=13bcfdaa sr_front=366c09fd add_re=232a out=09a3325b
 # CYC t=1075000 L0: p=34 fh=0 x=(4574,-5549) out=(57564,15447) v=1
+# L1I t=1085000 fh_sel=0 raw_f=00000000 diff_f=040ff2c4 sr_front=f508e9c2 add_re=d569 out=366c09fd
 # CYC t=1085000 L0: p=35 fh=0 x=(-5808,17961) out=(15610,49424) v=1
+# L1I t=1095000 fh_sel=1 raw_f=b5ed4cb4 diff_f=29dbf2d4 sr_front=c3edd8ac add_re=e527 out=f508e9c2
 # CYC t=1095000 L0: p=36 fh=0 x=(-32301,31298) out=(10332,61858) v=1
+# L1I t=1105000 fh_sel=1 raw_f=e0dc3c57 diff_f=2edfefa8 sr_front=e2f8f81c add_re=146a out=c3edd8ac
 # CYC t=1105000 L0: p=37 fh=0 x=(-26455,-3243) out=(52765,12472) v=1
+# L1I t=1115000 fh_sel=1 raw_f=3cfac110 diff_f=d6fb0508 sr_front=30df2ca2 add_re=23b6 out=e2f8f81c
 # CYC t=1115000 L0: p=38 fh=0 x=(-24254,26029) out=(52385,6859) v=1
+# CYC t=1125000 L0: p=39 fh=0 x=(-29252,-20765) out=(57186,27570) v=1
+# CYC t=1135000 L0: p=40 fh=0 x=(-3410,12363) out=(39268,55562) v=1
+# CYC t=1145000 L0: p=41 fh=0 x=(-32527,8314) out=(12674,12721) v=1
+# CYC t=1155000 L0: p=42 fh=0 x=(-21358,4591) out=(63160,53900) v=1
+# CYC t=1165000 L0: p=43 fh=0 x=(7728,-12073) out=(468,11414) v=1
+# CYC t=1175000 L0: p=44 fh=0 x=(1155,-22228) out=(13729,7550) v=1
+# CYC t=1185000 L0: p=45 fh=0 x=(-7752,31850) out=(8238,58678) v=1
+# CYC t=1195000 L0: p=46 fh=0 x=(29814,-17245) out=(58506,9550) v=1
+# CYC t=1205000 L0: p=47 fh=0 x=(4965,-24555) out=(5470,2934) v=1
+# CYC t=1215000 L0: p=48 fh=0 x=(24459,29607) out=(394,44920) v=1
+# CYC t=1225000 L0: p=49 fh=0 x=(13799,5831) out=(21597,24191) v=1
+# CYC t=1235000 L0: p=50 fh=0 x=(-32368,-6418) out=(1745,59632) v=1
+# CYC t=1245000 L0: p=51 fh=0 x=(28535,-9876) out=(58948,5098) v=1
+# CYC t=1255000 L0: p=52 fh=0 x=(3793,9440) out=(7203,64188) v=1
+# CYC t=1265000 L0: p=53 fh=0 x=(18955,19628) out=(53156,54326) v=1
+# CYC t=1275000 L0: p=54 fh=0 x=(6017,-19123) out=(64670,21742) v=1
+# CYC t=1285000 L0: p=55 fh=0 x=(-25308,-4639) out=(53884,1660) v=1
+# CYC t=1295000 L0: p=56 fh=0 x=(-30099,18203) out=(60447,51532) v=1
+# CYC t=1305000 L0: p=57 fh=0 x=(-14433,-6340) out=(35432,63364) v=1
+# CYC t=1315000 L0: p=58 fh=0 x=(-23646,12858) out=(8364,5454) v=1
+# CYC t=1325000 L0: p=59 fh=0 x=(-32053,-8422) out=(61764,11502) v=1
+# CYC t=1335000 L0: p=60 fh=0 x=(11167,2087) out=(54622,46426) v=1
+# CYC t=1345000 L0: p=61 fh=0 x=(15390,-7554) out=(19623,50992) v=1
+# CYC t=1355000 L0: p=62 fh=0 x=(21670,8079) out=(63960,3592) v=1
+# CYC t=1365000 L0: p=63 fh=0 x=(5143,5392) out=(4236,53895) v=1
+# CYC t=1375000 L0: p=0 fh=1 x=(29689,-20351) out=(63539,13944) v=1
+# CYC t=1385000 L0: p=1 fh=1 x=(-23728,21930) out=(52748,6621) v=1
+# CYC t=1395000 L0: p=2 fh=1 x=(30740,-24072) out=(64941,6734) v=1
+# CYC t=1405000 L0: p=3 fh=1 x=(5650,20477) out=(12884,57328) v=1
+# CYC t=1415000 L0: p=4 fh=1 x=(32064,-24417) out=(21726,49514) v=1
+# CYC t=1425000 L0: p=5 fh=1 x=(-21040,-29531) out=(25248,55617) v=1
+# CYC t=1435000 L0: p=6 fh=1 x=(6224,-25027) out=(6971,15181) v=1
+# CYC t=1445000 L0: p=7 fh=1 x=(6653,16556) out=(12367,10118) v=1
+# CYC t=1455000 L0: p=8 fh=1 x=(14147,-30632) out=(60998,10235) v=1
+# CYC t=1465000 L0: p=9 fh=1 x=(23760,-28769) out=(11120,11626) v=1
+# CYC t=1475000 L0: p=10 fh=1 x=(-17761,2598) out=(34549,10651) v=1
+# CYC t=1485000 L0: p=11 fh=1 x=(-27627,-5334) out=(6452,21938) v=1
+# CYC t=1495000 L0: p=12 fh=1 x=(14760,-4187) out=(51059,14543) v=1
+# CYC t=1505000 L0: p=13 fh=1 x=(-14857,-32200) out=(54046,12426) v=1
+# CYC t=1515000 L0: p=14 fh=1 x=(18094,-12322) out=(21550,59753) v=1
+# CYC t=1525000 L0: p=15 fh=1 x=(3541,-8565) out=(40995,45597) v=1
+# CYC t=1535000 L0: p=16 fh=1 x=(28578,10024) out=(61168,61374) v=1
+# CYC t=1545000 L0: p=17 fh=1 x=(13454,-660) out=(5416,62674) v=1
+# CYC t=1555000 L0: p=18 fh=1 x=(-9374,16712) out=(12860,54690) v=1
+# CYC t=1565000 L0: p=19 fh=1 x=(-30617,-4984) out=(49211,23038) v=1
+# CYC t=1575000 L0: p=20 fh=1 x=(-11008,27559) out=(63567,42647) v=1
+# CYC t=1585000 L0: p=21 fh=1 x=(-13801,-5617) out=(25267,58496) v=1
+# CYC t=1595000 L0: p=22 fh=1 x=(-20233,-12914) out=(7480,47059) v=1
+# CYC t=1605000 L0: p=23 fh=1 x=(-31383,-23211) out=(58072,39299) v=1
+# CYC t=1615000 L0: p=24 fh=1 x=(32714,-26258) out=(59948,21571) v=1
+# CYC t=1625000 L0: p=25 fh=1 x=(121,153) out=(14411,14403) v=1
+# CYC t=1635000 L0: p=26 fh=1 x=(3379,-2492) out=(40432,5345) v=1
+# CYC t=1645000 L0: p=27 fh=1 x=(-30067,-23165) out=(49765,12169) v=1
+# CYC t=1655000 L0: p=28 fh=1 x=(14309,-2276) out=(51931,19391) v=1
+# CYC t=1665000 L0: p=29 fh=1 x=(13078,-18557) out=(64088,18602) v=1
+# CYC t=1675000 L0: p=30 fh=1 x=(11008,22927) out=(13000,49945) v=1
+# CYC t=1685000 L0: p=31 fh=1 x=(-13630,-9218) out=(20946,15940) v=1
+# CYC t=1695000 L0: p=32 fh=0 x=(11832,-18597) out=(6267,56325) v=1
+# CYC t=1705000 L0: p=33 fh=0 x=(10175,-4786) out=(20760,46062) v=1
+# CYC t=1715000 L0: p=34 fh=0 x=(-3278,28164) out=(58760,8572) v=1
+# CYC t=1725000 L0: p=35 fh=0 x=(12302,28601) out=(13731,2046) v=1
+# CYC t=1735000 L0: p=36 fh=0 x=(8252,30541) out=(8976,24539) v=1
+# CYC t=1745000 L0: p=37 fh=0 x=(6615,-6403) out=(20158,3062) v=1
+# CYC t=1755000 L0: p=38 fh=0 x=(22879,17075) out=(58324,47569) v=1
+# CYC t=1765000 L0: p=39 fh=0 x=(26492,-15400) out=(14552,61560) v=1
+# CYC t=1775000 L0: p=40 fh=0 x=(-1422,11993) out=(16572,578) v=1
+# CYC t=1785000 L0: p=41 fh=0 x=(9989,-18842) out=(6362,56216) v=1
+# CYC t=1795000 L0: p=42 fh=0 x=(16216,-28724) out=(16874,41730) v=1
+# CYC t=1805000 L0: p=43 fh=0 x=(-13867,708) out=(64764,52473) v=1
+# CYC t=1815000 L0: p=44 fh=0 x=(17707,8912) out=(44789,63223) v=1
+# CYC t=1825000 L0: p=45 fh=0 x=(-27498,-16698) out=(16234,2362) v=1
+# CYC t=1835000 L0: p=46 fh=0 x=(-9881,-15113) out=(44358,41087) v=1
+# CYC t=1845000 L0: p=47 fh=0 x=(15185,-19097) out=(4106,51818) v=1
+# CYC t=1855000 L0: p=48 fh=0 x=(12573,7053) out=(9363,51705) v=1
+# CYC t=1865000 L0: p=49 fh=0 x=(-23784,-10732) out=(20576,8538) v=1
+# CYC t=1875000 L0: p=50 fh=0 x=(-3893,-6979) out=(60371,59840) v=1
+# CYC t=1885000 L0: p=51 fh=0 x=(-24564,13786) out=(58902,4866) v=1
+# CYC t=1895000 L0: p=52 fh=0 x=(-31445,20146) out=(37946,4401) v=1
+# CYC t=1905000 L0: p=53 fh=0 x=(-21338,-25569) out=(44310,23852) v=1
+# CYC t=1915000 L0: p=54 fh=0 x=(20258,25025) out=(47966,49943) v=1
+# CYC t=1925000 L0: p=55 fh=0 x=(30940,6223) out=(12,6056) v=1
+# CYC t=1935000 L0: p=56 fh=0 x=(-11394,9574) out=(65314,57042) v=1
+# CYC t=1945000 L0: p=57 fh=0 x=(28487,-27007) out=(10660,57194) v=1
+# CYC t=1955000 L0: p=58 fh=0 x=(-20464,-21778) out=(14304,52109) v=1
+# CYC t=1965000 L0: p=59 fh=0 x=(996,-26949) out=(56994,53401) v=1
+# CYC t=1975000 L0: p=60 fh=0 x=(-25838,12728) out=(51000,40479) v=1
+# CYC t=1985000 L0: p=61 fh=0 x=(-19459,1991) out=(59772,5226) v=1
+# CYC t=1995000 L0: p=62 fh=0 x=(19209,-3774) out=(62346,57253) v=1
+# CYC t=2005000 L0: p=63 fh=0 x=(-13569,-30802) out=(15108,9576) v=1
+# CYC t=2015000 L0: p=0 fh=1 x=(0,0) out=(51936,45526) v=1
+# CYC t=2025000 L0: p=1 fh=1 x=(0,0) out=(8928,64659) v=1
+# CYC t=2035000 L0: p=2 fh=1 x=(0,0) out=(47357,11632) v=1
+# CYC t=2045000 L0: p=3 fh=1 x=(0,0) out=(21778,43238) v=1
+# CYC t=2055000 L0: p=4 fh=1 x=(0,0) out=(63532,60683) v=1
+# CYC t=2065000 L0: p=5 fh=1 x=(0,0) out=(21515,44705) v=1
+# CYC t=2075000 L0: p=6 fh=1 x=(0,0) out=(58792,48819) v=1
+# CYC t=2085000 L0: p=7 fh=1 x=(0,0) out=(4771,43406) v=1
+# CYC t=2095000 L0: p=8 fh=1 x=(0,0) out=(47732,6058) v=1
+# CYC t=2105000 L0: p=9 fh=1 x=(0,0) out=(20575,55970) v=1
+# CYC t=2115000 L0: p=10 fh=1 x=(0,0) out=(8205,2174) v=1
+# CYC t=2125000 L0: p=11 fh=1 x=(0,0) out=(43076,60111) v=1
+# CYC t=2135000 L0: p=12 fh=1 x=(0,0) out=(64957,58044) v=1
+# CYC t=2145000 L0: p=13 fh=1 x=(0,0) out=(5487,61668) v=1
+# CYC t=2155000 L0: p=14 fh=1 x=(0,0) out=(9252,3798) v=1
+# CYC t=2165000 L0: p=15 fh=1 x=(0,0) out=(1360,13991) v=1
+# CYC t=2175000 L0: p=16 fh=1 x=(0,0) out=(59725,60258) v=1
+# CYC t=2185000 L0: p=17 fh=1 x=(0,0) out=(64050,8002) v=1
+# CYC t=2195000 L0: p=18 fh=1 x=(0,0) out=(58699,18036) v=1
+# CYC t=2205000 L0: p=19 fh=1 x=(0,0) out=(54453,60537) v=1
+# CYC t=2215000 L0: p=20 fh=1 x=(0,0) out=(9859,65364) v=1
+# CYC t=2225000 L0: p=21 fh=1 x=(0,0) out=(58201,8022) v=1
+# CYC t=2235000 L0: p=22 fh=1 x=(0,0) out=(54962,64157) v=1
+# CYC t=2245000 L0: p=23 fh=1 x=(0,0) out=(27020,59241) v=1
+# CYC t=2255000 L0: p=24 fh=1 x=(0,0) out=(31145,50784) v=1
+# CYC t=2265000 L0: p=25 fh=1 x=(0,0) out=(62610,28263) v=1
+# CYC t=2275000 L0: p=26 fh=1 x=(0,0) out=(2349,46041) v=1
+# CYC t=2285000 L0: p=27 fh=1 x=(0,0) out=(50266,64141) v=1
+# CYC t=2295000 L0: p=28 fh=1 x=(0,0) out=(12806,56546) v=1
+# CYC t=2305000 L0: p=29 fh=1 x=(0,0) out=(49861,14613) v=1
+# CYC t=2315000 L0: p=30 fh=1 x=(0,0) out=(52950,14554) v=1
+# CYC t=2325000 L0: p=31 fh=1 x=(0,0) out=(1417,51642) v=1
+# CYC t=2335000 L0: p=32 fh=0 x=(0,0) out=(64509,54793) v=1
+# CYC t=2345000 L0: p=33 fh=0 x=(0,0) out=(0,0) v=1
+# CYC t=2355000 L0: p=34 fh=0 x=(0,0) out=(0,0) v=1
+# CYC t=2365000 L0: p=35 fh=0 x=(0,0) out=(0,0) v=1
+# CYC t=2375000 L0: p=36 fh=0 x=(0,0) out=(0,0) v=1
+# CYC t=2385000 L0: p=37 fh=0 x=(0,0) out=(0,0) v=1
+# CYC t=2395000 L0: p=38 fh=0 x=(0,0) out=(0,0) v=1
+# CYC t=2405000 L0: p=39 fh=0 x=(0,0) out=(0,0) v=1
+# CYC t=2415000 L0: p=40 fh=0 x=(0,0) out=(0,0) v=1
+# CYC t=2425000 L0: p=41 fh=0 x=(0,0) out=(0,0) v=1
+# CYC t=2435000 L0: p=42 fh=0 x=(0,0) out=(0,0) v=1
+# CYC t=2445000 L0: p=43 fh=0 x=(0,0) out=(0,0) v=1
+# CYC t=2455000 L0: p=44 fh=0 x=(0,0) out=(0,0) v=1
+# CYC t=2465000 L0: p=45 fh=0 x=(0,0) out=(0,0) v=1
+# CYC t=2475000 L0: p=46 fh=0 x=(0,0) out=(0,0) v=1
+# CYC t=2485000 L0: p=47 fh=0 x=(0,0) out=(0,0) v=1
+# CYC t=2495000 L0: p=48 fh=0 x=(0,0) out=(0,0) v=1
+# CYC t=2505000 L0: p=49 fh=0 x=(0,0) out=(0,0) v=1
+# CYC t=2515000 L0: p=50 fh=0 x=(0,0) out=(0,0) v=1
+# CYC t=2525000 L0: p=51 fh=0 x=(0,0) out=(0,0) v=1
+# CYC t=2535000 L0: p=52 fh=0 x=(0,0) out=(0,0) v=1
+# CYC t=2545000 L0: p=53 fh=0 x=(0,0) out=(0,0) v=1
+# CYC t=2555000 L0: p=54 fh=0 x=(0,0) out=(0,0) v=1
+# CYC t=2565000 L0: p=55 fh=0 x=(0,0) out=(0,0) v=1
+# CYC t=2575000 L0: p=56 fh=0 x=(0,0) out=(0,0) v=1
+# CYC t=2585000 L0: p=57 fh=0 x=(0,0) out=(0,0) v=1
+# CYC t=2595000 L0: p=58 fh=0 x=(0,0) out=(0,0) v=1
+# CYC t=2605000 L0: p=59 fh=0 x=(0,0) out=(0,0) v=1
+# CYC t=2615000 L0: p=60 fh=0 x=(0,0) out=(0,0) v=1
+# CYC t=2625000 L0: p=61 fh=0 x=(0,0) out=(0,0) v=1
+# CYC t=2635000 L0: p=62 fh=0 x=(0,0) out=(0,0) v=1
+# CYC t=2645000 L0: p=63 fh=0 x=(0,0) out=(0,0) v=1
+# CYC t=2655000 L0: p=0 fh=1 x=(0,0) out=(0,0) v=1
+# CYC t=2665000 L0: p=1 fh=1 x=(0,0) out=(0,0) v=1
+# CYC t=2675000 L0: p=2 fh=1 x=(0,0) out=(0,0) v=1
+# CYC t=2685000 L0: p=3 fh=1 x=(0,0) out=(0,0) v=1
+# CYC t=2695000 L0: p=4 fh=1 x=(0,0) out=(0,0) v=1
+# CYC t=2705000 L0: p=5 fh=1 x=(0,0) out=(0,0) v=1
+# CYC t=2715000 L0: p=6 fh=1 x=(0,0) out=(0,0) v=1
+# CYC t=2725000 L0: p=7 fh=1 x=(0,0) out=(0,0) v=1
+# CYC t=2735000 L0: p=8 fh=1 x=(0,0) out=(0,0) v=1
+# CYC t=2745000 L0: p=9 fh=1 x=(0,0) out=(0,0) v=1
+# CYC t=2755000 L0: p=10 fh=1 x=(0,0) out=(0,0) v=1
+# CYC t=2765000 L0: p=11 fh=1 x=(0,0) out=(0,0) v=1
+# CYC t=2775000 L0: p=12 fh=1 x=(0,0) out=(0,0) v=1
+# CYC t=2785000 L0: p=13 fh=1 x=(0,0) out=(0,0) v=1
+# CYC t=2795000 L0: p=14 fh=1 x=(0,0) out=(0,0) v=1
+# CYC t=2805000 L0: p=15 fh=1 x=(0,0) out=(0,0) v=1
+# CYC t=2815000 L0: p=16 fh=1 x=(0,0) out=(0,0) v=1
+# CYC t=2825000 L0: p=17 fh=1 x=(0,0) out=(0,0) v=1
+# CYC t=2835000 L0: p=18 fh=1 x=(0,0) out=(0,0) v=1
+# CYC t=2845000 L0: p=19 fh=1 x=(0,0) out=(0,0) v=1
+# CYC t=2855000 L0: p=20 fh=1 x=(0,0) out=(0,0) v=1
+# CYC t=2865000 L0: p=21 fh=1 x=(0,0) out=(0,0) v=1
+# CYC t=2875000 L0: p=22 fh=1 x=(0,0) out=(0,0) v=1
+# CYC t=2885000 L0: p=23 fh=1 x=(0,0) out=(0,0) v=1
+# CYC t=2895000 L0: p=24 fh=1 x=(0,0) out=(0,0) v=1
+# CYC t=2905000 L0: p=25 fh=1 x=(0,0) out=(0,0) v=1
+# CYC t=2915000 L0: p=26 fh=1 x=(0,0) out=(0,0) v=1
+# CYC t=2925000 L0: p=27 fh=1 x=(0,0) out=(0,0) v=1
+# CYC t=2935000 L0: p=28 fh=1 x=(0,0) out=(0,0) v=1
+# CYC t=2945000 L0: p=29 fh=1 x=(0,0) out=(0,0) v=1
+# CYC t=2955000 L0: p=30 fh=1 x=(0,0) out=(0,0) v=1
+# CYC t=2965000 L0: p=31 fh=1 x=(0,0) out=(0,0) v=1
+# CYC t=2975000 L0: p=32 fh=0 x=(0,0) out=(0,0) v=1
+# CYC t=2985000 L0: p=33 fh=0 x=(0,0) out=(0,0) v=1
+# CYC t=2995000 L0: p=34 fh=0 x=(0,0) out=(0,0) v=1
+# CYC t=3005000 L0: p=35 fh=0 x=(0,0) out=(0,0) v=1
+# CYC t=3015000 L0: p=36 fh=0 x=(0,0) out=(0,0) v=1
+# CYC t=3025000 L0: p=37 fh=0 x=(0,0) out=(0,0) v=1
+# CYC t=3035000 L0: p=38 fh=0 x=(0,0) out=(0,0) v=1
+# CYC t=3045000 L0: p=39 fh=0 x=(0,0) out=(0,0) v=1
+# CYC t=3055000 L0: p=40 fh=0 x=(0,0) out=(0,0) v=1
+# CYC t=3065000 L0: p=41 fh=0 x=(0,0) out=(0,0) v=1
+# CYC t=3075000 L0: p=42 fh=0 x=(0,0) out=(0,0) v=1
+# CYC t=3085000 L0: p=43 fh=0 x=(0,0) out=(0,0) v=1
+# CYC t=3095000 L0: p=44 fh=0 x=(0,0) out=(0,0) v=1
+# CYC t=3105000 L0: p=45 fh=0 x=(0,0) out=(0,0) v=1
+# CYC t=3115000 L0: p=46 fh=0 x=(0,0) out=(0,0) v=1
+# CYC t=3125000 L0: p=47 fh=0 x=(0,0) out=(0,0) v=1
+# CYC t=3135000 L0: p=48 fh=0 x=(0,0) out=(0,0) v=1
+# CYC t=3145000 L0: p=49 fh=0 x=(0,0) out=(0,0) v=1
+# CYC t=3155000 L0: p=50 fh=0 x=(0,0) out=(0,0) v=1
+# CYC t=3165000 L0: p=51 fh=0 x=(0,0) out=(0,0) v=1
+# CYC t=3175000 L0: p=52 fh=0 x=(0,0) out=(0,0) v=1
+# CYC t=3185000 L0: p=53 fh=0 x=(0,0) out=(0,0) v=1
+# CYC t=3195000 L0: p=54 fh=0 x=(0,0) out=(0,0) v=1
+# CYC t=3205000 L0: p=55 fh=0 x=(0,0) out=(0,0) v=1
+# CYC t=3215000 L0: p=56 fh=0 x=(0,0) out=(0,0) v=1
+# CYC t=3225000 L0: p=57 fh=0 x=(0,0) out=(0,0) v=1
+# CYC t=3235000 L0: p=58 fh=0 x=(0,0) out=(0,0) v=1
+# CYC t=3245000 L0: p=59 fh=0 x=(0,0) out=(0,0) v=1
+# CYC t=3255000 L0: p=60 fh=0 x=(0,0) out=(0,0) v=1
+# CYC t=3265000 L0: p=61 fh=0 x=(0,0) out=(0,0) v=1
+# CYC t=3275000 L0: p=62 fh=0 x=(0,0) out=(0,0) v=1
+# CYC t=3285000 L0: p=63 fh=0 x=(0,0) out=(0,0) v=1
+# CYC t=3295000 L0: p=0 fh=1 x=(0,0) out=(0,0) v=1
+# CYC t=3305000 L0: p=0 fh=1 x=(0,0) out=(0,0) v=1
+# CYC t=3315000 L0: p=0 fh=1 x=(0,0) out=(0,0) v=1
+# CYC t=3325000 L0: p=0 fh=1 x=(0,0) out=(0,0) v=1
+# CYC t=3335000 L0: p=0 fh=1 x=(0,0) out=(0,0) v=1
+# CYC t=3345000 L0: p=0 fh=1 x=(0,0) out=(0,0) v=1
+# CYC t=3355000 L0: p=0 fh=1 x=(0,0) out=(0,0) v=1
+# CYC t=3365000 L0: p=0 fh=1 x=(0,0) out=(0,0) v=1
+# CYC t=3375000 L0: p=0 fh=1 x=(0,0) out=(0,0) v=1
+# CYC t=3385000 L0: p=0 fh=1 x=(0,0) out=(0,0) v=1
+# CYC t=3395000 L0: p=0 fh=1 x=(0,0) out=(0,0) v=1
+# CYC t=3405000 L0: p=0 fh=1 x=(0,0) out=(0,0) v=1
+# CYC t=3415000 L0: p=0 fh=1 x=(0,0) out=(0,0) v=1
+# CYC t=3425000 L0: p=0 fh=1 x=(0,0) out=(0,0) v=1
+# CYC t=3435000 L0: p=0 fh=1 x=(0,0) out=(0,0) v=1
+# CYC t=3445000 L0: p=0 fh=1 x=(0,0) out=(0,0) v=1
+# CYC t=3455000 L0: p=0 fh=1 x=(0,0) out=(0,0) v=1
+# CYC t=3465000 L0: p=0 fh=1 x=(0,0) out=(0,0) v=1
+# CYC t=3475000 L0: p=0 fh=1 x=(0,0) out=(0,0) v=1
+# CYC t=3485000 L0: p=0 fh=1 x=(0,0) out=(0,0) v=1
+# CYC t=3495000 L0: p=0 fh=1 x=(0,0) out=(0,0) v=1
+# CYC t=3505000 L0: p=0 fh=1 x=(0,0) out=(0,0) v=1
+# CYC t=3515000 L0: p=0 fh=1 x=(0,0) out=(0,0) v=1
+# CYC t=3525000 L0: p=0 fh=1 x=(0,0) out=(0,0) v=1
+# CYC t=3535000 L0: p=0 fh=1 x=(0,0) out=(0,0) v=1
+# CYC t=3545000 L0: p=0 fh=1 x=(0,0) out=(0,0) v=1
+# CYC t=3555000 L0: p=0 fh=1 x=(0,0) out=(0,0) v=1
+# CYC t=3565000 L0: p=0 fh=1 x=(0,0) out=(0,0) v=1
+# CYC t=3575000 L0: p=0 fh=1 x=(0,0) out=(0,0) v=1
+# CYC t=3585000 L0: p=0 fh=1 x=(0,0) out=(0,0) v=1
+# CYC t=3595000 L0: p=0 fh=1 x=(0,0) out=(0,0) v=1
+# CYC t=3605000 L0: p=0 fh=1 x=(0,0) out=(0,0) v=1
+# CYC t=3615000 L0: p=0 fh=1 x=(0,0) out=(0,0) v=1
+# CYC t=3625000 L0: p=0 fh=1 x=(0,0) out=(0,0) v=1
+# CYC t=3635000 L0: p=0 fh=1 x=(0,0) out=(0,0) v=1
+# CYC t=3645000 L0: p=0 fh=1 x=(0,0) out=(0,0) v=1
+# CYC t=3655000 L0: p=0 fh=1 x=(0,0) out=(0,0) v=1
+# CYC t=3665000 L0: p=0 fh=1 x=(0,0) out=(0,0) v=1
+# CYC t=3675000 L0: p=0 fh=1 x=(0,0) out=(0,0) v=1
+# CYC t=3685000 L0: p=0 fh=1 x=(0,0) out=(0,0) v=1
+# CYC t=3695000 L0: p=0 fh=1 x=(0,0) out=(0,0) v=1
+# CYC t=3705000 L0: p=0 fh=1 x=(0,0) out=(0,0) v=1
+# CYC t=3715000 L0: p=0 fh=1 x=(0,0) out=(0,0) v=1
+# CYC t=3725000 L0: p=0 fh=1 x=(0,0) out=(0,0) v=1
+# CYC t=3735000 L0: p=0 fh=1 x=(0,0) out=(0,0) v=1
+# CYC t=3745000 L0: p=0 fh=1 x=(0,0) out=(0,0) v=1
+# CYC t=3755000 L0: p=0 fh=1 x=(0,0) out=(0,0) v=1
+# CYC t=3765000 L0: p=0 fh=1 x=(0,0) out=(0,0) v=1
+# CYC t=3775000 L0: p=0 fh=1 x=(0,0) out=(0,0) v=1
+# CYC t=3785000 L0: p=0 fh=1 x=(0,0) out=(0,0) v=1
+# CYC t=3795000 L0: p=0 fh=1 x=(0,0) out=(0,0) v=1
+# CYC t=3805000 L0: p=0 fh=1 x=(0,0) out=(0,0) v=1
+# CYC t=3815000 L0: p=0 fh=1 x=(0,0) out=(0,0) v=1
+# CYC t=3825000 L0: p=0 fh=1 x=(0,0) out=(0,0) v=1
+# CYC t=3835000 L0: p=0 fh=1 x=(0,0) out=(0,0) v=1
+# CYC t=3845000 L0: p=0 fh=1 x=(0,0) out=(0,0) v=1
+# CYC t=3855000 L0: p=0 fh=1 x=(0,0) out=(0,0) v=1
+# CYC t=3865000 L0: p=0 fh=1 x=(0,0) out=(0,0) v=1
+# CYC t=3875000 L0: p=0 fh=1 x=(0,0) out=(0,0) v=1
+# CYC t=3885000 L0: p=0 fh=1 x=(0,0) out=(0,0) v=1
+# CYC t=3895000 L0: p=0 fh=1 x=(0,0) out=(0,0) v=1
+# CYC t=3905000 L0: p=0 fh=1 x=(0,0) out=(0,0) v=1
+# CYC t=3915000 L0: p=0 fh=1 x=(0,0) out=(0,0) v=1
+# CYC t=3925000 L0: p=0 fh=1 x=(0,0) out=(0,0) v=1
+# CYC t=3935000 L0: p=0 fh=1 x=(0,0) out=(0,0) v=1
+# CYC t=3945000 L0: p=0 fh=1 x=(0,0) out=(0,0) v=1
+# CYC t=3955000 L0: p=0 fh=1 x=(0,0) out=(0,0) v=1
+# CYC t=3965000 L0: p=0 fh=1 x=(0,0) out=(0,0) v=1
+# CYC t=3975000 L0: p=0 fh=1 x=(0,0) out=(0,0) v=1
+# CYC t=3985000 L0: p=0 fh=1 x=(0,0) out=(0,0) v=1
 # TB: aligned (deterministic off=0)
 # TB mismatch at 0: got 0360ed0c exp 00ad0006
 # TB mismatch at 1: got 14e00f6e exp 07110ad2
@@ -88,7 +479,7 @@ Reading pref.tcl
 # TB mismatch at 6: got f1e6fde1 exp ef3cfab2
 # TB mismatch at 7: got 1618fb81 exp fa2200b4
 # FFT TOP SELF-CHECK FAIL (M=6, 192 errors)
-# ** Note: $finish    : tb/tb_fft_top.v(227)
+# ** Note: $finish    : tb/tb_fft_top.v(233)
 #    Time: 3985 ns  Iteration: 1  Instance: /tb_fft_top
-# End time: 07:06:16 on Nov 04,2026, Elapsed time: 0:00:01
+# End time: 23:07:22 on Nov 04,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
