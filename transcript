@@ -5,28 +5,28 @@
 # vmap work sim/work 
 # Modifying modelsim.ini
 # Model Technology ModelSim SE-64 vlog 2020.4 Compiler 2020.10 Oct 13 2020
-# Start time: 23:07:21 on Nov 04,2026
+# Start time: 23:13:20 on Nov 04,2026
 # vlog rtl/fft_cmult3.v rtl/fft_stage.v rtl/fft_reorder.v rtl/fft_top.v tb/tb_fft_top.v 
 # -- Compiling module fft_cmult3
 # -- Compiling module fft_stage
 # -- Compiling module fft_reorder
 # -- Compiling module fft_top
 # -- Compiling module tb_fft_top
-# ** Warning: tb/tb_fft_top.v(199): (vlog-2643) Unterminated string literal continues onto next line.
-# ** Warning: tb/tb_fft_top.v(205): (vlog-2643) Unterminated string literal continues onto next line.
-# ** Warning: tb/tb_fft_top.v(209): (vlog-2643) Unterminated string literal continues onto next line.
-# ** Warning: tb/tb_fft_top.v(213): (vlog-2643) Unterminated string literal continues onto next line.
-# ** Warning: tb/tb_fft_top.v(217): (vlog-2643) Unterminated string literal continues onto next line.
-# ** Warning: tb/tb_fft_top.v(221): (vlog-2643) Unterminated string literal continues onto next line.
-# ** Warning: tb/tb_fft_top.v(225): (vlog-2643) Unterminated string literal continues onto next line.
+# ** Warning: tb/tb_fft_top.v(198): (vlog-2643) Unterminated string literal continues onto next line.
+# ** Warning: tb/tb_fft_top.v(204): (vlog-2643) Unterminated string literal continues onto next line.
+# ** Warning: tb/tb_fft_top.v(208): (vlog-2643) Unterminated string literal continues onto next line.
+# ** Warning: tb/tb_fft_top.v(212): (vlog-2643) Unterminated string literal continues onto next line.
+# ** Warning: tb/tb_fft_top.v(216): (vlog-2643) Unterminated string literal continues onto next line.
+# ** Warning: tb/tb_fft_top.v(220): (vlog-2643) Unterminated string literal continues onto next line.
+# ** Warning: tb/tb_fft_top.v(224): (vlog-2643) Unterminated string literal continues onto next line.
 # 
 # Top level modules:
 # 	tb_fft_top
-# End time: 23:07:22 on Nov 04,2026, Elapsed time: 0:00:01
+# End time: 23:13:20 on Nov 04,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 7
 # vsim -c work.tb_fft_top "+INFILE=vectors/only_noise_in.hex" "+OUTFILE=vectors/only_noise_out.hex" -do "run -all; quit -f" -gM_P=6 -gNAT_P=0 
-# Start time: 23:07:22 on Nov 04,2026
-# ** Note: (vsim-3812) Design is being optimized...
+# Start time: 23:13:20 on Nov 04,2026
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
 # //  ModelSim SE-64 2020.4 Oct 13 2020
 # //
 # //  Copyright 1991-2020 Mentor Graphics Corporation
@@ -160,23 +160,23 @@
 # CYC t=1005000 L0: p=27 fh=1 x=(10225,-29798) out=(52495,12174) v=1
 # CYC t=1015000 L0: p=28 fh=1 x=(28079,-31176) out=(10115,20321) v=1
 # CYC t=1025000 L0: p=29 fh=1 x=(-18543,14738) out=(62889,50718) v=1
-# L1I t=1035000 fh_sel=0 raw_f=00000000 diff_f=d9fc4c6e sr_front=ee4a16cd add_re=1375 out=0a62e012
+# L1I t=1035000 fh_sel=0 raw_f=00000000 diff_f=d9fc4c6e sr_front=ee4a16cd out=0a62e012
 # CYC t=1035000 L0: p=30 fh=1 x=(-13198,-31361) out=(58718,4125) v=1
-# L1I t=1045000 fh_sel=0 raw_f=00000000 diff_f=3c380f57 sr_front=38f5d159 add_re=d6be out=e9d41375
+# L1I t=1045000 fh_sel=0 raw_f=00000000 diff_f=3c380f57 sr_front=38f5d159 out=e9d41375
 # CYC t=1045000 L0: p=31 fh=1 x=(-9137,22496) out=(24374,56355) v=1
-# L1I t=1055000 fh_sel=0 raw_f=00000000 diff_f=defefc4e sr_front=e71e4b54 add_re=3f24 out=4c16d6be
+# L1I t=1055000 fh_sel=0 raw_f=00000000 diff_f=defefc4e sr_front=e71e4b54 out=4c16d6be
 # CYC t=1055000 L0: p=32 fh=0 x=(-6175,13015) out=(62526,13043) v=1
-# L1I t=1065000 fh_sel=0 raw_f=00000000 diff_f=fa6fffb3 sr_front=09a3325b add_re=3f88 out=edae3f24
+# L1I t=1065000 fh_sel=0 raw_f=00000000 diff_f=fa6fffb3 sr_front=09a3325b out=edae3f24
 # CYC t=1065000 L0: p=33 fh=0 x=(-8040,8687) out=(46573,19636) v=1
-# L1I t=1075000 fh_sel=0 raw_f=00000000 diff_f=13bcfdaa sr_front=366c09fd add_re=232a out=09a3325b
+# L1I t=1075000 fh_sel=0 raw_f=00000000 diff_f=13bcfdaa sr_front=366c09fd out=09a3325b
 # CYC t=1075000 L0: p=34 fh=0 x=(4574,-5549) out=(57564,15447) v=1
-# L1I t=1085000 fh_sel=0 raw_f=00000000 diff_f=040ff2c4 sr_front=f508e9c2 add_re=d569 out=366c09fd
+# L1I t=1085000 fh_sel=0 raw_f=00000000 diff_f=040ff2c4 sr_front=f508e9c2 out=366c09fd
 # CYC t=1085000 L0: p=35 fh=0 x=(-5808,17961) out=(15610,49424) v=1
-# L1I t=1095000 fh_sel=1 raw_f=b5ed4cb4 diff_f=29dbf2d4 sr_front=c3edd8ac add_re=e527 out=f508e9c2
+# L1I t=1095000 fh_sel=1 raw_f=b5ed4cb4 diff_f=29dbf2d4 sr_front=c3edd8ac out=f508e9c2
 # CYC t=1095000 L0: p=36 fh=0 x=(-32301,31298) out=(10332,61858) v=1
-# L1I t=1105000 fh_sel=1 raw_f=e0dc3c57 diff_f=2edfefa8 sr_front=e2f8f81c add_re=146a out=c3edd8ac
+# L1I t=1105000 fh_sel=1 raw_f=e0dc3c57 diff_f=2edfefa8 sr_front=e2f8f81c out=c3edd8ac
 # CYC t=1105000 L0: p=37 fh=0 x=(-26455,-3243) out=(52765,12472) v=1
-# L1I t=1115000 fh_sel=1 raw_f=3cfac110 diff_f=d6fb0508 sr_front=30df2ca2 add_re=23b6 out=e2f8f81c
+# L1I t=1115000 fh_sel=1 raw_f=3cfac110 diff_f=d6fb0508 sr_front=30df2ca2 out=e2f8f81c
 # CYC t=1115000 L0: p=38 fh=0 x=(-24254,26029) out=(52385,6859) v=1
 # CYC t=1125000 L0: p=39 fh=0 x=(-29252,-20765) out=(57186,27570) v=1
 # CYC t=1135000 L0: p=40 fh=0 x=(-3410,12363) out=(39268,55562) v=1
@@ -475,7 +475,7 @@
 # TB mismatch at 6: got f1e6fde1 exp ef3cfab2
 # TB mismatch at 7: got 1618fb81 exp fa2200b4
 # FFT TOP SELF-CHECK FAIL (M=6, 192 errors)
-# ** Note: $finish    : tb/tb_fft_top.v(233)
+# ** Note: $finish    : tb/tb_fft_top.v(232)
 #    Time: 3985 ns  Iteration: 1  Instance: /tb_fft_top
-# End time: 23:07:22 on Nov 04,2026, Elapsed time: 0:00:00
+# End time: 23:13:21 on Nov 04,2026, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0

@@ -85,11 +85,10 @@ module tb_fft_top #(
             end
             if (lv_valid[5]) dbg_cnt <= dbg_cnt + 1;
             if (dbg_cnt >= 88 && dbg_cnt <= 96)
-                $display("L1I t=%0t fh_sel=%b raw_f=%h diff_f=%h sr_front=%h add_re=%h out=%h",
+                $display("L1I t=%0t fh_sel=%b raw_f=%h diff_f=%h sr_front=%h out=%h",
                          $time, dut.g_stages[1].u_st.fh_sel,
                          dut.g_stages[1].u_st.raw_f, dut.g_stages[1].u_st.diff_f,
                          dut.g_stages[1].u_st.sr_front_w,
-                         dut.g_stages[1].u_st.ad_re,
                          dut.g_stages[1].u_st.y_tdata);
                 $display("CYC t=%0t L0: p=%0d fh=%b x=(%0d,%0d) out=(%0d,%0d) v=%b",
                          $time, dut.g_stages[0].u_st.p, dut.g_stages[0].u_st.fh_now,
