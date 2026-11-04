@@ -5,27 +5,27 @@
 # vmap work sim/work 
 # Modifying modelsim.ini
 # Model Technology ModelSim SE-64 vlog 2020.4 Compiler 2020.10 Oct 13 2020
-# Start time: 02:31:29 on Nov 05,2026
+# Start time: 02:37:55 on Nov 05,2026
 # vlog rtl/fft_cmult3.v rtl/fft_stage.v rtl/fft_reorder.v rtl/fft_top.v tb/tb_fft_top.v 
 # -- Compiling module fft_cmult3
 # -- Compiling module fft_stage
 # -- Compiling module fft_reorder
 # -- Compiling module fft_top
 # -- Compiling module tb_fft_top
-# ** Warning: tb/tb_fft_top.v(219): (vlog-2643) Unterminated string literal continues onto next line.
-# ** Warning: tb/tb_fft_top.v(225): (vlog-2643) Unterminated string literal continues onto next line.
-# ** Warning: tb/tb_fft_top.v(229): (vlog-2643) Unterminated string literal continues onto next line.
-# ** Warning: tb/tb_fft_top.v(233): (vlog-2643) Unterminated string literal continues onto next line.
-# ** Warning: tb/tb_fft_top.v(237): (vlog-2643) Unterminated string literal continues onto next line.
-# ** Warning: tb/tb_fft_top.v(241): (vlog-2643) Unterminated string literal continues onto next line.
-# ** Warning: tb/tb_fft_top.v(245): (vlog-2643) Unterminated string literal continues onto next line.
+# ** Warning: tb/tb_fft_top.v(198): (vlog-2643) Unterminated string literal continues onto next line.
+# ** Warning: tb/tb_fft_top.v(204): (vlog-2643) Unterminated string literal continues onto next line.
+# ** Warning: tb/tb_fft_top.v(208): (vlog-2643) Unterminated string literal continues onto next line.
+# ** Warning: tb/tb_fft_top.v(212): (vlog-2643) Unterminated string literal continues onto next line.
+# ** Warning: tb/tb_fft_top.v(216): (vlog-2643) Unterminated string literal continues onto next line.
+# ** Warning: tb/tb_fft_top.v(220): (vlog-2643) Unterminated string literal continues onto next line.
+# ** Warning: tb/tb_fft_top.v(224): (vlog-2643) Unterminated string literal continues onto next line.
 # 
 # Top level modules:
 # 	tb_fft_top
-# End time: 02:31:29 on Nov 05,2026, Elapsed time: 0:00:00
+# End time: 02:37:55 on Nov 05,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 7
 # vsim -c work.tb_fft_top "+INFILE=vectors/only_noise_in.hex" "+OUTFILE=vectors/only_noise_out.hex" -do "run -all; quit -f" -gM_P=6 -gNAT_P=0 
-# Start time: 02:31:29 on Nov 05,2026
+# Start time: 02:37:55 on Nov 05,2026
 # ** Note: (vsim-3813) Design is being optimized due to module recompilation...
 # //  ModelSim SE-64 2020.4 Oct 13 2020
 # //
@@ -49,751 +49,291 @@
 # Loading work.fft_stage(fast__5)
 # run -all
 # TB: M=6 in=192 exp=192 gap=0 natural=0 seed=7
-# L1ST k=0 p=31 rp0=00000000 f0=0 fr=00000000 srin=00000000 x=(0,0) out=00000000 sre=0 sim=0 pre=0 pim=0 satre=0 satim=0
-# L1SRRD k=0 p=31 fr=00000000 srin=00000000
 # CYC t=85000 L0: p=0 fh=1 x=(0,0) out=(0,0) v=0
 # CYC t=95000 L0: p=0 fh=1 x=(8058,12578) out=(0,0) v=0
-# L1SRRD k=1 p=31 fr=00000000 srin=00000000
-# L1ST k=1 p=31 rp0=00000000 f0=0 fr=00000000 srin=00000000 x=(0,0) out=00000000 sre=0 sim=0 pre=0 pim=0 satre=0 satim=0
-# L1ST k=2 p=0 rp0=00000000 f0=0 fr=00000000 srin=00000000 x=(0,0) out=00000000 sre=0 sim=0 pre=0 pim=0 satre=0 satim=0
-# L1SRRD k=2 p=0 fr=00000000 srin=00000000
 # CYC t=105000 L0: p=1 fh=1 x=(30855,-17749) out=(0,0) v=1
 # CYC t=115000 L0: p=2 fh=1 x=(-14807,11620) out=(0,0) v=1
-# L1SRRD k=3 p=1 fr=00000000 srin=00000000
-# L1ST k=3 p=1 rp0=00000000 f0=0 fr=00000000 srin=00000000 x=(0,0) out=00000000 sre=0 sim=0 pre=0 pim=0 satre=0 satim=0
-# L1ST k=4 p=2 rp0=00000000 f0=0 fr=00000000 srin=00000000 x=(0,0) out=00000000 sre=0 sim=0 pre=0 pim=0 satre=0 satim=0
-# L1SRRD k=4 p=2 fr=00000000 srin=00000000
 # CYC t=125000 L0: p=3 fh=1 x=(-22433,21232) out=(0,0) v=1
 # CYC t=135000 L0: p=4 fh=1 x=(8612,13463) out=(0,0) v=1
-# L1SRRD k=5 p=3 fr=00000000 srin=00000000
-# L1ST k=5 p=3 rp0=00000000 f0=1 fr=00000000 srin=00000000 x=(0,0) out=00000000 sre=0 sim=0 pre=0 pim=0 satre=0 satim=0
-# L1ST k=6 p=4 rp0=00000000 f0=1 fr=00000000 srin=00000000 x=(0,0) out=00000000 sre=0 sim=0 pre=0 pim=0 satre=0 satim=0
-# L1SRRD k=6 p=4 fr=00000000 srin=00000000
 # CYC t=145000 L0: p=5 fh=1 x=(7466,-10534) out=(0,0) v=1
 # PROBE t=155000 L5 cap#0 val=00000000 (pre-edge valid)
 # CYC t=155000 L0: p=6 fh=1 x=(-24961,27941) out=(0,0) v=1
-# L1SRRD k=7 p=5 fr=00000000 srin=00000000
-# L1ST k=7 p=5 rp0=00000000 f0=1 fr=00000000 srin=00000000 x=(0,0) out=00000000 sre=0 sim=0 pre=0 pim=0 satre=0 satim=0
-# L1ST k=8 p=6 rp0=00000000 f0=1 fr=00000000 srin=00000000 x=(0,0) out=00000000 sre=0 sim=0 pre=0 pim=0 satre=0 satim=0
-# L1SRRD k=8 p=6 fr=00000000 srin=00000000
 # PROBE t=165000 L5 cap#1 val=00000000 (pre-edge valid)
 # CYC t=165000 L0: p=7 fh=1 x=(17723,28996) out=(0,0) v=1
 # PROBE t=175000 L5 cap#2 val=00000000 (pre-edge valid)
 # CYC t=175000 L0: p=8 fh=1 x=(13561,17875) out=(0,0) v=1
-# L1SRRD k=9 p=7 fr=00000000 srin=00000000
-# L1ST k=9 p=7 rp0=00000000 f0=1 fr=00000000 srin=00000000 x=(0,0) out=00000000 sre=0 sim=0 pre=0 pim=0 satre=0 satim=0
-# L1ST k=10 p=8 rp0=00000000 f0=1 fr=00000000 srin=00000000 x=(0,0) out=00000000 sre=0 sim=0 pre=0 pim=0 satre=0 satim=0
-# L1SRRD k=10 p=8 fr=00000000 srin=00000000
 # PROBE t=185000 L5 cap#3 val=00000000 (pre-edge valid)
 # CYC t=185000 L0: p=9 fh=1 x=(-23454,-26073) out=(0,0) v=1
 # PROBE t=195000 L5 cap#4 val=00000000 (pre-edge valid)
 # CYC t=195000 L0: p=10 fh=1 x=(27374,-24717) out=(0,0) v=1
-# L1SRRD k=11 p=9 fr=00000000 srin=00000000
-# L1ST k=11 p=9 rp0=00000000 f0=1 fr=00000000 srin=00000000 x=(0,0) out=00000000 sre=0 sim=0 pre=0 pim=0 satre=0 satim=0
-# L1ST k=12 p=10 rp0=00000000 f0=1 fr=00000000 srin=00000000 x=(0,0) out=00000000 sre=0 sim=0 pre=0 pim=0 satre=0 satim=0
-# L1SRRD k=12 p=10 fr=00000000 srin=00000000
 # PROBE t=205000 L5 cap#5 val=00000000 (pre-edge valid)
 # CYC t=205000 L0: p=11 fh=1 x=(-16395,16553) out=(0,0) v=1
 # PROBE t=215000 L5 cap#6 val=00000000 (pre-edge valid)
 # CYC t=215000 L0: p=12 fh=1 x=(8843,4730) out=(0,0) v=1
-# L1SRRD k=13 p=11 fr=00000000 srin=00000000
-# L1ST k=13 p=11 rp0=00000000 f0=1 fr=00000000 srin=00000000 x=(0,0) out=00000000 sre=0 sim=0 pre=0 pim=0 satre=0 satim=0
-# L1ST k=14 p=12 rp0=00000000 f0=1 fr=00000000 srin=00000000 x=(0,0) out=00000000 sre=0 sim=0 pre=0 pim=0 satre=0 satim=0
-# L1SRRD k=14 p=12 fr=00000000 srin=00000000
 # PROBE t=225000 L5 cap#7 val=00000000 (pre-edge valid)
 # CYC t=225000 L0: p=13 fh=1 x=(-6659,6871) out=(0,0) v=1
 # PROBE t=235000 L5 cap#8 val=00000000 (pre-edge valid)
 # CYC t=235000 L0: p=14 fh=1 x=(-17348,-1196) out=(0,0) v=1
-# L1SRRD k=15 p=13 fr=00000000 srin=00000000
-# L1ST k=15 p=13 rp0=00000000 f0=1 fr=00000000 srin=00000000 x=(0,0) out=00000000 sre=0 sim=0 pre=0 pim=0 satre=0 satim=0
-# L1ST k=16 p=14 rp0=00000000 f0=1 fr=00000000 srin=00000000 x=(0,0) out=00000000 sre=0 sim=0 pre=0 pim=0 satre=0 satim=0
-# L1SRRD k=16 p=14 fr=00000000 srin=00000000
 # PROBE t=245000 L5 cap#9 val=00000000 (pre-edge valid)
 # CYC t=245000 L0: p=15 fh=1 x=(7155,1748) out=(0,0) v=1
 # PROBE t=255000 L5 cap#10 val=00000000 (pre-edge valid)
 # CYC t=255000 L0: p=16 fh=1 x=(2074,27609) out=(0,0) v=1
-# L1SRRD k=17 p=15 fr=00000000 srin=00000000
-# L1ST k=17 p=15 rp0=00000000 f0=1 fr=00000000 srin=00000000 x=(0,0) out=00000000 sre=0 sim=0 pre=0 pim=0 satre=0 satim=0
-# L1ST k=18 p=16 rp0=00000000 f0=1 fr=00000000 srin=00000000 x=(0,0) out=00000000 sre=0 sim=0 pre=0 pim=0 satre=0 satim=0
-# L1SRRD k=18 p=16 fr=00000000 srin=00000000
 # PROBE t=265000 L5 cap#11 val=00000000 (pre-edge valid)
 # CYC t=265000 L0: p=17 fh=1 x=(5770,31370) out=(0,0) v=1
 # PROBE t=275000 L5 cap#12 val=00000000 (pre-edge valid)
 # CYC t=275000 L0: p=18 fh=1 x=(22112,21748) out=(0,0) v=1
-# L1SRRD k=19 p=17 fr=00000000 srin=00000000
-# L1ST k=19 p=17 rp0=00000000 f0=1 fr=00000000 srin=00000000 x=(0,0) out=00000000 sre=0 sim=0 pre=0 pim=0 satre=0 satim=0
-# L1ST k=20 p=18 rp0=00000000 f0=1 fr=00000000 srin=00000000 x=(0,0) out=00000000 sre=0 sim=0 pre=0 pim=0 satre=0 satim=0
-# L1SRRD k=20 p=18 fr=00000000 srin=00000000
 # PROBE t=285000 L5 cap#13 val=00000000 (pre-edge valid)
 # CYC t=285000 L0: p=19 fh=1 x=(4185,-22771) out=(0,0) v=1
 # PROBE t=295000 L5 cap#14 val=00000000 (pre-edge valid)
 # CYC t=295000 L0: p=20 fh=1 x=(25818,-25886) out=(0,0) v=1
-# L1SRRD k=21 p=19 fr=00000000 srin=00000000
-# L1ST k=21 p=19 rp0=00000000 f0=0 fr=00000000 srin=00000000 x=(0,0) out=00000000 sre=0 sim=0 pre=0 pim=0 satre=0 satim=0
-# L1ST k=22 p=20 rp0=00000000 f0=0 fr=00000000 srin=00000000 x=(0,0) out=00000000 sre=0 sim=0 pre=0 pim=0 satre=0 satim=0
-# L1SRRD k=22 p=20 fr=00000000 srin=00000000
 # PROBE t=305000 L5 cap#15 val=00000000 (pre-edge valid)
 # CYC t=305000 L0: p=21 fh=1 x=(23158,-11132) out=(0,0) v=1
 # CYC t=315000 L0: p=22 fh=1 x=(12300,9919) out=(0,0) v=1
-# L1SRRD k=23 p=21 fr=00000000 srin=00000000
-# L1ST k=23 p=21 rp0=00000000 f0=0 fr=00000000 srin=00000000 x=(0,0) out=00000000 sre=0 sim=0 pre=0 pim=0 satre=0 satim=0
-# L1ST k=24 p=22 rp0=00000000 f0=0 fr=00000000 srin=00000000 x=(0,0) out=00000000 sre=0 sim=0 pre=0 pim=0 satre=0 satim=0
-# L1SRRD k=24 p=22 fr=00000000 srin=00000000
 # CYC t=325000 L0: p=23 fh=1 x=(-17776,10602) out=(0,0) v=1
 # CYC t=335000 L0: p=24 fh=1 x=(-14286,20765) out=(0,0) v=1
-# L1SRRD k=25 p=23 fr=00000000 srin=00000000
-# L1ST k=25 p=23 rp0=00000000 f0=0 fr=00000000 srin=00000000 x=(0,0) out=00000000 sre=0 sim=0 pre=0 pim=0 satre=0 satim=0
-# L1ST k=26 p=24 rp0=00000000 f0=0 fr=00000000 srin=00000000 x=(0,0) out=00000000 sre=0 sim=0 pre=0 pim=0 satre=0 satim=0
-# L1SRRD k=26 p=24 fr=00000000 srin=00000000
 # CYC t=345000 L0: p=25 fh=1 x=(-20088,3643) out=(0,0) v=1
 # CYC t=355000 L0: p=26 fh=1 x=(32316,-29340) out=(0,0) v=1
-# L1SRRD k=27 p=25 fr=00000000 srin=00000000
-# L1ST k=27 p=25 rp0=00000000 f0=0 fr=00000000 srin=00000000 x=(0,0) out=00000000 sre=0 sim=0 pre=0 pim=0 satre=0 satim=0
-# L1ST k=28 p=26 rp0=00000000 f0=0 fr=00000000 srin=00000000 x=(0,0) out=00000000 sre=0 sim=0 pre=0 pim=0 satre=0 satim=0
-# L1SRRD k=28 p=26 fr=00000000 srin=00000000
 # CYC t=365000 L0: p=27 fh=1 x=(-12507,-23096) out=(0,0) v=1
 # CYC t=375000 L0: p=28 fh=1 x=(-22140,6021) out=(0,0) v=1
-# L1SRRD k=29 p=27 fr=00000000 srin=00000000
-# L1ST k=29 p=27 rp0=00000000 f0=0 fr=00000000 srin=00000000 x=(0,0) out=00000000 sre=0 sim=0 pre=0 pim=0 satre=0 satim=0
-# L1ST k=30 p=28 rp0=00000000 f0=0 fr=00000000 srin=00000000 x=(0,0) out=00000000 sre=0 sim=0 pre=0 pim=0 satre=0 satim=0
-# L1SRRD k=30 p=28 fr=00000000 srin=00000000
 # CYC t=385000 L0: p=29 fh=1 x=(29282,-18102) out=(0,0) v=1
 # CYC t=395000 L0: p=30 fh=1 x=(-21100,25707) out=(0,0) v=1
-# L1SRRD k=31 p=29 fr=00000000 srin=00000000
-# L1ST k=31 p=29 rp0=00000000 f0=0 fr=00000000 srin=00000000 x=(0,0) out=00000000 sre=0 sim=0 pre=0 pim=0 satre=0 satim=0
-# L1ST k=32 p=30 rp0=00000000 f0=0 fr=00000000 srin=00000000 x=(0,0) out=00000000 sre=0 sim=0 pre=0 pim=0 satre=0 satim=0
-# L1SRRD k=32 p=30 fr=00000000 srin=00000000
 # CYC t=405000 L0: p=31 fh=1 x=(25000,-32010) out=(0,0) v=1
 # CYC t=415000 L0: p=32 fh=0 x=(31146,-29257) out=(0,0) v=1
-# L1SRRD k=33 p=31 fr=00000000 srin=00000000
-# L1ST k=33 p=31 rp0=00000000 f0=0 fr=00000000 srin=00000000 x=(0,0) out=00000000 sre=0 sim=0 pre=0 pim=0 satre=0 satim=0
-# L1ST k=34 p=0 rp0=00000000 f0=0 fr=00000000 srin=00000000 x=(-8340,19602) out=00000000 sre=-8340 sim=19602 pre=0 pim=0 satre=0 satim=0
-# L1SRRD k=34 p=0 fr=00000000 srin=00000000
 # CYC t=425000 L0: p=33 fh=0 x=(4963,-25667) out=(19602,57196) v=1
 # CYC t=435000 L0: p=34 fh=0 x=(18594,-14250) out=(17909,43828) v=1
-# L1SRRD k=35 p=1 fr=00000000 srin=00000000
-# L1ST k=35 p=1 rp0=00000000 f0=0 fr=00000000 srin=00000000 x=(-21708,17909) out=00000000 sre=-21708 sim=17909 pre=0 pim=0 satre=0 satim=0
-# L1ST k=36 p=2 rp0=00000000 f0=0 fr=00000000 srin=00000000 x=(-1315,1894) out=00000000 sre=-1315 sim=1894 pre=0 pim=0 satre=0 satim=0
-# L1SRRD k=36 p=2 fr=00000000 srin=00000000
 # CYC t=445000 L0: p=35 fh=0 x=(12078,-15786) out=(1894,64221) v=1
 # CYC t=455000 L0: p=36 fh=0 x=(20735,-15985) out=(60358,2723) v=1
-# L1SRRD k=37 p=3 fr=00000000 srin=4c92df6c
-# L1ST k=37 p=3 rp0=4c92df6c f0=1 fr=00000000 srin=4c92df6c x=(2723,-5178) out=00000000 sre=2723 sim=-5178 pre=0 pim=0 satre=0 satim=0
-# L1ST k=38 p=4 rp0=45f5ab34 f0=1 fr=00000000 srin=45f5ab34 x=(-1261,14674) out=00000000 sre=-1261 sim=14674 pre=0 pim=0 satre=0 satim=0
-# L1SRRD k=38 p=4 fr=00000000 srin=45f5ab34
 # CYC t=465000 L0: p=37 fh=0 x=(-32500,5726) out=(14674,64275) v=1
 # CYC t=475000 L0: p=38 fh=0 x=(-31904,23353) out=(53019,63132) v=1
-# L1SRRD k=39 p=5 fr=00000000 srin=0766fadd
-# L1ST k=39 p=5 rp0=0766fadd f0=1 fr=00000000 srin=0766fadd x=(-2404,-12517) out=00000000 sre=-2404 sim=-12517 pre=0 pim=0 satre=0 satim=0
-# L1ST k=40 p=6 rp0=ebc60aa3 f0=1 fr=00000000 srin=ebc60aa3 x=(25647,-28432) out=00000000 sre=25647 sim=-28432 pre=0 pim=0 satre=0 satim=0
-# L1SRRD k=40 p=6 fr=00000000 srin=ebc60aa3
 # CYC t=485000 L0: p=39 fh=0 x=(-17445,-15128) out=(37104,25647) v=1
 # CYC t=495000 L0: p=40 fh=0 x=(696,-27615) out=(139,6934) v=1
-# L1SRRD k=41 p=7 fr=00000000 srin=3952fb13
-# L1ST k=41 p=7 rp0=3952fb13 f0=1 fr=00000000 srin=3952fb13 x=(6934,139) out=00000000 sre=6934 sim=139 pre=0 pim=0 satre=0 satim=0
-# L1ST k=42 p=8 rp0=cf1bf69c f0=1 fr=00000000 srin=cf1bf69c x=(-4870,7128) out=00000000 sre=-4870 sim=7128 pre=0 pim=0 satre=0 satim=0
-# L1SRRD k=42 p=8 fr=00000000 srin=cf1bf69c
 # CYC t=505000 L0: p=41 fh=0 x=(-7818,-15257) out=(7128,60666) v=1
 # CYC t=515000 L0: p=42 fh=0 x=(-31827,9234) out=(49900,44871) v=1
-# L1SRRD k=43 p=9 fr=00000000 srin=90f0642f
-# L1ST k=43 p=9 rp0=90f0642f f0=1 fr=00000000 srin=90f0642f x=(-20665,-15636) out=00000000 sre=-20665 sim=-15636 pre=0 pim=0 satre=0 satim=0
-# L1ST k=44 p=10 rp0=008b1b16 f0=1 fr=00000000 srin=008b1b16 x=(-7742,-2226) out=00000000 sre=-7742 sim=-2226 pre=0 pim=0 satre=0 satim=0
-# L1SRRD k=44 p=10 fr=00000000 srin=008b1b16
 # CYC t=525000 L0: p=43 fh=0 x=(1132,24825) out=(63310,57794) v=1
 # CYC t=535000 L0: p=44 fh=0 x=(5575,20617) out=(57904,20689) v=1
-# L1SRRD k=45 p=11 fr=00000000 srin=1bd8ecfa
-# L1ST k=45 p=11 rp0=1bd8ecfa f0=1 fr=00000000 srin=1bd8ecfa x=(20689,-7632) out=00000000 sre=20689 sim=-7632 pre=0 pim=0 satre=0 satim=0
-# L1ST k=46 p=12 rp0=c2ecaf47 f0=1 fr=00000000 srin=c2ecaf47 x=(12674,7209) out=00000000 sre=12674 sim=7209 pre=0 pim=0 satre=0 satim=0
-# L1SRRD k=46 p=12 fr=00000000 srin=c2ecaf47
 # CYC t=545000 L0: p=45 fh=0 x=(-15199,-5195) out=(7209,12674) v=1
 # CYC t=555000 L0: p=46 fh=0 x=(390,32066) out=(54607,838) v=1
-# L1SRRD k=47 p=13 fr=00000000 srin=f74ee1c2
-# L1ST k=47 p=13 rp0=f74ee1c2 f0=1 fr=00000000 srin=f74ee1c2 x=(838,-10929) out=00000000 sre=838 sim=-10929 pre=0 pim=0 satre=0 satim=0
-# L1ST k=48 p=14 rp0=e23050d1 f0=1 fr=00000000 srin=e23050d1 x=(15435,-8479) out=00000000 sre=15435 sim=-8479 pre=0 pim=0 satre=0 satim=0
-# L1SRRD k=48 p=14 fr=00000000 srin=e23050d1
 # CYC t=565000 L0: p=47 fh=0 x=(-29979,-14710) out=(57057,15435) v=1
 # CYC t=575000 L0: p=48 fh=0 x=(11806,-5347) out=(54124,59055) v=1
-# L1SRRD k=49 p=15 fr=00000000 srin=1c293182
-# L1ST k=49 p=15 rp0=1c293182 f0=1 fr=00000000 srin=1c293182 x=(-6481,-11412) out=00000000 sre=-6481 sim=-11412 pre=0 pim=0 satre=0 satim=0
-# L1ST k=50 p=16 rp0=d54f0346 f0=1 fr=4c92df6c srin=d54f0346 x=(11131,6940) out=00000000 sre=2791 sim=26542 pre=-8340 pim=19602 satre=0 satim=0
-# L1SRRD k=50 p=16 fr=4c92df6c srin=d54f0346
 # CYC t=585000 L0: p=49 fh=0 x=(-8537,963) out=(6940,11131) v=1
 # CYC t=595000 L0: p=50 fh=0 x=(-16456,10338) out=(64152,16166) v=1
-# L1SRRD k=51 p=17 fr=45f5ab34 srin=dee13c4b
-# L1ST k=51 p=17 rp0=dee13c4b f0=1 fr=45f5ab34 srin=dee13c4b x=(16166,-1384) out=33d70574 sre=-5542 sim=16525 pre=-21708 pim=17909 satre=0 satim=0
-# L1ST k=52 p=18 rp0=d36ce6af f0=1 fr=0766fadd srin=d36ce6af x=(16043,2828) out=2046f52d sre=14728 sim=4722 pre=-1315 pim=1894 satre=0 satim=0
-# L1SRRD k=52 p=18 fr=0766fadd srin=d36ce6af
 # CYC t=605000 L0: p=51 fh=0 x=(-10829,12875) out=(2828,16043) v=1
 # CYC t=615000 L0: p=52 fh=0 x=(20744,-19166) out=(62214,60588) v=1
-# L1SRRD k=53 p=19 fr=ebc60aa3 srin=18bbd9f9
-# L1ST k=53 p=19 rp0=00000000 f0=0 fr=ebc60aa3 srin=18bbd9f9 x=(-4948,-3322) out=09391cc4 sre=-2225 sim=-8500 pre=2723 pim=-5178 satre=0 satim=0
-# L1ST k=54 p=20 rp0=00000000 f0=0 fr=3952fb13 srin=3364becd x=(-22526,23281) out=ef66fba8 sre=-23787 sim=37955 pre=-1261 pim=14674 satre=0 satim=0
-# L1SRRD k=54 p=20 fr=3952fb13 srin=3364becd
 # CYC t=625000 L0: p=53 fh=0 x=(-5907,-21553) out=(23281,43010) v=1
 # CYC t=635000 L0: p=54 fh=0 x=(-17578,5369) out=(8626,49194) v=1
-# L1SRRD k=55 p=21 fr=cf1bf69c srin=0b4adffb
-# L1ST k=55 p=21 rp0=00000000 f0=0 fr=cf1bf69c srin=0b4adffb x=(-16342,8626) out=4a22d18a sre=-18746 sim=-3891 pre=-2404 pim=-12517 satre=0 satim=0
-# L1ST k=56 p=22 rp0=00000000 f0=0 fr=90f0642f srin=f4aa0a72 x=(7644,-2639) out=f866db63 sre=33291 sim=-31071 pre=25647 pim=-28432 satre=0 satim=0
-# L1SRRD k=56 p=22 fr=90f0642f srin=f4aa0a72
 # CYC t=645000 L0: p=55 fh=0 x=(6269,6833) out=(62897,7644) v=1
 # CYC t=655000 L0: p=56 fh=0 x=(-6651,10403) out=(59782,8718) v=1
-# L1SRRD k=57 p=23 fr=008b1b16 srin=d6bf117b
-# L1ST k=57 p=23 rp0=00000000 f0=0 fr=008b1b16 srin=d6bf117b x=(8718,-5754) out=c3504106 sre=15652 sim=-5615 pre=6934 pim=139 satre=0 satim=0
-# L1ST k=58 p=24 rp0=00000000 f0=0 fr=1bd8ecfa srin=d26cecca x=(15584,-10468) out=f5081e92 sre=10714 sim=-3340 pre=-4870 pim=7128 satre=0 satim=0
-# L1SRRD k=58 p=24 fr=1bd8ecfa srin=d26cecca
 # CYC t=665000 L0: p=57 fh=0 x=(3675,12627) out=(55068,15584) v=1
 # CYC t=675000 L0: p=58 fh=0 x=(-2898,-23586) out=(57330,8135) v=1
-# L1SRRD k=59 p=25 fr=c2ecaf47 srin=cc3cdeea
-# L1ST k=59 p=25 rp0=00000000 f0=0 fr=c2ecaf47 srin=cc3cdeea x=(8135,-8206) out=f97a14ed sre=-12530 sim=-23842 pre=-20665 pim=-15636 satre=0 satim=0
-# L1ST k=60 p=26 rp0=00000000 f0=0 fr=f74ee1c2 srin=05aa0a9c x=(-26463,14709) out=d16fe787 sre=-34205 sim=12483 pre=-7742 pim=-2226 satre=0 satim=0
-# L1SRRD k=60 p=26 fr=f74ee1c2 srin=05aa0a9c
 # CYC t=685000 L0: p=59 fh=0 x=(-13825,22284) out=(14709,39073) v=1
 # CYC t=695000 L0: p=60 fh=0 x=(-15690,-23385) out=(52370,65130) v=1
-# L1SRRD k=61 p=27 fr=e23050d1 srin=27f3225e
-# L1ST k=61 p=27 rp0=00000000 f0=0 fr=e23050d1 srin=27f3225e x=(-406,-13166) out=1862bd32 sre=20283 sim=-20798 pre=20689 pim=-7632 satre=0 satim=0
-# L1ST k=62 p=28 rp0=00000000 f0=0 fr=1c293182 srin=3a00fcbe x=(-8682,-18915) out=d761279e sre=3992 sim=-11706 pre=12674 pim=7209 satre=0 satim=0
-# L1SRRD k=62 p=28 fr=1c293182 srin=3a00fcbe
 # CYC t=705000 L0: p=61 fh=0 x=(13838,-14165) out=(46621,56854) v=1
 # CYC t=715000 L0: p=62 fh=0 x=(30294,17208) out=(21560,49402) v=1
-# L1SRRD k=63 p=29 fr=d54f0346 srin=eae0d373
-# L1ST k=63 p=29 rp0=00000000 f0=0 fr=d54f0346 srin=eae0d373 x=(-16134,21560) out=e92307cc sre=-15296 sim=10631 pre=838 pim=-10929 satre=0 satim=0
-# L1ST k=64 p=30 rp0=00000000 f0=0 fr=dee13c4b srin=d7bdf219 x=(21458,4597) out=14c4e220 sre=36893 sim=-3882 pre=15435 pim=-8479 satre=0 satim=0
-# L1SRRD k=64 p=30 fr=dee13c4b srin=d7bdf219
 # CYC t=725000 L0: p=63 fh=0 x=(16452,-6640) out=(4597,21458) v=1
 # CYC t=735000 L0: p=0 fh=1 x=(-31751,26257) out=(20726,46211) v=1
-# L1SRRD k=65 p=31 fr=d36ce6af srin=be6d0696
-# L1ST k=65 p=31 rp0=00000000 f0=0 fr=d36ce6af srin=be6d0696 x=(-19325,20726) out=f86b480e sre=-25806 sim=9314 pre=-6481 pim=-11412 satre=0 satim=0
-# L1ST k=66 p=0 rp0=00000000 f0=0 fr=18bbd9f9 srin=2258c12f x=(20917,-11544) out=1231cd99 sre=11182 sim=-5213 pre=-9735 pim=6331 satre=0 satim=0
-# L1SRRD k=66 p=0 fr=18bbd9f9 srin=2258c12f
 # CYC t=745000 L0: p=1 fh=1 x=(-7905,22207) out=(53992,20917) v=1
 # CYC t=755000 L0: p=2 fh=1 x=(26645,-26676) out=(12496,5209) v=1
-# L1SRRD k=67 p=1 fr=3364becd srin=1c190118
-# L1ST k=67 p=1 rp0=00000000 f0=0 fr=3364becd srin=1c190118 x=(5209,12496) out=18bbd9f9 sre=-11482 sim=25652 pre=-16691 pim=13156 satre=0 satim=0
-# L1ST k=68 p=2 rp0=00000000 f0=0 fr=0b4adffb srin=38abdb26 x=(9428,-18903) out=3364becd sre=1231 sim=-16013 pre=-8197 pim=2890 satre=0 satim=0
-# L1SRRD k=68 p=2 fr=0b4adffb srin=38abdb26
 # CYC t=765000 L0: p=3 fh=1 x=(26471,-25317) out=(46633,9428) v=1
 # CYC t=775000 L0: p=4 fh=1 x=(6759,-6353) out=(43651,12703) v=1
-# L1SRRD k=69 p=3 fr=f4aa0a72 srin=d2e851b5
-# L1ST k=69 p=3 rp0=d2e851b5 f0=1 fr=f4aa0a72 srin=d2e851b5 x=(12703,-21885) out=0b4adffb sre=15377 sim=-24787 pre=2674 pim=-2902 satre=0 satim=0
-# L1ST k=70 p=4 rp0=30d01459 f0=1 fr=d6bf117b srin=30d01459 x=(11284,-11235) out=f4aa0a72 sre=15759 sim=-21796 pre=4475 pim=-10561 satre=0 satim=0
-# L1SRRD k=70 p=4 fr=d6bf117b srin=30d01459
 # CYC t=785000 L0: p=5 fh=1 x=(153,16961) out=(54301,11284) v=1
 # CYC t=795000 L0: p=6 fh=1 x=(7554,29112) out=(21456,2250) v=1
-# L1SRRD k=71 p=5 fr=d26cecca srin=b62924d4
-# L1ST k=71 p=5 rp0=b62924d4 f0=1 fr=d26cecca srin=b62924d4 x=(2250,21456) out=d6bf117b sre=-2668 sim=9788 pre=-4918 pim=-11668 satre=0 satim=0
-# L1ST k=72 p=6 rp0=aa83319f f0=1 fr=cc3cdeea srin=aa83319f x=(3836,1612) out=d26cecca sre=-4634 sim=-11640 pre=-8470 pim=-13252 satre=0 satim=0
-# L1SRRD k=72 p=6 fr=cc3cdeea srin=aa83319f
 # CYC t=805000 L0: p=7 fh=1 x=(-23283,816) out=(1612,3836) v=1
 # CYC t=815000 L0: p=8 fh=1 x=(28758,13079) out=(65133,28209) v=1
-# L1SRRD k=73 p=7 fr=05aa0a9c srin=d41d2c14
-# L1ST k=73 p=7 rp0=d41d2c14 f0=1 fr=05aa0a9c srin=d41d2c14 x=(28209,-403) out=cc3cdeea sre=30925 sim=1047 pre=2716 pim=1450 satre=0 satim=0
-# L1ST k=74 p=8 rp0=53d008ca f0=1 fr=27f3225e srin=53d008ca x=(20632,-11535) out=05aa0a9c sre=29430 sim=-1308 pre=8798 pim=10227 satre=0 satim=0
-# L1SRRD k=74 p=8 fr=27f3225e srin=53d008ca
 # CYC t=825000 L0: p=9 fh=1 x=(27775,-31585) out=(54001,20632) v=1
 # CYC t=835000 L0: p=10 fh=1 x=(22293,18238) out=(64757,56062) v=1
-# L1SRRD k=75 p=9 fr=3a00fcbe srin=064c0efc
-# L1ST k=75 p=9 rp0=064c0efc f0=1 fr=3a00fcbe srin=064c0efc x=(-9474,-779) out=27f3225e sre=-10308 sim=14069 pre=-834 pim=14848 satre=0 satim=0
-# L1ST k=76 p=10 rp0=fe6d6e31 f0=1 fr=eae0d373 srin=fe6d6e31 x=(15181,30560) out=3a00fcbe sre=3776 sim=25152 pre=-11405 pim=-5408 satre=0 satim=0
-# L1SRRD k=76 p=10 fr=eae0d373 srin=fe6d6e31
 # CYC t=845000 L0: p=11 fh=1 x=(19730,27174) out=(30560,15181) v=1
 # CYC t=855000 L0: p=12 fh=1 x=(15321,8512) out=(65053,55858) v=1
-# L1SRRD k=77 p=11 fr=d7bdf219 srin=d2f15098
-# L1ST k=77 p=11 rp0=d2f15098 f0=1 fr=d7bdf219 srin=d2f15098 x=(-9678,-483) out=eae0d373 sre=-13237 sim=-10790 pre=-3559 pim=-10307 satre=0 satim=0
-# L1ST k=78 p=12 rp0=fcf5dafe f0=1 fr=be6d0696 srin=fcf5dafe x=(-1530,7964) out=d7bdf219 sre=156 sim=-8823 pre=1686 pim=-16787 satre=0 satim=0
-# L1SRRD k=78 p=12 fr=be6d0696 srin=fcf5dafe
 # CYC t=865000 L0: p=13 fh=1 x=(-6309,-12751) out=(7964,64006) v=1
 # CYC t=875000 L0: p=14 fh=1 x=(-18873,23114) out=(61002,5837) v=1
-# L1SRRD k=79 p=13 fr=2258c12f srin=77603b4d
-# L1ST k=79 p=13 rp0=77603b4d f0=1 fr=2258c12f srin=77603b4d x=(5837,-4534) out=be6d0696 sre=-10244 sim=4258 pre=-16081 pim=8792 satre=0 satim=0
-# L1ST k=80 p=14 rp0=fe1dda32 f0=1 fr=1c190118 srin=fe1dda32 x=(-11943,14581) out=2258c12f sre=-11663 sim=21774 pre=280 pim=7193 satre=0 satim=0
-# L1SRRD k=80 p=14 fr=1c190118 srin=fe1dda32
 # CYC t=885000 L0: p=15 fh=1 x=(-4176,-16677) out=(14581,53593) v=1
 # CYC t=895000 L0: p=16 fh=1 x=(18735,18775) out=(59166,19284) v=1
-# L1SRRD k=81 p=15 fr=38abdb26 srin=1f1cfa06
-# L1ST k=81 p=15 rp0=1f1cfa06 f0=1 fr=38abdb26 srin=1f1cfa06 x=(19284,-6370) out=1c190118 sre=9850 sim=8137 pre=-9434 pim=14507 satre=0 satim=0
-# L1ST k=82 p=16 rp0=ee4a16cd f0=1 fr=d2e851b5 srin=ee4a16cd x=(-4866,-16478) out=38abdb26 sre=16051 sim=-28022 pre=20917 pim=-11544 satre=0 satim=0
-# L1SRRD k=82 p=16 fr=d2e851b5 srin=ee4a16cd
 # CYC t=905000 L0: p=17 fh=1 x=(-10309,-17639) out=(49058,60670) v=1
 # CYC t=915000 L0: p=18 fh=1 x=(19193,16615) out=(49705,5629) v=1
-# L1SRRD k=83 p=17 fr=30d01459 srin=38f5d159
-# L1ST k=83 p=17 rp0=38f5d159 f0=1 fr=30d01459 srin=38f5d159 x=(5629,-15831) out=c9451f5a sre=10838 sim=-3335 pre=5209 pim=12496 satre=0 satim=0
-# L1ST k=84 p=18 rp0=e71e4b54 f0=1 fr=b62924d4 srin=e71e4b54 x=(17800,-9357) out=f97c152b sre=27228 sim=-28260 pre=9428 pim=-18903 satre=0 satim=0
-# L1SRRD k=84 p=18 fr=b62924d4 srin=e71e4b54
 # CYC t=925000 L0: p=19 fh=1 x=(-14129,7181) out=(56179,17800) v=1
 # CYC t=935000 L0: p=20 fh=1 x=(-28554,-31860) out=(14876,12357) v=1
-# L1SRRD k=85 p=19 fr=aa83319f srin=09a3325b
-# L1ST k=85 p=19 rp0=00000000 f0=0 fr=aa83319f srin=09a3325b x=(12357,14876) out=c8ce352e sre=25060 sim=-7009 pre=12703 pim=-21885 satre=0 satim=0
-# L1ST k=86 p=20 rp0=00000000 f0=0 fr=d41d2c14 srin=366c09fd x=(3630,2133) out=f25030f2 sre=14914 sim=-9102 pre=11284 pim=-11235 satre=0 satim=0
-# L1SRRD k=86 p=20 fr=d41d2c14 srin=366c09fd
 # CYC t=945000 L0: p=21 fh=1 x=(-20688,23855) out=(2133,3630) v=1
 # CYC t=955000 L0: p=22 fh=1 x=(-29320,22443) out=(54090,10360) v=1
-# L1SRRD k=87 p=21 fr=53d008ca srin=f508e9c2
-# L1ST k=87 p=21 rp0=00000000 f0=0 fr=53d008ca srin=f508e9c2 x=(10360,-11446) out=ee391d21 sre=12610 sim=10010 pre=2250 pim=21456 satre=0 satim=0
-# L1ST k=88 p=22 rp0=00000000 f0=0 fr=064c0efc srin=c3edd8ac x=(11157,-10191) out=138d18a1 sre=14993 sim=-8579 pre=3836 pim=1612 satre=0 satim=0
-# L1SRRD k=88 p=22 fr=064c0efc srin=c3edd8ac
 # CYC t=965000 L0: p=23 fh=1 x=(15130,-23369) out=(55345,11157) v=1
 # CYC t=975000 L0: p=24 fh=1 x=(-30110,-22546) out=(6170,55047) v=1
-# L1SRRD k=89 p=23 fr=fe6d6e31 srin=e2f8f81c
-# L1ST k=89 p=23 rp0=00000000 f0=0 fr=fe6d6e31 srin=e2f8f81c x=(-10489,6170) out=ef3e1d48 sre=17720 sim=5767 pre=28209 pim=-403 satre=0 satim=0
-# L1ST k=90 p=24 rp0=00000000 f0=0 fr=d2f15098 srin=30df2ca2 x=(-6363,-964) out=0b44229c sre=14269 sim=-12499 pre=20632 pim=-11535 satre=0 satim=0
-# L1SRRD k=90 p=24 fr=d2f15098 srin=30df2ca2
 # CYC t=985000 L0: p=25 fh=1 x=(31160,17248) out=(64572,59173) v=1
 # CYC t=995000 L0: p=26 fh=1 x=(16102,10146) out=(12034,61471) v=1
-# L1SRRD k=91 p=25 fr=fcf5dafe srin=16080fd3
-# L1ST k=91 p=25 rp0=00000000 f0=0 fr=fcf5dafe srin=16080fd3 x=(-4065,12034) out=e7961bde sre=-13539 sim=11255 pre=-9474 pim=-779 satre=0 satim=0
-# L1ST k=92 p=26 rp0=00000000 f0=0 fr=77603b4d srin=b35e0227 x=(12174,-13041) out=15fce58e sre=27355 sim=17519 pre=15181 pim=30560 satre=0 satim=0
-# L1SRRD k=92 p=26 fr=77603b4d srin=b35e0227
 # CYC t=1005000 L0: p=27 fh=1 x=(10225,-29798) out=(52495,12174) v=1
 # CYC t=1015000 L0: p=28 fh=1 x=(28079,-31176) out=(10115,20321) v=1
-# L1SRRD k=93 p=27 fr=fe1dda32 srin=cb46eb5a
-# L1ST k=93 p=27 rp0=00000000 f0=0 fr=fe1dda32 srin=cb46eb5a x=(20321,10115) out=2238356e sre=10643 sim=9632 pre=-9678 pim=-483 satre=0 satim=0
-# L1ST k=94 p=28 rp0=00000000 f0=0 fr=1f1cfa06 srin=0f3ee984 x=(-14818,-2647) out=12d014ca sre=-16348 sim=5317 pre=-1530 pim=7964 satre=0 satim=0
-# L1SRRD k=94 p=28 fr=1f1cfa06 srin=0f3ee984
 # CYC t=1025000 L0: p=29 fh=1 x=(-18543,14738) out=(62889,50718) v=1
-# L1I t=1035000 fh_sel=0 raw_f=00000000 diff_f=d9fc4c6e sr_front=ee4a16cd out=0a62e012
+# L1I t=1035000 fh_sel=0 raw_f=00000000 diff_f=cbce438b sr_front=ee4a16cd out=0a62e012
 # CYC t=1035000 L0: p=30 fh=1 x=(-13198,-31361) out=(58718,4125) v=1
-# L1SRRD k=95 p=29 fr=ee4a16cd srin=d9fc4c6e
-# L1ST k=95 p=29 rp0=00000000 f0=0 fr=ee4a16cd srin=d9fc4c6e x=(4125,-6818) out=0a62e012 sre=9962 sim=-11352 pre=5837 pim=-4534 satre=0 satim=0
-# L1ST k=96 p=30 rp0=00000000 f0=0 fr=38f5d159 srin=3c380f57 x=(-9181,24374) out=e9d41375 sre=-21124 sim=38955 pre=-11943 pim=14581 satre=0 satim=0
-# L1SRRD k=96 p=30 fr=38f5d159 srin=3c380f57
-# L1I t=1045000 fh_sel=0 raw_f=00000000 diff_f=3c380f57 sr_front=38f5d159 out=e9d41375
+# L1I t=1045000 fh_sel=0 raw_f=00000000 diff_f=38111acb sr_front=38f5d159 out=e9d41375
 # CYC t=1045000 L0: p=31 fh=1 x=(-9137,22496) out=(24374,56355) v=1
-# L1I t=1055000 fh_sel=0 raw_f=00000000 diff_f=defefc4e sr_front=e71e4b54 out=4c16d6be
+# L1I t=1055000 fh_sel=0 raw_f=00000000 diff_f=e059f5ef sr_front=34ecb498 out=4c16d6be
 # CYC t=1055000 L0: p=32 fh=0 x=(-6175,13015) out=(62526,13043) v=1
-# L1SRRD k=97 p=31 fr=e71e4b54 srin=defefc4e
-# L1ST k=97 p=31 rp0=00000000 f0=0 fr=e71e4b54 srin=defefc4e x=(13043,-3010) out=4c16d6be sre=32327 sim=-9380 pre=19284 pim=-6370 satre=0 satim=0
-# L1ST k=98 p=0 rp0=00000000 f0=0 fr=09a3325b srin=fa6fffb3 x=(19636,-18963) out=edae3f24 sre=32527 sim=-16496 pre=12891 pim=2467 satre=0 satim=0
-# L1SRRD k=98 p=0 fr=09a3325b srin=fa6fffb3
-# L1I t=1065000 fh_sel=0 raw_f=00000000 diff_f=fa6fffb3 sr_front=09a3325b out=edae3f24
+# L1I t=1065000 fh_sel=0 raw_f=00000000 diff_f=fa99fe9e sr_front=ffa13345 out=34ecb498
 # CYC t=1065000 L0: p=33 fh=0 x=(-8040,8687) out=(46573,19636) v=1
-# L1I t=1075000 fh_sel=0 raw_f=00000000 diff_f=13bcfdaa sr_front=366c09fd out=09a3325b
+# L1I t=1075000 fh_sel=0 raw_f=00000000 diff_f=13d0018f sr_front=336e146a out=ffa13345
 # CYC t=1075000 L0: p=34 fh=0 x=(4574,-5549) out=(57564,15447) v=1
-# L1SRRD k=99 p=1 fr=366c09fd srin=13bcfdaa
-# L1ST k=99 p=1 rp0=00000000 f0=0 fr=366c09fd srin=13bcfdaa x=(15447,-7972) out=09a3325b sre=18004 sim=5960 pre=2557 pim=13932 satre=0 satim=0
-# L1ST k=100 p=2 rp0=00000000 f0=0 fr=f508e9c2 srin=040ff2c4 x=(-16112,15610) out=366c09fd sre=-21806 sim=12802 pre=-5694 pim=-2808 satre=0 satim=0
-# L1SRRD k=100 p=2 fr=f508e9c2 srin=040ff2c4
-# L1I t=1085000 fh_sel=0 raw_f=00000000 diff_f=040ff2c4 sr_front=f508e9c2 out=366c09fd
+# L1I t=1085000 fh_sel=1 raw_f=f43e32f3 diff_f=2057c0d3 sr_front=f995e80c out=336e146a
 # CYC t=1085000 L0: p=35 fh=0 x=(-5808,17961) out=(15610,49424) v=1
-# L1I t=1095000 fh_sel=1 raw_f=b5ed4cb4 diff_f=29dbf2d4 sr_front=c3edd8ac out=f508e9c2
+# L1I t=1095000 fh_sel=1 raw_f=b5ed4cb4 diff_f=26a0fab8 sr_front=ccc1cdb5 out=f995e80c
 # CYC t=1095000 L0: p=36 fh=0 x=(-32301,31298) out=(10332,61858) v=1
-# L1SRRD k=101 p=3 fr=c3edd8ac srin=b5ed4cb4
-# L1ST k=101 p=3 rp0=b5ed4cb4 f0=1 fr=c3edd8ac srin=b5ed4cb4 x=(-3678,10332) out=f508e9c2 sre=-13746 sim=-5047 pre=-10068 pim=-15379 satre=0 satim=0
-# L1ST k=102 p=4 rp0=e0dc3c57 f0=1 fr=e2f8f81c srin=e0dc3c57 x=(12472,-12771) out=c3edd8ac sre=10452 sim=-20203 pre=-2020 pim=-7432 satre=0 satim=0
-# L1SRRD k=102 p=4 fr=e2f8f81c srin=e0dc3c57
-# L1I t=1105000 fh_sel=1 raw_f=e0dc3c57 diff_f=2edfefa8 sr_front=e2f8f81c out=c3edd8ac
+# L1I t=1105000 fh_sel=1 raw_f=e0dc3c57 diff_f=2dc8fd5b sr_front=e511f299 out=ccc1cdb5
 # CYC t=1105000 L0: p=37 fh=0 x=(-26455,-3243) out=(52765,12472) v=1
-# L1I t=1115000 fh_sel=1 raw_f=3cfac110 diff_f=d6fb0508 sr_front=30df2ca2 out=e2f8f81c
+# L1I t=1115000 fh_sel=1 raw_f=3cfac110 diff_f=d927fd7c sr_front=273a354f out=e511f299
 # CYC t=1115000 L0: p=38 fh=0 x=(-24254,26029) out=(52385,6859) v=1
-# L1SRRD k=103 p=5 fr=30df2ca2 srin=3cfac110
-# L1ST k=103 p=5 rp0=3cfac110 f0=1 fr=30df2ca2 srin=3cfac110 x=(6859,-13151) out=e2f8f81c sre=18285 sim=-640 pre=11426 pim=12511 satre=0 satim=0
-# L1ST k=104 p=6 rp0=285cf1a2 f0=1 fr=16080fd3 srin=285cf1a2 x=(27570,-8350) out=30df2ca2 sre=31621 sim=-2710 pre=4051 pim=5640 satre=0 satim=0
-# L1SRRD k=104 p=6 fr=16080fd3 srin=285cf1a2
 # CYC t=1125000 L0: p=39 fh=0 x=(-29252,-20765) out=(57186,27570) v=1
 # CYC t=1135000 L0: p=40 fh=0 x=(-3410,12363) out=(39268,55562) v=1
-# L1SRRD k=105 p=7 fr=b35e0227 srin=ce1d30b8
-# L1ST k=105 p=7 rp0=ce1d30b8 f0=1 fr=b35e0227 srin=ce1d30b8 x=(-9974,-26268) out=16080fd3 sre=-9423 sim=-45886 pre=551 pim=-19618 satre=0 satim=0
-# L1ST k=106 p=8 rp0=cca11acb f0=1 fr=cb46eb5a srin=cca11acb x=(12721,12674) out=b35e0227 sre=7435 sim=-824 pre=-5286 pim=-13498 satre=0 satim=0
-# L1SRRD k=106 p=8 fr=cb46eb5a srin=cca11acb
 # CYC t=1145000 L0: p=41 fh=0 x=(-32527,8314) out=(12674,12721) v=1
 # CYC t=1155000 L0: p=42 fh=0 x=(-21358,4591) out=(63160,53900) v=1
-# L1SRRD k=107 p=9 fr=0f3ee984 srin=df626bb2
-# L1ST k=107 p=9 rp0=df626bb2 f0=1 fr=0f3ee984 srin=df626bb2 x=(-11636,-2376) out=cb46eb5a sre=-17392 sim=1526 pre=-5756 pim=3902 satre=0 satim=0
-# L1ST k=108 p=10 rp0=9964d90a f0=1 fr=d9fc4c6e srin=9964d90a x=(11414,468) out=0f3ee984 sre=30980 sim=-9264 pre=19566 pim=-9732 satre=0 satim=0
-# L1SRRD k=108 p=10 fr=d9fc4c6e srin=9964d90a
 # CYC t=1165000 L0: p=43 fh=0 x=(7728,-12073) out=(468,11414) v=1
 # CYC t=1175000 L0: p=44 fh=0 x=(1155,-22228) out=(13729,7550) v=1
-# L1SRRD k=109 p=11 fr=3c380f57 srin=318231b1
-# L1ST k=109 p=11 rp0=318231b1 f0=1 fr=3c380f57 srin=318231b1 x=(7550,13729) out=d9fc4c6e sre=11477 sim=29145 pre=3927 pim=15416 satre=0 satim=0
-# L1ST k=110 p=12 rp0=f6b8d28c f0=1 fr=defefc4e srin=f6b8d28c x=(-6858,8238) out=3c380f57 sre=-7804 sim=-212 pre=-946 pim=-8450 satre=0 satim=0
-# L1SRRD k=110 p=12 fr=defefc4e srin=f6b8d28c
 # CYC t=1185000 L0: p=45 fh=0 x=(-7752,31850) out=(8238,58678) v=1
 # CYC t=1195000 L0: p=46 fh=0 x=(29814,-17245) out=(58506,9550) v=1
-# L1SRRD k=111 p=13 fr=fa6fffb3 srin=01d42c96
-# L1ST k=111 p=13 rp0=01d42c96 f0=1 fr=fa6fffb3 srin=01d42c96 x=(9550,-7030) out=defefc4e sre=9473 sim=-8455 pre=-77 pim=-1425 satre=0 satim=0
-# L1ST k=112 p=14 rp0=35a11d7e f0=1 fr=13bcfdaa srin=35a11d7e x=(2934,5470) out=fa6fffb3 sre=2336 sim=10522 pre=-598 pim=5052 satre=0 satim=0
-# L1SRRD k=112 p=14 fr=13bcfdaa srin=35a11d7e
 # CYC t=1205000 L0: p=47 fh=0 x=(4965,-24555) out=(5470,2934) v=1
 # CYC t=1215000 L0: p=48 fh=0 x=(24459,29607) out=(394,44920) v=1
-# L1SRRD k=113 p=15 fr=040ff2c4 srin=202ee536
-# L1ST k=113 p=15 rp0=202ee536 f0=1 fr=040ff2c4 srin=202ee536 x=(-20616,394) out=13bcfdaa sre=-24004 sim=1433 pre=-3388 pim=1039 satre=0 satim=0
-# L1ST k=114 p=16 rp0=e48a254e f0=1 fr=b5ed4cb4 srin=e48a254e x=(24191,21597) out=040ff2c4 sre=43827 sim=2634 pre=19636 pim=-18963 satre=0 satim=0
-# L1SRRD k=114 p=16 fr=b5ed4cb4 srin=e48a254e
 # CYC t=1225000 L0: p=49 fh=0 x=(13799,5831) out=(21597,24191) v=1
 # CYC t=1235000 L0: p=50 fh=0 x=(-32368,-6418) out=(1745,59632) v=1
-# L1SRRD k=115 p=17 fr=e0dc3c57 srin=155e0b76
-# L1ST k=115 p=17 rp0=155e0b76 f0=1 fr=e0dc3c57 srin=155e0b76 x=(-5904,1745) out=0525559a sre=9543 sim=-6227 pre=15447 pim=-7972 satre=0 satim=0
-# L1ST k=116 p=18 rp0=018aaf78 f0=1 fr=3cfac110 srin=018aaf78 x=(5098,-6588) out=f3d612a4 sre=-11014 sim=9022 pre=-16112 pim=15610 satre=0 satim=0
-# L1SRRD k=116 p=18 fr=3cfac110 srin=018aaf78
 # CYC t=1245000 L0: p=51 fh=0 x=(28535,-9876) out=(58948,5098) v=1
 # CYC t=1255000 L0: p=52 fh=0 x=(3793,9440) out=(7203,64188) v=1
-# L1SRRD k=117 p=19 fr=285cf1a2 srin=b0c8f71b
-# L1ST k=117 p=19 rp0=00000000 f0=0 fr=285cf1a2 srin=b0c8f71b x=(-1348,7203) out=119fea7d sre=-5026 sim=17535 pre=-3678 pim=10332 satre=0 satim=0
-# L1ST k=118 p=20 rp0=00000000 f0=0 fr=ce1d30b8 srin=e5402532 x=(-11210,-12380) out=2240f62f sre=1262 sim=-25151 pre=12472 pim=-12771 satre=0 satim=0
-# L1SRRD k=118 p=20 fr=ce1d30b8 srin=e5402532
 # CYC t=1265000 L0: p=53 fh=0 x=(18955,19628) out=(53156,54326) v=1
 # CYC t=1275000 L0: p=54 fh=0 x=(6017,-19123) out=(64670,21742) v=1
-# L1SRRD k=119 p=21 fr=cca11acb srin=37e9ea52
-# L1ST k=119 p=21 rp0=00000000 f0=0 fr=cca11acb srin=37e9ea52 x=(21742,-866) out=cee00277 sre=28601 sim=-14017 pre=6859 pim=-13151 satre=0 satim=0
-# L1ST k=120 p=22 rp0=00000000 f0=0 fr=df626bb2 srin=079cff9d x=(1660,-11652) out=e4a037dc sre=29230 sim=-20002 pre=27570 pim=-8350 satre=0 satim=0
-# L1SRRD k=120 p=22 fr=df626bb2 srin=079cff9d
 # CYC t=1285000 L0: p=55 fh=0 x=(-25308,-4639) out=(53884,1660) v=1
 # CYC t=1295000 L0: p=56 fh=0 x=(-30099,18203) out=(60447,51532) v=1
-# L1SRRD k=121 p=23 fr=9964d90a srin=dec1202b
-# L1ST k=121 p=23 rp0=00000000 f0=0 fr=9964d90a srin=dec1202b x=(-14004,-5089) out=d8ef3917 sre=-23978 sim=-31357 pre=-9974 pim=-26268 satre=0 satim=0
-# L1ST k=122 p=24 rp0=00000000 f0=0 fr=318231b1 srin=0ad7dbe6 x=(-2172,-30104) out=c2c2d12b sre=10549 sim=-17430 pre=12721 pim=12674 satre=0 satim=0
-# L1SRRD k=122 p=24 fr=318231b1 srin=0ad7dbe6
 # CYC t=1305000 L0: p=57 fh=0 x=(-14433,-6340) out=(35432,63364) v=1
 # CYC t=1315000 L0: p=58 fh=0 x=(-23646,12858) out=(8364,5454) v=1
-# L1SRRD k=123 p=25 fr=f6b8d28c srin=d3b71953
-# L1ST k=123 p=25 rp0=00000000 f0=0 fr=f6b8d28c srin=d3b71953 x=(5454,8364) out=ddf5149a sre=-6182 sim=5988 pre=-11636 pim=-2376 satre=0 satim=0
-# L1ST k=124 p=26 rp0=00000000 f0=0 fr=01d42c96 srin=f036d8f7 x=(11502,-3772) out=0bb2f3ed sre=22916 sim=-3304 pre=11414 pim=468 satre=0 satim=0
-# L1SRRD k=124 p=26 fr=01d42c96 srin=f036d8f7
 # CYC t=1325000 L0: p=59 fh=0 x=(-32053,-8422) out=(61764,11502) v=1
 # CYC t=1335000 L0: p=60 fh=0 x=(11167,2087) out=(54622,46426) v=1
-# L1SRRD k=125 p=27 fr=35a11d7e srin=e2ea538d
-# L1ST k=125 p=27 rp0=00000000 f0=0 fr=35a11d7e srin=e2ea538d x=(-19110,-10914) out=f98c2cc2 sre=-11560 sim=2815 pre=7550 pim=13729 satre=0 satim=0
-# L1ST k=126 p=28 rp0=00000000 f0=0 fr=202ee536 srin=24d4f1f0 x=(-14544,19623) out=0580e96c sre=-21402 sim=27861 pre=-6858 pim=8238 satre=0 satim=0
-# L1SRRD k=126 p=28 fr=202ee536 srin=24d4f1f0
 # CYC t=1345000 L0: p=61 fh=0 x=(15390,-7554) out=(19623,50992) v=1
 # CYC t=1355000 L0: p=62 fh=0 x=(21670,8079) out=(63960,3592) v=1
-# L1SRRD k=127 p=29 fr=e48a254e srin=fcfd07b7
-# L1ST k=127 p=29 rp0=00000000 f0=0 fr=e48a254e srin=fcfd07b7 x=(3592,-1576) out=366ad633 sre=13142 sim=-8606 pre=9550 pim=-7030 satre=0 satim=0
-# L1ST k=128 p=30 rp0=00000000 f0=0 fr=155e0b76 srin=b9f70b17 x=(-11641,4236) out=ef3119ab sre=-8707 sim=9706 pre=2934 pim=5470 satre=0 satim=0
-# L1SRRD k=128 p=30 fr=155e0b76 srin=b9f70b17
 # CYC t=1365000 L0: p=63 fh=0 x=(5143,5392) out=(4236,53895) v=1
 # CYC t=1375000 L0: p=0 fh=1 x=(29689,-20351) out=(63539,13944) v=1
-# L1SRRD k=129 p=31 fr=018aaf78 srin=051ce5a9
-# L1ST k=129 p=31 rp0=00000000 f0=0 fr=018aaf78 srin=051ce5a9 x=(13944,-1997) out=12f5eefe sre=-6672 sim=-1603 pre=-20616 pim=394 satre=0 satim=0
-# L1ST k=130 p=0 rp0=00000000 f0=0 fr=b0c8f71b srin=0264f068 x=(6621,-12788) out=fcdef2f8 sre=4344 sim=-33068 pre=-2277 pim=-20280 satre=0 satim=0
-# L1SRRD k=130 p=0 fr=b0c8f71b srin=0264f068
 # CYC t=1385000 L0: p=1 fh=1 x=(-23728,21930) out=(52748,6621) v=1
 # CYC t=1395000 L0: p=2 fh=1 x=(30740,-24072) out=(64941,6734) v=1
-# L1SRRD k=131 p=1 fr=e5402532 srin=f2e1e69f
-# L1ST k=131 p=1 rp0=00000000 f0=0 fr=e5402532 srin=f2e1e69f x=(6734,-595) out=b0c8f71b sre=16256 sim=-7443 pre=9522 pim=-6848 satre=0 satim=0
-# L1ST k=132 p=2 rp0=00000000 f0=0 fr=37e9ea52 srin=0897431d x=(-8208,12884) out=e5402532 sre=-13758 sim=27197 pre=-5550 pim=14313 satre=0 satim=0
-# L1SRRD k=132 p=2 fr=37e9ea52 srin=0897431d
 # CYC t=1405000 L0: p=3 fh=1 x=(5650,20477) out=(12884,57328) v=1
 # CYC t=1415000 L0: p=4 fh=1 x=(32064,-24417) out=(21726,49514) v=1
-# L1SRRD k=133 p=3 fr=079cff9d srin=ce0c19dd
-# L1ST k=133 p=3 rp0=ce0c19dd f0=1 fr=079cff9d srin=ce0c19dd x=(-16022,21726) out=37e9ea52 sre=-16121 sim=23674 pre=-99 pim=1948 satre=0 satim=0
-# L1ST k=134 p=4 rp0=fdad1a4e f0=1 fr=dec1202b srin=fdad1a4e x=(-9919,25248) out=079cff9d sre=-1684 sim=16737 pre=8235 pim=-8511 satre=0 satim=0
-# L1SRRD k=134 p=4 fr=dec1202b srin=fdad1a4e
 # CYC t=1425000 L0: p=5 fh=1 x=(-21040,-29531) out=(25248,55617) v=1
 # CYC t=1435000 L0: p=6 fh=1 x=(6224,-25027) out=(6971,15181) v=1
-# L1SRRD k=135 p=5 fr=0ad7dbe6 srin=3254dff0
-# L1ST k=135 p=5 rp0=3254dff0 f0=1 fr=0ad7dbe6 srin=3254dff0 x=(15181,6971) out=dec1202b sre=5939 sim=9746 pre=-9242 pim=2775 satre=0 satim=0
-# L1ST k=136 p=6 rp0=54dec16a f0=1 fr=d3b71953 srin=54dec16a x=(10118,12367) out=0ad7dbe6 sre=16601 sim=1030 pre=6483 pim=-11337 satre=0 satim=0
-# L1SRRD k=136 p=6 fr=d3b71953 srin=54dec16a
 # CYC t=1445000 L0: p=7 fh=1 x=(6653,16556) out=(12367,10118) v=1
 # CYC t=1455000 L0: p=8 fh=1 x=(14147,-30632) out=(60998,10235) v=1
-# L1SRRD k=137 p=7 fr=f036d8f7 srin=62a0d941
-# L1ST k=137 p=7 rp0=62a0d941 f0=1 fr=f036d8f7 srin=62a0d941 x=(10235,-4538) out=d3b71953 sre=242 sim=-8580 pre=-9993 pim=-4042 satre=0 satim=0
-# L1ST k=138 p=8 rp0=1b3b3b4d f0=1 fr=e2ea538d srin=1b3b3b4d x=(11626,11120) out=f036d8f7 sre=33015 sim=3674 pre=21389 pim=-7446 satre=0 satim=0
-# L1SRRD k=138 p=8 fr=e2ea538d srin=1b3b3b4d
 # CYC t=1465000 L0: p=9 fh=1 x=(23760,-28769) out=(11120,11626) v=1
 # CYC t=1475000 L0: p=10 fh=1 x=(-17761,2598) out=(34549,10651) v=1
-# L1SRRD k=139 p=9 fr=24d4f1f0 srin=304f2786
-# L1ST k=139 p=9 rp0=304f2786 f0=1 fr=24d4f1f0 srin=304f2786 x=(10651,-30987) out=e2ea538d sre=7051 sim=-21559 pre=-3600 pim=9428 satre=0 satim=0
-# L1ST k=140 p=10 rp0=ee4627fb f0=1 fr=fcfd07b7 srin=ee4627fb x=(21938,6452) out=24d4f1f0 sre=23913 sim=5681 pre=1975 pim=-771 satre=0 satim=0
-# L1SRRD k=140 p=10 fr=fcfd07b7 srin=ee4627fb
 # CYC t=1485000 L0: p=11 fh=1 x=(-27627,-5334) out=(6452,21938) v=1
 # CYC t=1495000 L0: p=12 fh=1 x=(14760,-4187) out=(51059,14543) v=1
-# L1SRRD k=141 p=11 fr=b9f70b17 srin=2b702d6a
-# L1ST k=141 p=11 rp0=2b702d6a f0=1 fr=b9f70b17 srin=2b702d6a x=(14543,-14477) out=fcfd07b7 sre=17382 sim=-32406 pre=2839 pim=-17929 satre=0 satim=0
-# L1ST k=142 p=12 rp0=86f5299b f0=1 fr=051ce5a9 srin=86f5299b x=(12426,-11490) out=b9f70b17 sre=5683 sim=-10182 pre=-6743 pim=1308 satre=0 satim=0
-# L1SRRD k=142 p=12 fr=051ce5a9 srin=86f5299b
 # CYC t=1505000 L0: p=13 fh=1 x=(-14857,-32200) out=(54046,12426) v=1
 # CYC t=1515000 L0: p=14 fh=1 x=(18094,-12322) out=(21550,59753) v=1
-# L1SRRD k=143 p=13 fr=0264f068 srin=193455b2
-# L1ST k=143 p=13 rp0=193455b2 f0=1 fr=0264f068 srin=193455b2 x=(-5783,21550) out=051ce5a9 sre=-9775 sim=22162 pre=-3992 pim=612 satre=0 satim=0
-# L1ST k=144 p=14 rp0=c77338cf f0=1 fr=f2e1e69f srin=c77338cf x=(-19939,-24541) out=0264f068 sre=-26436 sim=-27900 pre=-6497 pim=-3359 satre=0 satim=0
-# L1SRRD k=144 p=14 fr=f2e1e69f srin=c77338cf
 # CYC t=1525000 L0: p=15 fh=1 x=(3541,-8565) out=(40995,45597) v=1
 # CYC t=1535000 L0: p=16 fh=1 x=(28578,10024) out=(61168,61374) v=1
-# L1SRRD k=145 p=15 fr=0897431d srin=d31e308a
-# L1ST k=145 p=15 rp0=d31e308a f0=1 fr=0897431d srin=d31e308a x=(-4162,-4368) out=f2e1e69f sre=13019 sim=-2169 pre=17181 pim=2199 satre=0 satim=0
-# L1ST k=146 p=16 rp0=542ee969 f0=1 fr=ce0c19dd srin=542ee969 x=(-2862,5416) out=0897431d sre=3759 sim=-7372 pre=6621 pim=-12788 satre=0 satim=0
-# L1SRRD k=146 p=16 fr=ce0c19dd srin=542ee969
 # CYC t=1545000 L0: p=17 fh=1 x=(13454,-660) out=(5416,62674) v=1
 # CYC t=1555000 L0: p=18 fh=1 x=(-9374,16712) out=(12860,54690) v=1
-# L1SRRD k=147 p=17 fr=fdad1a4e srin=a023b21d
-# L1ST k=147 p=17 rp0=a023b21d f0=1 fr=fdad1a4e srin=a023b21d x=(-10846,12860) out=f19a0758 sre=-4112 sim=12265 pre=6734 pim=-595 satre=0 satim=0
-# L1ST k=148 p=18 rp0=eef0efbe f0=1 fr=3254dff0 srin=eef0efbe x=(23038,-16325) out=17f4f7f8 sre=14830 sim=-3441 pre=-8208 pim=12884 satre=0 satim=0
-# L1SRRD k=148 p=18 fr=3254dff0 srin=eef0efbe
 # CYC t=1565000 L0: p=19 fh=1 x=(-30617,-4984) out=(49211,23038) v=1
 # CYC t=1575000 L0: p=20 fh=1 x=(-11008,27559) out=(63567,42647) v=1
-# L1SRRD k=149 p=19 fr=54dec16a srin=dc721285
-# L1ST k=149 p=19 rp0=00000000 f0=0 fr=54dec16a srin=dc721285 x=(-22889,-1969) out=f9481cf7 sre=-38911 sim=19757 pre=-16022 pim=21726 satre=0 satim=0
-# L1ST k=150 p=20 rp0=00000000 f0=0 fr=62a0d941 srin=df871c8d x=(-7040,25267) out=2696b400 sre=-16959 sim=50515 pre=-9919 pim=25248 satre=0 satim=0
-# L1SRRD k=150 p=20 fr=62a0d941 srin=df871c8d
 # CYC t=1585000 L0: p=21 fh=1 x=(-13801,-5617) out=(25267,58496) v=1
 # CYC t=1595000 L0: p=22 fh=1 x=(-20233,-12914) out=(7480,47059) v=1
-# L1SRRD k=151 p=21 fr=1b3b3b4d srin=4c0fdd73
-# L1ST k=151 p=21 rp0=00000000 f0=0 fr=1b3b3b4d srin=4c0fdd73 x=(-18477,7480) out=62aadee0 sre=-3296 sim=14451 pre=15181 pim=6971 satre=0 satim=0
-# L1ST k=152 p=22 rp0=00000000 f0=0 fr=304f2786 srin=1f0724dd x=(-26237,-7464) out=1c3af990 sre=-16119 sim=4903 pre=10118 pim=12367 satre=0 satim=0
-# L1SRRD k=152 p=22 fr=304f2786 srin=1f0724dd
 # CYC t=1605000 L0: p=23 fh=1 x=(-31383,-23211) out=(58072,39299) v=1
 # CYC t=1615000 L0: p=24 fh=1 x=(32714,-26258) out=(59948,21571) v=1
-# L1SRRD k=153 p=23 fr=ee4627fb srin=03f3fbff
-# L1ST k=153 p=23 rp0=00000000 f0=0 fr=ee4627fb srin=03f3fbff x=(21571,-5588) out=0994e084 sre=31806 sim=-10126 pre=10235 pim=-4538 satre=0 satim=0
-# L1ST k=154 p=24 rp0=00000000 f0=0 fr=2b702d6a srin=c8ca23b2 x=(14403,14411) out=ec393e1f sre=26029 sim=25531 pre=11626 pim=11120 satre=0 satim=0
-# L1SRRD k=154 p=24 fr=2b702d6a srin=c8ca23b2
 # CYC t=1625000 L0: p=25 fh=1 x=(121,153) out=(14411,14403) v=1
 # CYC t=1635000 L0: p=26 fh=1 x=(3379,-2492) out=(40432,5345) v=1
-# L1SRRD k=155 p=25 fr=86f5299b srin=cd393ef5
-# L1ST k=155 p=25 rp0=00000000 f0=0 fr=86f5299b srin=cd393ef5 x=(5345,-25104) out=31de32d6 sre=15996 sim=-56091 pre=10651 pim=-30987 satre=0 satim=0
-# L1ST k=156 p=26 rp0=00000000 f0=0 fr=193455b2 srin=161dfdb1 x=(12169,-15771) out=92721f3e sre=34107 sim=-9319 pre=21938 pim=6452 satre=0 satim=0
-# L1SRRD k=156 p=26 fr=193455b2 srin=161dfdb1
 # CYC t=1645000 L0: p=27 fh=1 x=(-30067,-23165) out=(49765,12169) v=1
 # CYC t=1655000 L0: p=28 fh=1 x=(14309,-2276) out=(51931,19391) v=1
-# L1SRRD k=157 p=27 fr=c77338cf srin=056cf992
-# L1ST k=157 p=27 rp0=00000000 f0=0 fr=c77338cf srin=056cf992 x=(19391,-13605) out=edcc429e sre=33934 sim=-28082 pre=14543 pim=-14477 satre=0 satim=0
-# L1ST k=158 p=28 rp0=00000000 f0=0 fr=d31e308a srin=f814f2b5 x=(18602,-1448) out=c9274247 sre=31028 sim=-12938 pre=12426 pim=-11490 satre=0 satim=0
-# L1SRRD k=158 p=28 fr=d31e308a srin=f814f2b5
 # CYC t=1665000 L0: p=29 fh=1 x=(13078,-18557) out=(64088,18602) v=1
 # CYC t=1675000 L0: p=30 fh=1 x=(11008,22927) out=(13000,49945) v=1
-# L1SRRD k=159 p=29 fr=542ee969 srin=ddc320cc
-# L1ST k=159 p=29 rp0=00000000 f0=0 fr=542ee969 srin=ddc320cc x=(-15591,13000) out=e6bb3c9a sre=-21374 sim=34550 pre=-5783 pim=21550 satre=0 satim=0
-# L1ST k=160 p=30 rp0=00000000 f0=0 fr=a023b21d srin=08d203d8 x=(15940,20946) out=437bd641 sre=-3999 sim=-3595 pre=-19939 pim=-24541 satre=0 satim=0
-# L1SRRD k=160 p=30 fr=a023b21d srin=08d203d8
 # CYC t=1685000 L0: p=31 fh=1 x=(-13630,-9218) out=(20946,15940) v=1
 # CYC t=1695000 L0: p=32 fh=0 x=(11832,-18597) out=(6267,56325) v=1
-# L1SRRD k=161 p=31 fr=eef0efbe srin=1666faa9
-# L1ST k=161 p=31 rp0=00000000 f0=0 fr=eef0efbe srin=1666faa9 x=(-9211,6267) out=f8faf830 sre=-13373 sim=1899 pre=-4162 pim=-4368 satre=0 satim=0
-# L1ST k=162 p=0 rp0=00000000 f0=0 fr=dc721285 srin=e779f95a x=(-19474,20760) out=03b6e5e2 sre=-14733 sim=11658 pre=4741 pim=-9102 satre=0 satim=0
-# L1SRRD k=162 p=0 fr=dc721285 srin=e779f95a
 # CYC t=1705000 L0: p=33 fh=0 x=(10175,-4786) out=(20760,46062) v=1
 # CYC t=1715000 L0: p=34 fh=0 x=(-3278,28164) out=(58760,8572) v=1
-# L1SRRD k=163 p=1 fr=df871c8d srin=6ce51ebe
-# L1ST k=163 p=1 rp0=00000000 f0=0 fr=df871c8d srin=6ce51ebe x=(8572,-6776) out=dc721285 sre=15881 sim=-15089 pre=7309 pim=-8313 satre=0 satim=0
-# L1ST k=164 p=2 rp0=00000000 f0=0 fr=4c0fdd73 srin=1273f247 x=(2046,13731) out=df871c8d sre=-6799 sim=33202 pre=-8845 pim=19471 satre=0 satim=0
-# L1SRRD k=164 p=2 fr=4c0fdd73 srin=1273f247
 # CYC t=1725000 L0: p=35 fh=0 x=(12302,28601) out=(13731,2046) v=1
 # CYC t=1735000 L0: p=36 fh=0 x=(8252,30541) out=(8976,24539) v=1
-# L1SRRD k=165 p=3 fr=1f0724dd srin=5118b3ee
-# L1ST k=165 p=3 rp0=5118b3ee f0=1 fr=1f0724dd srin=5118b3ee x=(24539,8976) out=4c0fdd73 sre=33976 sim=16919 pre=9437 pim=7943 satre=0 satim=0
-# L1ST k=166 p=4 rp0=e588217c f0=1 fr=03f3fbff srin=e588217c x=(3062,20158) out=1f0724dd sre=2037 sim=21169 pre=-1025 pim=1011 satre=0 satim=0
-# L1SRRD k=166 p=4 fr=03f3fbff srin=e588217c
 # CYC t=1745000 L0: p=37 fh=0 x=(6615,-6403) out=(20158,3062) v=1
 # CYC t=1755000 L0: p=38 fh=0 x=(22879,17075) out=(58324,47569) v=1
-# L1SRRD k=167 p=5 fr=c8ca23b2 srin=35a307fe
-# L1ST k=167 p=5 rp0=35a307fe f0=1 fr=c8ca23b2 srin=35a307fe x=(-17967,-7212) out=03f3fbff sre=-8829 sim=-21346 pre=9138 pim=-14134 satre=0 satim=0
-# L1ST k=168 p=6 rp0=23105fdb f0=1 fr=cd393ef5 srin=23105fdb x=(-3976,14552) out=c8ca23b2 sre=12141 sim=1553 pre=16117 pim=-12999 satre=0 satim=0
-# L1SRRD k=168 p=6 fr=cd393ef5 srin=23105fdb
 # CYC t=1765000 L0: p=39 fh=0 x=(26492,-15400) out=(14552,61560) v=1
 # CYC t=1775000 L0: p=40 fh=0 x=(-1422,11993) out=(16572,578) v=1
-# L1SRRD k=169 p=7 fr=161dfdb1 srin=4ebe0bf6
-# L1ST k=169 p=7 rp0=4ebe0bf6 f0=1 fr=161dfdb1 srin=4ebe0bf6 x=(578,16572) out=cd393ef5 sre=-13 sim=22233 pre=-591 pim=5661 satre=0 satim=0
-# L1ST k=170 p=8 rp0=e3d4b9d1 f0=1 fr=056cf992 srin=e3d4b9d1 x=(-9320,6362) out=161dfdb1 sre=-10966 sim=7750 pre=-1646 pim=1388 satre=0 satim=0
-# L1SRRD k=170 p=8 fr=056cf992 srin=e3d4b9d1
 # CYC t=1785000 L0: p=41 fh=0 x=(9989,-18842) out=(6362,56216) v=1
 # CYC t=1795000 L0: p=42 fh=0 x=(16216,-28724) out=(16874,41730) v=1
-# L1SRRD k=171 p=9 fr=f814f2b5 srin=38d8f078
-# L1ST k=171 p=9 rp0=38d8f078 f0=1 fr=f814f2b5 srin=38d8f078 x=(-23806,16874) out=056cf992 sre=-27209 sim=14846 pre=-3403 pim=-2028 satre=0 satim=0
-# L1ST k=172 p=10 rp0=40bc0242 f0=1 fr=ddc320cc srin=40bc0242 x=(-13063,-772) out=f814f2b5 sre=-4667 sim=-9537 pre=8396 pim=-8765 satre=0 satim=0
-# L1SRRD k=172 p=10 fr=ddc320cc srin=40bc0242
 # CYC t=1805000 L0: p=43 fh=0 x=(-13867,708) out=(64764,52473) v=1
 # CYC t=1815000 L0: p=44 fh=0 x=(17707,8912) out=(44789,63223) v=1
-# L1SRRD k=173 p=11 fr=08d203d8 srin=18dadb98
-# L1ST k=173 p=11 rp0=18dadb98 f0=1 fr=08d203d8 srin=18dadb98 x=(-2313,-20747) out=ddc320cc sre=-1329 sim=-18489 pre=984 pim=2258 satre=0 satim=0
-# L1ST k=174 p=12 rp0=41eaa302 f0=1 fr=1666faa9 srin=41eaa302 x=(2362,16234) out=08d203d8 sre=995 sim=21968 pre=-1367 pim=5734 satre=0 satim=0
-# L1SRRD k=174 p=12 fr=1666faa9 srin=41eaa302
 # CYC t=1825000 L0: p=45 fh=0 x=(-27498,-16698) out=(16234,2362) v=1
 # CYC t=1835000 L0: p=46 fh=0 x=(-9881,-15113) out=(44358,41087) v=1
-# L1SRRD k=175 p=13 fr=e779f95a srin=fcfcccf9
-# L1ST k=175 p=13 rp0=fcfcccf9 f0=1 fr=e779f95a srin=fcfcccf9 x=(-24449,-21178) out=1666faa9 sre=-26151 sim=-27457 pre=-1702 pim=-6279 satre=0 satim=0
-# L1ST k=176 p=14 rp0=aef5f6f7 f0=1 fr=6ce51ebe srin=aef5f6f7 x=(-13718,4106) out=e779f95a sre=-5848 sim=31983 pre=7870 pim=27877 satre=0 satim=0
-# L1SRRD k=176 p=14 fr=6ce51ebe srin=aef5f6f7
 # CYC t=1845000 L0: p=47 fh=0 x=(15185,-19097) out=(4106,51818) v=1
 # CYC t=1855000 L0: p=48 fh=0 x=(12573,7053) out=(9363,51705) v=1
-# L1SRRD k=177 p=15 fr=1273f247 srin=3f6a093a
-# L1ST k=177 p=15 rp0=3f6a093a f0=1 fr=1273f247 srin=3f6a093a x=(-13831,9363) out=6ce51ebe sre=-17344 sim=14086 pre=-3513 pim=4723 satre=0 satim=0
-# L1ST k=178 p=16 rp0=ad46a07f f0=1 fr=5118b3ee srin=ad46a07f x=(8538,20576) out=1273f247 sre=-10936 sim=41336 pre=-19474 pim=20760 satre=0 satim=0
-# L1SRRD k=178 p=16 fr=5118b3ee srin=ad46a07f
 # CYC t=1865000 L0: p=49 fh=0 x=(-23784,-10732) out=(20576,8538) v=1
 # CYC t=1875000 L0: p=50 fh=0 x=(-3893,-6979) out=(60371,59840) v=1
-# L1SRRD k=179 p=17 fr=e588217c srin=100aca6a
-# L1ST k=179 p=17 rp0=100aca6a f0=1 fr=e588217c srin=100aca6a x=(-5696,-5165) out=50bceaa4 sre=2876 sim=-11941 pre=8572 pim=-6776 satre=0 satim=0
-# L1ST k=180 p=18 rp0=2493c9f9 f0=1 fr=35a307fe srin=2493c9f9 x=(4866,-6634) out=e8ae059e sre=6912 sim=7097 pre=2046 pim=13731 satre=0 satim=0
-# L1SRRD k=180 p=18 fr=35a307fe srin=2493c9f9
 # CYC t=1885000 L0: p=51 fh=0 x=(-24564,13786) out=(58902,4866) v=1
 # CYC t=1895000 L0: p=52 fh=0 x=(-31445,20146) out=(37946,4401) v=1
-# L1SRRD k=181 p=19 fr=23105fdb srin=005cc94a
-# L1ST k=181 p=19 rp0=00000000 f0=0 fr=23105fdb srin=005cc94a x=(4401,-27590) out=0ddc0d80 sre=28940 sim=-18614 pre=24539 pim=8976 satre=0 satim=0
-# L1ST k=182 p=20 rp0=00000000 f0=0 fr=4ebe0bf6 srin=f77a1ab8 x=(23852,-21226) out=dba53886 sre=26914 sim=-1068 pre=3062 pim=20158 satre=0 satim=0
-# L1SRRD k=182 p=20 fr=4ebe0bf6 srin=f77a1ab8
 # CYC t=1905000 L0: p=53 fh=0 x=(-21338,-25569) out=(44310,23852) v=1
 # CYC t=1915000 L0: p=54 fh=0 x=(20258,25025) out=(47966,49943) v=1
-# L1SRRD k=183 p=21 fr=e3d4b9d1 srin=26db0a22
-# L1ST k=183 p=21 rp0=00000000 f0=0 fr=e3d4b9d1 srin=26db0a22 x=(-15593,-17570) out=fdea3491 sre=-33560 sim=-24782 pre=-17967 pim=-7212 satre=0 satim=0
-# L1ST k=184 p=22 rp0=00000000 f0=0 fr=38d8f078 srin=25884862 x=(6056,12) out=cf99be74 sre=2080 sim=14564 pre=-3976 pim=14552 satre=0 satim=0
-# L1SRRD k=184 p=22 fr=38d8f078 srin=25884862
 # CYC t=1925000 L0: p=55 fh=0 x=(30940,6223) out=(12,6056) v=1
 # CYC t=1935000 L0: p=56 fh=0 x=(-11394,9574) out=(65314,57042) v=1
-# L1SRRD k=185 p=23 fr=40bc0242 srin=55de1c71
-# L1ST k=185 p=23 rp0=00000000 f0=0 fr=40bc0242 srin=55de1c71 x=(-8494,-222) out=1c720410 sre=-7916 sim=16350 pre=578 pim=16572 satre=0 satim=0
-# L1ST k=186 p=24 rp0=00000000 f0=0 fr=18dadb98 srin=0f180e3f x=(-8342,10660) out=1feff08a sre=-17662 sim=17022 pre=-9320 pim=6362 satre=0 satim=0
-# L1SRRD k=186 p=24 fr=18dadb98 srin=0f180e3f
 # CYC t=1945000 L0: p=57 fh=0 x=(28487,-27007) out=(10660,57194) v=1
 # CYC t=1955000 L0: p=58 fh=0 x=(-20464,-21778) out=(14304,52109) v=1
-# L1SRRD k=187 p=25 fr=41eaa302 srin=1cf812bd
-# L1ST k=187 p=25 rp0=00000000 f0=0 fr=41eaa302 srin=1cf812bd x=(-13427,14304) out=213fdd81 sre=-37233 sim=31178 pre=-23806 pim=16874 satre=0 satim=0
-# L1ST k=188 p=26 rp0=00000000 f0=0 fr=fcfcccf9 srin=f50523a1 x=(-12135,-8542) out=3ce5b748 sre=-25198 sim=-9314 pre=-13063 pim=-772 satre=0 satim=0
-# L1SRRD k=188 p=26 fr=fcfcccf9 srin=f50523a1
 # CYC t=1965000 L0: p=59 fh=0 x=(996,-26949) out=(56994,53401) v=1
 # CYC t=1975000 L0: p=60 fh=0 x=(-25838,12728) out=(51000,40479) v=1
-# L1SRRD k=189 p=27 fr=aef5f6f7 srin=01e9f79b
-# L1ST k=189 p=27 rp0=00000000 f0=0 fr=aef5f6f7 srin=01e9f79b x=(-25057,-14536) out=edcfcec9 sre=-27370 sim=-35283 pre=-2313 pim=-20747 satre=0 satim=0
-# L1ST k=190 p=28 rp0=00000000 f0=0 fr=3f6a093a srin=12e708e1 x=(5226,-5764) out=bb16ca8b sre=7588 sim=10470 pre=2362 pim=16234 satre=0 satim=0
-# L1SRRD k=190 p=28 fr=3f6a093a srin=12e708e1
 # CYC t=1985000 L0: p=61 fh=0 x=(-19459,1991) out=(59772,5226) v=1
 # CYC t=1995000 L0: p=62 fh=0 x=(19209,-3774) out=(62346,57253) v=1
-# L1SRRD k=191 p=29 fr=ad46a07f srin=fbde0eb7
-# L1ST k=191 p=29 rp0=00000000 f0=0 fr=ad46a07f srin=fbde0eb7 x=(-8283,-3190) out=14730ed2 sre=-32732 sim=-24368 pre=-24449 pim=-21178 satre=0 satim=0
-# L1ST k=192 p=30 rp0=00000000 f0=0 fr=100aca6a srin=e1cedd3c x=(9576,15108) out=d068c012 sre=-4142 sim=19214 pre=-13718 pim=4106 satre=0 satim=0
-# L1SRRD k=192 p=30 fr=100aca6a srin=e1cedd3c
 # CYC t=2005000 L0: p=63 fh=0 x=(-13569,-30802) out=(15108,9576) v=1
 # CYC t=2015000 L0: p=0 fh=1 x=(0,0) out=(51936,45526) v=1
-# L1SRRD k=193 p=31 fr=2493c9f9 srin=e5932256
-# L1ST k=193 p=31 rp0=00000000 f0=0 fr=2493c9f9 srin=e5932256 x=(-20010,-13600) out=2587f7e9 sre=-33841 sim=-4237 pre=-13831 pim=9363 satre=0 satim=0
-# L1ST k=194 p=0 rp0=00000000 f0=0 fr=005cc94a srin=2ec106bc x=(-877,8928) out=f7babde8 sre=-14883 sim=9020 pre=-14006 pim=92 satre=0 satim=0
-# L1SRRD k=194 p=0 fr=005cc94a srin=2ec106bc
 # CYC t=2025000 L0: p=1 fh=1 x=(0,0) out=(8928,64659) v=1
 # CYC t=2035000 L0: p=2 fh=1 x=(0,0) out=(47357,11632) v=1
-# L1SRRD k=195 p=1 fr=f77a1ab8 srin=254321cf
-# L1ST k=195 p=1 rp0=00000000 f0=0 fr=f77a1ab8 srin=254321cf x=(11632,-18179) out=005cc94a sre=18472 sim=-20361 pre=6840 pim=-2182 satre=0 satim=0
-# L1ST k=196 p=2 rp0=00000000 f0=0 fr=26db0a22 srin=d1a8fcea x=(-22298,21778) out=f77a1ab8 sre=-19704 sim=31725 pre=2594 pim=9947 satre=0 satim=0
-# L1SRRD k=196 p=2 fr=26db0a22 srin=d1a8fcea
 # CYC t=2045000 L0: p=3 fh=1 x=(0,0) out=(21778,43238) v=1
 # CYC t=2055000 L0: p=4 fh=1 x=(0,0) out=(63532,60683) v=1
-# L1SRRD k=197 p=3 fr=25884862 srin=22e0fc93
-# L1ST k=197 p=3 rp0=22e0fc93 f0=1 fr=25884862 srin=22e0fc93 x=(-4853,-2004) out=26db0a22 sre=13677 sim=7604 pre=18530 pim=9608 satre=0 satim=0
-# L1ST k=198 p=4 rp0=b8fd2d70 f0=1 fr=55de1c71 srin=b8fd2d70 x=(-20831,21515) out=25884862 sre=-13550 sim=43497 pre=7281 pim=21982 satre=0 satim=0
-# L1SRRD k=198 p=4 fr=55de1c71 srin=b8fd2d70
 # CYC t=2065000 L0: p=5 fh=1 x=(0,0) out=(21515,44705) v=1
 # CYC t=2075000 L0: p=6 fh=1 x=(0,0) out=(58792,48819) v=1
-# L1SRRD k=199 p=5 fr=0f180e3f srin=5512a8e6
-# L1ST k=199 p=5 rp0=5512a8e6 f0=1 fr=0f180e3f srin=5512a8e6 x=(-16717,-6744) out=55de1c71 sre=-13070 sim=-2880 pre=3647 pim=3864 satre=0 satim=0
-# L1SRRD k=200 p=6 fr=1cf812bd srin=f82ced0b
 # CYC t=2085000 L0: p=7 fh=1 x=(0,0) out=(4771,43406) v=1
 # CYC t=2095000 L0: p=8 fh=1 x=(0,0) out=(47732,6058) v=1
-# L1SRRD k=201 p=7 fr=f50523a1 srin=540baea1
-# L1SRRD k=202 p=8 fr=01e9f79b srin=e5a8beb3
 # CYC t=2105000 L0: p=9 fh=1 x=(0,0) out=(20575,55970) v=1
 # CYC t=2115000 L0: p=10 fh=1 x=(0,0) out=(8205,2174) v=1
-# L1SRRD k=203 p=9 fr=12e708e1 srin=12a3a98e
-# L1SRRD k=204 p=10 fr=fbde0eb7 srin=ba7417aa
 # CYC t=2125000 L0: p=11 fh=1 x=(0,0) out=(43076,60111) v=1
 # CYC t=2135000 L0: p=12 fh=1 x=(0,0) out=(64957,58044) v=1
-# L1SRRD k=205 p=11 fr=e1cedd3c srin=505fdaa2
-# L1SRRD k=206 p=12 fr=e5932256 srin=200d087e
 # CYC t=2145000 L0: p=13 fh=1 x=(0,0) out=(5487,61668) v=1
 # CYC t=2155000 L0: p=14 fh=1 x=(0,0) out=(9252,3798) v=1
-# L1SRRD k=207 p=13 fr=2ec106bc srin=a844eacf
-# L1SRRD k=208 p=14 fr=254321cf srin=fdbde2bc
 # CYC t=2165000 L0: p=15 fh=1 x=(0,0) out=(1360,13991) v=1
 # CYC t=2175000 L0: p=16 fh=1 x=(0,0) out=(59725,60258) v=1
-# L1SRRD k=209 p=15 fr=d1a8fcea srin=156ff0e4
-# L1SRRD k=210 p=16 fr=22e0fc93 srin=24240ed6
 # CYC t=2185000 L0: p=17 fh=1 x=(0,0) out=(64050,8002) v=1
 # CYC t=2195000 L0: p=18 fh=1 x=(0,0) out=(58699,18036) v=1
-# L1SRRD k=211 p=17 fr=b8fd2d70 srin=055036a7
-# L1SRRD k=212 p=18 fr=5512a8e6 srin=e94deb62
 # CYC t=2205000 L0: p=19 fh=1 x=(0,0) out=(54453,60537) v=1
 # CYC t=2215000 L0: p=20 fh=1 x=(0,0) out=(9859,65364) v=1
-# L1SRRD k=213 p=19 fr=f82ced0b srin=1457eea9
-# L1SRRD k=214 p=20 fr=540baea1 srin=ecb7ef69
 # CYC t=2225000 L0: p=21 fh=1 x=(0,0) out=(58201,8022) v=1
 # CYC t=2235000 L0: p=22 fh=1 x=(0,0) out=(54962,64157) v=1
-# L1SRRD k=215 p=21 fr=e5a8beb3 srin=483af959
-# L1SRRD k=216 p=22 fr=12a3a98e srin=f1d0eb87
 # CYC t=2245000 L0: p=23 fh=1 x=(0,0) out=(27020,59241) v=1
 # CYC t=2255000 L0: p=24 fh=1 x=(0,0) out=(31145,50784) v=1
-# L1SRRD k=217 p=23 fr=ba7417aa srin=4fb1ffff
-# L1SRRD k=218 p=24 fr=505fdaa2 srin=1d10f594
 # CYC t=2265000 L0: p=25 fh=1 x=(0,0) out=(62610,28263) v=1
 # CYC t=2275000 L0: p=26 fh=1 x=(0,0) out=(2349,46041) v=1
-# L1SRRD k=219 p=25 fr=200d087e srin=0bf2cc04
-# L1SRRD k=220 p=26 fr=a844eacf srin=c57caa2a
 # CYC t=2285000 L0: p=27 fh=1 x=(0,0) out=(50266,64141) v=1
 # CYC t=2295000 L0: p=28 fh=1 x=(0,0) out=(12806,56546) v=1
-# L1SRRD k=221 p=27 fr=fdbde2bc srin=49e22de6
-# L1SRRD k=222 p=28 fr=156ff0e4 srin=d44202f6
 # CYC t=2305000 L0: p=29 fh=1 x=(0,0) out=(49861,14613) v=1
 # CYC t=2315000 L0: p=30 fh=1 x=(0,0) out=(52950,14554) v=1
-# L1SRRD k=223 p=29 fr=24240ed6 srin=0ca5f60a
-# L1SRRD k=224 p=30 fr=055036a7 srin=0c17e8a3
 # CYC t=2325000 L0: p=31 fh=1 x=(0,0) out=(1417,51642) v=1
 # CYC t=2335000 L0: p=32 fh=0 x=(0,0) out=(64509,54793) v=1
-# L1SRRD k=225 p=31 fr=e94deb62 srin=fc4c36c0
-# L1SRRD k=226 p=0 fr=1457eea9 srin=e835292a
 # CYC t=2345000 L0: p=33 fh=0 x=(0,0) out=(0,0) v=1
 # CYC t=2355000 L0: p=34 fh=0 x=(0,0) out=(0,0) v=1
-# L1SRRD k=227 p=1 fr=ecb7ef69 srin=eb43cda4
-# L1SRRD k=228 p=2 fr=483af959 srin=0715f3b5
 # CYC t=2365000 L0: p=35 fh=0 x=(0,0) out=(0,0) v=1
 # CYC t=2375000 L0: p=36 fh=0 x=(0,0) out=(0,0) v=1
-# L1SRRD k=229 p=3 fr=f1d0eb87 srin=00000000
-# L1SRRD k=230 p=4 fr=4fb1ffff srin=00000000
 # CYC t=2385000 L0: p=37 fh=0 x=(0,0) out=(0,0) v=1
 # CYC t=2395000 L0: p=38 fh=0 x=(0,0) out=(0,0) v=1
-# L1SRRD k=231 p=5 fr=1d10f594 srin=00000000
-# L1SRRD k=232 p=6 fr=0bf2cc04 srin=00000000
 # CYC t=2405000 L0: p=39 fh=0 x=(0,0) out=(0,0) v=1
 # CYC t=2415000 L0: p=40 fh=0 x=(0,0) out=(0,0) v=1
-# L1SRRD k=233 p=7 fr=c57caa2a srin=00000000
-# L1SRRD k=234 p=8 fr=49e22de6 srin=00000000
 # CYC t=2425000 L0: p=41 fh=0 x=(0,0) out=(0,0) v=1
 # CYC t=2435000 L0: p=42 fh=0 x=(0,0) out=(0,0) v=1
-# L1SRRD k=235 p=9 fr=d44202f6 srin=00000000
-# L1SRRD k=236 p=10 fr=0ca5f60a srin=00000000
 # CYC t=2445000 L0: p=43 fh=0 x=(0,0) out=(0,0) v=1
 # CYC t=2455000 L0: p=44 fh=0 x=(0,0) out=(0,0) v=1
-# L1SRRD k=237 p=11 fr=0c17e8a3 srin=00000000
-# L1SRRD k=238 p=12 fr=fc4c36c0 srin=00000000
 # CYC t=2465000 L0: p=45 fh=0 x=(0,0) out=(0,0) v=1
 # CYC t=2475000 L0: p=46 fh=0 x=(0,0) out=(0,0) v=1
-# L1SRRD k=239 p=13 fr=e835292a srin=00000000
-# L1SRRD k=240 p=14 fr=eb43cda4 srin=00000000
 # CYC t=2485000 L0: p=47 fh=0 x=(0,0) out=(0,0) v=1
 # CYC t=2495000 L0: p=48 fh=0 x=(0,0) out=(0,0) v=1
-# L1SRRD k=241 p=15 fr=0715f3b5 srin=00000000
-# L1SRRD k=242 p=16 fr=00000000 srin=00000000
 # CYC t=2505000 L0: p=49 fh=0 x=(0,0) out=(0,0) v=1
 # CYC t=2515000 L0: p=50 fh=0 x=(0,0) out=(0,0) v=1
-# L1SRRD k=243 p=17 fr=00000000 srin=00000000
-# L1SRRD k=244 p=18 fr=00000000 srin=00000000
 # CYC t=2525000 L0: p=51 fh=0 x=(0,0) out=(0,0) v=1
 # CYC t=2535000 L0: p=52 fh=0 x=(0,0) out=(0,0) v=1
-# L1SRRD k=245 p=19 fr=00000000 srin=00000000
-# L1SRRD k=246 p=20 fr=00000000 srin=00000000
 # CYC t=2545000 L0: p=53 fh=0 x=(0,0) out=(0,0) v=1
 # CYC t=2555000 L0: p=54 fh=0 x=(0,0) out=(0,0) v=1
-# L1SRRD k=247 p=21 fr=00000000 srin=00000000
-# L1SRRD k=248 p=22 fr=00000000 srin=00000000
 # CYC t=2565000 L0: p=55 fh=0 x=(0,0) out=(0,0) v=1
 # CYC t=2575000 L0: p=56 fh=0 x=(0,0) out=(0,0) v=1
-# L1SRRD k=249 p=23 fr=00000000 srin=00000000
-# L1SRRD k=250 p=24 fr=00000000 srin=00000000
 # CYC t=2585000 L0: p=57 fh=0 x=(0,0) out=(0,0) v=1
 # CYC t=2595000 L0: p=58 fh=0 x=(0,0) out=(0,0) v=1
-# L1SRRD k=251 p=25 fr=00000000 srin=00000000
-# L1SRRD k=252 p=26 fr=00000000 srin=00000000
 # CYC t=2605000 L0: p=59 fh=0 x=(0,0) out=(0,0) v=1
 # CYC t=2615000 L0: p=60 fh=0 x=(0,0) out=(0,0) v=1
-# L1SRRD k=253 p=27 fr=00000000 srin=00000000
-# L1SRRD k=254 p=28 fr=00000000 srin=00000000
 # CYC t=2625000 L0: p=61 fh=0 x=(0,0) out=(0,0) v=1
 # CYC t=2635000 L0: p=62 fh=0 x=(0,0) out=(0,0) v=1
-# L1SRRD k=255 p=29 fr=00000000 srin=00000000
-# L1SRRD k=256 p=30 fr=00000000 srin=00000000
 # CYC t=2645000 L0: p=63 fh=0 x=(0,0) out=(0,0) v=1
 # CYC t=2655000 L0: p=0 fh=1 x=(0,0) out=(0,0) v=1
-# L1SRRD k=257 p=31 fr=00000000 srin=00000000
-# L1SRRD k=258 p=0 fr=00000000 srin=00000000
 # CYC t=2665000 L0: p=1 fh=1 x=(0,0) out=(0,0) v=1
 # CYC t=2675000 L0: p=2 fh=1 x=(0,0) out=(0,0) v=1
-# L1SRRD k=259 p=1 fr=00000000 srin=00000000
 # CYC t=2685000 L0: p=3 fh=1 x=(0,0) out=(0,0) v=1
 # CYC t=2695000 L0: p=4 fh=1 x=(0,0) out=(0,0) v=1
 # CYC t=2705000 L0: p=5 fh=1 x=(0,0) out=(0,0) v=1
@@ -926,16 +466,16 @@
 # CYC t=3975000 L0: p=0 fh=1 x=(0,0) out=(0,0) v=1
 # CYC t=3985000 L0: p=0 fh=1 x=(0,0) out=(0,0) v=1
 # TB: aligned (deterministic off=0)
-# TB mismatch at 0: got 0360ed0c exp 00ad0006
-# TB mismatch at 1: got 14e00f6e exp 07110ad2
-# TB mismatch at 2: got 0bcc04a8 exp 0f88fc19
-# TB mismatch at 3: got fd0a01c2 exp 00e0f5fd
-# TB mismatch at 4: got 0d10f320 exp 08650550
-# TB mismatch at 5: got 02daf4ae exp 0cc10f8c
-# TB mismatch at 6: got f1e6fde1 exp ef3cfab2
-# TB mismatch at 7: got 1618fb81 exp fa2200b4
+# TB mismatch at 0: got f96efbbc exp 00ad0006
+# TB mismatch at 1: got 0963027f exp 07110ad2
+# TB mismatch at 2: got fc9714eb exp 0f88fc19
+# TB mismatch at 3: got 0b1509ae exp 00e0f5fd
+# TB mismatch at 4: got 076fec6a exp 08650550
+# TB mismatch at 5: got ed94f724 exp 0cc10f8c
+# TB mismatch at 6: got ec58edb8 exp ef3cfab2
+# TB mismatch at 7: got 0ebc00a0 exp fa2200b4
 # FFT TOP SELF-CHECK FAIL (M=6, 192 errors)
-# ** Note: $finish    : tb/tb_fft_top.v(253)
+# ** Note: $finish    : tb/tb_fft_top.v(232)
 #    Time: 3985 ns  Iteration: 1  Instance: /tb_fft_top
-# End time: 02:31:30 on Nov 05,2026, Elapsed time: 0:00:01
+# End time: 02:37:56 on Nov 05,2026, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
