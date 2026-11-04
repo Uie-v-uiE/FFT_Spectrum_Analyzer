@@ -10,16 +10,16 @@ z2
 cModel Technology
 Z0 dD:/Xilinx/Harness/Project/new_prj/k5p-fft-accelerator
 T_opt
-!s110 1793818891
-VhSAB[KN>j<4lYSPN]gQ8V0
+Z1 !s110 1793819830
+VO2c67ni5HWXAQ0Qg1UB:V0
 04 10 4 work tb_fft_top fast 0
-=1-00e04c167f20-6aeb810a-3bf-699c
+=1-00e04c167f20-6aeb84b6-31d-1f98
 o-quiet -auto_acc_if_foreign -work work -g M_P=6 -g NAT_P=0
-Z1 tCvgOpt 0
+Z2 tCvgOpt 0
 n@_opt
 OL;O;2020.4;71
 vfft_cmult3
-Z2 !s110 1793818890
+R1
 !i10b 1
 !s100 f6GPeHPzEakajV^5MV0MK3
 Z3 !s11b Dg1SIo80bB@j0V0VzS_@n1
@@ -28,31 +28,31 @@ R0
 w1793814574
 8rtl/fft_cmult3.v
 Frtl/fft_cmult3.v
-!i122 0
+!i122 26
 L0 8 60
 Z4 VDg1SIo80bB@j0V0VzS_@n1
 Z5 OL;L;2020.4;71
 r1
 !s85 0
 31
-Z6 !s108 1793818890.000000
+Z6 !s108 1793819830.000000
 Z7 !s107 tb/tb_fft_top.v|rtl/fft_top.v|rtl/fft_reorder.v|rtl/fft_stage.v|rtl/fft_cmult3.v|
 Z8 !s90 rtl/fft_cmult3.v|rtl/fft_stage.v|rtl/fft_reorder.v|rtl/fft_top.v|tb/tb_fft_top.v|
 !i113 0
 Z9 o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
-R1
-vfft_reorder
 R2
+vfft_reorder
+R1
 !i10b 1
-!s100 D5bflNazoYe713KY1f41D1
+!s100 iP1DLR0YlKV8U59lS9ZEk1
 R3
-I`9gb06ACR4He1KXZT><FI0
+Il@R3NcI_Kd[PZzA?P7_iI0
 R0
-w1793725805
+Z10 w1793819610
 8rtl/fft_reorder.v
 Frtl/fft_reorder.v
-!i122 0
-L0 6 90
+!i122 26
+L0 6 91
 R4
 R5
 r1
@@ -63,19 +63,19 @@ R7
 R8
 !i113 0
 R9
-R1
-vfft_stage
 R2
+vfft_stage
+R1
 !i10b 1
-!s100 =ldQ6>L6GH@bjEHfTO0Vz1
+!s100 9C@i1KeYDfC5WTVMo;>i72
 R3
-IDB2L?WeS`9kCgW6CSe=B32
+IDXF?E4zY=J[GJ0VCcn`G03
 R0
-w1793818503
+w1793819716
 8rtl/fft_stage.v
 Frtl/fft_stage.v
-!i122 0
-L0 17 205
+!i122 26
+L0 17 215
 R4
 R5
 r1
@@ -86,19 +86,19 @@ R7
 R8
 !i113 0
 R9
-R1
-vfft_top
 R2
+vfft_top
+R1
 !i10b 1
-!s100 Jzh@M5QQe3chJe;^XXNWK2
+!s100 Mz@3iE=eR55YZ=oH?QDcj2
 R3
-IW[^0z5n_?X8L`:gHdk4Oa2
+I=DmD]P8Gc^L?ZZj1`V3^h2
 R0
-Z10 w1793818333
+w1793819829
 8rtl/fft_top.v
 Frtl/fft_top.v
-!i122 0
-L0 13 101
+!i122 26
+L0 13 104
 R4
 R5
 r1
@@ -109,19 +109,19 @@ R7
 R8
 !i113 0
 R9
-R1
-vtb_fft_top
 R2
+vtb_fft_top
+R1
 !i10b 1
-!s100 i6I3daW]QP>8IE2Q5=L^n1
+!s100 ahh8fUX`TkbFC1f[Y]HH60
 R3
-If[If;f^ZZoKU<N7BC3fSJ1
+IczVDYHi^Ro<6N:NbFkBZI2
 R0
 R10
 8tb/tb_fft_top.v
 Ftb/tb_fft_top.v
-!i122 0
-L0 8 234
+!i122 26
+L0 8 244
 R4
 R5
 r1
@@ -132,4 +132,4 @@ R7
 R8
 !i113 0
 R9
-R1
+R2
