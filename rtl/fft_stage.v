@@ -45,7 +45,7 @@ module fft_stage #(
     endfunction
 
     localparam PW = clog2p1(R);
-    localparam K  = L;                         // 本级输入相对全局推进的延迟拍数
+    localparam K  = 0;                         // K=0 baseline: verified off=L / err=2^L pattern (L0 bit-exact)
     localparam PINIT_I = (R - (K % R)) % R;
     localparam [PW-1:0] PINIT = PINIT_I;
     localparam [PW-1:0] R_M1 = R - 1;
