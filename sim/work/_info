@@ -10,10 +10,10 @@ z2
 cModel Technology
 Z0 dD:/Xilinx/Harness/Project/new_prj/k5p-fft-accelerator
 T_opt
-Z1 !s110 1793891885
-VjX^WoacF^Vk?NDGlLC8OW2
+Z1 !s110 1793892784
+VGQ1j?lU9iT>n0T;B>ZISc2
 04 10 4 work tb_fft_top fast 0
-=1-00e04c167f20-6aec9e2d-19f-4814
+=1-00e04c167f20-6aeca1b0-231-594
 o-quiet -auto_acc_if_foreign -work work -g M_P=6 -g NAT_P=0
 Z2 tCvgOpt 0
 n@_opt
@@ -28,14 +28,14 @@ R0
 w1793814574
 8rtl/fft_cmult3.v
 Frtl/fft_cmult3.v
-!i122 34
+!i122 38
 L0 8 60
 Z4 VDg1SIo80bB@j0V0VzS_@n1
 Z5 OL;L;2020.4;71
 r1
 !s85 0
 31
-Z6 !s108 1793891885.000000
+Z6 !s108 1793892784.000000
 Z7 !s107 tb/tb_fft_top.v|rtl/fft_top.v|rtl/fft_reorder.v|rtl/fft_stage.v|rtl/fft_cmult3.v|
 Z8 !s90 rtl/fft_cmult3.v|rtl/fft_stage.v|rtl/fft_reorder.v|rtl/fft_top.v|tb/tb_fft_top.v|
 !i113 0
@@ -51,7 +51,7 @@ R0
 Z10 w1793891867
 8rtl/fft_reorder.v
 Frtl/fft_reorder.v
-!i122 34
+!i122 38
 L0 6 91
 R4
 R5
@@ -74,7 +74,7 @@ R0
 R10
 8rtl/fft_stage.v
 Frtl/fft_stage.v
-!i122 34
+!i122 38
 L0 17 215
 R4
 R5
@@ -94,10 +94,10 @@ R1
 R3
 I=DmD]P8Gc^L?ZZj1`V3^h2
 R0
-R10
+w1793892783
 8rtl/fft_top.v
 Frtl/fft_top.v
-!i122 34
+!i122 38
 L0 13 104
 R4
 R5
@@ -117,10 +117,10 @@ R1
 R3
 IczVDYHi^Ro<6N:NbFkBZI2
 R0
-w1793891884
+w1793892579
 8tb/tb_fft_top.v
 Ftb/tb_fft_top.v
-!i122 34
+!i122 38
 L0 8 244
 R4
 R5
