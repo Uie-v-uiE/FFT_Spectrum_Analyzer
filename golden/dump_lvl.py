@@ -52,10 +52,8 @@ with open("../vectors/exp1_sr.hex", "w") as fo:
     for rd_v, wr_v in zip(lv.sr_rd_log, lv.sr_wr_log):
         fo.write(("%08X %08X" + chr(10)) % ((wr_v[1] & 0xFFFF) << 16 | (wr_v[0] & 0xFFFF),
                                             (rd_v[1] & 0xFFFF) << 16 | (rd_v[0] & 0xFFFF)))
-# 第六轮实测:RTL 第 L 级采集流相对模型重放流早 L 拍(got[k] = 黄金[k+L])
-# 期望流按级左移 L,使逐级对账归一(只剩真值错可见)
 for li in range(M):
     with open("../vectors/rtl_lvl%d.hex" % li, "w") as fo:
-        for re, im in outstreams[li][li:]:
+        for re, im in outstreams[li]:
             fo.write(("%04X%04X" + chr(10)) % (im & 0xFFFF, re & 0xFFFF))
 print("rtl-timed per-level streams:", [len(v) for v in outstreams])
