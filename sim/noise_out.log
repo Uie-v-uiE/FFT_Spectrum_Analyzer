@@ -3,34 +3,33 @@ Reading pref.tcl
 # 2020.4
 
 # do sim/fft_noise.do
-# ** Warning: (vlib-34) Library already exists at "sim/work".
-# Errors: 0, Warnings: 1
 # Model Technology ModelSim SE-64 vmap 2020.4 Lib Mapping Utility 2020.10 Oct 13 2020
 # vmap work sim/work 
 # Modifying modelsim.ini
 # Model Technology ModelSim SE-64 vlog 2020.4 Compiler 2020.10 Oct 13 2020
-# Start time: 00:25:15 on Nov 06,2026
+# Start time: 00:28:55 on Nov 06,2026
 # vlog rtl/fft_cmult3.v rtl/fft_stage.v rtl/fft_reorder.v rtl/fft_top.v tb/tb_fft_top.v 
 # -- Compiling module fft_cmult3
 # -- Compiling module fft_stage
 # -- Compiling module fft_reorder
 # -- Compiling module fft_top
 # -- Compiling module tb_fft_top
-# ** Warning: tb/tb_fft_top.v(198): (vlog-2643) Unterminated string literal continues onto next line.
-# ** Warning: tb/tb_fft_top.v(204): (vlog-2643) Unterminated string literal continues onto next line.
-# ** Warning: tb/tb_fft_top.v(208): (vlog-2643) Unterminated string literal continues onto next line.
-# ** Warning: tb/tb_fft_top.v(212): (vlog-2643) Unterminated string literal continues onto next line.
-# ** Warning: tb/tb_fft_top.v(216): (vlog-2643) Unterminated string literal continues onto next line.
-# ** Warning: tb/tb_fft_top.v(220): (vlog-2643) Unterminated string literal continues onto next line.
-# ** Warning: tb/tb_fft_top.v(224): (vlog-2643) Unterminated string literal continues onto next line.
+# ** Warning: tb/tb_fft_top.v(71): (vlog-2643) Unterminated string literal continues onto next line.
+# ** Warning: tb/tb_fft_top.v(213): (vlog-2643) Unterminated string literal continues onto next line.
+# ** Warning: tb/tb_fft_top.v(219): (vlog-2643) Unterminated string literal continues onto next line.
+# ** Warning: tb/tb_fft_top.v(223): (vlog-2643) Unterminated string literal continues onto next line.
+# ** Warning: tb/tb_fft_top.v(227): (vlog-2643) Unterminated string literal continues onto next line.
+# ** Warning: tb/tb_fft_top.v(231): (vlog-2643) Unterminated string literal continues onto next line.
+# ** Warning: tb/tb_fft_top.v(235): (vlog-2643) Unterminated string literal continues onto next line.
+# ** Warning: tb/tb_fft_top.v(239): (vlog-2643) Unterminated string literal continues onto next line.
 # 
 # Top level modules:
 # 	tb_fft_top
-# End time: 00:25:15 on Nov 06,2026, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 7
+# End time: 00:28:55 on Nov 06,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 8
 # vsim -c work.tb_fft_top "+INFILE=vectors/only_noise_in.hex" "+OUTFILE=vectors/only_noise_out.hex" -do "run -all; quit -f" -gM_P=6 -gNAT_P=0 
-# Start time: 00:25:15 on Nov 06,2026
-# ** Note: (vsim-8009) Loading existing optimized design _opt
+# Start time: 00:28:55 on Nov 06,2026
+# ** Note: (vsim-3812) Design is being optimized...
 # //  ModelSim SE-64 2020.4 Oct 13 2020
 # //
 # //  Copyright 1991-2020 Mentor Graphics Corporation
@@ -53,291 +52,551 @@ Reading pref.tcl
 # Loading work.fft_stage(fast__5)
 # run -all
 # TB: M=6 in=192 exp=192 gap=0 natural=0 seed=7
+# L1ST k=0 x_im=0 pr_im=0 s_im=0 simsa=0 out=000000000
 # CYC t=85000 L0: p=0 fh=1 x=(0,0) out=(0,0) v=0
 # CYC t=95000 L0: p=0 fh=1 x=(8058,12578) out=(0,0) v=0
+# L1ST k=1 x_im=0 pr_im=0 s_im=0 simsa=0 out=000000000
+# L1ST k=2 x_im=0 pr_im=0 s_im=0 simsa=0 out=000000000
 # CYC t=105000 L0: p=1 fh=1 x=(30855,-17749) out=(0,0) v=1
 # CYC t=115000 L0: p=2 fh=1 x=(-14807,11620) out=(0,0) v=1
+# L1ST k=3 x_im=0 pr_im=0 s_im=0 simsa=0 out=000000000
+# L1ST k=4 x_im=0 pr_im=0 s_im=0 simsa=0 out=000000000
 # CYC t=125000 L0: p=3 fh=1 x=(-22433,21232) out=(0,0) v=1
 # CYC t=135000 L0: p=4 fh=1 x=(8612,13463) out=(0,0) v=1
+# L1ST k=5 x_im=0 pr_im=0 s_im=0 simsa=0 out=000000000
+# L1ST k=6 x_im=0 pr_im=0 s_im=0 simsa=0 out=000000000
 # CYC t=145000 L0: p=5 fh=1 x=(7466,-10534) out=(0,0) v=1
-# PROBE t=155000 L5 cap#0 val=00000000 (pre-edge valid)
+# PROBE t=155000 L5 cap#0 val=000000000 (pre-edge valid)
 # CYC t=155000 L0: p=6 fh=1 x=(-24961,27941) out=(0,0) v=1
-# PROBE t=165000 L5 cap#1 val=00000000 (pre-edge valid)
+# L1ST k=7 x_im=0 pr_im=0 s_im=0 simsa=0 out=000000000
+# L1ST k=8 x_im=0 pr_im=0 s_im=0 simsa=0 out=000000000
+# PROBE t=165000 L5 cap#1 val=000000000 (pre-edge valid)
 # CYC t=165000 L0: p=7 fh=1 x=(17723,28996) out=(0,0) v=1
-# PROBE t=175000 L5 cap#2 val=00000000 (pre-edge valid)
+# PROBE t=175000 L5 cap#2 val=000000000 (pre-edge valid)
 # CYC t=175000 L0: p=8 fh=1 x=(13561,17875) out=(0,0) v=1
-# PROBE t=185000 L5 cap#3 val=00000000 (pre-edge valid)
+# L1ST k=9 x_im=0 pr_im=0 s_im=0 simsa=0 out=000000000
+# L1ST k=10 x_im=0 pr_im=0 s_im=0 simsa=0 out=000000000
+# PROBE t=185000 L5 cap#3 val=000000000 (pre-edge valid)
 # CYC t=185000 L0: p=9 fh=1 x=(-23454,-26073) out=(0,0) v=1
-# PROBE t=195000 L5 cap#4 val=00000000 (pre-edge valid)
+# PROBE t=195000 L5 cap#4 val=000000000 (pre-edge valid)
 # CYC t=195000 L0: p=10 fh=1 x=(27374,-24717) out=(0,0) v=1
-# PROBE t=205000 L5 cap#5 val=00000000 (pre-edge valid)
+# L1ST k=11 x_im=0 pr_im=0 s_im=0 simsa=0 out=000000000
+# L1ST k=12 x_im=0 pr_im=0 s_im=0 simsa=0 out=000000000
+# PROBE t=205000 L5 cap#5 val=000000000 (pre-edge valid)
 # CYC t=205000 L0: p=11 fh=1 x=(-16395,16553) out=(0,0) v=1
-# PROBE t=215000 L5 cap#6 val=00000000 (pre-edge valid)
+# PROBE t=215000 L5 cap#6 val=000000000 (pre-edge valid)
 # CYC t=215000 L0: p=12 fh=1 x=(8843,4730) out=(0,0) v=1
-# PROBE t=225000 L5 cap#7 val=00000000 (pre-edge valid)
+# L1ST k=13 x_im=0 pr_im=0 s_im=0 simsa=0 out=000000000
+# L1ST k=14 x_im=0 pr_im=0 s_im=0 simsa=0 out=000000000
+# PROBE t=225000 L5 cap#7 val=000000000 (pre-edge valid)
 # CYC t=225000 L0: p=13 fh=1 x=(-6659,6871) out=(0,0) v=1
-# PROBE t=235000 L5 cap#8 val=00000000 (pre-edge valid)
+# PROBE t=235000 L5 cap#8 val=000000000 (pre-edge valid)
 # CYC t=235000 L0: p=14 fh=1 x=(-17348,-1196) out=(0,0) v=1
-# PROBE t=245000 L5 cap#9 val=00000000 (pre-edge valid)
+# L1ST k=15 x_im=0 pr_im=0 s_im=0 simsa=0 out=000000000
+# L1ST k=16 x_im=0 pr_im=0 s_im=0 simsa=0 out=000000000
+# PROBE t=245000 L5 cap#9 val=000000000 (pre-edge valid)
 # CYC t=245000 L0: p=15 fh=1 x=(7155,1748) out=(0,0) v=1
-# PROBE t=255000 L5 cap#10 val=00000000 (pre-edge valid)
+# PROBE t=255000 L5 cap#10 val=000000000 (pre-edge valid)
 # CYC t=255000 L0: p=16 fh=1 x=(2074,27609) out=(0,0) v=1
-# PROBE t=265000 L5 cap#11 val=00000000 (pre-edge valid)
+# L1ST k=17 x_im=0 pr_im=0 s_im=0 simsa=0 out=000000000
+# L1ST k=18 x_im=0 pr_im=0 s_im=0 simsa=0 out=000000000
+# PROBE t=265000 L5 cap#11 val=000000000 (pre-edge valid)
 # CYC t=265000 L0: p=17 fh=1 x=(5770,31370) out=(0,0) v=1
-# PROBE t=275000 L5 cap#12 val=00000000 (pre-edge valid)
+# PROBE t=275000 L5 cap#12 val=000000000 (pre-edge valid)
 # CYC t=275000 L0: p=18 fh=1 x=(22112,21748) out=(0,0) v=1
-# PROBE t=285000 L5 cap#13 val=00000000 (pre-edge valid)
+# L1ST k=19 x_im=0 pr_im=0 s_im=0 simsa=0 out=000000000
+# L1ST k=20 x_im=0 pr_im=0 s_im=0 simsa=0 out=000000000
+# PROBE t=285000 L5 cap#13 val=000000000 (pre-edge valid)
 # CYC t=285000 L0: p=19 fh=1 x=(4185,-22771) out=(0,0) v=1
-# PROBE t=295000 L5 cap#14 val=00000000 (pre-edge valid)
+# PROBE t=295000 L5 cap#14 val=000000000 (pre-edge valid)
 # CYC t=295000 L0: p=20 fh=1 x=(25818,-25886) out=(0,0) v=1
-# PROBE t=305000 L5 cap#15 val=00000000 (pre-edge valid)
+# L1ST k=21 x_im=0 pr_im=0 s_im=0 simsa=0 out=000000000
+# L1ST k=22 x_im=0 pr_im=0 s_im=0 simsa=0 out=000000000
+# PROBE t=305000 L5 cap#15 val=000000000 (pre-edge valid)
 # CYC t=305000 L0: p=21 fh=1 x=(23158,-11132) out=(0,0) v=1
 # CYC t=315000 L0: p=22 fh=1 x=(12300,9919) out=(0,0) v=1
+# L1ST k=23 x_im=0 pr_im=0 s_im=0 simsa=0 out=000000000
+# L1ST k=24 x_im=0 pr_im=0 s_im=0 simsa=0 out=000000000
 # CYC t=325000 L0: p=23 fh=1 x=(-17776,10602) out=(0,0) v=1
 # CYC t=335000 L0: p=24 fh=1 x=(-14286,20765) out=(0,0) v=1
+# L1ST k=25 x_im=0 pr_im=0 s_im=0 simsa=0 out=000000000
+# L1ST k=26 x_im=0 pr_im=0 s_im=0 simsa=0 out=000000000
 # CYC t=345000 L0: p=25 fh=1 x=(-20088,3643) out=(0,0) v=1
 # CYC t=355000 L0: p=26 fh=1 x=(32316,-29340) out=(0,0) v=1
+# L1ST k=27 x_im=0 pr_im=0 s_im=0 simsa=0 out=000000000
+# L1ST k=28 x_im=0 pr_im=0 s_im=0 simsa=0 out=000000000
 # CYC t=365000 L0: p=27 fh=1 x=(-12507,-23096) out=(0,0) v=1
 # CYC t=375000 L0: p=28 fh=1 x=(-22140,6021) out=(0,0) v=1
+# L1ST k=29 x_im=0 pr_im=0 s_im=0 simsa=0 out=000000000
+# L1ST k=30 x_im=0 pr_im=0 s_im=0 simsa=0 out=000000000
 # CYC t=385000 L0: p=29 fh=1 x=(29282,-18102) out=(0,0) v=1
 # CYC t=395000 L0: p=30 fh=1 x=(-21100,25707) out=(0,0) v=1
+# L1ST k=31 x_im=0 pr_im=0 s_im=0 simsa=0 out=000000000
+# L1ST k=32 x_im=0 pr_im=0 s_im=0 simsa=0 out=000000000
 # CYC t=405000 L0: p=31 fh=1 x=(25000,-32010) out=(0,0) v=1
 # CYC t=415000 L0: p=32 fh=0 x=(31146,-29257) out=(0,0) v=1
+# L1ST k=33 x_im=0 pr_im=0 s_im=0 simsa=0 out=000000000
+# L1ST k=34 x_im=9801 pr_im=0 s_im=9801 simsa=0 out=000000000
 # CYC t=425000 L0: p=33 fh=0 x=(4963,-25667) out=(19602,57196) v=1
 # CYC t=435000 L0: p=34 fh=0 x=(18594,-14250) out=(17909,43828) v=1
+# L1ST k=35 x_im=8954 pr_im=0 s_im=8954 simsa=0 out=000000000
+# L1ST k=36 x_im=947 pr_im=0 s_im=947 simsa=0 out=000000000
 # CYC t=445000 L0: p=35 fh=0 x=(12078,-15786) out=(1894,64221) v=1
 # CYC t=455000 L0: p=36 fh=0 x=(20735,-15985) out=(60358,2723) v=1
+# L1ST k=37 x_im=30179 pr_im=0 s_im=30179 simsa=0 out=000000000
+# L1ST k=38 x_im=7337 pr_im=0 s_im=7337 simsa=0 out=000000000
 # CYC t=465000 L0: p=37 fh=0 x=(-32500,5726) out=(14674,64275) v=1
 # CYC t=475000 L0: p=38 fh=0 x=(-31904,23353) out=(53019,63132) v=1
+# L1ST k=39 x_im=26509 pr_im=0 s_im=26509 simsa=0 out=000000000
+# L1ST k=40 x_im=18552 pr_im=0 s_im=18552 simsa=0 out=000000000
 # CYC t=485000 L0: p=39 fh=0 x=(-17445,-15128) out=(37104,25647) v=1
 # CYC t=495000 L0: p=40 fh=0 x=(696,-27615) out=(139,6934) v=1
+# L1ST k=41 x_im=69 pr_im=0 s_im=69 simsa=0 out=000000000
+# L1ST k=42 x_im=3564 pr_im=0 s_im=3564 simsa=0 out=000000000
 # CYC t=505000 L0: p=41 fh=0 x=(-7818,-15257) out=(7128,60666) v=1
 # CYC t=515000 L0: p=42 fh=0 x=(-31827,9234) out=(49900,44871) v=1
+# L1ST k=43 x_im=24950 pr_im=0 s_im=24950 simsa=0 out=000000000
+# L1ST k=44 x_im=31655 pr_im=0 s_im=31655 simsa=0 out=000000000
 # CYC t=525000 L0: p=43 fh=0 x=(1132,24825) out=(63310,57794) v=1
 # CYC t=535000 L0: p=44 fh=0 x=(5575,20617) out=(57904,20689) v=1
+# L1ST k=45 x_im=28952 pr_im=0 s_im=28952 simsa=0 out=000000000
+# L1ST k=46 x_im=3604 pr_im=0 s_im=3604 simsa=0 out=000000000
 # CYC t=545000 L0: p=45 fh=0 x=(-15199,-5195) out=(7209,12674) v=1
 # CYC t=555000 L0: p=46 fh=0 x=(390,32066) out=(54607,838) v=1
+# L1ST k=47 x_im=27303 pr_im=0 s_im=27303 simsa=0 out=000000000
+# L1ST k=48 x_im=28528 pr_im=0 s_im=28528 simsa=0 out=000000000
 # CYC t=565000 L0: p=47 fh=0 x=(-29979,-14710) out=(57057,15435) v=1
 # CYC t=575000 L0: p=48 fh=0 x=(11806,-5347) out=(54124,59055) v=1
+# L1ST k=49 x_im=27062 pr_im=0 s_im=27062 simsa=0 out=000000000
+# L1ST k=50 x_im=3470 pr_im=9801 s_im=13271 simsa=0 out=034db7358
 # CYC t=585000 L0: p=49 fh=0 x=(-8537,963) out=(6940,11131) v=1
 # CYC t=595000 L0: p=50 fh=0 x=(-16456,10338) out=(64152,16166) v=1
+# L1ST k=51 x_im=32076 pr_im=8954 s_im=41030 simsa=0 out=019ec8574
+# L1ST k=52 x_im=1414 pr_im=947 s_im=2361 simsa=0 out=05023f52d
 # CYC t=605000 L0: p=51 fh=0 x=(-10829,12875) out=(2828,16043) v=1
 # CYC t=615000 L0: p=52 fh=0 x=(20744,-19166) out=(62214,60588) v=1
+# L1ST k=53 x_im=31107 pr_im=30179 s_im=61286 simsa=0 out=0049c9cc4
+# L1ST k=54 x_im=11640 pr_im=7337 s_im=18977 simsa=0 out=077b37ba8
 # CYC t=625000 L0: p=53 fh=0 x=(-5907,-21553) out=(23281,43010) v=1
 # CYC t=635000 L0: p=54 fh=0 x=(-17578,5369) out=(8626,49194) v=1
+# L1ST k=55 x_im=4313 pr_im=26509 s_im=30822 simsa=0 out=02510518a
+# L1ST k=56 x_im=31448 pr_im=18552 s_im=50000 simsa=0 out=03c335b63
 # CYC t=645000 L0: p=55 fh=0 x=(6269,6833) out=(62897,7644) v=1
 # CYC t=655000 L0: p=56 fh=0 x=(-6651,10403) out=(59782,8718) v=1
+# L1ST k=57 x_im=29891 pr_im=69 s_im=29960 simsa=0 out=061a8c106
+# L1ST k=58 x_im=27534 pr_im=3564 s_im=31098 simsa=0 out=03a849e92
 # CYC t=665000 L0: p=57 fh=0 x=(3675,12627) out=(55068,15584) v=1
 # CYC t=675000 L0: p=58 fh=0 x=(-2898,-23586) out=(57330,8135) v=1
+# L1ST k=59 x_im=28665 pr_im=24950 s_im=53615 simsa=0 out=03cbd94ed
+# L1ST k=60 x_im=7354 pr_im=31655 s_im=39009 simsa=0 out=068b86787
 # CYC t=685000 L0: p=59 fh=0 x=(-13825,22284) out=(14709,39073) v=1
 # CYC t=695000 L0: p=60 fh=0 x=(-15690,-23385) out=(52370,65130) v=1
+# L1ST k=61 x_im=26185 pr_im=28952 s_im=55137 simsa=0 out=04c303d32
+# L1ST k=62 x_im=23310 pr_im=3604 s_im=26914 simsa=0 out=06bb0a79e
 # CYC t=705000 L0: p=61 fh=0 x=(13838,-14165) out=(46621,56854) v=1
 # CYC t=715000 L0: p=62 fh=0 x=(30294,17208) out=(21560,49402) v=1
+# L1ST k=63 x_im=10780 pr_im=27303 s_im=38083 simsa=0 out=0349187cc
+# L1ST k=64 x_im=2298 pr_im=28528 s_im=30826 simsa=0 out=04a62e220
 # CYC t=725000 L0: p=63 fh=0 x=(16452,-6640) out=(4597,21458) v=1
 # CYC t=735000 L0: p=0 fh=1 x=(-31751,26257) out=(20726,46211) v=1
+# L1ST k=65 x_im=10363 pr_im=-13531 s_im=-3168 simsa=0 out=03c35480e
+# L1ST k=66 x_im=26996 pr_im=-1389 s_im=25607 simsa=0 out=0cb258ca9
 # CYC t=745000 L0: p=1 fh=1 x=(-7905,22207) out=(53992,20917) v=1
 # CYC t=755000 L0: p=2 fh=1 x=(26645,-26676) out=(12496,5209) v=1
+# L1ST k=67 x_im=6248 pr_im=-3434 s_im=2814 simsa=0 out=0fa935aa7
+# L1ST k=68 x_im=23316 pr_im=-13577 s_im=9739 simsa=0 out=0f296aa60
 # CYC t=765000 L0: p=3 fh=1 x=(26471,-25317) out=(46633,9428) v=1
 # CYC t=775000 L0: p=4 fh=1 x=(6759,-6353) out=(43651,12703) v=1
+# L1ST k=69 x_im=21825 pr_im=20130 s_im=41955 simsa=0 out=0caf74dbb
+# L1ST k=70 x_im=27150 pr_im=17210 s_im=44360 simsa=0 out=04ea2aece
 # CYC t=785000 L0: p=5 fh=1 x=(153,16961) out=(54301,11284) v=1
 # CYC t=795000 L0: p=6 fh=1 x=(7554,29112) out=(21456,2250) v=1
+# L1ST k=71 x_im=10728 pr_im=28082 s_im=38810 simsa=0 out=0433ac8f9
+# L1ST k=72 x_im=806 pr_im=22052 s_im=22858 simsa=0 out=06db2017c
 # CYC t=805000 L0: p=7 fh=1 x=(-23283,816) out=(1612,3836) v=1
 # CYC t=815000 L0: p=8 fh=1 x=(28758,13079) out=(65133,28209) v=1
+# L1ST k=73 x_im=32566 pr_im=-31876 s_im=690 simsa=0 out=05624d52f
+# L1ST k=74 x_im=27000 pr_im=-19770 s_im=7230 simsa=0 out=0837cc5c1
 # CYC t=825000 L0: p=9 fh=1 x=(27775,-31585) out=(54001,20632) v=1
 # CYC t=835000 L0: p=10 fh=1 x=(22293,18238) out=(64757,56062) v=1
+# L1ST k=75 x_im=32378 pr_im=-16259 s_im=16119 simsa=0 out=0b2c6c0e8
+# L1ST k=76 x_im=15280 pr_im=12712 s_im=27992 simsa=0 out=0c07dddd7
 # CYC t=845000 L0: p=11 fh=1 x=(19730,27174) out=(30560,15181) v=1
 # CYC t=855000 L0: p=12 fh=1 x=(15321,8512) out=(65053,55858) v=1
+# L1ST k=77 x_im=32526 pr_im=14734 s_im=47260 simsa=0 out=031a85a43
+# L1ST k=78 x_im=3982 pr_im=20465 s_im=24447 simsa=0 out=0398e4133
 # CYC t=865000 L0: p=13 fh=1 x=(-6309,-12751) out=(7964,64006) v=1
 # CYC t=875000 L0: p=14 fh=1 x=(-18873,23114) out=(61002,5837) v=1
+# L1ST k=79 x_im=30501 pr_im=-10880 s_im=19621 simsa=0 out=04ff1325d
+# L1ST k=80 x_im=7290 pr_im=-12275 s_im=-4985 simsa=0 out=0d580edb9
 # CYC t=885000 L0: p=15 fh=1 x=(-4176,-16677) out=(14581,53593) v=1
 # CYC t=895000 L0: p=16 fh=1 x=(18735,18775) out=(59166,19284) v=1
+# L1ST k=81 x_im=29583 pr_im=10363 s_im=39946 simsa=0 out=0d00d1588
+# L1ST k=82 x_im=24529 pr_im=26996 s_im=51525 simsa=0 out=04e057fec
 # CYC t=905000 L0: p=17 fh=1 x=(-10309,-17639) out=(49058,60670) v=1
 # CYC t=915000 L0: p=18 fh=1 x=(19193,16615) out=(49705,5629) v=1
+# L1ST k=83 x_im=24852 pr_im=6248 s_im=31100 simsa=0 out=064a29f5a
+# L1ST k=84 x_im=28089 pr_im=23316 s_im=51405 simsa=0 out=03cbe952b
 # CYC t=925000 L0: p=19 fh=1 x=(-14129,7181) out=(56179,17800) v=1
 # CYC t=935000 L0: p=20 fh=1 x=(-28554,-31860) out=(14876,12357) v=1
+# L1ST k=85 x_im=7438 pr_im=21825 s_im=29263 simsa=0 out=06466352e
+# L1ST k=86 x_im=1066 pr_im=27150 s_im=28216 simsa=0 out=03928b0f2
 # CYC t=945000 L0: p=21 fh=1 x=(-20688,23855) out=(2133,3630) v=1
 # CYC t=955000 L0: p=22 fh=1 x=(-29320,22443) out=(54090,10360) v=1
+# L1ST k=87 x_im=27045 pr_im=10728 s_im=37773 simsa=0 out=0371c1d21
+# L1ST k=88 x_im=27672 pr_im=806 s_im=28478 simsa=0 out=049c618a1
 # CYC t=965000 L0: p=23 fh=1 x=(15130,-23369) out=(55345,11157) v=1
 # CYC t=975000 L0: p=24 fh=1 x=(-30110,-22546) out=(6170,55047) v=1
+# L1ST k=89 x_im=3085 pr_im=32566 s_im=35651 simsa=0 out=0379f9d48
+# L1ST k=90 x_im=32286 pr_im=27000 s_im=59286 simsa=0 out=045a2229c
 # CYC t=985000 L0: p=25 fh=1 x=(31160,17248) out=(64572,59173) v=1
 # CYC t=995000 L0: p=26 fh=1 x=(16102,10146) out=(12034,61471) v=1
+# L1ST k=91 x_im=6017 pr_im=32378 s_im=38395 simsa=0 out=073cb1bde
+# L1ST k=92 x_im=26247 pr_im=15280 s_im=41527 simsa=0 out=04afe658e
 # CYC t=1005000 L0: p=27 fh=1 x=(10225,-29798) out=(52495,12174) v=1
 # CYC t=1015000 L0: p=28 fh=1 x=(28079,-31176) out=(10115,20321) v=1
+# L1ST k=93 x_im=5057 pr_im=32526 s_im=37583 simsa=0 out=0511cb56e
+# L1ST k=94 x_im=31444 pr_im=3982 s_im=35426 simsa=0 out=0496894ca
 # CYC t=1025000 L0: p=29 fh=1 x=(-18543,14738) out=(62889,50718) v=1
-# L1I t=1035000 fh_sel=0 raw_f=00000000 diff_f=cbce438b sr_front=ee4a16cd out=0a62e012
+# L1I t=1035000 fh_sel=0 raw_f=000000000 diff_f=7172320a sr_front=0ee4a16cd out=045316012
 # CYC t=1035000 L0: p=30 fh=1 x=(-13198,-31361) out=(58718,4125) v=1
-# L1I t=1045000 fh_sel=0 raw_f=00000000 diff_f=38111acb sr_front=38f5d159 out=e9d41375
+# L1ST k=95 x_im=29359 pr_im=30501 s_im=59860 simsa=0 out=045316012
+# L1ST k=96 x_im=12187 pr_im=7290 s_im=19477 simsa=0 out=074ea1375
+# L1I t=1045000 fh_sel=0 raw_f=000000000 diff_f=a8fcf4dc sr_front=038f5d159 out=074ea1375
 # CYC t=1045000 L0: p=31 fh=1 x=(-9137,22496) out=(24374,56355) v=1
-# L1I t=1055000 fh_sel=0 raw_f=00000000 diff_f=e059f5ef sr_front=34ecb498 out=4c16d6be
+# L1I t=1055000 fh_sel=0 raw_f=000000000 diff_f=654b370d sr_front=3b4ec3497 out=0260a56be
 # CYC t=1055000 L0: p=32 fh=0 x=(-6175,13015) out=(62526,13043) v=1
-# L1I t=1065000 fh_sel=0 raw_f=00000000 diff_f=fa99fe9e sr_front=ffa13345 out=34ecb498
+# L1ST k=97 x_im=31263 pr_im=-9610 s_im=21653 simsa=0 out=0260a56be
+# L1ST k=98 x_im=23286 pr_im=5088 s_im=28374 simsa=0 out=0da763497
+# L1I t=1065000 fh_sel=0 raw_f=000000000 diff_f=fca9fdc4 sr_front=027c1b4ca out=0da763497
 # CYC t=1065000 L0: p=33 fh=0 x=(-8040,8687) out=(46573,19636) v=1
-# L1I t=1075000 fh_sel=0 raw_f=00000000 diff_f=13d0018f sr_front=336e146a out=ffa13345
+# L1I t=1075000 fh_sel=0 raw_f=000000000 diff_f=f17685e3 sr_front=35b866798 out=013e0b4ca
 # CYC t=1075000 L0: p=34 fh=0 x=(4574,-5549) out=(57564,15447) v=1
-# L1I t=1085000 fh_sel=1 raw_f=f43e32f3 diff_f=2057c0d3 sr_front=f995e80c out=336e146a
+# L1ST k=99 x_im=28782 pr_im=-21053 s_im=7729 simsa=0 out=013e0b4ca
+# L1ST k=100 x_im=7805 pr_im=341 s_im=8146 simsa=0 out=0adc36798
+# L1I t=1085000 fh_sel=1 raw_f=0f43e32f3 diff_f=b02c00d2 sr_front=002abed3a out=0adc36798
 # CYC t=1085000 L0: p=35 fh=0 x=(-5808,17961) out=(15610,49424) v=1
-# L1I t=1095000 fh_sel=1 raw_f=b5ed4cb4 diff_f=26a0fab8 sr_front=ccc1cdb5 out=f995e80c
+# L1I t=1095000 fh_sel=1 raw_f=0b5ed4cb4 diff_f=d2fd2c1c sr_front=0dbcfb9d6 out=00155ed3a
 # CYC t=1095000 L0: p=36 fh=0 x=(-32301,31298) out=(10332,61858) v=1
-# L1I t=1105000 fh_sel=1 raw_f=e0dc3c57 diff_f=2dc8fd5b sr_front=e511f299 out=ccc1cdb5
+# L1ST k=101 x_im=5166 pr_im=28135 s_im=33301 simsa=0 out=00155ed3a
+# L1ST k=102 x_im=26382 pr_im=4064 s_im=30446 simsa=0 out=06de7b9d6
+# L1I t=1105000 fh_sel=1 raw_f=0e0dc3c57 diff_f=9dcceebc sr_front=01fc032aa out=06de7b9d6
 # CYC t=1105000 L0: p=37 fh=0 x=(-26455,-3243) out=(52765,12472) v=1
-# L1I t=1115000 fh_sel=1 raw_f=3cfac110 diff_f=d927fd7c sr_front=273a354f out=e511f299
+# L1I t=1115000 fh_sel=1 raw_f=03cfac110 diff_f=2eb99fd5 sr_front=004e1dc7f out=00fe032aa
 # CYC t=1115000 L0: p=38 fh=0 x=(-24254,26029) out=(52385,6859) v=1
+# L1ST k=103 x_im=26192 pr_im=624 s_im=26816 simsa=0 out=00fe032aa
+# L1ST k=104 x_im=28593 pr_im=-31169 s_im=-2576 simsa=0 out=00270dc7f
 # CYC t=1125000 L0: p=39 fh=0 x=(-29252,-20765) out=(57186,27570) v=1
 # CYC t=1135000 L0: p=40 fh=0 x=(-3410,12363) out=(39268,55562) v=1
+# L1ST k=105 x_im=19634 pr_im=-19349 s_im=285 simsa=0 out=0863fe2b8
+# L1ST k=106 x_im=6337 pr_im=-12722 s_im=-6385 simsa=0 out=0b46b3994
 # CYC t=1145000 L0: p=41 fh=0 x=(-32527,8314) out=(12674,12721) v=1
 # CYC t=1155000 L0: p=42 fh=0 x=(-21358,4591) out=(63160,53900) v=1
+# L1ST k=107 x_im=31580 pr_im=-32819 s_im=-1239 simsa=0 out=0ce4eeb97
+# L1ST k=108 x_im=234 pr_im=29042 s_im=29276 simsa=0 out=07fcd02a0
 # CYC t=1165000 L0: p=43 fh=0 x=(7728,-12073) out=(468,11414) v=1
 # CYC t=1175000 L0: p=44 fh=0 x=(1155,-22228) out=(13729,7550) v=1
+# L1ST k=109 x_im=6864 pr_im=-22276 s_im=-15412 simsa=0 out=07172320a
+# L1ST k=110 x_im=4119 pr_im=25931 s_im=30050 simsa=0 out=0a8fcf4dc
 # CYC t=1185000 L0: p=45 fh=0 x=(-7752,31850) out=(8238,58678) v=1
 # CYC t=1195000 L0: p=46 fh=0 x=(29814,-17245) out=(58506,9550) v=1
+# L1ST k=111 x_im=29253 pr_im=-855 s_im=28398 simsa=0 out=0654b370d
+# L1ST k=112 x_im=2735 pr_im=-3722 s_im=-987 simsa=0 out=0fca9fdc4
 # CYC t=1205000 L0: p=47 fh=0 x=(4965,-24555) out=(5470,2934) v=1
 # CYC t=1215000 L0: p=48 fh=0 x=(24459,29607) out=(394,44920) v=1
+# L1ST k=113 x_im=197 pr_im=31263 s_im=31460 simsa=0 out=0f17685e3
+# L1ST k=114 x_im=10798 pr_im=23286 s_im=34084 simsa=0 out=03d727136
 # CYC t=1225000 L0: p=49 fh=0 x=(13799,5831) out=(21597,24191) v=1
 # CYC t=1235000 L0: p=50 fh=0 x=(-32368,-6418) out=(1745,59632) v=1
+# L1ST k=115 x_im=872 pr_im=28782 s_im=29654 simsa=0 out=04292559a
+# L1ST k=116 x_im=29474 pr_im=7805 s_im=37279 simsa=0 out=039eb12a4
 # CYC t=1245000 L0: p=51 fh=0 x=(28535,-9876) out=(58948,5098) v=1
 # CYC t=1255000 L0: p=52 fh=0 x=(3793,9440) out=(7203,64188) v=1
+# L1ST k=117 x_im=3601 pr_im=5166 s_im=8767 simsa=0 out=048d06a7d
+# L1ST k=118 x_im=26578 pr_im=26382 s_im=52960 simsa=0 out=01120762f
 # CYC t=1265000 L0: p=53 fh=0 x=(18955,19628) out=(53156,54326) v=1
 # CYC t=1275000 L0: p=54 fh=0 x=(6017,-19123) out=(64670,21742) v=1
+# L1ST k=119 x_im=32335 pr_im=26192 s_im=58527 simsa=0 out=067700277
+# L1ST k=120 x_im=26942 pr_im=28593 s_im=55535 simsa=0 out=07250b7dc
 # CYC t=1285000 L0: p=55 fh=0 x=(-25308,-4639) out=(53884,1660) v=1
 # CYC t=1295000 L0: p=56 fh=0 x=(-30099,18203) out=(60447,51532) v=1
+# L1ST k=121 x_im=30223 pr_im=19634 s_im=49857 simsa=0 out=06c783917
+# L1ST k=122 x_im=17716 pr_im=6337 s_im=24053 simsa=0 out=06160512b
 # CYC t=1305000 L0: p=57 fh=0 x=(-14433,-6340) out=(35432,63364) v=1
 # CYC t=1315000 L0: p=58 fh=0 x=(-23646,12858) out=(8364,5454) v=1
+# L1ST k=123 x_im=4182 pr_im=31580 s_im=35762 simsa=0 out=02efa949a
+# L1ST k=124 x_im=30882 pr_im=234 s_im=31116 simsa=0 out=045d973ed
 # CYC t=1325000 L0: p=59 fh=0 x=(-32053,-8422) out=(61764,11502) v=1
 # CYC t=1335000 L0: p=60 fh=0 x=(11167,2087) out=(54622,46426) v=1
+# L1ST k=125 x_im=27311 pr_im=6864 s_im=34175 simsa=0 out=03cc62cc2
+# L1ST k=126 x_im=9811 pr_im=4119 s_im=13930 simsa=0 out=042c0e96c
 # CYC t=1345000 L0: p=61 fh=0 x=(15390,-7554) out=(19623,50992) v=1
 # CYC t=1355000 L0: p=62 fh=0 x=(21670,8079) out=(63960,3592) v=1
+# L1ST k=127 x_im=31980 pr_im=29253 s_im=61233 simsa=0 out=01b355633
+# L1ST k=128 x_im=2118 pr_im=2735 s_im=4853 simsa=0 out=0779819ab
 # CYC t=1365000 L0: p=63 fh=0 x=(5143,5392) out=(4236,53895) v=1
 # CYC t=1375000 L0: p=0 fh=1 x=(29689,-20351) out=(63539,13944) v=1
+# L1ST k=129 x_im=31769 pr_im=15533 s_im=47302 simsa=0 out=0097a6efe
+# L1ST k=130 x_im=26374 pr_im=6568 s_im=32942 simsa=0 out=03cadc1be
 # CYC t=1385000 L0: p=1 fh=1 x=(-23728,21930) out=(52748,6621) v=1
 # CYC t=1395000 L0: p=2 fh=1 x=(30740,-24072) out=(64941,6734) v=1
+# L1ST k=131 x_im=32470 pr_im=8807 s_im=41277 simsa=0 out=019a8fc08
+# L1ST k=132 x_im=6442 pr_im=-21322 s_im=-14880 simsa=0 out=022673b63
 # CYC t=1405000 L0: p=3 fh=1 x=(5650,20477) out=(12884,57328) v=1
 # CYC t=1415000 L0: p=4 fh=1 x=(32064,-24417) out=(21726,49514) v=1
+# L1ST k=133 x_im=10863 pr_im=-21793 s_im=-10930 simsa=0 out=0acb63078
+# L1ST k=134 x_im=12624 pr_im=-9900 s_im=2724 simsa=0 out=0aadf5974
 # CYC t=1425000 L0: p=5 fh=1 x=(-21040,-29531) out=(25248,55617) v=1
 # CYC t=1435000 L0: p=6 fh=1 x=(6224,-25027) out=(6971,15181) v=1
+# L1ST k=135 x_im=3485 pr_im=-24574 s_im=-21089 simsa=0 out=0d9541961
+# L1ST k=136 x_im=6183 pr_im=-12545 s_im=-6362 simsa=0 out=0a0021ac6
 # CYC t=1445000 L0: p=7 fh=1 x=(6653,16556) out=(12367,10118) v=1
 # CYC t=1455000 L0: p=8 fh=1 x=(14147,-30632) out=(60998,10235) v=1
+# L1ST k=137 x_im=30499 pr_im=30753 s_im=61252 simsa=0 out=0ceff0d09
+# L1ST k=138 x_im=5560 pr_im=25945 s_im=31505 simsa=0 out=07821eb52
 # CYC t=1465000 L0: p=9 fh=1 x=(23760,-28769) out=(11120,11626) v=1
 # CYC t=1475000 L0: p=10 fh=1 x=(-17761,2598) out=(34549,10651) v=1
+# L1ST k=139 x_im=17274 pr_im=-27622 s_im=-10348 simsa=0 out=06559fd80
+# L1ST k=140 x_im=3226 pr_im=8550 s_im=11776 simsa=0 out=0941a0d3b
 # CYC t=1485000 L0: p=11 fh=1 x=(-27627,-5334) out=(6452,21938) v=1
 # CYC t=1495000 L0: p=12 fh=1 x=(14760,-4187) out=(51059,14543) v=1
+# L1ST k=141 x_im=25529 pr_im=-2197 s_im=23332 simsa=0 out=02166ce53
+# L1ST k=142 x_im=27023 pr_im=18436 s_im=45459 simsa=0 out=0f76bbef1
 # CYC t=1505000 L0: p=13 fh=1 x=(-14857,-32200) out=(54046,12426) v=1
 # CYC t=1515000 L0: p=14 fh=1 x=(18094,-12322) out=(21550,59753) v=1
+# L1ST k=143 x_im=10775 pr_im=120 s_im=10895 simsa=0 out=0480457c5
+# L1ST k=144 x_im=20497 pr_im=4668 s_im=25165 simsa=0 out=00078f336
 # CYC t=1525000 L0: p=15 fh=1 x=(3541,-8565) out=(40995,45597) v=1
 # CYC t=1535000 L0: p=16 fh=1 x=(28578,10024) out=(61168,61374) v=1
+# L1ST k=145 x_im=30584 pr_im=31769 s_im=62353 simsa=0 out=0123c61db
+# L1ST k=146 x_im=2708 pr_im=26374 s_im=29082 simsa=0 out=079c8131b
 # CYC t=1545000 L0: p=17 fh=1 x=(13454,-660) out=(5416,62674) v=1
 # CYC t=1555000 L0: p=18 fh=1 x=(-9374,16712) out=(12860,54690) v=1
+# L1ST k=147 x_im=6430 pr_im=32470 s_im=38900 simsa=0 out=038cd8758
+# L1ST k=148 x_im=24605 pr_im=6442 s_im=31047 simsa=0 out=04bfaf7f8
 # CYC t=1565000 L0: p=19 fh=1 x=(-30617,-4984) out=(49211,23038) v=1
 # CYC t=1575000 L0: p=20 fh=1 x=(-11008,27559) out=(63567,42647) v=1
+# L1ST k=149 x_im=31783 pr_im=10863 s_im=42646 simsa=0 out=03ca41cf7
+# L1ST k=150 x_im=12633 pr_im=12624 s_im=25257 simsa=0 out=0534b3400
 # CYC t=1585000 L0: p=21 fh=1 x=(-13801,-5617) out=(25267,58496) v=1
 # CYC t=1595000 L0: p=22 fh=1 x=(-20233,-12914) out=(7480,47059) v=1
+# L1ST k=151 x_im=3740 pr_im=3485 s_im=7225 simsa=0 out=031545ee0
+# L1ST k=152 x_im=29036 pr_im=6183 s_im=35219 simsa=0 out=00e1cf990
 # CYC t=1605000 L0: p=23 fh=1 x=(-31383,-23211) out=(58072,39299) v=1
 # CYC t=1615000 L0: p=24 fh=1 x=(32714,-26258) out=(59948,21571) v=1
+# L1ST k=153 x_im=29974 pr_im=30499 s_im=60473 simsa=0 out=044cae084
+# L1ST k=154 x_im=7205 pr_im=5560 s_im=12765 simsa=0 out=0761c3e1f
 # CYC t=1625000 L0: p=25 fh=1 x=(121,153) out=(14411,14403) v=1
 # CYC t=1635000 L0: p=26 fh=1 x=(3379,-2492) out=(40432,5345) v=1
+# L1ST k=155 x_im=20216 pr_im=17274 s_im=37490 simsa=0 out=018eeb2d6
+# L1ST k=156 x_im=24882 pr_im=3226 s_im=28108 simsa=0 out=049399f3e
 # CYC t=1645000 L0: p=27 fh=1 x=(-30067,-23165) out=(49765,12169) v=1
 # CYC t=1655000 L0: p=28 fh=1 x=(14309,-2276) out=(51931,19391) v=1
+# L1ST k=157 x_im=25965 pr_im=25529 s_im=51494 simsa=0 out=036e6c29e
+# L1ST k=158 x_im=32044 pr_im=27023 s_im=59067 simsa=0 out=064934247
 # CYC t=1665000 L0: p=29 fh=1 x=(13078,-18557) out=(64088,18602) v=1
 # CYC t=1675000 L0: p=30 fh=1 x=(11008,22927) out=(13000,49945) v=1
+# L1ST k=159 x_im=6500 pr_im=10775 s_im=17275 simsa=0 out=0735e3c9a
+# L1ST k=160 x_im=10473 pr_im=20497 s_im=30970 simsa=0 out=021bed641
 # CYC t=1685000 L0: p=31 fh=1 x=(-13630,-9218) out=(20946,15940) v=1
 # CYC t=1695000 L0: p=32 fh=0 x=(11832,-18597) out=(6267,56325) v=1
+# L1ST k=161 x_im=3133 pr_im=592 s_im=3725 simsa=0 out=03c7df830
+# L1ST k=162 x_im=10380 pr_im=17073 s_im=27453 simsa=0 out=00250235d
 # CYC t=1705000 L0: p=33 fh=0 x=(10175,-4786) out=(20760,46062) v=1
 # CYC t=1715000 L0: p=34 fh=0 x=(-3278,28164) out=(58760,8572) v=1
+# L1ST k=163 x_im=29380 pr_im=8665 s_im=38045 simsa=0 out=042b19da5
+# L1ST k=164 x_im=6865 pr_im=1129 s_im=7994 simsa=0 out=021d9332f
 # CYC t=1725000 L0: p=35 fh=0 x=(12302,28601) out=(13731,2046) v=1
 # CYC t=1735000 L0: p=36 fh=0 x=(8252,30541) out=(8976,24539) v=1
+# L1ST k=165 x_im=4488 pr_im=13346 s_im=17834 simsa=0 out=00469b98d
+# L1ST k=166 x_im=10079 pr_im=-26051 s_im=-15972 simsa=0 out=034229215
 # CYC t=1745000 L0: p=37 fh=0 x=(6615,-6403) out=(20158,3062) v=1
 # CYC t=1755000 L0: p=38 fh=0 x=(22879,17075) out=(58324,47569) v=1
+# L1ST k=167 x_im=29162 pr_im=-15597 s_im=13565 simsa=0 out=09a3d43fa
+# L1ST k=168 x_im=7276 pr_im=-20057 s_im=-12781 simsa=0 out=0c31318b2
 # CYC t=1765000 L0: p=39 fh=0 x=(26492,-15400) out=(14552,61560) v=1
 # CYC t=1775000 L0: p=40 fh=0 x=(-1422,11993) out=(16572,578) v=1
+# L1ST k=169 x_im=8286 pr_im=5668 s_im=13954 simsa=0 out=0b1a7e213
+# L1ST k=170 x_im=3181 pr_im=-30616 s_im=-27435 simsa=0 out=016240106
 # CYC t=1785000 L0: p=41 fh=0 x=(9989,-18842) out=(6362,56216) v=1
 # CYC t=1795000 L0: p=42 fh=0 x=(16216,-28724) out=(16874,41730) v=1
+# L1ST k=171 x_im=8437 pr_im=28386 s_im=36823 simsa=0 out=08868e4ef
+# L1ST k=172 x_im=32382 pr_im=29200 s_im=61582 simsa=0 out=06ee227b5
 # CYC t=1805000 L0: p=43 fh=0 x=(-13867,708) out=(64764,52473) v=1
 # CYC t=1815000 L0: p=44 fh=0 x=(17707,8912) out=(44789,63223) v=1
+# L1ST k=173 x_im=22394 pr_im=1868 s_im=24262 simsa=0 out=072101958
+# L1ST k=174 x_im=8117 pr_im=3803 s_im=11920 simsa=0 out=0074c0618
 # CYC t=1825000 L0: p=45 fh=0 x=(-27498,-16698) out=(16234,2362) v=1
 # CYC t=1835000 L0: p=46 fh=0 x=(-9881,-15113) out=(44358,41087) v=1
+# L1ST k=175 x_im=22179 pr_im=-3851 s_im=18328 simsa=0 out=00edb0495
+# L1ST k=176 x_im=2053 pr_im=-1416 s_im=637 simsa=0 out=0f0f5f17f
 # CYC t=1845000 L0: p=47 fh=0 x=(15185,-19097) out=(4106,51818) v=1
 # CYC t=1855000 L0: p=48 fh=0 x=(12573,7053) out=(9363,51705) v=1
+# L1ST k=177 x_im=4681 pr_im=3133 s_im=7814 simsa=0 out=0fa78488d
+# L1ST k=178 x_im=10288 pr_im=10380 s_im=20668 simsa=0 out=00f43d2ff
 # CYC t=1865000 L0: p=49 fh=0 x=(-23784,-10732) out=(20576,8538) v=1
 # CYC t=1875000 L0: p=50 fh=0 x=(-3893,-6979) out=(60371,59840) v=1
+# L1ST k=179 x_im=30185 pr_im=29380 s_im=59565 simsa=0 out=0285e6aa4
+# L1ST k=180 x_im=29451 pr_im=6865 s_im=36316 simsa=0 out=07456059e
 # CYC t=1885000 L0: p=51 fh=0 x=(-24564,13786) out=(58902,4866) v=1
 # CYC t=1895000 L0: p=52 fh=0 x=(-31445,20146) out=(37946,4401) v=1
+# L1ST k=181 x_im=18973 pr_im=4488 s_im=23461 simsa=0 out=046ee8d80
+# L1ST k=182 x_im=22155 pr_im=10079 s_im=32234 simsa=0 out=02dd23886
 # CYC t=1905000 L0: p=53 fh=0 x=(-21338,-25569) out=(44310,23852) v=1
 # CYC t=1915000 L0: p=54 fh=0 x=(20258,25025) out=(47966,49943) v=1
+# L1ST k=183 x_im=23983 pr_im=29162 s_im=53145 simsa=0 out=03ef53491
+# L1ST k=184 x_im=6 pr_im=7276 s_im=7282 simsa=0 out=067ccbe74
 # CYC t=1925000 L0: p=55 fh=0 x=(30940,6223) out=(12,6056) v=1
 # CYC t=1935000 L0: p=56 fh=0 x=(-11394,9574) out=(65314,57042) v=1
+# L1ST k=185 x_im=32657 pr_im=8286 s_im=40943 simsa=0 out=00e398410
+# L1ST k=186 x_im=5330 pr_im=3181 s_im=8511 simsa=0 out=04ff8708a
 # CYC t=1945000 L0: p=57 fh=0 x=(28487,-27007) out=(10660,57194) v=1
 # CYC t=1955000 L0: p=58 fh=0 x=(-20464,-21778) out=(14304,52109) v=1
+# L1ST k=187 x_im=7152 pr_im=8437 s_im=15589 simsa=0 out=010a0dd81
+# L1ST k=188 x_im=28497 pr_im=32382 s_im=60879 simsa=0 out=01e72b748
 # CYC t=1965000 L0: p=59 fh=0 x=(996,-26949) out=(56994,53401) v=1
 # CYC t=1975000 L0: p=60 fh=0 x=(-25838,12728) out=(51000,40479) v=1
+# L1ST k=189 x_im=25500 pr_im=22394 s_im=47894 simsa=0 out=076e8cec9
+# L1ST k=190 x_im=29886 pr_im=8117 s_im=38003 simsa=0 out=05d8b4a8b
 # CYC t=1985000 L0: p=61 fh=0 x=(-19459,1991) out=(59772,5226) v=1
 # CYC t=1995000 L0: p=62 fh=0 x=(19209,-3774) out=(62346,57253) v=1
+# L1ST k=191 x_im=31173 pr_im=22179 s_im=53352 simsa=0 out=04a3a0ed2
+# L1ST k=192 x_im=7554 pr_im=2053 s_im=9607 simsa=0 out=06834c012
 # CYC t=2005000 L0: p=63 fh=0 x=(-13569,-30802) out=(15108,9576) v=1
 # CYC t=2015000 L0: p=0 fh=1 x=(0,0) out=(51936,45526) v=1
+# L1ST k=193 x_im=25968 pr_im=-774 s_im=25194 simsa=0 out=012c477e9
+# L1ST k=194 x_im=4464 pr_im=-3615 s_im=849 simsa=0 out=0fcfa0906
 # CYC t=2025000 L0: p=1 fh=1 x=(0,0) out=(8928,64659) v=1
 # CYC t=2035000 L0: p=2 fh=1 x=(0,0) out=(47357,11632) v=1
+# L1ST k=195 x_im=23678 pr_im=-3102 s_im=20576 simsa=0 out=0f1e147ea
+# L1ST k=196 x_im=10889 pr_im=-26811 s_im=-15922 simsa=0 out=0f3e21925
 # CYC t=2045000 L0: p=3 fh=1 x=(0,0) out=(21778,43238) v=1
 # CYC t=2055000 L0: p=4 fh=1 x=(0,0) out=(63532,60683) v=1
+# L1ST k=197 x_im=31766 pr_im=-12241 s_im=19525 simsa=0 out=097454d57
+# L1ST k=198 x_im=10757 pr_im=5289 s_im=16046 simsa=0 out=0d02f07cf
 # CYC t=2065000 L0: p=5 fh=1 x=(0,0) out=(21515,44705) v=1
 # CYC t=2075000 L0: p=6 fh=1 x=(0,0) out=(58792,48819) v=1
+# L1ST k=199 x_im=29396 pr_im=2088 s_im=31484 simsa=0 out=014a9d5d4
+# L1ST k=200 x_im=2385 pr_im=-26509 s_im=-24124 simsa=0 out=008280792
 # CYC t=2085000 L0: p=7 fh=1 x=(0,0) out=(4771,43406) v=1
 # CYC t=2095000 L0: p=8 fh=1 x=(0,0) out=(47732,6058) v=1
+# L1ST k=201 x_im=23866 pr_im=28232 s_im=52098 simsa=0 out=098732313
+# L1ST k=202 x_im=10287 pr_im=689 s_im=10976 simsa=0 out=06e48d066
 # CYC t=2105000 L0: p=9 fh=1 x=(0,0) out=(20575,55970) v=1
 # CYC t=2115000 L0: p=10 fh=1 x=(0,0) out=(8205,2174) v=1
+# L1ST k=203 x_im=4102 pr_im=4549 s_im=8651 simsa=0 out=002b1fc42
+# L1ST k=204 x_im=21538 pr_im=-693 s_im=20845 simsa=0 out=011c50a14
 # CYC t=2125000 L0: p=11 fh=1 x=(0,0) out=(43076,60111) v=1
 # CYC t=2135000 L0: p=12 fh=1 x=(0,0) out=(64957,58044) v=1
+# L1ST k=205 x_im=32478 pr_im=16227 s_im=48705 simsa=0 out=0fd4b0751
+# L1ST k=206 x_im=2743 pr_im=9846 s_im=12589 simsa=0 out=03f6336cf
 # CYC t=2145000 L0: p=13 fh=1 x=(0,0) out=(5487,61668) v=1
 # CYC t=2155000 L0: p=14 fh=1 x=(0,0) out=(9252,3798) v=1
+# L1ST k=207 x_im=4626 pr_im=7248 s_im=11874 simsa=0 out=02676ed08
+# L1ST k=208 x_im=680 pr_im=-1423 s_im=-743 simsa=0 out=01c501673
 # CYC t=2165000 L0: p=15 fh=1 x=(0,0) out=(1360,13991) v=1
 # CYC t=2175000 L0: p=16 fh=1 x=(0,0) out=(59725,60258) v=1
+# L1ST k=209 x_im=29862 pr_im=25968 s_im=55830 simsa=0 out=0fa71acfc
+# L1ST k=210 x_im=32025 pr_im=4464 s_im=36489 simsa=0 out=06d0b4e9c
 # CYC t=2185000 L0: p=17 fh=1 x=(0,0) out=(64050,8002) v=1
 # CYC t=2195000 L0: p=18 fh=1 x=(0,0) out=(58699,18036) v=1
+# L1ST k=211 x_im=29349 pr_im=23678 s_im=53027 simsa=0 out=047448dea
+# L1ST k=212 x_im=27226 pr_im=10889 s_im=38115 simsa=0 out=0679239f2
 # CYC t=2205000 L0: p=19 fh=1 x=(0,0) out=(54453,60537) v=1
 # CYC t=2215000 L0: p=20 fh=1 x=(0,0) out=(9859,65364) v=1
+# L1ST k=213 x_im=4929 pr_im=31766 s_im=36695 simsa=0 out=04a724ab0
+# L1ST k=214 x_im=29100 pr_im=10757 s_im=39857 simsa=0 out=047ac7630
 # CYC t=2225000 L0: p=21 fh=1 x=(0,0) out=(58201,8022) v=1
 # CYC t=2235000 L0: p=22 fh=1 x=(0,0) out=(54962,64157) v=1
+# L1ST k=215 x_im=27481 pr_im=29396 s_im=56877 simsa=0 out=04dd866fc
+# L1ST k=216 x_im=13510 pr_im=2385 s_im=15895 simsa=0 out=06f16dca8
 # CYC t=2245000 L0: p=23 fh=1 x=(0,0) out=(27020,59241) v=1
 # CYC t=2255000 L0: p=24 fh=1 x=(0,0) out=(31145,50784) v=1
+# L1ST k=217 x_im=15572 pr_im=23866 s_im=39438 simsa=0 out=01f0c487c
+# L1ST k=218 x_im=31305 pr_im=10287 s_im=41592 simsa=0 out=04d07ef05
 # CYC t=2265000 L0: p=25 fh=1 x=(0,0) out=(62610,28263) v=1
 # CYC t=2275000 L0: p=26 fh=1 x=(0,0) out=(2349,46041) v=1
+# L1ST k=219 x_im=1174 pr_im=4102 s_im=5276 simsa=0 out=0513c2484
+# L1ST k=220 x_im=25133 pr_im=21538 s_im=46671 simsa=0 out=00a4e5e2c
 # CYC t=2285000 L0: p=27 fh=1 x=(0,0) out=(50266,64141) v=1
 # CYC t=2295000 L0: p=28 fh=1 x=(0,0) out=(12806,56546) v=1
+# L1ST k=221 x_im=6403 pr_im=32478 s_im=38881 simsa=0 out=05b28f2ae
+# L1ST k=222 x_im=24930 pr_im=2743 s_im=27673 simsa=0 out=04bf05fcf
 # CYC t=2305000 L0: p=29 fh=1 x=(0,0) out=(49861,14613) v=1
 # CYC t=2315000 L0: p=30 fh=1 x=(0,0) out=(52950,14554) v=1
+# L1ST k=223 x_im=26475 pr_im=4626 s_im=31101 simsa=0 out=0360c94fc
+# L1ST k=224 x_im=708 pr_im=680 s_im=1388 simsa=0 out=03cbe23d8
 # CYC t=2325000 L0: p=31 fh=1 x=(0,0) out=(1417,51642) v=1
 # CYC t=2335000 L0: p=32 fh=0 x=(0,0) out=(64509,54793) v=1
+# L1ST k=225 x_im=32254 pr_im=-1947 s_im=30307 simsa=0 out=002b60030
+# L1ST k=226 x_im=0 pr_im=-19042 s_im=-19042 simsa=0 out=0f865633a
 # CYC t=2345000 L0: p=33 fh=0 x=(0,0) out=(0,0) v=1
 # CYC t=2355000 L0: p=34 fh=0 x=(0,0) out=(0,0) v=1
+# L1ST k=227 x_im=0 pr_im=-1394 s_im=-1394 simsa=0 out=0b59e6208
+# L1ST k=228 x_im=0 pr_im=-20191 s_im=-20191 simsa=0 out=0fa8ef035
 # CYC t=2365000 L0: p=35 fh=0 x=(0,0) out=(0,0) v=1
 # CYC t=2375000 L0: p=36 fh=0 x=(0,0) out=(0,0) v=1
+# L1ST k=229 x_im=0 pr_im=-12027 s_im=-12027 simsa=0 out=0b1213c9c
+# L1ST k=230 x_im=0 pr_im=-20346 s_im=-20346 simsa=0 out=0d105791c
 # CYC t=2385000 L0: p=37 fh=0 x=(0,0) out=(0,0) v=1
 # CYC t=2395000 L0: p=38 fh=0 x=(0,0) out=(0,0) v=1
+# L1ST k=231 x_im=0 pr_im=7452 s_im=7452 simsa=0 out=0b0860a04
+# L1ST k=232 x_im=0 pr_im=-25458 s_im=-25458 simsa=0 out=01d1cf7fe
 # CYC t=2405000 L0: p=39 fh=0 x=(0,0) out=(0,0) v=1
 # CYC t=2415000 L0: p=40 fh=0 x=(0,0) out=(0,0) v=1
+# L1ST k=233 x_im=0 pr_im=-10405 s_im=-10405 simsa=0 out=09c8efda1
+# L1ST k=234 x_im=0 pr_im=20601 s_im=20601 simsa=0 out=0d75b1033
 # CYC t=2425000 L0: p=41 fh=0 x=(0,0) out=(0,0) v=1
 # CYC t=2435000 L0: p=42 fh=0 x=(0,0) out=(0,0) v=1
+# L1ST k=235 x_im=0 pr_im=19704 s_im=19704 simsa=0 out=05079e627
+# L1ST k=236 x_im=0 pr_im=2674 s_im=2674 simsa=0 out=04cf82612
 # CYC t=2445000 L0: p=43 fh=0 x=(0,0) out=(0,0) v=1
 # CYC t=2455000 L0: p=44 fh=0 x=(0,0) out=(0,0) v=1
+# L1ST k=237 x_im=0 pr_im=13422 s_im=13422 simsa=0 out=00a72fe89
+# L1ST k=238 x_im=0 pr_im=-3847 s_im=-3847 simsa=0 out=0346e7c74
 # CYC t=2465000 L0: p=45 fh=0 x=(0,0) out=(0,0) v=1
 # CYC t=2475000 L0: p=46 fh=0 x=(0,0) out=(0,0) v=1
+# L1ST k=239 x_im=0 pr_im=12151 s_im=12151 simsa=0 out=0f0f99b82
+# L1ST k=240 x_im=0 pr_im=-2706 s_im=-2706 simsa=0 out=02f770314
 # CYC t=2485000 L0: p=47 fh=0 x=(0,0) out=(0,0) v=1
 # CYC t=2495000 L0: p=48 fh=0 x=(0,0) out=(0,0) v=1
+# L1ST k=241 x_im=0 pr_im=32254 s_im=32254 simsa=0 out=0f56eca93
+# L1ST k=242 x_im=0 pr_im=0 s_im=0 simsa=0 out=03effeb04
 # CYC t=2505000 L0: p=49 fh=0 x=(0,0) out=(0,0) v=1
 # CYC t=2515000 L0: p=50 fh=0 x=(0,0) out=(0,0) v=1
+# L1ST k=243 x_im=0 pr_im=0 s_im=0 simsa=0 out=000000000
+# L1ST k=244 x_im=0 pr_im=0 s_im=0 simsa=0 out=000000000
 # CYC t=2525000 L0: p=51 fh=0 x=(0,0) out=(0,0) v=1
 # CYC t=2535000 L0: p=52 fh=0 x=(0,0) out=(0,0) v=1
+# L1ST k=245 x_im=0 pr_im=0 s_im=0 simsa=0 out=000000000
+# L1ST k=246 x_im=0 pr_im=0 s_im=0 simsa=0 out=000000000
 # CYC t=2545000 L0: p=53 fh=0 x=(0,0) out=(0,0) v=1
 # CYC t=2555000 L0: p=54 fh=0 x=(0,0) out=(0,0) v=1
+# L1ST k=247 x_im=0 pr_im=0 s_im=0 simsa=0 out=000000000
+# L1ST k=248 x_im=0 pr_im=0 s_im=0 simsa=0 out=000000000
 # CYC t=2565000 L0: p=55 fh=0 x=(0,0) out=(0,0) v=1
 # CYC t=2575000 L0: p=56 fh=0 x=(0,0) out=(0,0) v=1
+# L1ST k=249 x_im=0 pr_im=0 s_im=0 simsa=0 out=000000000
+# L1ST k=250 x_im=0 pr_im=0 s_im=0 simsa=0 out=000000000
 # CYC t=2585000 L0: p=57 fh=0 x=(0,0) out=(0,0) v=1
 # CYC t=2595000 L0: p=58 fh=0 x=(0,0) out=(0,0) v=1
+# L1ST k=251 x_im=0 pr_im=0 s_im=0 simsa=0 out=000000000
+# L1ST k=252 x_im=0 pr_im=0 s_im=0 simsa=0 out=000000000
 # CYC t=2605000 L0: p=59 fh=0 x=(0,0) out=(0,0) v=1
 # CYC t=2615000 L0: p=60 fh=0 x=(0,0) out=(0,0) v=1
+# L1ST k=253 x_im=0 pr_im=0 s_im=0 simsa=0 out=000000000
+# L1ST k=254 x_im=0 pr_im=0 s_im=0 simsa=0 out=000000000
 # CYC t=2625000 L0: p=61 fh=0 x=(0,0) out=(0,0) v=1
 # CYC t=2635000 L0: p=62 fh=0 x=(0,0) out=(0,0) v=1
+# L1ST k=255 x_im=0 pr_im=0 s_im=0 simsa=0 out=000000000
+# L1ST k=256 x_im=0 pr_im=0 s_im=0 simsa=0 out=000000000
 # CYC t=2645000 L0: p=63 fh=0 x=(0,0) out=(0,0) v=1
 # CYC t=2655000 L0: p=0 fh=1 x=(0,0) out=(0,0) v=1
+# L1ST k=257 x_im=0 pr_im=16127 s_im=16127 simsa=0 out=000000000
+# L1ST k=258 x_im=0 pr_im=0 s_im=0 simsa=0 out=03effeb05
 # CYC t=2665000 L0: p=1 fh=1 x=(0,0) out=(0,0) v=1
 # CYC t=2675000 L0: p=2 fh=1 x=(0,0) out=(0,0) v=1
+# L1ST k=259 x_im=0 pr_im=0 s_im=0 simsa=0 out=000000000
 # CYC t=2685000 L0: p=3 fh=1 x=(0,0) out=(0,0) v=1
 # CYC t=2695000 L0: p=4 fh=1 x=(0,0) out=(0,0) v=1
 # CYC t=2705000 L0: p=5 fh=1 x=(0,0) out=(0,0) v=1
@@ -470,16 +729,16 @@ Reading pref.tcl
 # CYC t=3975000 L0: p=0 fh=1 x=(0,0) out=(0,0) v=1
 # CYC t=3985000 L0: p=0 fh=1 x=(0,0) out=(0,0) v=1
 # TB: aligned (deterministic off=0)
-# TB mismatch at 0: got f96efbbc exp 00ad0006
-# TB mismatch at 1: got 0963027f exp 07110ad2
-# TB mismatch at 2: got fc9714eb exp 0f88fc19
-# TB mismatch at 3: got 0b1509ae exp 00e0f5fd
-# TB mismatch at 4: got 076fec6a exp 08650550
-# TB mismatch at 5: got ed94f724 exp 0cc10f8c
-# TB mismatch at 6: got ec58edb8 exp ef3cfab2
-# TB mismatch at 7: got 0ebc00a0 exp fa2200b4
+# TB mismatch at 0: got 094c526e exp 00ad0006
+# TB mismatch at 1: got 1f838268 exp 07110ad2
+# TB mismatch at 2: got 6db83c8c exp 0f88fc19
+# TB mismatch at 3: got 0896102e exp 00e0f5fd
+# TB mismatch at 4: got 06fcbcd0 exp 08650550
+# TB mismatch at 5: got 21c65952 exp 0cc10f8c
+# TB mismatch at 6: got 630ab114 exp ef3cfab2
+# TB mismatch at 7: got 08f4f865 exp fa2200b4
 # FFT TOP SELF-CHECK FAIL (M=6, 192 errors)
-# ** Note: $finish    : tb/tb_fft_top.v(232)
+# ** Note: $finish    : tb/tb_fft_top.v(248)
 #    Time: 3985 ns  Iteration: 1  Instance: /tb_fft_top
-# End time: 00:25:16 on Nov 06,2026, Elapsed time: 0:00:01
+# End time: 00:28:56 on Nov 06,2026, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0

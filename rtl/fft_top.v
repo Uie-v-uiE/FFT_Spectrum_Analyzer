@@ -46,15 +46,18 @@ module fft_top #(
     assign s_axis_tready = m_axis_tready;   // 核心无内部缓冲:ready=可推进
 
     // ---------------- 级联 ----------------
-    wire [2*DW-1:0] lk_tdata [0:M];
+    localparam AWL = DW + 1;
+    wire [2*AWL-1:0] lk_tdata [0:M];
     wire            lk_valid[0:M];
-    assign lk_tdata[0]  = s_axis_tdata;
+    // s_axis 32 位({im16,re16})符号扩展到 34 位(2×17)级间全精度
+    assign lk_tdata[0]  = {s_axis_tdata[2*DW-1], s_axis_tdata[2*DW-1:DW],
+                           s_axis_tdata[DW-1], s_axis_tdata[DW-1:0]};
     assign lk_valid[0]  = s_axis_tvalid;
 
     genvar g;
     generate
         for (g = 0; g < M; g = g + 1) begin : g_stages
-            fft_stage #(.M(M), .L(g), .DW(DW)) u_st (
+            fft_stage #(.M(M), .L(g), .DW(DW), .SRD_I(g == 0 ? 0 : 0)) u_st (
                 .clk(clk), .rst(rst), .en(en),
                 .x_tdata(lk_tdata[g]), .x_valid(lk_valid[g]),
                 .y_tdata(lk_tdata[g+1]), .y_valid(lk_valid[g+1])
@@ -73,7 +76,7 @@ module fft_top #(
 
 
     // ---------------- 输出序(位倒序 / 自然序) ----------------
-    wire [2*DW-1:0] raw_tdata = lk_tdata[M];
+    wire [2*AWL-1:0] raw_tdata = lk_tdata[M];
     wire            raw_valid = lk_valid[M] & (cyc + 1'b1 >= FIRST_VALID);
 
     // 输出块内位置计数(有效输出推进计)
@@ -90,7 +93,7 @@ module fft_top #(
     wire frame_first = (opos == OWZERO);
 
     generate if (OUT_NATURAL == 0) begin : g_direct
-        assign m_axis_tdata  = raw_tdata;
+        assign m_axis_tdata  = {raw_tdata[2*AWL-2:AWL], raw_tdata[DW-1:0]};
         assign m_axis_tvalid = raw_valid;
         assign m_axis_tuser  = raw_valid & frame_first;
         assign m_axis_tlast  = raw_valid & frame_last;
@@ -104,7 +107,7 @@ module fft_top #(
             .y_tdata(rb_tdata), .y_valid(rb_valid),
             .y_first(rb_first), .y_last(rb_last)
         );
-        assign m_axis_tdata  = rb_tdata;
+        assign m_axis_tdata  = {rb_tdata[2*AWL-2:AWL], rb_tdata[DW-1:0]};
         assign m_axis_tvalid = rb_valid;
         assign m_axis_tuser  = rb_valid & rb_first;
         assign m_axis_tlast  = rb_valid & rb_last;
