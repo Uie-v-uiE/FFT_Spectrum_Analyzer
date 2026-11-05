@@ -43,3 +43,24 @@
   位置与直算一致,分歧出现在更高级,待专门定位。
 - Vivado OOC (xcku5p-ffvb676-2,M=6):400MHz WNS=-0.100(接近收敛),DSP 60,BRAM 11;
   333MHz 复跑进行中。
+
+## 2026-11-06(I-08 关闭:20 轮攻坚终局)
+
+- **根因锁定**(第二十轮,与前 19 轮假象彻底决裂):diff 路 conv_round(d·W,18)
+  输出值域 18-bit(实测 34549>32767;理论界 |y|≤131071,18-bit 后逐级不动点
+  |SR|≤131071 数学闭合),而 SR/diff_f/级间通路全按 16 位字段打包 → 环绕。
+  铁证:黄金 partner@L1 = (10651, 34549) vs RTL 读出 (10651, -30987)。
+  旧"L1 全域 193 错"是 34 位版实验流对账错配假象,真基线残差仅 2 源错。
+- **修复**:36-bit 级间字 {im18, re18},SR/diff/级间全链 18-bit 字段;加法路
+  d/s 19-bit、sb 20-bit、饱和 = 高 4 位一致性;CMULT a 19-bit / y 18-bit;
+  顶层契约输出 = 字段截 16。fft_top 门控起点参数化(FV_START)。
+- **配套修正**:only_noise_out 与 all_N*_out 全部按黄金 Level 链重放(级间 1 拍)
+  重生成——旧 all_N exp 由 FftCore 同拍级联建模生成,与 RTL 级间 1 拍不符,
+  SDF 相位配对错(内容性错误,非平移)。TB 修 4 坑:NAT 置换按帧、采集条件
+  s_valid&&m_valid(停拍不重采)、冲刷 2N+2(reorder 滞后 1 帧)、gap 序列落盘。
+- **回归**:L0-L5 逐级对账全 0 错(256/255/254/253/252/251,k=-L);顶层
+  8/8 PASS:N64 gap0/gap1/NAT、N256 gap0/gap1、N1024、N4096(90112 词)、
+  only_noise(192 词);stall 不变性实证(gap 版 exp ≡ no-gap 版)。
+- Vivado OOC(36-bit 管线,xcku5p @333 MHz):WNS -0.037 ns(15/13206 端点,
+  边缘),DSP 50(2.74%)。时序余量优化(retiming/pipelining)留 G5。
+- git 33d6051(修复+工具+向量)、7afa8de(DESIGN 更新)。审计:独立 agent 复查中。
