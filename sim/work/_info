@@ -10,16 +10,16 @@ z2
 cModel Technology
 Z0 dD:/Xilinx/Harness/Project/new_prj/k5p-fft-accelerator
 T_opt
-!s110 1793892817
-VeAk0oPVJ?OfQ]`0jnU:@;1
+!s110 1793894235
+VS;cgD]6F2c0f=VFW9XNQ61
 04 10 4 work tb_fft_top fast 0
-=1-00e04c167f20-6aeca1d0-3c4-6d84
+=1-00e04c167f20-6aeca75a-34c-e70
 o-quiet -auto_acc_if_foreign -work work -g M_P=6 -g NAT_P=0
 Z1 tCvgOpt 0
 n@_opt
 OL;O;2020.4;71
 vfft_cmult3
-Z2 !s110 1793892816
+Z2 !s110 1793894234
 !i10b 1
 !s100 f6GPeHPzEakajV^5MV0MK3
 Z3 !s11b Dg1SIo80bB@j0V0VzS_@n1
@@ -28,14 +28,14 @@ R0
 w1793814574
 8rtl/fft_cmult3.v
 Frtl/fft_cmult3.v
-!i122 39
+!i122 48
 L0 8 60
 Z4 VDg1SIo80bB@j0V0VzS_@n1
 Z5 OL;L;2020.4;71
 r1
 !s85 0
 31
-Z6 !s108 1793892816.000000
+Z6 !s108 1793894234.000000
 Z7 !s107 tb/tb_fft_top.v|rtl/fft_top.v|rtl/fft_reorder.v|rtl/fft_stage.v|rtl/fft_cmult3.v|
 Z8 !s90 rtl/fft_cmult3.v|rtl/fft_stage.v|rtl/fft_reorder.v|rtl/fft_top.v|tb/tb_fft_top.v|
 !i113 0
@@ -44,15 +44,15 @@ R1
 vfft_reorder
 R2
 !i10b 1
-!s100 D5bflNazoYe713KY1f41D1
+!s100 iP1DLR0YlKV8U59lS9ZEk1
 R3
-I`9gb06ACR4He1KXZT><FI0
+Il@R3NcI_Kd[PZzA?P7_iI0
 R0
-Z10 w1793892815
+Z10 w1793893642
 8rtl/fft_reorder.v
 Frtl/fft_reorder.v
-!i122 39
-L0 6 90
+!i122 48
+L0 6 91
 R4
 R5
 r1
@@ -67,15 +67,15 @@ R1
 vfft_stage
 R2
 !i10b 1
-!s100 lc=3CC<QoDF>>IDNRDj<E2
+!s100 9C@i1KeYDfC5WTVMo;>i72
 R3
-I>cCNc9ofKQ^mn;Bgc1O@c1
+IDXF?E4zY=J[GJ0VCcn`G03
 R0
 R10
 8rtl/fft_stage.v
 Frtl/fft_stage.v
-!i122 39
-L0 17 197
+!i122 48
+L0 17 215
 R4
 R5
 r1
@@ -90,15 +90,15 @@ R1
 vfft_top
 R2
 !i10b 1
-!s100 Jzh@M5QQe3chJe;^XXNWK2
+!s100 Mz@3iE=eR55YZ=oH?QDcj2
 R3
-IW[^0z5n_?X8L`:gHdk4Oa2
+I=DmD]P8Gc^L?ZZj1`V3^h2
 R0
 R10
 8rtl/fft_top.v
 Frtl/fft_top.v
-!i122 39
-L0 13 101
+!i122 48
+L0 13 104
 R4
 R5
 r1
@@ -113,15 +113,15 @@ R1
 vtb_fft_top
 R2
 !i10b 1
-!s100 i6I3daW]QP>8IE2Q5=L^n1
+!s100 H9RTdkU4ca8mbncBkDUZ03
 R3
-If[If;f^ZZoKU<N7BC3fSJ1
+I:_90KW?1Vz]CzWlZ:fa6P3
 R0
-R10
+w1793894233
 8tb/tb_fft_top.v
 Ftb/tb_fft_top.v
-!i122 39
-L0 8 234
+!i122 48
+L0 8 244
 R4
 R5
 r1

@@ -17,14 +17,16 @@
 module fft_stage #(
     parameter M  = 12,
     parameter L  = 0,
-    parameter DW = 16
+    parameter DW = 16,
+    parameter AW = DW + 1,
+    parameter SRD_I = 0
 )(
     input  wire             clk,
     input  wire             rst,        // 仅复位相位计数(控制状态)
     input  wire             en,         // 流水推进
-    input  wire [2*DW-1:0]  x_tdata,    // {im, re}
+    input  wire [2*AW-1:0]  x_tdata,    // {im17, re17} 全精度级间
     input  wire             x_valid,
-    output wire [2*DW-1:0]  y_tdata,
+    output wire [2*AW-1:0]  y_tdata,
     output wire             y_valid
 );
     localparam N  = 1 << M;
@@ -33,7 +35,6 @@ module fft_stage #(
     localparam TRIVIAL = (L >= M - 2);
     localparam LC = TRIVIAL ? 1 : 3;
     localparam S  = D - LC;
-    localparam AW = DW + 1;
     localparam LI = L + (12 - M);              // 旋转因子文件级号
 
     function integer clog2p1(input integer v);
@@ -61,36 +62,36 @@ module fft_stage #(
     end
 
     // ---------------- 前向声明 ----------------
-    wire [2*DW-1:0] sr_in;                     // SR 写入口(差路之后赋值)
-    wire [2*DW-1:0] sr_front_w;
+    wire [2*AW-1:0] sr_front_w;                // SR 读出(34 位 = 2×17 位全精度)
 
     // ---------------- 输入 ----------------
-    wire signed [DW-1:0] x_re = x_tdata[DW-1:0];
-    wire signed [DW-1:0] x_im = x_tdata[2*DW-1:DW];
+    wire signed [AW-1:0] x_re = x_tdata[AW-1:0];          // re17
+    wire signed [AW-1:0] x_im = x_tdata[2*AW-1:AW];       // im17
 
     // ---------------- raw_pipe(深 LC)+ fh 历史 ----------------
-    reg [2*DW-1:0] rp0, rp1, rp2;
+    reg [2*AW-1:0] rp0, rp1, rp2;
     reg f0, f1, f2;
     initial begin
-        rp0 = {2*DW{1'b0}}; rp1 = {2*DW{1'b0}}; rp2 = {2*DW{1'b0}};
+        rp0 = {2*AW{1'b0}}; rp1 = {2*AW{1'b0}}; rp2 = {2*AW{1'b0}};
         f0 = 1'b0; f1 = 1'b0; f2 = 1'b0;
     end
     always @(posedge clk) if (en) begin
         if (LC == 3) begin
-            rp0 <= rp1;  rp1 <= rp2;  rp2 <= fh_now ? x_tdata : {2*DW{1'b0}};
+            rp0 <= rp1;  rp1 <= rp2;  rp2 <= fh_now ? x_tdata : {2*AW{1'b0}};
             f0  <= f1;   f1  <= f2;   f2  <= fh_now;
         end else begin
-            rp0 <= fh_now ? x_tdata : {2*DW{1'b0}};
+            rp0 <= fh_now ? x_tdata : {2*AW{1'b0}};
             f0  <= fh_now;
         end
     end
-    wire [2*DW-1:0] raw_f = rp0;
+    wire [2*AW-1:0] raw_f = rp0;
     wire fh_sel = f0;                          // LC 拍前的 fh 标志
 
     // ---------------- 蝶形 ----------------
-    wire [2*DW-1:0] partner_w = (S > 0) ? sr_front_w : raw_f;
-    wire signed [AW-1:0] pr_re = {{(AW-DW){partner_w[DW-1]}}, partner_w[DW-1:0]};
-    wire signed [AW-1:0] pr_im = {{(AW-DW){partner_w[2*DW-1]}}, partner_w[2*DW-1:DW]};
+    // SR 全精度 17 位/分量:黄金 SR 存未饱和 cmult 输出(17 位),16 位截断会 2^16 环绕
+    wire [2*AW-1:0] partner_w = (S > 0) ? sr_front_w : raw_f;
+    wire signed [AW-1:0] pr_re = partner_w[AW-1:0];          // re17 = fr[16:0]
+    wire signed [AW-1:0] pr_im = partner_w[2*AW-1:AW];       // im17 = fr[33:17]
     wire signed [AW-1:0] xr_re = {{(AW-DW){x_re[DW-1]}}, x_re};
     wire signed [AW-1:0] xr_im = {{(AW-DW){x_im[DW-1]}}, x_im};
     wire signed [AW-1:0] d_re = pr_re - xr_re;             // DIF: d = a − b(a=先存)
@@ -165,38 +166,55 @@ module fft_stage #(
     wire [2*DW-1:0] diff_f = TRIVIAL ? {tr_y_im, tr_y_re}
                                      : {cm_im[DW-1:0], cm_re[DW-1:0]};
 
-    assign sr_in = fh_sel ? raw_f : diff_f;
+    // SR 写入口 34 位:x 全精度直通;TRIVIAL diff 16 位符号扩展 17
+    wire [2*AW-1:0] sr_in = fh_sel ? raw_f
+                         : TRIVIAL ? {tr_y_im[DW-1], tr_y_im[DW-1:0],
+                                      tr_y_re[DW-1], tr_y_re[DW-1:0]}
+                                   : {cm_im[AW-1:0], cm_re[AW-1:0]};
+    // SR 写口延迟(SRD_I):补偿 SR 内容与黄金 push 序列的相位差
+    reg [2*AW-1:0] srd1, srd2, srd3, srd4, srd5, srd6, srd7, srd8;
+    initial begin {srd1, srd2, srd3, srd4, srd5, srd6, srd7, srd8} = 0; end
+    always @(posedge clk) if (en) begin
+        srd1 <= sr_in; srd2 <= srd1; srd3 <= srd2; srd4 <= srd3;
+        srd5 <= srd4; srd6 <= srd5; srd7 <= srd6; srd8 <= srd7;
+    end
+    wire [2*AW-1:0] sr_in_eff = (SRD_I == 0) ? sr_in :
+        (SRD_I == 1) ? srd1 : (SRD_I == 2) ? srd2 : (SRD_I == 3) ? srd3 :
+        (SRD_I == 4) ? srd4 : (SRD_I == 5) ? srd5 : (SRD_I == 6) ? srd6 :
+        (SRD_I == 7) ? srd7 : srd8;
 
     // ---------------- 主延迟线 SR(深 S,无复位,零初始化) ----------------
     generate if (S == 1) begin : g_sr1
-        reg [2*DW-1:0] fr;
-        initial fr = {2*DW{1'b0}};
-        always @(posedge clk) if (en) fr <= sr_in;
+        reg [2*AW-1:0] fr;
+        initial fr = {2*AW{1'b0}};
+        always @(posedge clk) if (en) fr <= sr_in_eff;
         assign sr_front_w = fr;
     end else if (S > 1) begin : g_srN
         localparam AWD = clog2p1(S);
         localparam [AWD-1:0] S_M1 = S - 1;
-        reg [2*DW-1:0] mem [0:S-1];
+        reg [2*AW-1:0] mem [0:S-1];
         reg [AWD-1:0]  wptr;
-        reg [2*DW-1:0] fr;
+        reg [2*AW-1:0] fr;
         wire [AWD-1:0] rm1 = (wptr == S_M1) ? {AWD{1'b0}} : wptr + 1'b1;
         integer zi;
         initial begin
-            fr = {2*DW{1'b0}}; wptr = {AWD{1'b0}};
-            for (zi = 0; zi < S; zi = zi + 1) mem[zi] = {2*DW{1'b0}};
+            fr = {2*AW{1'b0}}; wptr = {AWD{1'b0}};
+            for (zi = 0; zi < S; zi = zi + 1) mem[zi] = {2*AW{1'b0}};
         end
         always @(posedge clk) if (en) begin
-            mem[wptr] <= sr_in;
+            mem[wptr] <= sr_in_eff;
             wptr      <= rm1;
             fr        <= mem[rm1];             // raddr=wptr+1:fr@t = t−S 拍写入值
         end
         assign sr_front_w = fr;
     end else begin : g_sr0
-        assign sr_front_w = {2*DW{1'b0}};
+        assign sr_front_w = {2*AW{1'b0}};
     end endgenerate
 
     // ---------------- 输出选择 ----------------
-    wire [2*DW-1:0] out_c = fh_now ? ((S > 0) ? sr_front_w : diff_f)
+    // fh 段输出:im17 低 16 = fr[32:17],re17 低 16 = fr[15:0](与黄金 &0xFFFF 一致)
+    wire [2*DW-1:0] out_c = fh_now ? ((S > 0) ? {sr_front_w[2*AW-2:AW], sr_front_w[DW-1:0]}
+                                              : diff_f)
                                    : {ad_im, ad_re};
     reg [2*DW-1:0] out_r;
     reg            out_v;
