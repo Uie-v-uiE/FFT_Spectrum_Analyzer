@@ -1,0 +1,10 @@
+RTL dump ÐÐ: 391 | mirror ÐÐ: 246
+sr_in ´í 193 / fr ´í 192
+  srin mc=37 j=36 rtl=04c92df6c mir=09925df6c | rtl(sgn17)=(57196,9801) mir=(-8340,19602)
+  srin mc=38 j=37 rtl=045f5ab34 mir=08bebab34 | rtl(sgn17)=(-21708,8954) mir=(-21708,17909)
+  srin mc=39 j=38 rtl=00766fadd mir=00ecdfadd | rtl(sgn17)=(64221,947) mir=(-1315,1894)
+  srin mc=40 j=39 rtl=0ebc60aa3 mir=3d78c0aa3 | rtl(sgn17)=(2723,30179) mir=(2723,-5178)
+  fr   mc=50 j=49 rtl=04c92df6c mir=09925df6c | rtl(sgn17)=(57196,9801) mir=(-8340,19602)
+  fr   mc=51 j=50 rtl=045f5ab34 mir=08bebab34 | rtl(sgn17)=(-21708,8954) mir=(-21708,17909)
+  fr   mc=52 j=51 rtl=00766fadd mir=00ecdfadd | rtl(sgn17)=(64221,947) mir=(-1315,1894)
+  fr   mc=53 j=52 rtl=0ebc60aa3 mir=3d78c0aa3 | rtl(sgn17)=(2723,30179) mir=(2723,-5178)
