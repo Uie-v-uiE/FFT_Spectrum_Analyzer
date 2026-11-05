@@ -501,3 +501,55 @@ cm_re/cm_im 端口从 17 位改 19 位直出,SR 38 位存 19 位样本),
 比对 fr 写入/读出)或以黄金 Python 直接生成整个 fft_stage.v 的 RTL
 (从寄存器传输级描述全新生成,非 patch)——本会话预算内无法完成。
 全部工具/数据/十八轮复盘已入库(git 30+ commits)。**
+
+### I-08 第二十轮终(2026-11-06):根因铁证锁定 + 修复 + 全回归 PASS,I-08 关闭
+**根因(单一、完备):diff 路 conv_round(d·W,18) 输出值域 18 位(实测
+34549>32767,理论界 |y|≤131071 且 18 位后逐级不动点闭合),而 RTL 的
+SR/diff_f/级间通路全部按 16 位字段打包 → 17/18 位值 16 位环绕。
+黄金 partner@L1帧2 p=26 = (10651, 34549),RTL 读出 (10651, -30987)
+(34549-65536)——sr_front 错读 + partner 错 → s_im 全错 → L1 两源错
+(j=154 bf 段 im XOR 0x8000;j=170 fh 段直通错),2→4→8→16 扩散至顶层。**
+历轮"im/re 不对称""位域错位""19 位值域"均为本轮假象/次生症状:
+- 旧"L1 全域 193 错"= 34 位版实验流(工作树残留)对账基线黄金的错配;
+  真基线残差只有 2 个源错;
+- 旧"匹配数"(62/191)全被黄金流头尾 0 填充段的 0-0 对齐污染(N=64
+  3 帧结构,非 256 点单帧);真对齐 k=-1 双非零窗口 full=0。
+
+**修复(36 位字方案,SR/级间全链 18 位字段):**
+- fft_stage.v:SW=18 级间字 36 位 {im18,re18};raw_pipe/SR/fr 全 36 位;
+  partner/x 18 位直用(不再 16 位符扩);d/s 19 位;sb(=2s+s[1])20 位;
+  饱和检测 = sb 高 4 位一致性(3 段 XOR);ad 16 位不变;
+  平凡级 tr_y = conv_round(d',1) 18 位(trb[18:1]);
+- fft_cmult3.v:a 路 AW=19、y 路 YW=18(y = conv_round(·,18) 全精度);
+- fft_top.v:输入 16 位符号扩 18 进 36 位字;末端契约输出 = 36 位字按
+  字段截 16({v[33:18], v[15:0]},模 2^16 与黄金流文件一致);
+  FIRST_VALID 参数化(FV_START):向量契约起点(模型流下标)- M + 2
+  (only_noise 2N-1→123;all_N 3N-1→187;RTL 流比黄金重放早 M-1 拍);
+- fft_reorder.v:y_valid/y_first/y_last 改 output wire(assign 驱动,
+  原 output reg + assign 是 vopt 报错的老 bug,NAT 模式首次例化暴露);
+- tb_fft_top.v:36 位 lvl 采集 + L1 全信号探针(l1_probe.hex)+
+  gap 停拍序列落盘(gap_seq.hex,黄金 gap 重放复刻用);采集条件
+  m_valid→s_valid&&m_valid(源停拍时核心冻结 m_valid 保持,不得重复采集);
+  冲刷 2N→2N+2(NAT 模式 reorder 滞后 1 帧,末帧最后输出落在冲刷结束
+  后 1 拍,差 1 拍采集);NAT 置换按帧循环(原只置换首帧,exp 为 22 帧
+  拼接帧 1+ 全没置换)。
+
+**配套数据修正(两个陈旧产物):**
+- vectors/only_noise_out.hex:旧文件与当前输入/模型不配套(192 行 vs
+  export 契约 128 行),按黄金 Level 链重放窗口 [2N-1, +192) 重生成;
+- vectors/all_N{64,256,1024,4096}_out.hex:旧文件由 gen_rtl_assets 的
+  FftCore 生成——**FftCore 是同拍级联建模(L0@t 直接灌 L1@t),与 RTL
+  级间 1 拍(上级 y_tdata 寄存)不符**;SDF 级联延迟改变蝶形相位配对,
+  不是纯平移,旧 exp 内容性错误(黄金重放对旧 exp 只 76-162/1408 匹配)。
+  新 exp = dump_lvl 式重放(级间 1 拍)窗口 [3N-1, +22N),与 RTL 实测
+  1471/1471 全对。backup: *_out_old.hex。
+
+**回归(全部 vsim -c 全新编译):**
+- 逐级对账(golden/analysis/reaudit.py):L0 256/256@k=0、L1 255/255@-1、
+  L2 254/254@-2、L3 253/253@-3、L4 252/252@-4、L5 251/251@-5,全 0 错;
+- 顶层:only_noise 192/192、all_N64 1408/1408(gap0/gap1/NAT 三态)、
+  all_N256 5632/5632(gap0/gap1)、all_N1024 22528/22528、
+  all_N4096 90112/90112——8/8 SELF-CHECK PASS;
+- stall 不变性实证:gap 版 exp 与 no-gap 版内容逐位一致(同一文件通吃)。
+**I-08 关闭。剩余待办:GAP 语义已并入回归;Vivado 综合复核(36 位管线
+资源/时序);文档定稿。**

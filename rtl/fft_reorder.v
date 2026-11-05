@@ -5,18 +5,19 @@
 
 module fft_reorder #(
     parameter M  = 12,
-    parameter DW = 16
+    parameter DW = 16,
+    parameter SW = 18
 )(
     input  wire             clk,
     input  wire             rst,
     input  wire             en,
-    input  wire [2*DW-1:0]  x_tdata,
+    input  wire [2*SW-1:0]  x_tdata,
     input  wire [M-1:0]     x_pos,      // 帧内位置 0..N-1(N=2^M,位宽恰为 M)
     input  wire             x_valid,
-    output reg  [2*DW-1:0]  y_tdata,
-    output reg              y_valid,
-    output reg              y_first,
-    output reg              y_last
+    output reg  [2*SW-1:0]  y_tdata,
+    output wire             y_valid,
+    output wire             y_first,
+    output wire             y_last
 );
     localparam N  = 1 << M;
     localparam OW = M;                     // N=2^M → 位倒序宽度恰为 M
@@ -44,17 +45,16 @@ module fft_reorder #(
     reg             dv, df, dl;
 
     (* ram_style = "block" *)
-    reg [2*DW-1:0] mem0 [0:N-1];
+    reg [2*SW-1:0] mem0 [0:N-1];
     (* ram_style = "block" *)
-    reg [2*DW-1:0] mem1 [0:N-1];
+    reg [2*SW-1:0] mem1 [0:N-1];
 
     integer zi;
     initial begin
         wr_bank = 1'b0; rd_bank = 1'b0; started = 1'b0; rptr = {OW{1'b0}};
-        dv = 1'b0; df = 1'b0; dl = 1'b0; y_tdata = {2*DW{1'b0}};
-        y_valid = 1'b0; y_first = 1'b0; y_last = 1'b0;
+        dv = 1'b0; df = 1'b0; dl = 1'b0; y_tdata = {2*SW{1'b0}};
         for (zi = 0; zi < N; zi = zi + 1) begin
-            mem0[zi] = {2*DW{1'b0}}; mem1[zi] = {2*DW{1'b0}};
+            mem0[zi] = {2*SW{1'b0}}; mem1[zi] = {2*SW{1'b0}};
         end
     end
 

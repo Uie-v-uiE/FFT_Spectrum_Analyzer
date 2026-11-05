@@ -5,10 +5,17 @@
 //   相位 p(块长 R=N/2^L,D=R/2):前半拍(fh)存数,后半拍(sh)配对;
 //   fh 拍:输出 SR 前端(上一块的 diff·W);x 进 raw_pipe(深 LC);
 //   sh 拍:partner=SR 前端,d=partner−x,s=x+partner;
-//         加法路:s>>1 convergent → 本拍输出;
+//         加法路:s>>1 convergent → 饱和 16 位 → 本拍输出;
 //         差 路:非平凡级 fft_cmult3(Lc=3)回填 SR;平凡级(W4/W2)纯旋转+舍入(Lc=1);
 //   SR:深 S=D−LC 循环延迟线(S=1 退化为单寄存),无复位、零初始化;
 //   SR 写入选择 = 延迟 LC 拍的 fh 标志(原始数经 raw_pipe 到达 SR 口恰迟 LC 拍)。
+//
+// 位宽(I-08 终版,黄金语义逐位对齐):
+//   SR 内容 = diff 路 conv_round(d·W,18) 输出,值域 18 位(实测 34549>32767,
+//   理论界 |y|≤131071);级间字 36 位 = {im18, re18},SR/raw_pipe/fr 全 36 位;
+//   partner/x 18 位;d/s 19 位;sb(=2s+s[1])20 位;饱和检测 = sb 高 4 位
+//   一致性;ad 16 位(不变);cmult a 路 19 位、y 路 18 位。
+//   顶层输出 m_axis = 级间字低 32 位(模 2^16,与黄金 16 位流文件一致)。
 //
 // 旋转因子 ROM:vectors/tw_L{LI}.mem,LI = L+12−M(级前缀复用,条目数恰为 D),未旋转表;
 //   地址 = p_j+1(R=2^PW,回绕自然):rom_q@t = tw[j(t)],与差路同拍进入复乘。
@@ -17,14 +24,15 @@
 module fft_stage #(
     parameter M  = 12,
     parameter L  = 0,
-    parameter DW = 16
+    parameter DW = 16,
+    parameter SW = 18                          // SR/级间字段宽(18 位补码)
 )(
     input  wire             clk,
     input  wire             rst,        // 仅复位相位计数(控制状态)
     input  wire             en,         // 流水推进
-    input  wire [2*DW-1:0]  x_tdata,    // {im, re}
+    input  wire [2*SW-1:0]  x_tdata,    // {im18, re18} 全精度级间字
     input  wire             x_valid,
-    output wire [2*DW-1:0]  y_tdata,
+    output wire [2*SW-1:0]  y_tdata,
     output wire             y_valid
 );
     localparam N  = 1 << M;
@@ -33,7 +41,8 @@ module fft_stage #(
     localparam TRIVIAL = (L >= M - 2);
     localparam LC = TRIVIAL ? 1 : 3;
     localparam S  = D - LC;
-    localparam AW = DW + 1;
+    localparam SWW = SW;                       // SR/级间字段宽(18 位补码)
+    localparam AW  = 19;                       // d/s 路位宽
     localparam LI = L + (12 - M);              // 旋转因子文件级号
 
     function integer clog2p1(input integer v);
@@ -61,56 +70,56 @@ module fft_stage #(
     end
 
     // ---------------- 前向声明 ----------------
-    wire [2*DW-1:0] sr_in;                     // SR 写入口(差路之后赋值)
-    wire [2*DW-1:0] sr_front_w;
+    wire [2*SWW-1:0] sr_in;                    // SR 写入口(差路之后赋值)
+    wire [2*SWW-1:0] sr_front_w;
 
     // ---------------- 输入 ----------------
-    wire signed [DW-1:0] x_re = x_tdata[DW-1:0];
-    wire signed [DW-1:0] x_im = x_tdata[2*DW-1:DW];
+    wire signed [SWW-1:0] x_re = x_tdata[SWW-1:0];
+    wire signed [SWW-1:0] x_im = x_tdata[2*SWW-1:SWW];
 
     // ---------------- raw_pipe(深 LC)+ fh 历史 ----------------
-    reg [2*DW-1:0] rp0, rp1, rp2;
+    reg [2*SWW-1:0] rp0, rp1, rp2;
     reg f0, f1, f2;
     initial begin
-        rp0 = {2*DW{1'b0}}; rp1 = {2*DW{1'b0}}; rp2 = {2*DW{1'b0}};
+        rp0 = {2*SWW{1'b0}}; rp1 = {2*SWW{1'b0}}; rp2 = {2*SWW{1'b0}};
         f0 = 1'b0; f1 = 1'b0; f2 = 1'b0;
     end
     always @(posedge clk) if (en) begin
         if (LC == 3) begin
-            rp0 <= rp1;  rp1 <= rp2;  rp2 <= fh_now ? x_tdata : {2*DW{1'b0}};
+            rp0 <= rp1;  rp1 <= rp2;  rp2 <= fh_now ? x_tdata : {2*SWW{1'b0}};
             f0  <= f1;   f1  <= f2;   f2  <= fh_now;
         end else begin
-            rp0 <= fh_now ? x_tdata : {2*DW{1'b0}};
+            rp0 <= fh_now ? x_tdata : {2*SWW{1'b0}};
             f0  <= fh_now;
         end
     end
-    wire [2*DW-1:0] raw_f = rp0;
+    wire [2*SWW-1:0] raw_f = rp0;
     wire fh_sel = f0;                          // LC 拍前的 fh 标志
 
     // ---------------- 蝶形 ----------------
-    wire [2*DW-1:0] partner_w = (S > 0) ? sr_front_w : raw_f;
-    wire signed [AW-1:0] pr_re = {{(AW-DW){partner_w[DW-1]}}, partner_w[DW-1:0]};
-    wire signed [AW-1:0] pr_im = {{(AW-DW){partner_w[2*DW-1]}}, partner_w[2*DW-1:DW]};
-    wire signed [AW-1:0] xr_re = {{(AW-DW){x_re[DW-1]}}, x_re};
-    wire signed [AW-1:0] xr_im = {{(AW-DW){x_im[DW-1]}}, x_im};
+    wire [2*SWW-1:0] partner_w = (S > 0) ? sr_front_w : raw_f;
+    wire signed [SWW-1:0] pr_re = partner_w[SWW-1:0];
+    wire signed [SWW-1:0] pr_im = partner_w[2*SWW-1:SWW];
+    wire signed [SWW-1:0] xr_re = x_re;
+    wire signed [SWW-1:0] xr_im = x_im;
     wire signed [AW-1:0] d_re = pr_re - xr_re;             // DIF: d = a − b(a=先存)
     wire signed [AW-1:0] d_im = pr_im - xr_im;
     wire signed [AW-1:0] s_re = xr_re + pr_re;
     wire signed [AW-1:0] s_im = xr_im + pr_im;
 
-    // 加法路 >>1 convergent:y=(s+s[1])>>1,并饱和到 16 位有符号
-    // (输入含 −32768 时 s 最大 = 32767+32768 = 65535,舍入 = 32768 溢出 16 位;
-    //  饱和后 SR 值域 [−32768, 32767],后续 s ≤ 65534、|d·W|/2 ≤ 32767.5,宽度账闭合)
+    // 加法路 >>1 convergent:y=(s+s[1])>>1,饱和到 16 位有符号
+    // sat ⟺ (s+s[1])>>1 ∉ [−32768, 32767] ⟺ sb ∉ [−65536, 65535]
+    //     ⟺ sb(20 位)高 4 位非全同
     wire signed [AW:0] sb_re0 = {s_re[AW-1], s_re} + {{AW{1'b0}}, s_re[1]};
     wire signed [AW:0] sb_im0 = {s_im[AW-1], s_im} + {{AW{1'b0}}, s_im[1]};
-    wire sat_re = sb_re0[AW] ^ sb_re0[AW-1];
-    wire sat_im = sb_im0[AW] ^ sb_im0[AW-1];
+    wire sat_re = (sb_re0[AW] ^ sb_re0[AW-1]) | (sb_re0[AW-1] ^ sb_re0[AW-2]) | (sb_re0[AW-2] ^ sb_re0[AW-3]);
+    wire sat_im = (sb_im0[AW] ^ sb_im0[AW-1]) | (sb_im0[AW-1] ^ sb_im0[AW-2]) | (sb_im0[AW-2] ^ sb_im0[AW-3]);
     wire signed [DW-1:0] ad_re = sat_re ? (sb_re0[AW] ? -32768 : 32767) : sb_re0[DW:1];
     wire signed [DW-1:0] ad_im = sat_im ? (sb_im0[AW] ? -32768 : 32767) : sb_im0[DW:1];
 
     // ---------------- 差路 ----------------
     wire signed [17:0] tw_re, tw_im;
-    wire signed [AW-1:0] cm_re, cm_im;
+    wire signed [SWW-1:0] cm_re, cm_im;
     wire cm_v;
 
     generate if (!TRIVIAL) begin : g_rom
@@ -139,7 +148,7 @@ module fft_stage #(
         end
     end endgenerate
 
-    fft_cmult3 #(.AW(AW), .BW(18), .RSH(18)) u_cmult (
+    fft_cmult3 #(.AW(AW), .BW(18), .RSH(18), .YW(SWW)) u_cmult (
         .clk(clk), .en(en),
         .a_re(d_re), .a_im(d_im),
         .b_re(tw_re), .b_im(tw_im),
@@ -148,42 +157,43 @@ module fft_stage #(
     );
 
     // 平凡级:W4 {1,−j} / W2 {1},纯旋转 + >>1 舍入寄存(Lc=1)
+    // y = conv_round(d',1) 值域 18 位 → tr_y 取 trb[18:1]
     wire tri_id = (p_j == 0) || (R == 2);
     wire signed [AW-1:0] tr_re = tri_id ? d_re : d_im;
     wire signed [AW-1:0] tr_im = tri_id ? d_im : -d_re;
     wire signed [AW:0] trb_re = {tr_re[AW-1], tr_re} + {{AW{1'b0}}, tr_re[1]};
     wire signed [AW:0] trb_im = {tr_im[AW-1], tr_im} + {{AW{1'b0}}, tr_im[1]};
-    reg [DW-1:0] tr_y_re, tr_y_im;
+    reg [SWW-1:0] tr_y_re, tr_y_im;
     initial begin
-        tr_y_re = {DW{1'b0}}; tr_y_im = {DW{1'b0}};
+        tr_y_re = {SWW{1'b0}}; tr_y_im = {SWW{1'b0}};
     end
     always @(posedge clk) if (en) begin
-        tr_y_re <= trb_re[DW:1];
-        tr_y_im <= trb_im[DW:1];
+        tr_y_re <= trb_re[SWW:1];
+        tr_y_im <= trb_im[SWW:1];
     end
 
-    wire [2*DW-1:0] diff_f = TRIVIAL ? {tr_y_im, tr_y_re}
-                                     : {cm_im[DW-1:0], cm_re[DW-1:0]};
+    wire [2*SWW-1:0] diff_f = TRIVIAL ? {tr_y_im, tr_y_re}
+                                     : {cm_im, cm_re};
 
     assign sr_in = fh_sel ? raw_f : diff_f;
 
     // ---------------- 主延迟线 SR(深 S,无复位,零初始化) ----------------
     generate if (S == 1) begin : g_sr1
-        reg [2*DW-1:0] fr;
-        initial fr = {2*DW{1'b0}};
+        reg [2*SWW-1:0] fr;
+        initial fr = {2*SWW{1'b0}};
         always @(posedge clk) if (en) fr <= sr_in;
         assign sr_front_w = fr;
     end else if (S > 1) begin : g_srN
         localparam AWD = clog2p1(S);
         localparam [AWD-1:0] S_M1 = S - 1;
-        reg [2*DW-1:0] mem [0:S-1];
+        reg [2*SWW-1:0] mem [0:S-1];
         reg [AWD-1:0]  wptr;
-        reg [2*DW-1:0] fr;
+        reg [2*SWW-1:0] fr;
         wire [AWD-1:0] rm1 = (wptr == S_M1) ? {AWD{1'b0}} : wptr + 1'b1;
         integer zi;
         initial begin
-            fr = {2*DW{1'b0}}; wptr = {AWD{1'b0}};
-            for (zi = 0; zi < S; zi = zi + 1) mem[zi] = {2*DW{1'b0}};
+            fr = {2*SWW{1'b0}}; wptr = {AWD{1'b0}};
+            for (zi = 0; zi < S; zi = zi + 1) mem[zi] = {2*SWW{1'b0}};
         end
         always @(posedge clk) if (en) begin
             mem[wptr] <= sr_in;
@@ -192,16 +202,19 @@ module fft_stage #(
         end
         assign sr_front_w = fr;
     end else begin : g_sr0
-        assign sr_front_w = {2*DW{1'b0}};
+        assign sr_front_w = {2*SWW{1'b0}};
     end endgenerate
 
     // ---------------- 输出选择 ----------------
-    wire [2*DW-1:0] out_c = fh_now ? ((S > 0) ? sr_front_w : diff_f)
-                                   : {ad_im, ad_re};
-    reg [2*DW-1:0] out_r;
+    // fh 段:SR 读出 36 位全精度透传(级间);末级由 fft_top 取低 32 位
+    // sh 段:ad 16 位符号扩展到 18 位字段
+    wire [2*SWW-1:0] out_c = fh_now ? ((S > 0) ? sr_front_w : diff_f)
+                                   : {{(SWW-DW){ad_im[DW-1]}}, ad_im,
+                                      {(SWW-DW){ad_re[DW-1]}}, ad_re};
+    reg [2*SWW-1:0] out_r;
     reg            out_v;
     initial begin
-        out_r = {2*DW{1'b0}}; out_v = 1'b0;
+        out_r = {2*SWW{1'b0}}; out_v = 1'b0;
     end
     always @(posedge clk) if (en) begin
         out_r <= out_c;

@@ -13,7 +13,8 @@
 module fft_top #(
     parameter M  = 12,
     parameter DW = 16,
-    parameter OUT_NATURAL = 0
+    parameter OUT_NATURAL = 0,
+    parameter FV_START = 0   // 门控起点覆盖:0 = 旧默认 3N;向量配套契约起点(模型流下标)- M + 2
 )(
     input  wire             clk,
     input  wire             rst,            // 同步复位(仅控制状态)
@@ -27,6 +28,7 @@ module fft_top #(
     input  wire             m_axis_tready
 );
     localparam N  = 1 << M;
+    localparam SW = 18;                     // 级间字段宽(18 位,I-08 终版)
     localparam NFIRST = 3*N;                // cyc(滞后1) +1 ≥ 3N ⟺ 首个门控 = 流下标 3N−1(帧2块起点)
 
     function integer clog2p1(input integer v);
@@ -38,7 +40,7 @@ module fft_top #(
     endfunction
 
     localparam CW = clog2p1(NFIRST + 1);
-    localparam [CW-1:0] FIRST_VALID = NFIRST;
+    localparam [CW-1:0] FIRST_VALID = (FV_START > 0) ? FV_START : NFIRST;
     localparam [CW-1:0] CWZERO = {CW{1'b0}};
 
     // ---------------- 推进与 warmup 计数 ----------------
@@ -46,15 +48,17 @@ module fft_top #(
     assign s_axis_tready = m_axis_tready;   // 核心无内部缓冲:ready=可推进
 
     // ---------------- 级联 ----------------
-    wire [2*DW-1:0] lk_tdata [0:M];
+    wire [2*SW-1:0] lk_tdata [0:M];
     wire            lk_valid[0:M];
-    assign lk_tdata[0]  = s_axis_tdata;
+    // 输入 16 位符号扩展到 18 位字段(黄金语义:输入 16 位,内部 18 位域)
+    assign lk_tdata[0]  = {{2{s_axis_tdata[2*DW-1]}}, s_axis_tdata[2*DW-1:DW],
+                           {2{s_axis_tdata[DW-1]}},  s_axis_tdata[DW-1:0]};
     assign lk_valid[0]  = s_axis_tvalid;
 
     genvar g;
     generate
         for (g = 0; g < M; g = g + 1) begin : g_stages
-            fft_stage #(.M(M), .L(g), .DW(DW)) u_st (
+            fft_stage #(.M(M), .L(g), .DW(DW), .SW(SW)) u_st (
                 .clk(clk), .rst(rst), .en(en),
                 .x_tdata(lk_tdata[g]), .x_valid(lk_valid[g]),
                 .y_tdata(lk_tdata[g+1]), .y_valid(lk_valid[g+1])
@@ -73,7 +77,7 @@ module fft_top #(
 
 
     // ---------------- 输出序(位倒序 / 自然序) ----------------
-    wire [2*DW-1:0] raw_tdata = lk_tdata[M];
+    wire [2*SW-1:0] raw_tdata = lk_tdata[M];
     wire            raw_valid = lk_valid[M] & (cyc + 1'b1 >= FIRST_VALID);
 
     // 输出块内位置计数(有效输出推进计)
@@ -90,21 +94,22 @@ module fft_top #(
     wire frame_first = (opos == OWZERO);
 
     generate if (OUT_NATURAL == 0) begin : g_direct
-        assign m_axis_tdata  = raw_tdata;
+        // 末端 16 位契约输出 = 级间字低 32 位(模 2^16,与黄金 16 位流文件一致)
+        assign m_axis_tdata  = {raw_tdata[33:18], raw_tdata[15:0]};  // 16 位契约:各取 18 位字段低 16
         assign m_axis_tvalid = raw_valid;
         assign m_axis_tuser  = raw_valid & frame_first;
         assign m_axis_tlast  = raw_valid & frame_last;
     end else begin : g_reorder
         // ping-pong 重排:写地址 = 位倒序(opos),块满切换读出
-        wire [2*DW-1:0] rb_tdata;
+        wire [2*SW-1:0] rb_tdata;
         wire            rb_valid, rb_first, rb_last;
-        fft_reorder #(.M(M), .DW(DW)) u_reorder (
+        fft_reorder #(.M(M), .DW(DW), .SW(SW)) u_reorder (
             .clk(clk), .rst(rst), .en(en),
             .x_tdata(raw_tdata), .x_pos(opos), .x_valid(raw_valid),
             .y_tdata(rb_tdata), .y_valid(rb_valid),
             .y_first(rb_first), .y_last(rb_last)
         );
-        assign m_axis_tdata  = rb_tdata;
+        assign m_axis_tdata  = {rb_tdata[33:18], rb_tdata[15:0]};
         assign m_axis_tvalid = rb_valid;
         assign m_axis_tuser  = rb_valid & rb_first;
         assign m_axis_tlast  = rb_valid & rb_last;

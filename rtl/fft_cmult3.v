@@ -8,7 +8,8 @@
 module fft_cmult3 #(
     parameter AW = 17,                       // a 路位宽(有符号)
     parameter BW = 18,                       // b 路位宽(有符号,2^17 刻度)
-    parameter RSH = 18                       // 总移位 = 17(刻度) + 1(级缩放)
+    parameter RSH = 18,                      // 总移位 = 17(刻度) + 1(级缩放)
+    parameter YW = 18                        // y 路位宽(conv_round 值域)
 )(
     input  wire                    clk,
     input  wire                    en,       // 流水推进
@@ -17,8 +18,8 @@ module fft_cmult3 #(
     input  wire signed [BW-1:0]    b_re,     // t 拍旋转因子(ROM 出)
     input  wire signed [BW-1:0]    b_im,
     input  wire                    a_valid,
-    output reg  signed [AW-1:0]    y_re,     // t+3 拍
-    output reg  signed [AW-1:0]    y_im,
+    output reg  signed [YW-1:0]    y_re,     // t+3 拍(18 位全精度,conv_round 值域)
+    output reg  signed [YW-1:0]    y_im,
     output reg                     y_valid
 );
     localparam PW = AW + BW + 2;             // 乘积位宽(48 内)
@@ -57,11 +58,11 @@ module fft_cmult3 #(
     wire signed [PW-1:0] sre_b = sre + {{(PW-1){1'b0}}, sre[RSH]} + {{(PW-RSH+1){1'b0}}, {(RSH-1){1'b1}}};
     wire signed [PW-1:0] sim_b = sim + {{(PW-1){1'b0}}, sim[RSH]} + {{(PW-RSH+1){1'b0}}, {(RSH-1){1'b1}}};
     initial begin
-        y_re = {AW{1'b0}}; y_im = {AW{1'b0}}; y_valid = 1'b0;  // 沿前组合读(sr_in)会采到未初始化 X 写进 SR
+        y_re = {YW{1'b0}}; y_im = {YW{1'b0}}; y_valid = 1'b0;  // 沿前组合读(sr_in)会采到未初始化 X 写进 SR
     end
     always @(posedge clk) if (en) begin
-        y_re    <= sre_b[PW-1:RSH];
-        y_im    <= sim_b[PW-1:RSH];
+        y_re    <= sre_b[RSH+YW-1:RSH];      // conv_round(·,18) ∈ 18 位域
+        y_im    <= sim_b[RSH+YW-1:RSH];
         y_valid <= v2;
     end
 endmodule

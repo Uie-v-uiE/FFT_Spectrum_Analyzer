@@ -14,7 +14,7 @@ module tb_fft_top #(
 
     localparam DW = 16;
     localparam MAXN = 1 << 12;
-    localparam MAXW = 18 * MAXN;               // 18 帧 × 4096
+    localparam MAXW = 26 * MAXN;               // 24 帧 in + 22 帧 exp + 余量(all_N 4096:98304/90112)
 
     reg clk = 1'b0;
     always #5 clk = ~clk;
@@ -46,17 +46,21 @@ module tb_fft_top #(
     // 随机停拍
     integer seed;
     integer gap_en, gap_cnt;
+    reg [15:0] gap_seq [0:65535];           // 停拍位置记录(样元号,黄金重放复刻用)
 
     // 采集
     always @(posedge clk) begin
-        if (m_valid && m_ready && n_got < MAXW) begin
+        // 采集 = 每个推进拍的输出(源推进时 s_valid=1 且 m_valid);源停拍时核心冻结、
+        // m_valid 保持,不得重复采集(GAP 语义:停拍不传输)
+        if (s_valid && m_valid && n_got < MAXW) begin
             got_mem[n_got] <= m_tdata;
             n_got <= n_got + 1;
         end
     end
 
     // 逐级探针(级定位用):lvl_mem[l][c] = 第 l 级输出在绝对周期 c 的值
-    wire [2*DW-1:0] lv_tdata [0:M_P-1];
+    localparam SW_P = 18;
+    wire [2*SW_P-1:0] lv_tdata [0:M_P-1];
     wire            lv_valid [0:M_P-1];
     genvar gp;
     generate
@@ -65,9 +69,16 @@ module tb_fft_top #(
             assign lv_valid[gp] = dut.g_stages[gp].u_st.y_valid;
         end
     endgenerate
-    reg [31:0] lvl_mem [0:M_P-1][0:4095];
+    reg [2*SW_P-1:0] lvl_mem [0:M_P-1][0:4095];
     reg [15:0] lvl_cyc [0:M_P-1];
     integer    gi;
+    // L1 级全信号逐拍探针(9 字/拍:x raw diff srfront srin fr y ad ctrl)
+    reg [2*SW_P-1:0] l1p [0:4607];
+    integer    l1c;
+    initial begin
+        l1c = 0;
+        for (gi = 0; gi < 4608; gi = gi + 1) l1p[gi] = 36'h0;
+    end
     initial begin
         for (gi = 0; gi < M_P; gi = gi + 1) lvl_cyc[gi] = 16'h0;
     end
@@ -78,6 +89,20 @@ module tb_fft_top #(
             for (gi = 0; gi < M_P; gi = gi + 1) begin
                 if (lv_valid[gi] && lvl_cyc[gi] < 4095) begin
                     lvl_mem[gi][lvl_cyc[gi]] <= lv_tdata[gi];
+                    if (gi == 1 && l1c < 512) begin
+                        l1p[l1c*9+0] = dut.g_stages[1].u_st.x_tdata;
+                        l1p[l1c*9+1] = dut.g_stages[1].u_st.raw_f;
+                        l1p[l1c*9+2] = dut.g_stages[1].u_st.diff_f;
+                        l1p[l1c*9+3] = dut.g_stages[1].u_st.sr_front_w;
+                        l1p[l1c*9+4] = dut.g_stages[1].u_st.sr_in;
+                        l1p[l1c*9+5] = dut.g_stages[1].u_st.g_srN.fr;
+                        l1p[l1c*9+6] = dut.g_stages[1].u_st.y_tdata;
+                        l1p[l1c*9+7] = {dut.g_stages[1].u_st.ad_im, dut.g_stages[1].u_st.ad_re};
+                        l1p[l1c*9+8] = {23'h0, dut.g_stages[1].u_st.x_valid,
+                                        dut.g_stages[1].u_st.fh_sel, dut.g_stages[1].u_st.fh_now,
+                                        dut.g_stages[1].u_st.p};
+                        l1c = l1c + 1;
+                    end
                     if (gi == 5 && dbg_cnt < 16)
                         $display("PROBE t=%0t L5 cap#%0d val=%h (pre-edge valid)", $time, lvl_cyc[gi], lv_tdata[gi]);
                     lvl_cyc[gi] <= lvl_cyc[gi] + 1'b1;
@@ -137,6 +162,10 @@ module tb_fft_top #(
             s_tdata = in_mem[i];
             if (gap_en && (({$random(seed)} % 10) < 3)) begin
                 s_valid = 1'b0;                     // 停拍一拍(数据保持)
+                if (gap_cnt < 65536) begin
+                    gap_seq[gap_cnt] = i[15:0];     // 记录停拍位置(样元 i 未被接受)
+                    gap_cnt = gap_cnt + 1;
+                end
                 @(posedge clk);
             end else begin
                 s_valid = 1'b1;
@@ -144,9 +173,10 @@ module tb_fft_top #(
                 if (s_ready === 1'b1) i = i + 1;    // 被接受才推进
             end
         end
-        // 冲刷帧:2N 个零字,把尾帧输出推出来(与模型 run_stream 的冲刷一致)
+        // 冲刷帧:2N+2 个零字把尾帧输出推出来(OUT_NATURAL=1 时 reorder 滞后 1 帧,
+        // 末帧最后一个输出落在冲刷结束后 1 拍,+2 拍余量保证采集)
         s_tdata = 0;
-        for (i = 0; i < 2 * (1 << M_P); i = i + 1) begin
+        for (i = 0; i < 2 * (1 << M_P) + 2; i = i + 1) begin
             s_valid = 1'b1;
             @(posedge clk);
         end
@@ -162,15 +192,18 @@ module tb_fft_top #(
         // 自然序模式:期望流按位倒序自反置换(位倒序为自反置换)
         if (NAT_P == 1) begin : perm
             reg [31:0] tmp;
-            integer a, b, mm;
-            for (a = 0; a < (1 << M_P); a = a + 1) begin
-                b = 0;
-                for (mm = 0; mm < M_P; mm = mm + 1)
-                    b[mm] = a[M_P-1-mm];
-                if (b > a) begin           // 只交换一次(位倒序自反,避免二次交换抵消)
-                    tmp = exp_mem[a];
-                    exp_mem[a] = exp_mem[b];
-                    exp_mem[b] = tmp;
+            integer a, b, mm, ff;
+            // exp 为多帧拼接:帧内位倒序自反置换(每帧独立)
+            for (ff = 0; ff < n_exp; ff = ff + (1 << M_P)) begin
+                for (a = 0; a < (1 << M_P); a = a + 1) begin
+                    b = 0;
+                    for (mm = 0; mm < M_P; mm = mm + 1)
+                        b[mm] = a[M_P-1-mm];
+                    if (b > a) begin           // 只交换一次(位倒序自反,避免二次交换抵消)
+                        tmp = exp_mem[ff + a];
+                        exp_mem[ff + a] = exp_mem[ff + b];
+                        exp_mem[ff + b] = tmp;
+                    end
                 end
             end
         end
@@ -223,6 +256,20 @@ module tb_fft_top #(
             f4 = $fopen("sim/got_lvl5.hex", "w");
             for (i = 0; i < lvl_cyc[5]; i = i + 1) $fwrite(f4, "%h
 ", lvl_mem[5][i]);
+            $fclose(f4);
+        end
+        begin
+            f4 = $fopen("sim/l1_probe.hex", "w");
+            for (i = 0; i < l1c; i = i + 1)
+                $fwrite(f4, "%h %h %h %h %h %h %h %h %h
+", l1p[i*9+0], l1p[i*9+1], l1p[i*9+2], l1p[i*9+3],
+                       l1p[i*9+4], l1p[i*9+5], l1p[i*9+6], l1p[i*9+7], l1p[i*9+8]);
+            $fclose(f4);
+        end
+        begin
+            f4 = $fopen("sim/gap_seq.hex", "w");
+            for (i = 0; i < gap_cnt; i = i + 1) $fwrite(f4, "%0d
+", gap_seq[i]);
             $fclose(f4);
         end
         if (errors == 0)
