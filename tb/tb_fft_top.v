@@ -55,8 +55,18 @@ module tb_fft_top #(
         end
     end
 
+    integer mcnt;
+    initial mcnt = 0;
+    always @(posedge clk) if (!rst && mcnt < 260) begin
+        mcnt <= mcnt + 1;
+        $display("L1ST k=%0d x_im=%0d pr_im=%0d s_im=%0d simsa=%b out=%h",
+                 mcnt, $signed(dut.g_stages[1].u_st.x_im),
+                 $signed(dut.g_stages[1].u_st.pr_im),
+                 $signed(dut.g_stages[1].u_st.s_im),
+                 dut.g_stages[1].u_st.sat_im, dut.g_stages[1].u_st.y_tdata);
+    end
     // 逐级探针(级定位用):lvl_mem[l][c] = 第 l 级输出在绝对周期 c 的值
-    wire [2*DW-1:0] lv_tdata [0:M_P-1];
+    wire [2*DW+1:0] lv_tdata [0:M_P-1];
     wire            lv_valid [0:M_P-1];
     genvar gp;
     generate
@@ -77,7 +87,7 @@ module tb_fft_top #(
         if (!rst) begin
             for (gi = 0; gi < M_P; gi = gi + 1) begin
                 if (lv_valid[gi] && lvl_cyc[gi] < 4095) begin
-                    lvl_mem[gi][lvl_cyc[gi]] <= lv_tdata[gi];
+                    lvl_mem[gi][lvl_cyc[gi]] <= {lv_tdata[gi][2*DW-1:DW], lv_tdata[gi][DW-1:0]};
                     if (gi == 5 && dbg_cnt < 16)
                         $display("PROBE t=%0t L5 cap#%0d val=%h (pre-edge valid)", $time, lvl_cyc[gi], lv_tdata[gi]);
                     lvl_cyc[gi] <= lvl_cyc[gi] + 1'b1;
