@@ -58,7 +58,9 @@ module fft_top #(
     genvar g;
     generate
         for (g = 0; g < M; g = g + 1) begin : g_stages
-            fft_stage #(.M(M), .L(g), .DW(DW), .SW(SW)) u_st (
+            // K=g:级间 1 拍寄存的相位补偿——数据到级 g 晚 g 拍,PINIT 滞后 g
+            // 才能与数据流相位对齐(缺此补偿蝶形配对错位,级联不是 DFT)
+            fft_stage #(.M(M), .L(g), .DW(DW), .SW(SW), .K(g)) u_st (
                 .clk(clk), .rst(rst), .en(en),
                 .x_tdata(lk_tdata[g]), .x_valid(lk_valid[g]),
                 .y_tdata(lk_tdata[g+1]), .y_valid(lk_valid[g+1])

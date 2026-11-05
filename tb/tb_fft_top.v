@@ -174,9 +174,9 @@ module tb_fft_top #(
             end
         end
         // 冲刷帧:2N+2 个零字把尾帧输出推出来(OUT_NATURAL=1 时 reorder 滞后 1 帧,
-        // 末帧最后一个输出落在冲刷结束后 1 拍,+2 拍余量保证采集)
+        // 末帧最后一个输出落在冲刷结束后数拍(reorder 滞后 1 帧 + 级延迟),+8 拍余量保证采集)
         s_tdata = 0;
-        for (i = 0; i < 2 * (1 << M_P) + 2; i = i + 1) begin
+        for (i = 0; i < 2 * (1 << M_P) + 8; i = i + 1) begin
             s_valid = 1'b1;
             @(posedge clk);
         end

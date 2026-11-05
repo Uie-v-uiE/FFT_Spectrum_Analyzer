@@ -25,7 +25,8 @@ module fft_stage #(
     parameter M  = 12,
     parameter L  = 0,
     parameter DW = 16,
-    parameter SW = 18                          // SR/级间字段宽(18 位补码)
+    parameter SW = 18,                         // SR/级间字段宽(18 位补码)
+    parameter K  = 0                           // 相位滞后拍数 = 级间寄存级数(顶层传 L)
 )(
     input  wire             clk,
     input  wire             rst,        // 仅复位相位计数(控制状态)
@@ -54,7 +55,6 @@ module fft_stage #(
     endfunction
 
     localparam PW = clog2p1(R);
-    localparam K  = 0;                         // K=0 baseline: verified off=L / err=2^L pattern (L0 bit-exact)
     localparam PINIT_I = (R - (K % R)) % R;
     localparam [PW-1:0] PINIT = PINIT_I;
     localparam [PW-1:0] R_M1 = R - 1;
