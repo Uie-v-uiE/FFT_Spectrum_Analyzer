@@ -12,12 +12,12 @@ module tb_fft_cmult3;
     reg        rst = 1'b1;
     reg        en = 1'b0;
     reg        a_valid = 1'b0;
-    reg signed [16:0] a_re, a_im;
+    reg signed [18:0] a_re, a_im;
     reg signed [17:0] b_re, b_im;
-    wire signed [16:0] y_re, y_im;
+    wire signed [17:0] y_re, y_im;
     wire        y_valid;
 
-    fft_cmult3 #(.AW(17), .BW(18), .RSH(18)) dut (
+    fft_cmult3 #(.AW(19), .BW(18), .RSH(18), .YW(18)) dut (
         .clk, .en, .a_re, .a_im, .b_re, .b_im, .a_valid,
         .y_re, .y_im, .y_valid
     );
@@ -38,7 +38,7 @@ module tb_fft_cmult3;
     end
 
     integer i, errors, fd, code;
-    reg [33:0] ea;
+    reg [35:0] ea;
     reg [35:0] eb;
     reg [31:0] ey;
 
@@ -60,8 +60,8 @@ module tb_fft_cmult3;
                 $finish;
             end
             exp_arr[i] = ey;
-            a_re    = ea[16:0];
-            a_im    = ea[33:17];
+            a_re    = {{1{ea[17]}},  ea[17:0]};    // 18 位位选赋 19 位 reg:须显式符号扩展
+            a_im    = {{1{ea[35]}},  ea[35:18]};
             b_re    = eb[17:0];
             b_im    = eb[35:18];
             en      = 1'b1;

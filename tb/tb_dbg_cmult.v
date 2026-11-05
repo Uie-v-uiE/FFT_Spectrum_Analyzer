@@ -4,17 +4,17 @@ module tb_dbg_cmult;
     reg clk = 1'b0;
     always #5 clk = ~clk;
     reg rst = 1'b1, en = 1'b0, a_valid = 1'b0;
-    reg signed [16:0] a_re, a_im;
+    reg signed [18:0] a_re, a_im;
     reg signed [17:0] b_re, b_im;
-    wire signed [16:0] y_re, y_im;
+    wire signed [17:0] y_re, y_im;
     wire y_valid;
 
-    fft_cmult3 #(.AW(17), .BW(18), .RSH(18)) dut (
+    fft_cmult3 #(.AW(19), .BW(18), .RSH(18), .YW(18)) dut (
         .clk, .en, .a_re, .a_im, .b_re, .b_im, .a_valid,
         .y_re, .y_im, .y_valid
     );
 
-    reg [33:0] ea;
+    reg [35:0] ea;
     reg [35:0] eb;
     reg [31:0] ey;
     integer fd, code, i;
@@ -25,9 +25,9 @@ module tb_dbg_cmult;
         repeat (4) @(posedge clk);
         rst = 0;
         @(posedge clk);
-        for (i = 0; i < 8; i = i + 1) begin
+        for (i = 0; i < 2; i = i + 1) begin
             code = $fscanf(fd, "%h %h %h", ea, eb, ey);
-            a_re = ea[16:0]; a_im = ea[33:17];
+            a_re = ea[17:0]; a_im = ea[35:18];
             b_re = eb[17:0]; b_im = eb[35:18];
             en = 1; a_valid = 1;
             @(posedge clk);
