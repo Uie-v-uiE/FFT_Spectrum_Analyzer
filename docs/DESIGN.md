@@ -87,7 +87,7 @@ ROM 内置一帧合成信号(双音),FFT 后逐帧取峰值 bin,LED[3:0] 显示�
 | G2 | golden/fft_model.py 比特精确模型 + 向量/ROM 生成;RTL L0-L5 逐级对账全 0 错 + 顶层 8/8 回归 PASS(见 ISSUES I-08 第二十轮) | ✅ |
 | G3 | dump_lvl 式重放(级间 1 拍)逐级流对账 = 周期精确对账;off=L 规律实证 | ✅ |
 | G4 | OOC 综合(36-bit 管线,xcku5p @333 MHz):WNS -0.037 ns(15/13206 端点,边缘),DSP 50(2.74%) | ✅(时序余量优化待办) |
-| G5 | 布线后 WNS≥0@400 MHz + failfast/拥塞报告 | 待办 |
+| G5 | 布线后时序闭环:333 MHz WNS +0.027 / TNS 0 / WHS +0.023(phys_opt 链 + SR 禁 BRAM 级联 cascade_height=1);400 MHz 需结构性优化(SR 读出寄存/Bank 化),吞吐 333 MSPS 已达架构指标 | ✅(333 MHz)|
 
 ## 8. 参考前作(调研结论,非拷贝)
 

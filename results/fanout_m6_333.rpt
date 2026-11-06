@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2025.2.1 (win64) Build 6403652 Thu Mar 19 19:48:24 GMT 2026
-| Date         : Wed Nov  4 03:46:25 2026
+| Date         : Fri Nov  6 02:49:28 2026
 | Host         : Uie-laptop running 64-bit major release  (build 9200)
 | Command      : report_high_fanout_nets -file results/fanout_m6_333.rpt
 | Design       : fft_top
@@ -17,16 +17,16 @@ High Fan-out Nets Information
 +--------------------------------+--------+-------------+
 | Net Name                       | Fanout | Driver Type |
 +--------------------------------+--------+-------------+
-| g_stages[5].u_st/en            |   2019 | LUT3        |
-| rst                            |    131 | PORT        |
-| g_stages[10].u_st/Q[0]         |     98 | FDSE        |
-| g_stages[4].u_st/g_srN.wptr[0] |     98 | FDRE        |
-| g_stages[4].u_st/g_srN.wptr[1] |     98 | FDRE        |
-| g_stages[4].u_st/g_srN.wptr[2] |     97 | FDRE        |
-| g_stages[4].u_st/g_srN.wptr[5] |     95 | FDRE        |
-| g_stages[4].u_st/g_srN.wptr[3] |     93 | FDRE        |
-| g_stages[4].u_st/g_srN.wptr[4] |     93 | FDRE        |
-| g_stages[4].u_st/g_srN.rm1[0]  |     71 | LUT6        |
+| g_stages[5].u_st/u_cmult/rst_0 |   2779 | LUT3        |
+| g_stages[10].u_st/Q[0]         |    108 | FDRE        |
+| rst                            |    105 | PORT        |
+| g_stages[4].u_st/g_srN.wptr[0] |    104 | FDRE        |
+| g_stages[4].u_st/g_srN.wptr[1] |    104 | FDRE        |
+| g_stages[4].u_st/g_srN.wptr[2] |    103 | FDRE        |
+| g_stages[4].u_st/g_srN.wptr[5] |    101 | FDRE        |
+| g_stages[4].u_st/g_srN.wptr[3] |     99 | FDRE        |
+| g_stages[4].u_st/g_srN.wptr[4] |     99 | FDRE        |
+| g_stages[4].u_st/g_srN.rm1[2]  |     73 | LUT6        |
 +--------------------------------+--------+-------------+
 
 

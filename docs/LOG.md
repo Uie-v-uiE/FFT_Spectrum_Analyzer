@@ -64,3 +64,12 @@
 - Vivado OOC(36-bit 管线,xcku5p @333 MHz):WNS -0.037 ns(15/13206 端点,
   边缘),DSP 50(2.74%)。时序余量优化(retiming/pipelining)留 G5。
 - git 33d6051(修复+工具+向量)、7afa8de(DESIGN 更新)。审计:独立 agent 复查中。
+
+## 2026-11-06(G5 时序闭环)
+
+- 布线后 WNS -0.103 @3.0 ns(L0 SR BRAM CAS 级联读 + 加法/饱和/mux 9 级 3.036 ns);
+  phys_opt 仅收 0.015;**SR mem 加 cascade_height=1 禁 CAS 级联(同步读拍数语义不变)
+  → 布线后 WNS +0.027 / TNS 0 / WHS +0.023,333 MHz 闭环**;
+- 400 MHz(2.5 ns)仍差 ~0.4 ns,需结构性优化(SR 读出加寄存/Bank 化),列入待办;
+  吞吐 333 MSPS(1 样本/拍)已达 G1 架构指标;
+- 实现脚本 scripts/impl_ooc.tcl / impl_ooc_po.tcl,报告与 checkpoint 落 results/。

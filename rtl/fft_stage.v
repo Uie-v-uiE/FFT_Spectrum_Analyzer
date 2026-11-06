@@ -186,6 +186,7 @@ module fft_stage #(
     end else if (S > 1) begin : g_srN
         localparam AWD = clog2p1(S);
         localparam [AWD-1:0] S_M1 = S - 1;
+        (* cascade_height = 1 *)                   // 禁 BRAM CAS 级联:压缩 SR 读出路径(拍数语义不变)
         reg [2*SWW-1:0] mem [0:S-1];
         reg [AWD-1:0]  wptr;
         reg [2*SWW-1:0] fr;
