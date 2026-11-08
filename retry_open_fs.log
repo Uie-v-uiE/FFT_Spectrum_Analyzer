@@ -1,2 +1,0 @@
-Retry open file channel in 250 ms for file: D:/Xilinx/Harness/Project/new_prj/k5p-fft-accelerator/.Xil/Vivado-2308-Uie-laptop/realtime\fft_top.tcl
-Retry open file channel in 250 ms for file: D:/Software/Vivado/2025.2.1/Vivado/scripts/rt/fpga_tcl/rtSynthPrep.tcl

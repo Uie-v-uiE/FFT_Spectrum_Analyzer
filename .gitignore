@@ -22,3 +22,8 @@ __pycache__/
 
 # OS
 *.bak
+*.log
+transcript
+.Xil/
+clockInfo.txt
+vish_stacktrace.vstf
