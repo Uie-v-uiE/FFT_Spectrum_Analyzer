@@ -1,0 +1,24 @@
+# Vivado build artifacts
+build/
+*.bit
+*.dcp
+*.wdb
+*.jou
+*.log
+*.backup.log
+*.backup.jou
+.Xil/
+
+# ModelSim simulation artifacts
+sim/work/
+transcript
+modelsim.ini
+vsim_stacktrace.vstf
+*.wlf
+
+# Python
+__pycache__/
+*.pyc
+
+# OS
+*.bak
