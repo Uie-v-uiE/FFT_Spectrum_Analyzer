@@ -1,0 +1,60 @@
+# vsim -c "+INFILE=vectors/all_N1024_in.hex" "+OUTFILE=vectors/all_N1024_out.hex" work.tb_fft_top -do "run -all; quit -f" -gM_P=10 -gFV_START=3063 -gNAT_P=0 
+# Start time: 02:21:51 on Nov 06,2026
+# ** Note: (vsim-3812) Design is being optimized...
+# //  ModelSim SE-64 2020.4 Oct 13 2020
+# //
+# //  Copyright 1991-2020 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  ModelSim SE-64 and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# Loading work.tb_fft_top(fast)
+# Loading work.fft_stage(fast)
+# Loading work.fft_stage(fast__1)
+# Loading work.fft_stage(fast__2)
+# Loading work.fft_stage(fast__3)
+# Loading work.fft_stage(fast__4)
+# Loading work.fft_stage(fast__5)
+# Loading work.fft_stage(fast__6)
+# Loading work.fft_stage(fast__7)
+# Loading work.fft_stage(fast__8)
+# Loading work.fft_stage(fast__9)
+# run -all
+# ** Warning: (vsim-7) Failed to open readmem file "vectors/tw_L2.mem" in read mode.
+# No such file or directory. (errno = ENOENT)    : D:/Xilinx/Harness/Project/new_prj/k5p-fft-accelerator/rtl/fft_stage.v(140)
+#    Time: 0 ps  Iteration: 0  Instance: /tb_fft_top/dut/g_stages[0]/u_st
+# ** Warning: (vsim-7) Failed to open readmem file "vectors/tw_L3.mem" in read mode.
+# No such file or directory. (errno = ENOENT)    : D:/Xilinx/Harness/Project/new_prj/k5p-fft-accelerator/rtl/fft_stage.v(141)
+#    Time: 0 ps  Iteration: 0  Instance: /tb_fft_top/dut/g_stages[1]/u_st
+# ** Warning: (vsim-7) Failed to open readmem file "vectors/tw_L4.mem" in read mode.
+# No such file or directory. (errno = ENOENT)    : D:/Xilinx/Harness/Project/new_prj/k5p-fft-accelerator/rtl/fft_stage.v(142)
+#    Time: 0 ps  Iteration: 0  Instance: /tb_fft_top/dut/g_stages[2]/u_st
+# ** Warning: (vsim-7) Failed to open readmem file "vectors/tw_L5.mem" in read mode.
+# No such file or directory. (errno = ENOENT)    : D:/Xilinx/Harness/Project/new_prj/k5p-fft-accelerator/rtl/fft_stage.v(143)
+#    Time: 0 ps  Iteration: 0  Instance: /tb_fft_top/dut/g_stages[3]/u_st
+# ** Warning: (vsim-7) Failed to open readmem file "vectors/tw_L6.mem" in read mode.
+# No such file or directory. (errno = ENOENT)    : D:/Xilinx/Harness/Project/new_prj/k5p-fft-accelerator/rtl/fft_stage.v(144)
+#    Time: 0 ps  Iteration: 0  Instance: /tb_fft_top/dut/g_stages[4]/u_st
+# ** Warning: (vsim-7) Failed to open readmem file "vectors/tw_L7.mem" in read mode.
+# No such file or directory. (errno = ENOENT)    : D:/Xilinx/Harness/Project/new_prj/k5p-fft-accelerator/rtl/fft_stage.v(145)
+#    Time: 0 ps  Iteration: 0  Instance: /tb_fft_top/dut/g_stages[5]/u_st
+# ** Warning: (vsim-7) Failed to open readmem file "vectors/tw_L8.mem" in read mode.
+# No such file or directory. (errno = ENOENT)    : D:/Xilinx/Harness/Project/new_prj/k5p-fft-accelerator/rtl/fft_stage.v(146)
+#    Time: 0 ps  Iteration: 0  Instance: /tb_fft_top/dut/g_stages[6]/u_st
+# ** Warning: (vsim-7) Failed to open readmem file "vectors/tw_L9.mem" in read mode.
+# No such file or directory. (errno = ENOENT)    : D:/Xilinx/Harness/Project/new_prj/k5p-fft-accelerator/rtl/fft_stage.v(147)
+#    Time: 0 ps  Iteration: 0  Instance: /tb_fft_top/dut/g_stages[7]/u_st
+# ** Warning: (vsim-3534) [FOFIR] - Failed to open file "vectors/all_N1024_in.hex" for reading.
+# No such file or directory. (errno = ENOENT)    : D:/Xilinx/Harness/Project/new_prj/k5p-fft-accelerator/tb/tb_fft_top.v(141)
+#    Time: 0 ps  Iteration: 0  Instance: /tb_fft_top
+# TB FAIL: open vectors/all_N1024_in.hex
+# ** Note: $finish    : D:/Xilinx/Harness/Project/new_prj/k5p-fft-accelerator/tb/tb_fft_top.v(142)
+#    Time: 0 ps  Iteration: 0  Instance: /tb_fft_top
+# End time: 02:21:52 on Nov 06,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 9

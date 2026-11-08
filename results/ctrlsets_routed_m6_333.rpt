@@ -1,0 +1,99 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.2.1 (win64) Build 6403652 Thu Mar 19 19:48:24 GMT 2026
+| Date         : Fri Nov  6 23:54:36 2026
+| Host         : Uie-laptop running 64-bit major release  (build 9200)
+| Command      : report_control_sets -verbose -file results/ctrlsets_routed_m6_333.rpt
+| Design       : fft_top
+| Device       : xcku5p
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Total control sets                                       |    21 |
+|    Minimum number of control sets                        |    21 |
+|    Addition due to synthesis replication                 |     0 |
+|    Addition due to physical synthesis replication        |     0 |
+| Unused register locations in slices containing registers |    17 |
++----------------------------------------------------------+-------+
+* Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
+** Run report_qor_suggestions for automated merging and remapping suggestions
+
+
+2. Histogram
+------------
+
++--------------------+-------+
+|       Fanout       | Count |
++--------------------+-------+
+| Total control sets |    21 |
+| >= 0 to < 4        |     3 |
+| >= 4 to < 6        |     0 |
+| >= 6 to < 8        |     0 |
+| >= 8 to < 10       |     0 |
+| >= 10 to < 12      |     0 |
+| >= 12 to < 14      |     1 |
+| >= 14 to < 16      |     1 |
+| >= 16              |    16 |
++--------------------+-------+
+* Control sets can be remapped at either synth_design or opt_design
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |               1 |            1 |
+| No           | No                    | Yes                    |               0 |            0 |
+| No           | Yes                   | No                     |               0 |            0 |
+| Yes          | No                    | No                     |            1869 |          330 |
+| Yes          | No                    | Yes                    |               0 |            0 |
+| Yes          | Yes                   | No                     |             533 |          170 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++--------------+----------------------------------------------------+-------------------------------------------+------------------+----------------+--------------+
+| Clock Signal |                    Enable Signal                   |              Set/Reset Signal             | Slice Load Count | Bel Load Count | Bels / Slice |
++--------------+----------------------------------------------------+-------------------------------------------+------------------+----------------+--------------+
+|  clk         |                                                    |                                           |                1 |              1 |         1.00 |
+|  clk         | g_stages[5].u_st/u_cmult/rst_0                     | g_stages[3].u_st/g_srN.wptr[5]_i_1__0_n_0 |                1 |              1 |         1.00 |
+|  clk         | g_stages[5].u_st/u_cmult/rst_0                     | g_stages[5].u_st/g_srN.wptr[5]_i_1__1_n_0 |                1 |              1 |         1.00 |
+|  clk         | g_stages[11].u_st/u_cmult/cyc_reg[11][0]           | rst                                       |                3 |             12 |         4.00 |
+|  clk         | g_stages[11].u_st/u_cmult/E[0]                     | rst                                       |                3 |             14 |         4.67 |
+|  clk         | g_stages[5].u_st/u_cmult/rst_0                     | g_stages[0].u_st/rp2[33]_i_1_n_0          |                9 |             32 |         3.56 |
+|  clk         | g_stages[5].u_st/u_cmult/rst_0                     | g_stages[11].u_st/rp0[35]_i_1__0_n_0      |                8 |             36 |         4.50 |
+|  clk         | g_stages[5].u_st/u_cmult/rst_0                     | g_stages[1].u_st/rp2[35]_i_1_n_0          |               10 |             36 |         3.60 |
+|  clk         | g_stages[5].u_st/u_cmult/rst_0                     | g_stages[10].u_st/rp0[35]_i_1_n_0         |                8 |             36 |         4.50 |
+|  clk         | g_stages[5].u_st/u_cmult/rst_0                     | g_stages[2].u_st/rp2[35]_i_1__0_n_0       |               12 |             36 |         3.00 |
+|  clk         | g_stages[5].u_st/u_cmult/rst_0                     | g_stages[7].u_st/rp2[35]_i_1__5_n_0       |               17 |             36 |         2.12 |
+|  clk         | g_stages[5].u_st/u_cmult/rst_0                     | g_stages[5].u_st/rp2[35]_i_1__3_n_0       |               14 |             36 |         2.57 |
+|  clk         | g_stages[5].u_st/u_cmult/rst_0                     | g_stages[6].u_st/rp2[35]_i_1__4_n_0       |               12 |             36 |         3.00 |
+|  clk         | g_stages[5].u_st/u_cmult/rst_0                     | g_stages[3].u_st/rp2[35]_i_1__1_n_0       |               11 |             36 |         3.27 |
+|  clk         | g_stages[5].u_st/u_cmult/rst_0                     | g_stages[4].u_st/rp2[35]_i_1__2_n_0       |               11 |             36 |         3.27 |
+|  clk         | g_stages[5].u_st/u_cmult/rst_0                     | g_stages[8].u_st/rp2[35]_i_1__6_n_0       |               14 |             36 |         2.57 |
+|  clk         | g_stages[5].u_st/u_cmult/rst_0                     | g_stages[9].u_st/rp2[35]_i_1__7_n_0       |               18 |             36 |         2.00 |
+|  clk         | g_stages[4].u_st/g_srN.mem_reg_0_63_0_6_i_8__0_n_0 |                                           |                6 |             42 |         7.00 |
+|  clk         | g_stages[4].u_st/g_srN.mem_reg_64_127_0_6_i_1_n_0  |                                           |                6 |             42 |         7.00 |
+|  clk         | g_stages[5].u_st/u_cmult/rst_0                     | rst                                       |               20 |             77 |         3.85 |
+|  clk         | g_stages[5].u_st/u_cmult/rst_0                     |                                           |              346 |           2066 |         5.97 |
++--------------+----------------------------------------------------+-------------------------------------------+------------------+----------------+--------------+
+
+

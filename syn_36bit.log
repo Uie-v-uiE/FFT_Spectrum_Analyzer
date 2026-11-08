@@ -1,0 +1,1011 @@
+#-----------------------------------------------------------
+# Vivado v2025.2.1 (64-bit)
+# SW Build 6403652 on Thu Mar 19 19:48:24 GMT 2026
+# IP Build 6403511 on Thu Mar 19 12:41:45 MDT 2026
+# SharedData Build 6403650 on Thu Mar 19 14:02:13 MDT 2026
+# Start of session at: Fri Nov  6 02:47:50 2026
+# Process ID         : 7108
+# Current directory  : D:/Xilinx/Harness/Project/new_prj/k5p-fft-accelerator
+# Command line       : vivado.exe -mode batch -source scripts/synth_ooc.tcl -nojournal -log syn_36bit.log
+# Log file           : D:/Xilinx/Harness/Project/new_prj/k5p-fft-accelerator/syn_36bit.log
+# Journal file       : 
+# Running On         : Uie-laptop
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 26300
+# Processor Detail   : 12th Gen Intel(R) Core(TM) i5-12450H
+# CPU Frequency      : 2496 MHz
+# CPU Physical cores : 8
+# CPU Logical cores  : 12
+# Host memory        : 16873 MB
+# Swap memory        : 3510 MB
+# Total Virtual      : 20384 MB
+# Available Virtual  : 5418 MB
+#-----------------------------------------------------------
+source scripts/synth_ooc.tcl
+# set part xcku5p-ffvb676-2-i
+# set outdir results
+# create_project -force fft_ooc $outdir/ooc_prj -part $part -in_memory
+create_project: Time (s): cpu = 00:00:11 ; elapsed = 00:00:07 . Memory (MB): peak = 542.355 ; gain = 222.594
+# add_files rtl/fft_cmult3.v
+# add_files rtl/fft_stage.v
+# add_files rtl/fft_top.v
+# set_property top fft_top [current_fileset]
+# set_property file_type {Verilog Header} [glob rtl/*.v] -quiet
+# synth_design -top fft_top -mode out_of_context -flatten_hierarchy rebuilt
+Command: synth_design -top fft_top -mode out_of_context -flatten_hierarchy rebuilt
+Starting synth_design
+Using part: xcku5p-ffvb676-2-i
+Attempting to get a license for feature 'Synthesis' and/or device 'xcku5p'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xcku5p'
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 24796
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1085.949 ; gain = 538.621
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'fft_top' [D:/Xilinx/Harness/Project/new_prj/k5p-fft-accelerator/rtl/fft_top.v:13]
+INFO: [Synth 8-6157] synthesizing module 'fft_stage' [D:/Xilinx/Harness/Project/new_prj/k5p-fft-accelerator/rtl/fft_stage.v:24]
+	Parameter M bound to: 12 - type: integer 
+	Parameter L bound to: 0 - type: integer 
+	Parameter DW bound to: 16 - type: integer 
+	Parameter SW bound to: 18 - type: integer 
+INFO: [Synth 8-3876] $readmem data file 'vectors/tw_L0.mem' is read successfully [D:/Xilinx/Harness/Project/new_prj/k5p-fft-accelerator/rtl/fft_stage.v:138]
+INFO: [Synth 8-6157] synthesizing module 'fft_cmult3' [D:/Xilinx/Harness/Project/new_prj/k5p-fft-accelerator/rtl/fft_cmult3.v:8]
+	Parameter AW bound to: 19 - type: integer 
+	Parameter BW bound to: 18 - type: integer 
+	Parameter RSH bound to: 18 - type: integer 
+	Parameter YW bound to: 18 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'fft_cmult3' (0#1) [D:/Xilinx/Harness/Project/new_prj/k5p-fft-accelerator/rtl/fft_cmult3.v:8]
+INFO: [Synth 8-6155] done synthesizing module 'fft_stage' (0#1) [D:/Xilinx/Harness/Project/new_prj/k5p-fft-accelerator/rtl/fft_stage.v:24]
+INFO: [Synth 8-6157] synthesizing module 'fft_stage__parameterized0' [D:/Xilinx/Harness/Project/new_prj/k5p-fft-accelerator/rtl/fft_stage.v:24]
+	Parameter M bound to: 12 - type: integer 
+	Parameter L bound to: 1 - type: integer 
+	Parameter DW bound to: 16 - type: integer 
+	Parameter SW bound to: 18 - type: integer 
+INFO: [Synth 8-3876] $readmem data file 'vectors/tw_L1.mem' is read successfully [D:/Xilinx/Harness/Project/new_prj/k5p-fft-accelerator/rtl/fft_stage.v:139]
+INFO: [Synth 8-6155] done synthesizing module 'fft_stage__parameterized0' (0#1) [D:/Xilinx/Harness/Project/new_prj/k5p-fft-accelerator/rtl/fft_stage.v:24]
+INFO: [Synth 8-6157] synthesizing module 'fft_stage__parameterized1' [D:/Xilinx/Harness/Project/new_prj/k5p-fft-accelerator/rtl/fft_stage.v:24]
+	Parameter M bound to: 12 - type: integer 
+	Parameter L bound to: 2 - type: integer 
+	Parameter DW bound to: 16 - type: integer 
+	Parameter SW bound to: 18 - type: integer 
+INFO: [Synth 8-3876] $readmem data file 'vectors/tw_L2.mem' is read successfully [D:/Xilinx/Harness/Project/new_prj/k5p-fft-accelerator/rtl/fft_stage.v:140]
+INFO: [Synth 8-6155] done synthesizing module 'fft_stage__parameterized1' (0#1) [D:/Xilinx/Harness/Project/new_prj/k5p-fft-accelerator/rtl/fft_stage.v:24]
+INFO: [Synth 8-6157] synthesizing module 'fft_stage__parameterized2' [D:/Xilinx/Harness/Project/new_prj/k5p-fft-accelerator/rtl/fft_stage.v:24]
+	Parameter M bound to: 12 - type: integer 
+	Parameter L bound to: 3 - type: integer 
+	Parameter DW bound to: 16 - type: integer 
+	Parameter SW bound to: 18 - type: integer 
+INFO: [Synth 8-3876] $readmem data file 'vectors/tw_L3.mem' is read successfully [D:/Xilinx/Harness/Project/new_prj/k5p-fft-accelerator/rtl/fft_stage.v:141]
+INFO: [Synth 8-6155] done synthesizing module 'fft_stage__parameterized2' (0#1) [D:/Xilinx/Harness/Project/new_prj/k5p-fft-accelerator/rtl/fft_stage.v:24]
+INFO: [Synth 8-6157] synthesizing module 'fft_stage__parameterized3' [D:/Xilinx/Harness/Project/new_prj/k5p-fft-accelerator/rtl/fft_stage.v:24]
+	Parameter M bound to: 12 - type: integer 
+	Parameter L bound to: 4 - type: integer 
+	Parameter DW bound to: 16 - type: integer 
+	Parameter SW bound to: 18 - type: integer 
+INFO: [Synth 8-3876] $readmem data file 'vectors/tw_L4.mem' is read successfully [D:/Xilinx/Harness/Project/new_prj/k5p-fft-accelerator/rtl/fft_stage.v:142]
+INFO: [Synth 8-6155] done synthesizing module 'fft_stage__parameterized3' (0#1) [D:/Xilinx/Harness/Project/new_prj/k5p-fft-accelerator/rtl/fft_stage.v:24]
+INFO: [Synth 8-6157] synthesizing module 'fft_stage__parameterized4' [D:/Xilinx/Harness/Project/new_prj/k5p-fft-accelerator/rtl/fft_stage.v:24]
+	Parameter M bound to: 12 - type: integer 
+	Parameter L bound to: 5 - type: integer 
+	Parameter DW bound to: 16 - type: integer 
+	Parameter SW bound to: 18 - type: integer 
+INFO: [Synth 8-3876] $readmem data file 'vectors/tw_L5.mem' is read successfully [D:/Xilinx/Harness/Project/new_prj/k5p-fft-accelerator/rtl/fft_stage.v:143]
+INFO: [Synth 8-6155] done synthesizing module 'fft_stage__parameterized4' (0#1) [D:/Xilinx/Harness/Project/new_prj/k5p-fft-accelerator/rtl/fft_stage.v:24]
+INFO: [Synth 8-6157] synthesizing module 'fft_stage__parameterized5' [D:/Xilinx/Harness/Project/new_prj/k5p-fft-accelerator/rtl/fft_stage.v:24]
+	Parameter M bound to: 12 - type: integer 
+	Parameter L bound to: 6 - type: integer 
+	Parameter DW bound to: 16 - type: integer 
+	Parameter SW bound to: 18 - type: integer 
+INFO: [Synth 8-3876] $readmem data file 'vectors/tw_L6.mem' is read successfully [D:/Xilinx/Harness/Project/new_prj/k5p-fft-accelerator/rtl/fft_stage.v:144]
+INFO: [Synth 8-6155] done synthesizing module 'fft_stage__parameterized5' (0#1) [D:/Xilinx/Harness/Project/new_prj/k5p-fft-accelerator/rtl/fft_stage.v:24]
+INFO: [Synth 8-6157] synthesizing module 'fft_stage__parameterized6' [D:/Xilinx/Harness/Project/new_prj/k5p-fft-accelerator/rtl/fft_stage.v:24]
+	Parameter M bound to: 12 - type: integer 
+	Parameter L bound to: 7 - type: integer 
+	Parameter DW bound to: 16 - type: integer 
+	Parameter SW bound to: 18 - type: integer 
+INFO: [Synth 8-3876] $readmem data file 'vectors/tw_L7.mem' is read successfully [D:/Xilinx/Harness/Project/new_prj/k5p-fft-accelerator/rtl/fft_stage.v:145]
+INFO: [Synth 8-6155] done synthesizing module 'fft_stage__parameterized6' (0#1) [D:/Xilinx/Harness/Project/new_prj/k5p-fft-accelerator/rtl/fft_stage.v:24]
+INFO: [Synth 8-6157] synthesizing module 'fft_stage__parameterized7' [D:/Xilinx/Harness/Project/new_prj/k5p-fft-accelerator/rtl/fft_stage.v:24]
+	Parameter M bound to: 12 - type: integer 
+	Parameter L bound to: 8 - type: integer 
+	Parameter DW bound to: 16 - type: integer 
+	Parameter SW bound to: 18 - type: integer 
+INFO: [Synth 8-3876] $readmem data file 'vectors/tw_L8.mem' is read successfully [D:/Xilinx/Harness/Project/new_prj/k5p-fft-accelerator/rtl/fft_stage.v:146]
+INFO: [Synth 8-6155] done synthesizing module 'fft_stage__parameterized7' (0#1) [D:/Xilinx/Harness/Project/new_prj/k5p-fft-accelerator/rtl/fft_stage.v:24]
+INFO: [Synth 8-6157] synthesizing module 'fft_stage__parameterized8' [D:/Xilinx/Harness/Project/new_prj/k5p-fft-accelerator/rtl/fft_stage.v:24]
+	Parameter M bound to: 12 - type: integer 
+	Parameter L bound to: 9 - type: integer 
+	Parameter DW bound to: 16 - type: integer 
+	Parameter SW bound to: 18 - type: integer 
+INFO: [Synth 8-3876] $readmem data file 'vectors/tw_L9.mem' is read successfully [D:/Xilinx/Harness/Project/new_prj/k5p-fft-accelerator/rtl/fft_stage.v:147]
+INFO: [Synth 8-6155] done synthesizing module 'fft_stage__parameterized8' (0#1) [D:/Xilinx/Harness/Project/new_prj/k5p-fft-accelerator/rtl/fft_stage.v:24]
+INFO: [Synth 8-6157] synthesizing module 'fft_stage__parameterized9' [D:/Xilinx/Harness/Project/new_prj/k5p-fft-accelerator/rtl/fft_stage.v:24]
+	Parameter M bound to: 12 - type: integer 
+	Parameter L bound to: 10 - type: integer 
+	Parameter DW bound to: 16 - type: integer 
+	Parameter SW bound to: 18 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'fft_stage__parameterized9' (0#1) [D:/Xilinx/Harness/Project/new_prj/k5p-fft-accelerator/rtl/fft_stage.v:24]
+INFO: [Synth 8-6157] synthesizing module 'fft_stage__parameterized10' [D:/Xilinx/Harness/Project/new_prj/k5p-fft-accelerator/rtl/fft_stage.v:24]
+	Parameter M bound to: 12 - type: integer 
+	Parameter L bound to: 11 - type: integer 
+	Parameter DW bound to: 16 - type: integer 
+	Parameter SW bound to: 18 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'fft_stage__parameterized10' (0#1) [D:/Xilinx/Harness/Project/new_prj/k5p-fft-accelerator/rtl/fft_stage.v:24]
+INFO: [Synth 8-6155] done synthesizing module 'fft_top' (0#1) [D:/Xilinx/Harness/Project/new_prj/k5p-fft-accelerator/rtl/fft_top.v:13]
+WARNING: [Synth 8-6014] Unused sequential element tr_y_re_reg was removed.  [D:/Xilinx/Harness/Project/new_prj/k5p-fft-accelerator/rtl/fft_stage.v:171]
+WARNING: [Synth 8-6014] Unused sequential element tr_y_im_reg was removed.  [D:/Xilinx/Harness/Project/new_prj/k5p-fft-accelerator/rtl/fft_stage.v:172]
+WARNING: [Synth 8-6014] Unused sequential element tr_y_re_reg was removed.  [D:/Xilinx/Harness/Project/new_prj/k5p-fft-accelerator/rtl/fft_stage.v:171]
+WARNING: [Synth 8-6014] Unused sequential element tr_y_im_reg was removed.  [D:/Xilinx/Harness/Project/new_prj/k5p-fft-accelerator/rtl/fft_stage.v:172]
+WARNING: [Synth 8-6014] Unused sequential element tr_y_re_reg was removed.  [D:/Xilinx/Harness/Project/new_prj/k5p-fft-accelerator/rtl/fft_stage.v:171]
+WARNING: [Synth 8-6014] Unused sequential element tr_y_im_reg was removed.  [D:/Xilinx/Harness/Project/new_prj/k5p-fft-accelerator/rtl/fft_stage.v:172]
+WARNING: [Synth 8-6014] Unused sequential element tr_y_re_reg was removed.  [D:/Xilinx/Harness/Project/new_prj/k5p-fft-accelerator/rtl/fft_stage.v:171]
+WARNING: [Synth 8-6014] Unused sequential element tr_y_im_reg was removed.  [D:/Xilinx/Harness/Project/new_prj/k5p-fft-accelerator/rtl/fft_stage.v:172]
+WARNING: [Synth 8-6014] Unused sequential element tr_y_re_reg was removed.  [D:/Xilinx/Harness/Project/new_prj/k5p-fft-accelerator/rtl/fft_stage.v:171]
+WARNING: [Synth 8-6014] Unused sequential element tr_y_im_reg was removed.  [D:/Xilinx/Harness/Project/new_prj/k5p-fft-accelerator/rtl/fft_stage.v:172]
+WARNING: [Synth 8-6014] Unused sequential element tr_y_re_reg was removed.  [D:/Xilinx/Harness/Project/new_prj/k5p-fft-accelerator/rtl/fft_stage.v:171]
+WARNING: [Synth 8-6014] Unused sequential element tr_y_im_reg was removed.  [D:/Xilinx/Harness/Project/new_prj/k5p-fft-accelerator/rtl/fft_stage.v:172]
+WARNING: [Synth 8-6014] Unused sequential element tr_y_re_reg was removed.  [D:/Xilinx/Harness/Project/new_prj/k5p-fft-accelerator/rtl/fft_stage.v:171]
+WARNING: [Synth 8-6014] Unused sequential element tr_y_im_reg was removed.  [D:/Xilinx/Harness/Project/new_prj/k5p-fft-accelerator/rtl/fft_stage.v:172]
+WARNING: [Synth 8-6014] Unused sequential element tr_y_re_reg was removed.  [D:/Xilinx/Harness/Project/new_prj/k5p-fft-accelerator/rtl/fft_stage.v:171]
+WARNING: [Synth 8-6014] Unused sequential element tr_y_im_reg was removed.  [D:/Xilinx/Harness/Project/new_prj/k5p-fft-accelerator/rtl/fft_stage.v:172]
+WARNING: [Synth 8-6014] Unused sequential element tr_y_re_reg was removed.  [D:/Xilinx/Harness/Project/new_prj/k5p-fft-accelerator/rtl/fft_stage.v:171]
+WARNING: [Synth 8-6014] Unused sequential element tr_y_im_reg was removed.  [D:/Xilinx/Harness/Project/new_prj/k5p-fft-accelerator/rtl/fft_stage.v:172]
+WARNING: [Synth 8-6014] Unused sequential element tr_y_re_reg was removed.  [D:/Xilinx/Harness/Project/new_prj/k5p-fft-accelerator/rtl/fft_stage.v:171]
+WARNING: [Synth 8-6014] Unused sequential element tr_y_im_reg was removed.  [D:/Xilinx/Harness/Project/new_prj/k5p-fft-accelerator/rtl/fft_stage.v:172]
+WARNING: [Synth 8-3848] Net tw_re in module/entity fft_stage__parameterized9 does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-fft-accelerator/rtl/fft_stage.v:121]
+WARNING: [Synth 8-3848] Net tw_im in module/entity fft_stage__parameterized9 does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-fft-accelerator/rtl/fft_stage.v:121]
+WARNING: [Synth 8-6014] Unused sequential element f0_reg was removed.  [D:/Xilinx/Harness/Project/new_prj/k5p-fft-accelerator/rtl/fft_stage.v:93]
+WARNING: [Synth 8-3848] Net tw_re in module/entity fft_stage__parameterized10 does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-fft-accelerator/rtl/fft_stage.v:121]
+WARNING: [Synth 8-3848] Net tw_im in module/entity fft_stage__parameterized10 does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-fft-accelerator/rtl/fft_stage.v:121]
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 1222.238 ; gain = 674.910
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 1222.238 ; gain = 674.910
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xcku5p-ffvb676-2-i
+INFO: [Synth 8-6742] Reading net delay rules and data
+INFO: [Device 21-403] Loading part xcku5p-ffvb676-2-i
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 1222.238 ; gain = 674.910
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6904] The RAM "fft_stage__parameterized3:/g_srN.mem_reg" of size (depth=125 x width=36) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "fft_stage__parameterized4:/g_srN.mem_reg" of size (depth=61 x width=36) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "fft_stage__parameterized5:/g_srN.mem_reg" of size (depth=29 x width=36) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "fft_stage__parameterized6:/g_srN.mem_reg" of size (depth=13 x width=36) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "fft_stage__parameterized7:/g_srN.mem_reg" of size (depth=5 x width=36) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:13 ; elapsed = 00:00:12 . Memory (MB): peak = 1262.938 ; gain = 715.609
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   20 Bit       Adders := 24    
+	   2 Input   19 Bit       Adders := 41    
+	   3 Input   19 Bit       Adders := 24    
+	   2 Input   14 Bit       Adders := 1     
+	   2 Input   12 Bit       Adders := 3     
+	   2 Input   11 Bit       Adders := 3     
+	   2 Input   10 Bit       Adders := 3     
+	   2 Input    9 Bit       Adders := 3     
+	   2 Input    8 Bit       Adders := 3     
+	   2 Input    7 Bit       Adders := 3     
+	   2 Input    6 Bit       Adders := 3     
+	   2 Input    5 Bit       Adders := 3     
+	   2 Input    4 Bit       Adders := 3     
+	   2 Input    3 Bit       Adders := 3     
+	   2 Input    2 Bit       Adders := 1     
+	   2 Input    1 Bit       Adders := 1     
++---XORs : 
+	   2 Input      1 Bit         XORs := 72    
++---Registers : 
+	               36 Bit    Registers := 63    
+	               20 Bit    Registers := 1     
+	               19 Bit    Registers := 36    
+	               18 Bit    Registers := 64    
+	               14 Bit    Registers := 1     
+	               12 Bit    Registers := 2     
+	               11 Bit    Registers := 1     
+	               10 Bit    Registers := 1     
+	                9 Bit    Registers := 1     
+	                8 Bit    Registers := 2     
+	                7 Bit    Registers := 1     
+	                6 Bit    Registers := 1     
+	                5 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
+	                3 Bit    Registers := 1     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 92    
++---RAMs : 
+	              71K Bit	(2045 X 36 bit)          RAMs := 1     
+	              35K Bit	(1021 X 36 bit)          RAMs := 1     
+	              17K Bit	(509 X 36 bit)          RAMs := 1     
+	               8K Bit	(253 X 36 bit)          RAMs := 1     
+	               4K Bit	(125 X 36 bit)          RAMs := 1     
+	               2K Bit	(61 X 36 bit)          RAMs := 1     
+	               1K Bit	(29 X 36 bit)          RAMs := 1     
+	              468 Bit	(13 X 36 bit)          RAMs := 1     
+	              180 Bit	(5 X 36 bit)          RAMs := 1     
++---ROMs : 
+	                    ROMs := 10    
++---Muxes : 
+	   2 Input   36 Bit        Muxes := 35    
+	   2 Input   19 Bit        Muxes := 2     
+	   3 Input   16 Bit        Muxes := 24    
+	   2 Input    5 Bit        Muxes := 3     
+	   2 Input    4 Bit        Muxes := 3     
+	   2 Input    3 Bit        Muxes := 3     
+	   2 Input    2 Bit        Muxes := 1     
+	   2 Input    1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 1824 (col length:96)
+BRAMs: 960 (col length: RAMB18 96 RAMB36 48)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-3936] Found unconnected internal register 'u_cmult/k2_reg' and it is trimmed from '37' to '35' bits. [D:/Xilinx/Harness/Project/new_prj/k5p-fft-accelerator/rtl/fft_cmult3.v:49]
+DSP Report: Generating DSP u_cmult/k2_reg, operation Mode is: (C' or 0)+A2*B.
+DSP Report: register u_cmult/ai1_reg is absorbed into DSP u_cmult/k2_reg.
+DSP Report: register u_cmult/k2_reg is absorbed into DSP u_cmult/k2_reg.
+DSP Report: register u_cmult/k2_reg is absorbed into DSP u_cmult/k2_reg.
+DSP Report: operator u_cmult/k20 is absorbed into DSP u_cmult/k2_reg.
+DSP Report: operator u_cmult/k20 is absorbed into DSP u_cmult/k2_reg.
+DSP Report: Generating DSP u_cmult/sre, operation Mode is: -C+((D'+A2)*B2)'+1-1.
+DSP Report: register u_cmult/br1_reg is absorbed into DSP u_cmult/sre.
+DSP Report: register u_cmult/ai1_reg is absorbed into DSP u_cmult/sre.
+DSP Report: register u_cmult/ar1_reg is absorbed into DSP u_cmult/sre.
+DSP Report: register u_cmult/k1_reg is absorbed into DSP u_cmult/sre.
+DSP Report: operator u_cmult/k10 is absorbed into DSP u_cmult/sre.
+DSP Report: operator u_cmult/k11 is absorbed into DSP u_cmult/sre.
+DSP Report: operator u_cmult/sre is absorbed into DSP u_cmult/sre.
+DSP Report: Generating DSP u_cmult/sre_b, operation Mode is: PCIN+(A:0x0):B+(C:0x1ffff).
+DSP Report: operator u_cmult/sre_b is absorbed into DSP u_cmult/sre_b.
+DSP Report: Generating DSP u_cmult/sim, operation Mode is: C+((D'-A2)*B2)'.
+DSP Report: register u_cmult/ar1_reg is absorbed into DSP u_cmult/sim.
+DSP Report: register u_cmult/bi1_reg is absorbed into DSP u_cmult/sim.
+DSP Report: register u_cmult/ai1_reg is absorbed into DSP u_cmult/sim.
+DSP Report: register u_cmult/k3_reg is absorbed into DSP u_cmult/sim.
+DSP Report: operator u_cmult/k30 is absorbed into DSP u_cmult/sim.
+DSP Report: operator u_cmult/k31 is absorbed into DSP u_cmult/sim.
+DSP Report: operator u_cmult/sim is absorbed into DSP u_cmult/sim.
+DSP Report: Generating DSP u_cmult/sim_b, operation Mode is: PCIN+(A:0x0):B+(C:0x1ffff).
+DSP Report: operator u_cmult/sim_b is absorbed into DSP u_cmult/sim_b.
+WARNING: [Synth 8-3936] Found unconnected internal register 'u_cmult/k2_reg' and it is trimmed from '37' to '35' bits. [D:/Xilinx/Harness/Project/new_prj/k5p-fft-accelerator/rtl/fft_cmult3.v:49]
+DSP Report: Generating DSP u_cmult/k2_reg, operation Mode is: (C' or 0)+A2*B.
+DSP Report: register u_cmult/ai1_reg is absorbed into DSP u_cmult/k2_reg.
+DSP Report: register u_cmult/k2_reg is absorbed into DSP u_cmult/k2_reg.
+DSP Report: register u_cmult/k2_reg is absorbed into DSP u_cmult/k2_reg.
+DSP Report: operator u_cmult/k20 is absorbed into DSP u_cmult/k2_reg.
+DSP Report: operator u_cmult/k20 is absorbed into DSP u_cmult/k2_reg.
+DSP Report: Generating DSP u_cmult/sre, operation Mode is: -C+((D'+A2)*B2)'+1-1.
+DSP Report: register u_cmult/br1_reg is absorbed into DSP u_cmult/sre.
+DSP Report: register u_cmult/ai1_reg is absorbed into DSP u_cmult/sre.
+DSP Report: register u_cmult/ar1_reg is absorbed into DSP u_cmult/sre.
+DSP Report: register u_cmult/k1_reg is absorbed into DSP u_cmult/sre.
+DSP Report: operator u_cmult/k10 is absorbed into DSP u_cmult/sre.
+DSP Report: operator u_cmult/k11 is absorbed into DSP u_cmult/sre.
+DSP Report: operator u_cmult/sre is absorbed into DSP u_cmult/sre.
+DSP Report: Generating DSP u_cmult/sre_b, operation Mode is: PCIN+(A:0x0):B+(C:0x1ffff).
+DSP Report: operator u_cmult/sre_b is absorbed into DSP u_cmult/sre_b.
+DSP Report: Generating DSP u_cmult/sim, operation Mode is: C+((D'-A2)*B2)'.
+DSP Report: register u_cmult/ar1_reg is absorbed into DSP u_cmult/sim.
+DSP Report: register u_cmult/bi1_reg is absorbed into DSP u_cmult/sim.
+DSP Report: register u_cmult/ai1_reg is absorbed into DSP u_cmult/sim.
+DSP Report: register u_cmult/k3_reg is absorbed into DSP u_cmult/sim.
+DSP Report: operator u_cmult/k30 is absorbed into DSP u_cmult/sim.
+DSP Report: operator u_cmult/k31 is absorbed into DSP u_cmult/sim.
+DSP Report: operator u_cmult/sim is absorbed into DSP u_cmult/sim.
+DSP Report: Generating DSP u_cmult/sim_b, operation Mode is: PCIN+(A:0x0):B+(C:0x1ffff).
+DSP Report: operator u_cmult/sim_b is absorbed into DSP u_cmult/sim_b.
+WARNING: [Synth 8-3936] Found unconnected internal register 'u_cmult/k2_reg' and it is trimmed from '37' to '35' bits. [D:/Xilinx/Harness/Project/new_prj/k5p-fft-accelerator/rtl/fft_cmult3.v:49]
+DSP Report: Generating DSP u_cmult/k2_reg, operation Mode is: (C' or 0)+A2*B.
+DSP Report: register u_cmult/ai1_reg is absorbed into DSP u_cmult/k2_reg.
+DSP Report: register u_cmult/k2_reg is absorbed into DSP u_cmult/k2_reg.
+DSP Report: register u_cmult/k2_reg is absorbed into DSP u_cmult/k2_reg.
+DSP Report: operator u_cmult/k20 is absorbed into DSP u_cmult/k2_reg.
+DSP Report: operator u_cmult/k20 is absorbed into DSP u_cmult/k2_reg.
+DSP Report: Generating DSP u_cmult/sre, operation Mode is: -C+((D'+A2)*B2)'+1-1.
+DSP Report: register u_cmult/br1_reg is absorbed into DSP u_cmult/sre.
+DSP Report: register u_cmult/ai1_reg is absorbed into DSP u_cmult/sre.
+DSP Report: register u_cmult/ar1_reg is absorbed into DSP u_cmult/sre.
+DSP Report: register u_cmult/k1_reg is absorbed into DSP u_cmult/sre.
+DSP Report: operator u_cmult/k10 is absorbed into DSP u_cmult/sre.
+DSP Report: operator u_cmult/k11 is absorbed into DSP u_cmult/sre.
+DSP Report: operator u_cmult/sre is absorbed into DSP u_cmult/sre.
+DSP Report: Generating DSP u_cmult/sre_b, operation Mode is: PCIN+(A:0x0):B+(C:0x1ffff).
+DSP Report: operator u_cmult/sre_b is absorbed into DSP u_cmult/sre_b.
+DSP Report: Generating DSP u_cmult/sim, operation Mode is: C+((D'-A2)*B2)'.
+DSP Report: register u_cmult/ar1_reg is absorbed into DSP u_cmult/sim.
+DSP Report: register u_cmult/bi1_reg is absorbed into DSP u_cmult/sim.
+DSP Report: register u_cmult/ai1_reg is absorbed into DSP u_cmult/sim.
+DSP Report: register u_cmult/k3_reg is absorbed into DSP u_cmult/sim.
+DSP Report: operator u_cmult/k30 is absorbed into DSP u_cmult/sim.
+DSP Report: operator u_cmult/k31 is absorbed into DSP u_cmult/sim.
+DSP Report: operator u_cmult/sim is absorbed into DSP u_cmult/sim.
+DSP Report: Generating DSP u_cmult/sim_b, operation Mode is: PCIN+(A:0x0):B+(C:0x1ffff).
+DSP Report: operator u_cmult/sim_b is absorbed into DSP u_cmult/sim_b.
+WARNING: [Synth 8-3936] Found unconnected internal register 'u_cmult/k2_reg' and it is trimmed from '37' to '35' bits. [D:/Xilinx/Harness/Project/new_prj/k5p-fft-accelerator/rtl/fft_cmult3.v:49]
+DSP Report: Generating DSP u_cmult/k2_reg, operation Mode is: (C' or 0)+A2*B.
+DSP Report: register u_cmult/ai1_reg is absorbed into DSP u_cmult/k2_reg.
+DSP Report: register u_cmult/k2_reg is absorbed into DSP u_cmult/k2_reg.
+DSP Report: register u_cmult/k2_reg is absorbed into DSP u_cmult/k2_reg.
+DSP Report: operator u_cmult/k20 is absorbed into DSP u_cmult/k2_reg.
+DSP Report: operator u_cmult/k20 is absorbed into DSP u_cmult/k2_reg.
+DSP Report: Generating DSP u_cmult/sre, operation Mode is: -C+((D'+A2)*B2)'+1-1.
+DSP Report: register u_cmult/br1_reg is absorbed into DSP u_cmult/sre.
+DSP Report: register u_cmult/ai1_reg is absorbed into DSP u_cmult/sre.
+DSP Report: register u_cmult/ar1_reg is absorbed into DSP u_cmult/sre.
+DSP Report: register u_cmult/k1_reg is absorbed into DSP u_cmult/sre.
+DSP Report: operator u_cmult/k10 is absorbed into DSP u_cmult/sre.
+DSP Report: operator u_cmult/k11 is absorbed into DSP u_cmult/sre.
+DSP Report: operator u_cmult/sre is absorbed into DSP u_cmult/sre.
+DSP Report: Generating DSP u_cmult/sre_b, operation Mode is: PCIN+(A:0x0):B+(C:0x1ffff).
+DSP Report: operator u_cmult/sre_b is absorbed into DSP u_cmult/sre_b.
+DSP Report: Generating DSP u_cmult/sim, operation Mode is: C+((D'-A2)*B2)'.
+DSP Report: register u_cmult/ar1_reg is absorbed into DSP u_cmult/sim.
+DSP Report: register u_cmult/bi1_reg is absorbed into DSP u_cmult/sim.
+DSP Report: register u_cmult/ai1_reg is absorbed into DSP u_cmult/sim.
+DSP Report: register u_cmult/k3_reg is absorbed into DSP u_cmult/sim.
+DSP Report: operator u_cmult/k30 is absorbed into DSP u_cmult/sim.
+DSP Report: operator u_cmult/k31 is absorbed into DSP u_cmult/sim.
+DSP Report: operator u_cmult/sim is absorbed into DSP u_cmult/sim.
+DSP Report: Generating DSP u_cmult/sim_b, operation Mode is: PCIN+(A:0x0):B+(C:0x1ffff).
+DSP Report: operator u_cmult/sim_b is absorbed into DSP u_cmult/sim_b.
+WARNING: [Synth 8-3936] Found unconnected internal register 'u_cmult/k2_reg' and it is trimmed from '37' to '35' bits. [D:/Xilinx/Harness/Project/new_prj/k5p-fft-accelerator/rtl/fft_cmult3.v:49]
+DSP Report: Generating DSP u_cmult/k2_reg, operation Mode is: (C' or 0)+A2*B.
+DSP Report: register u_cmult/ai1_reg is absorbed into DSP u_cmult/k2_reg.
+DSP Report: register u_cmult/k2_reg is absorbed into DSP u_cmult/k2_reg.
+DSP Report: register u_cmult/k2_reg is absorbed into DSP u_cmult/k2_reg.
+DSP Report: operator u_cmult/k20 is absorbed into DSP u_cmult/k2_reg.
+DSP Report: operator u_cmult/k20 is absorbed into DSP u_cmult/k2_reg.
+DSP Report: Generating DSP u_cmult/sre, operation Mode is: -C+((D'+A2)*B2)'+1-1.
+DSP Report: register u_cmult/br1_reg is absorbed into DSP u_cmult/sre.
+DSP Report: register u_cmult/ai1_reg is absorbed into DSP u_cmult/sre.
+DSP Report: register u_cmult/ar1_reg is absorbed into DSP u_cmult/sre.
+DSP Report: register u_cmult/k1_reg is absorbed into DSP u_cmult/sre.
+DSP Report: operator u_cmult/k10 is absorbed into DSP u_cmult/sre.
+DSP Report: operator u_cmult/k11 is absorbed into DSP u_cmult/sre.
+DSP Report: operator u_cmult/sre is absorbed into DSP u_cmult/sre.
+DSP Report: Generating DSP u_cmult/sre_b, operation Mode is: PCIN+(A:0x0):B+(C:0x1ffff).
+DSP Report: operator u_cmult/sre_b is absorbed into DSP u_cmult/sre_b.
+DSP Report: Generating DSP u_cmult/sim, operation Mode is: C+((D'-A2)*B2)'.
+DSP Report: register u_cmult/ar1_reg is absorbed into DSP u_cmult/sim.
+DSP Report: register u_cmult/bi1_reg is absorbed into DSP u_cmult/sim.
+DSP Report: register u_cmult/ai1_reg is absorbed into DSP u_cmult/sim.
+DSP Report: register u_cmult/k3_reg is absorbed into DSP u_cmult/sim.
+DSP Report: operator u_cmult/k30 is absorbed into DSP u_cmult/sim.
+DSP Report: operator u_cmult/k31 is absorbed into DSP u_cmult/sim.
+DSP Report: operator u_cmult/sim is absorbed into DSP u_cmult/sim.
+DSP Report: Generating DSP u_cmult/sim_b, operation Mode is: PCIN+(A:0x0):B+(C:0x1ffff).
+DSP Report: operator u_cmult/sim_b is absorbed into DSP u_cmult/sim_b.
+INFO: [Synth 8-6904] The RAM "\g_stages[4].u_st/g_srN.mem_reg " of size (depth=125 x width=36) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+WARNING: [Synth 8-3936] Found unconnected internal register 'u_cmult/k2_reg' and it is trimmed from '37' to '35' bits. [D:/Xilinx/Harness/Project/new_prj/k5p-fft-accelerator/rtl/fft_cmult3.v:49]
+DSP Report: Generating DSP u_cmult/k2_reg, operation Mode is: (C' or 0)+A2*B.
+DSP Report: register u_cmult/ai1_reg is absorbed into DSP u_cmult/k2_reg.
+DSP Report: register u_cmult/k2_reg is absorbed into DSP u_cmult/k2_reg.
+DSP Report: register u_cmult/k2_reg is absorbed into DSP u_cmult/k2_reg.
+DSP Report: operator u_cmult/k20 is absorbed into DSP u_cmult/k2_reg.
+DSP Report: operator u_cmult/k20 is absorbed into DSP u_cmult/k2_reg.
+DSP Report: Generating DSP u_cmult/sre, operation Mode is: -C+((D'+A2)*B2)'+1-1.
+DSP Report: register u_cmult/br1_reg is absorbed into DSP u_cmult/sre.
+DSP Report: register u_cmult/ai1_reg is absorbed into DSP u_cmult/sre.
+DSP Report: register u_cmult/ar1_reg is absorbed into DSP u_cmult/sre.
+DSP Report: register u_cmult/k1_reg is absorbed into DSP u_cmult/sre.
+DSP Report: operator u_cmult/k10 is absorbed into DSP u_cmult/sre.
+DSP Report: operator u_cmult/k11 is absorbed into DSP u_cmult/sre.
+DSP Report: operator u_cmult/sre is absorbed into DSP u_cmult/sre.
+DSP Report: Generating DSP u_cmult/sre_b, operation Mode is: PCIN+(A:0x0):B+(C:0x1ffff).
+DSP Report: operator u_cmult/sre_b is absorbed into DSP u_cmult/sre_b.
+DSP Report: Generating DSP u_cmult/sim, operation Mode is: C+((D'-A2)*B2)'.
+DSP Report: register u_cmult/ar1_reg is absorbed into DSP u_cmult/sim.
+DSP Report: register u_cmult/bi1_reg is absorbed into DSP u_cmult/sim.
+DSP Report: register u_cmult/ai1_reg is absorbed into DSP u_cmult/sim.
+DSP Report: register u_cmult/k3_reg is absorbed into DSP u_cmult/sim.
+DSP Report: operator u_cmult/k30 is absorbed into DSP u_cmult/sim.
+DSP Report: operator u_cmult/k31 is absorbed into DSP u_cmult/sim.
+DSP Report: operator u_cmult/sim is absorbed into DSP u_cmult/sim.
+DSP Report: Generating DSP u_cmult/sim_b, operation Mode is: PCIN+(A:0x0):B+(C:0x1ffff).
+DSP Report: operator u_cmult/sim_b is absorbed into DSP u_cmult/sim_b.
+INFO: [Synth 8-6904] The RAM "\g_stages[5].u_st/g_srN.mem_reg " of size (depth=61 x width=36) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+WARNING: [Synth 8-3936] Found unconnected internal register 'u_cmult/k2_reg' and it is trimmed from '37' to '35' bits. [D:/Xilinx/Harness/Project/new_prj/k5p-fft-accelerator/rtl/fft_cmult3.v:49]
+DSP Report: Generating DSP u_cmult/k2_reg, operation Mode is: (C' or 0)+A2*B.
+DSP Report: register u_cmult/ai1_reg is absorbed into DSP u_cmult/k2_reg.
+DSP Report: register u_cmult/k2_reg is absorbed into DSP u_cmult/k2_reg.
+DSP Report: register u_cmult/k2_reg is absorbed into DSP u_cmult/k2_reg.
+DSP Report: operator u_cmult/k20 is absorbed into DSP u_cmult/k2_reg.
+DSP Report: operator u_cmult/k20 is absorbed into DSP u_cmult/k2_reg.
+DSP Report: Generating DSP u_cmult/sre, operation Mode is: -C+((D'+A2)*B2)'+1-1.
+DSP Report: register u_cmult/br1_reg is absorbed into DSP u_cmult/sre.
+DSP Report: register u_cmult/ai1_reg is absorbed into DSP u_cmult/sre.
+DSP Report: register u_cmult/ar1_reg is absorbed into DSP u_cmult/sre.
+DSP Report: register u_cmult/k1_reg is absorbed into DSP u_cmult/sre.
+DSP Report: operator u_cmult/k10 is absorbed into DSP u_cmult/sre.
+DSP Report: operator u_cmult/k11 is absorbed into DSP u_cmult/sre.
+DSP Report: operator u_cmult/sre is absorbed into DSP u_cmult/sre.
+DSP Report: Generating DSP u_cmult/sre_b, operation Mode is: PCIN+(A:0x0):B+(C:0x1ffff).
+DSP Report: operator u_cmult/sre_b is absorbed into DSP u_cmult/sre_b.
+DSP Report: Generating DSP u_cmult/sim, operation Mode is: C+((D'-A2)*B2)'.
+DSP Report: register u_cmult/ar1_reg is absorbed into DSP u_cmult/sim.
+DSP Report: register u_cmult/bi1_reg is absorbed into DSP u_cmult/sim.
+DSP Report: register u_cmult/ai1_reg is absorbed into DSP u_cmult/sim.
+DSP Report: register u_cmult/k3_reg is absorbed into DSP u_cmult/sim.
+DSP Report: operator u_cmult/k30 is absorbed into DSP u_cmult/sim.
+DSP Report: operator u_cmult/k31 is absorbed into DSP u_cmult/sim.
+DSP Report: operator u_cmult/sim is absorbed into DSP u_cmult/sim.
+DSP Report: Generating DSP u_cmult/sim_b, operation Mode is: PCIN+(A:0x0):B+(C:0x1ffff).
+DSP Report: operator u_cmult/sim_b is absorbed into DSP u_cmult/sim_b.
+INFO: [Synth 8-6904] The RAM "\g_stages[6].u_st/g_srN.mem_reg " of size (depth=29 x width=36) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+WARNING: [Synth 8-3936] Found unconnected internal register 'u_cmult/k2_reg' and it is trimmed from '37' to '35' bits. [D:/Xilinx/Harness/Project/new_prj/k5p-fft-accelerator/rtl/fft_cmult3.v:49]
+DSP Report: Generating DSP u_cmult/k2_reg, operation Mode is: (C' or 0)+A2*B.
+DSP Report: register u_cmult/ai1_reg is absorbed into DSP u_cmult/k2_reg.
+DSP Report: register u_cmult/k2_reg is absorbed into DSP u_cmult/k2_reg.
+DSP Report: register u_cmult/k2_reg is absorbed into DSP u_cmult/k2_reg.
+DSP Report: operator u_cmult/k20 is absorbed into DSP u_cmult/k2_reg.
+DSP Report: operator u_cmult/k20 is absorbed into DSP u_cmult/k2_reg.
+DSP Report: Generating DSP u_cmult/sre, operation Mode is: -C+((D'+A2)*B2)'+1-1.
+DSP Report: register u_cmult/br1_reg is absorbed into DSP u_cmult/sre.
+DSP Report: register u_cmult/ai1_reg is absorbed into DSP u_cmult/sre.
+DSP Report: register u_cmult/ar1_reg is absorbed into DSP u_cmult/sre.
+DSP Report: register u_cmult/k1_reg is absorbed into DSP u_cmult/sre.
+DSP Report: operator u_cmult/k10 is absorbed into DSP u_cmult/sre.
+DSP Report: operator u_cmult/k11 is absorbed into DSP u_cmult/sre.
+DSP Report: operator u_cmult/sre is absorbed into DSP u_cmult/sre.
+DSP Report: Generating DSP u_cmult/sre_b, operation Mode is: PCIN+(A:0x0):B+(C:0x1ffff).
+DSP Report: operator u_cmult/sre_b is absorbed into DSP u_cmult/sre_b.
+DSP Report: Generating DSP u_cmult/sim, operation Mode is: C+((D'-A2)*B2)'.
+DSP Report: register u_cmult/ar1_reg is absorbed into DSP u_cmult/sim.
+DSP Report: register u_cmult/bi1_reg is absorbed into DSP u_cmult/sim.
+DSP Report: register u_cmult/ai1_reg is absorbed into DSP u_cmult/sim.
+DSP Report: register u_cmult/k3_reg is absorbed into DSP u_cmult/sim.
+DSP Report: operator u_cmult/k30 is absorbed into DSP u_cmult/sim.
+DSP Report: operator u_cmult/k31 is absorbed into DSP u_cmult/sim.
+DSP Report: operator u_cmult/sim is absorbed into DSP u_cmult/sim.
+DSP Report: Generating DSP u_cmult/sim_b, operation Mode is: PCIN+(A:0x0):B+(C:0x1ffff).
+DSP Report: operator u_cmult/sim_b is absorbed into DSP u_cmult/sim_b.
+INFO: [Synth 8-6904] The RAM "\g_stages[7].u_st/g_srN.mem_reg " of size (depth=13 x width=36) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+WARNING: [Synth 8-3936] Found unconnected internal register 'u_cmult/k2_reg' and it is trimmed from '37' to '35' bits. [D:/Xilinx/Harness/Project/new_prj/k5p-fft-accelerator/rtl/fft_cmult3.v:49]
+DSP Report: Generating DSP u_cmult/k2_reg, operation Mode is: (C' or 0)+A2*B.
+DSP Report: register u_cmult/ai1_reg is absorbed into DSP u_cmult/k2_reg.
+DSP Report: register u_cmult/k2_reg is absorbed into DSP u_cmult/k2_reg.
+DSP Report: register u_cmult/k2_reg is absorbed into DSP u_cmult/k2_reg.
+DSP Report: operator u_cmult/k20 is absorbed into DSP u_cmult/k2_reg.
+DSP Report: operator u_cmult/k20 is absorbed into DSP u_cmult/k2_reg.
+DSP Report: Generating DSP u_cmult/sre, operation Mode is: -C+((D'+A2)*B2)'+1-1.
+DSP Report: register u_cmult/br1_reg is absorbed into DSP u_cmult/sre.
+DSP Report: register u_cmult/ai1_reg is absorbed into DSP u_cmult/sre.
+DSP Report: register u_cmult/ar1_reg is absorbed into DSP u_cmult/sre.
+DSP Report: register u_cmult/k1_reg is absorbed into DSP u_cmult/sre.
+DSP Report: operator u_cmult/k10 is absorbed into DSP u_cmult/sre.
+DSP Report: operator u_cmult/k11 is absorbed into DSP u_cmult/sre.
+DSP Report: operator u_cmult/sre is absorbed into DSP u_cmult/sre.
+DSP Report: Generating DSP u_cmult/sre_b, operation Mode is: PCIN+(A:0x0):B+(C:0x1ffff).
+DSP Report: operator u_cmult/sre_b is absorbed into DSP u_cmult/sre_b.
+DSP Report: Generating DSP u_cmult/sim, operation Mode is: C+((D'-A2)*B2)'.
+DSP Report: register u_cmult/ar1_reg is absorbed into DSP u_cmult/sim.
+DSP Report: register u_cmult/bi1_reg is absorbed into DSP u_cmult/sim.
+DSP Report: register u_cmult/ai1_reg is absorbed into DSP u_cmult/sim.
+DSP Report: register u_cmult/k3_reg is absorbed into DSP u_cmult/sim.
+DSP Report: operator u_cmult/k30 is absorbed into DSP u_cmult/sim.
+DSP Report: operator u_cmult/k31 is absorbed into DSP u_cmult/sim.
+DSP Report: operator u_cmult/sim is absorbed into DSP u_cmult/sim.
+DSP Report: Generating DSP u_cmult/sim_b, operation Mode is: PCIN+(A:0x0):B+(C:0x1ffff).
+DSP Report: operator u_cmult/sim_b is absorbed into DSP u_cmult/sim_b.
+INFO: [Synth 8-6904] The RAM "\g_stages[8].u_st/g_srN.mem_reg " of size (depth=5 x width=36) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+WARNING: [Synth 8-3936] Found unconnected internal register 'u_cmult/k2_reg' and it is trimmed from '37' to '35' bits. [D:/Xilinx/Harness/Project/new_prj/k5p-fft-accelerator/rtl/fft_cmult3.v:49]
+DSP Report: Generating DSP u_cmult/k2_reg, operation Mode is: (C' or 0)+A2*B.
+DSP Report: register u_cmult/ai1_reg is absorbed into DSP u_cmult/k2_reg.
+DSP Report: register u_cmult/k2_reg is absorbed into DSP u_cmult/k2_reg.
+DSP Report: register u_cmult/k2_reg is absorbed into DSP u_cmult/k2_reg.
+DSP Report: operator u_cmult/k20 is absorbed into DSP u_cmult/k2_reg.
+DSP Report: operator u_cmult/k20 is absorbed into DSP u_cmult/k2_reg.
+DSP Report: Generating DSP u_cmult/sre, operation Mode is: -C+((D'+A2)*B2)'+1-1.
+DSP Report: register u_cmult/br1_reg is absorbed into DSP u_cmult/sre.
+DSP Report: register u_cmult/ai1_reg is absorbed into DSP u_cmult/sre.
+DSP Report: register u_cmult/ar1_reg is absorbed into DSP u_cmult/sre.
+DSP Report: register u_cmult/k1_reg is absorbed into DSP u_cmult/sre.
+DSP Report: operator u_cmult/k10 is absorbed into DSP u_cmult/sre.
+DSP Report: operator u_cmult/k11 is absorbed into DSP u_cmult/sre.
+DSP Report: operator u_cmult/sre is absorbed into DSP u_cmult/sre.
+DSP Report: Generating DSP u_cmult/sre_b, operation Mode is: PCIN+(A:0x0):B+(C:0x1ffff).
+DSP Report: operator u_cmult/sre_b is absorbed into DSP u_cmult/sre_b.
+DSP Report: Generating DSP u_cmult/sim, operation Mode is: C+((D'-A2)*B2)'.
+DSP Report: register u_cmult/ar1_reg is absorbed into DSP u_cmult/sim.
+DSP Report: register u_cmult/bi1_reg is absorbed into DSP u_cmult/sim.
+DSP Report: register u_cmult/ai1_reg is absorbed into DSP u_cmult/sim.
+DSP Report: register u_cmult/k3_reg is absorbed into DSP u_cmult/sim.
+DSP Report: operator u_cmult/k30 is absorbed into DSP u_cmult/sim.
+DSP Report: operator u_cmult/k31 is absorbed into DSP u_cmult/sim.
+DSP Report: operator u_cmult/sim is absorbed into DSP u_cmult/sim.
+DSP Report: Generating DSP u_cmult/sim_b, operation Mode is: PCIN+(A:0x0):B+(C:0x1ffff).
+DSP Report: operator u_cmult/sim_b is absorbed into DSP u_cmult/sim_b.
+WARNING: [Synth 8-6014] Unused sequential element u_cmult/k2_reg was removed.  [D:/Xilinx/Harness/Project/new_prj/k5p-fft-accelerator/rtl/fft_cmult3.v:49]
+WARNING: [Synth 8-3936] Found unconnected internal register 'u_cmult/ai1_reg' and it is trimmed from '19' to '1' bits. [D:/Xilinx/Harness/Project/new_prj/k5p-fft-accelerator/rtl/fft_cmult3.v:36]
+WARNING: [Synth 8-3936] Found unconnected internal register 'u_cmult/bi1_reg' and it is trimmed from '18' to '1' bits. [D:/Xilinx/Harness/Project/new_prj/k5p-fft-accelerator/rtl/fft_cmult3.v:37]
+WARNING: [Synth 8-3936] Found unconnected internal register 'u_cmult/br1_reg' and it is trimmed from '18' to '1' bits. [D:/Xilinx/Harness/Project/new_prj/k5p-fft-accelerator/rtl/fft_cmult3.v:37]
+WARNING: [Synth 8-6014] Unused sequential element u_cmult/k2_reg was removed.  [D:/Xilinx/Harness/Project/new_prj/k5p-fft-accelerator/rtl/fft_cmult3.v:49]
+WARNING: [Synth 8-3936] Found unconnected internal register 'u_cmult/ai1_reg' and it is trimmed from '19' to '1' bits. [D:/Xilinx/Harness/Project/new_prj/k5p-fft-accelerator/rtl/fft_cmult3.v:36]
+WARNING: [Synth 8-3936] Found unconnected internal register 'u_cmult/bi1_reg' and it is trimmed from '18' to '1' bits. [D:/Xilinx/Harness/Project/new_prj/k5p-fft-accelerator/rtl/fft_cmult3.v:37]
+WARNING: [Synth 8-3936] Found unconnected internal register 'u_cmult/br1_reg' and it is trimmed from '18' to '1' bits. [D:/Xilinx/Harness/Project/new_prj/k5p-fft-accelerator/rtl/fft_cmult3.v:37]
+INFO: [Synth 8-7124] RAM ("\g_stages[0].u_st/g_srN.mem_reg ") is implemented using BRAM instead of URAM. Memory would be severely underutilized if URAMs are used
+RAM ("\g_stages[1].u_st/g_srN.mem_reg ") is too shallow (depth = 1021) to use URAM. Choosing BRAM instead of URAM 
+RAM ("\g_stages[2].u_st/g_srN.mem_reg ") is too shallow (depth = 509) to use URAM. Choosing BRAM instead of URAM 
+RAM ("\g_stages[3].u_st/g_srN.mem_reg ") is too shallow (depth = 253) to use URAM. Choosing BRAM instead of URAM 
+INFO: [Synth 8-6904] The RAM "\g_stages[4].u_st/g_srN.mem_reg " of size (depth=125 x width=36) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "\g_stages[5].u_st/g_srN.mem_reg " of size (depth=61 x width=36) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "\g_stages[6].u_st/g_srN.mem_reg " of size (depth=29 x width=36) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "\g_stages[7].u_st/g_srN.mem_reg " of size (depth=13 x width=36) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "\g_stages[8].u_st/g_srN.mem_reg " of size (depth=5 x width=36) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:29 ; elapsed = 00:00:32 . Memory (MB): peak = 2110.672 ; gain = 1563.344
+---------------------------------------------------------------------------------
+ Sort Area is  u_cmult/k2_reg_0 : 0 0 : 2816 2816 : Used 1 time 100
+ Sort Area is  u_cmult/k2_reg_10 : 0 0 : 2816 2816 : Used 1 time 100
+ Sort Area is  u_cmult/k2_reg_13 : 0 0 : 2816 2816 : Used 1 time 100
+ Sort Area is  u_cmult/k2_reg_16 : 0 0 : 2816 2816 : Used 1 time 100
+ Sort Area is  u_cmult/k2_reg_19 : 0 0 : 2816 2816 : Used 1 time 100
+ Sort Area is  u_cmult/k2_reg_1c : 0 0 : 2816 2816 : Used 1 time 100
+ Sort Area is  u_cmult/k2_reg_1f : 0 0 : 2816 2816 : Used 1 time 100
+ Sort Area is  u_cmult/k2_reg_7 : 0 0 : 2816 2816 : Used 1 time 100
+ Sort Area is  u_cmult/k2_reg_a : 0 0 : 2816 2816 : Used 1 time 100
+ Sort Area is  u_cmult/k2_reg_d : 0 0 : 2816 2816 : Used 1 time 100
+ Sort Area is  u_cmult/sre_12 : 0 0 : 3096 3203 : Used 1 time 0
+ Sort Area is  u_cmult/sre_12 : 0 1 : 107 3203 : Used 1 time 0
+ Sort Area is  u_cmult/sre_15 : 0 0 : 3096 3203 : Used 1 time 0
+ Sort Area is  u_cmult/sre_15 : 0 1 : 107 3203 : Used 1 time 0
+ Sort Area is  u_cmult/sre_18 : 0 0 : 3096 3203 : Used 1 time 0
+ Sort Area is  u_cmult/sre_18 : 0 1 : 107 3203 : Used 1 time 0
+ Sort Area is  u_cmult/sre_1b : 0 0 : 3096 3203 : Used 1 time 0
+ Sort Area is  u_cmult/sre_1b : 0 1 : 107 3203 : Used 1 time 0
+ Sort Area is  u_cmult/sre_1e : 0 0 : 3096 3203 : Used 1 time 0
+ Sort Area is  u_cmult/sre_1e : 0 1 : 107 3203 : Used 1 time 0
+ Sort Area is  u_cmult/sre_21 : 0 0 : 3096 3203 : Used 1 time 0
+ Sort Area is  u_cmult/sre_21 : 0 1 : 107 3203 : Used 1 time 0
+ Sort Area is  u_cmult/sre_5 : 0 0 : 3096 3203 : Used 1 time 0
+ Sort Area is  u_cmult/sre_5 : 0 1 : 107 3203 : Used 1 time 0
+ Sort Area is  u_cmult/sre_9 : 0 0 : 3096 3203 : Used 1 time 0
+ Sort Area is  u_cmult/sre_9 : 0 1 : 107 3203 : Used 1 time 0
+ Sort Area is  u_cmult/sre_c : 0 0 : 3096 3203 : Used 1 time 0
+ Sort Area is  u_cmult/sre_c : 0 1 : 107 3203 : Used 1 time 0
+ Sort Area is  u_cmult/sre_f : 0 0 : 3096 3203 : Used 1 time 0
+ Sort Area is  u_cmult/sre_f : 0 1 : 107 3203 : Used 1 time 0
+ Sort Area is  u_cmult/sim_11 : 0 0 : 3031 3138 : Used 1 time 0
+ Sort Area is  u_cmult/sim_11 : 0 1 : 107 3138 : Used 1 time 0
+ Sort Area is  u_cmult/sim_14 : 0 0 : 3031 3138 : Used 1 time 0
+ Sort Area is  u_cmult/sim_14 : 0 1 : 107 3138 : Used 1 time 0
+ Sort Area is  u_cmult/sim_17 : 0 0 : 3031 3138 : Used 1 time 0
+ Sort Area is  u_cmult/sim_17 : 0 1 : 107 3138 : Used 1 time 0
+ Sort Area is  u_cmult/sim_1a : 0 0 : 3031 3138 : Used 1 time 0
+ Sort Area is  u_cmult/sim_1a : 0 1 : 107 3138 : Used 1 time 0
+ Sort Area is  u_cmult/sim_1d : 0 0 : 3031 3138 : Used 1 time 0
+ Sort Area is  u_cmult/sim_1d : 0 1 : 107 3138 : Used 1 time 0
+ Sort Area is  u_cmult/sim_2 : 0 0 : 3031 3138 : Used 1 time 0
+ Sort Area is  u_cmult/sim_2 : 0 1 : 107 3138 : Used 1 time 0
+ Sort Area is  u_cmult/sim_20 : 0 0 : 3031 3138 : Used 1 time 0
+ Sort Area is  u_cmult/sim_20 : 0 1 : 107 3138 : Used 1 time 0
+ Sort Area is  u_cmult/sim_8 : 0 0 : 3031 3138 : Used 1 time 0
+ Sort Area is  u_cmult/sim_8 : 0 1 : 107 3138 : Used 1 time 0
+ Sort Area is  u_cmult/sim_b : 0 0 : 3031 3138 : Used 1 time 0
+ Sort Area is  u_cmult/sim_b : 0 1 : 107 3138 : Used 1 time 0
+ Sort Area is  u_cmult/sim_e : 0 0 : 3031 3138 : Used 1 time 0
+ Sort Area is  u_cmult/sim_e : 0 1 : 107 3138 : Used 1 time 0
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+ROM: Preliminary Mapping Report
++------------+-----------------+---------------+----------------+
+|Module Name | RTL Object      | Depth x Width | Implemented As | 
++------------+-----------------+---------------+----------------+
+|fft_stage   | g_rom.rom_q_reg | 2048x36       | Block RAM      | 
+|fft_stage   | g_rom.rom_q_reg | 1024x36       | Block RAM      | 
+|fft_stage   | g_rom.rom_q_reg | 512x36        | Block RAM      | 
+|fft_stage   | g_rom.rom_q_reg | 256x36        | Block RAM      | 
+|fft_stage   | g_rom.rom_q_reg | 128x36        | Block RAM      | 
+|fft_stage   | g_rom.rom_q_reg | 64x36         | Block RAM      | 
+|fft_stage   | g_rom.rom_q_reg | 32x36         | Block RAM      | 
+|fft_stage   | g_rom.rom_q_reg | 16x36         | Block RAM      | 
+|fft_stage   | g_rom.rom_q_reg | 8x20          | Block RAM      | 
+|fft_stage   | g_rom.rom_q_reg | 4x8           | Block RAM      | 
++------------+-----------------+---------------+----------------+
+
+
+Block RAM: Preliminary Mapping Report (see note below)
++-------------------+---------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+-----------------+
+|Module Name        | RTL Object    | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | Cascade Heights | 
++-------------------+---------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+-----------------+
+|\g_stages[0].u_st  | g_srN.mem_reg | 1 K x 36(READ_FIRST)   | W |   | 1 K x 36(WRITE_FIRST)  |   | R | Port A and B     | 0      | 2      | 2               | 
+|\g_stages[1].u_st  | g_srN.mem_reg | 1021 x 36(READ_FIRST)  | W |   | 1021 x 36(WRITE_FIRST) |   | R | Port A and B     | 0      | 1      | 1               | 
+|\g_stages[2].u_st  | g_srN.mem_reg | 509 x 36(READ_FIRST)   | W |   | 509 x 36(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      |                 | 
+|\g_stages[3].u_st  | g_srN.mem_reg | 253 x 36(READ_FIRST)   | W |   | 253 x 36(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      |                 | 
++-------------------+---------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+-----------------+
+
+Note: The table above is a preliminary report that shows the Block RAMs at the current stage of the synthesis flow. Some Block RAMs may be reimplemented as non Block RAM primitives later in the synthesis flow. Multiple instantiated Block RAMs are reported only once. 
+
+Distributed RAM: Preliminary Mapping Report (see note below)
++-------------------+---------------+-----------+----------------------+---------------+
+|Module Name        | RTL Object    | Inference | Size (Depth x Width) | Primitives    | 
++-------------------+---------------+-----------+----------------------+---------------+
+|\g_stages[4].u_st  | g_srN.mem_reg | Implied   | 128 x 36             | RAM64M8 x 12  | 
+|\g_stages[5].u_st  | g_srN.mem_reg | Implied   | 64 x 36              | RAM64M8 x 6   | 
+|\g_stages[6].u_st  | g_srN.mem_reg | Implied   | 32 x 36              | RAM32M16 x 3  | 
+|\g_stages[7].u_st  | g_srN.mem_reg | Implied   | 16 x 36              | RAM32M16 x 3  | 
+|\g_stages[8].u_st  | g_srN.mem_reg | Implied   | 8 x 36               | RAM32M16 x 3  | 
++-------------------+---------------+-----------+----------------------+---------------+
+
+Note: The table above is a preliminary report that shows the Distributed RAMs at the current stage of the synthesis flow. Some Distributed RAMs may be reimplemented as non Distributed RAM primitives later in the synthesis flow. Multiple instantiated RAMs are reported only once.
+
+DSP: Preliminary Mapping Report (see note below. The ' indicates corresponding REG is set)
++------------+----------------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name | DSP Mapping                | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++------------+----------------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|fft_stage   | (C' or 0)+A2*B             | 19     | 18     | 18     | -      | 35     | 1    | 0    | 1    | -    | -     | 0    | 1    | 
+|fft_stage   | -C+((D'+A2)*B2)'+1-1       | 19     | 18     | 36     | 19     | 36     | 1    | 1    | 0    | 1    | 0     | 1    | 0    | 
+|fft_stage   | PCIN+(A:0x0):B+(C:0x1ffff) | 30     | 1      | 17     | -      | -1     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|fft_cmult3  | C+((D'-A2)*B2)'            | 19     | 18     | 36     | 19     | 36     | 1    | 1    | 0    | 1    | 0     | 1    | 0    | 
+|fft_stage   | PCIN+(A:0x0):B+(C:0x1ffff) | 30     | 1      | 17     | -      | -1     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|fft_stage   | (C' or 0)+A2*B             | 19     | 18     | 18     | -      | 35     | 1    | 0    | 1    | -    | -     | 0    | 1    | 
+|fft_stage   | -C+((D'+A2)*B2)'+1-1       | 19     | 18     | 36     | 19     | 36     | 1    | 1    | 0    | 1    | 0     | 1    | 0    | 
+|fft_stage   | PCIN+(A:0x0):B+(C:0x1ffff) | 30     | 1      | 17     | -      | -1     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|fft_cmult3  | C+((D'-A2)*B2)'            | 19     | 18     | 36     | 19     | 36     | 1    | 1    | 0    | 1    | 0     | 1    | 0    | 
+|fft_stage   | PCIN+(A:0x0):B+(C:0x1ffff) | 30     | 1      | 17     | -      | -1     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|fft_stage   | (C' or 0)+A2*B             | 19     | 18     | 18     | -      | 35     | 1    | 0    | 1    | -    | -     | 0    | 1    | 
+|fft_stage   | -C+((D'+A2)*B2)'+1-1       | 19     | 18     | 36     | 19     | 36     | 1    | 1    | 0    | 1    | 0     | 1    | 0    | 
+|fft_stage   | PCIN+(A:0x0):B+(C:0x1ffff) | 30     | 1      | 17     | -      | -1     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|fft_cmult3  | C+((D'-A2)*B2)'            | 19     | 18     | 36     | 19     | 36     | 1    | 1    | 0    | 1    | 0     | 1    | 0    | 
+|fft_stage   | PCIN+(A:0x0):B+(C:0x1ffff) | 30     | 1      | 17     | -      | -1     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|fft_stage   | (C' or 0)+A2*B             | 19     | 18     | 18     | -      | 35     | 1    | 0    | 1    | -    | -     | 0    | 1    | 
+|fft_stage   | -C+((D'+A2)*B2)'+1-1       | 19     | 18     | 36     | 19     | 36     | 1    | 1    | 0    | 1    | 0     | 1    | 0    | 
+|fft_stage   | PCIN+(A:0x0):B+(C:0x1ffff) | 30     | 1      | 17     | -      | -1     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|fft_cmult3  | C+((D'-A2)*B2)'            | 19     | 18     | 36     | 19     | 36     | 1    | 1    | 0    | 1    | 0     | 1    | 0    | 
+|fft_stage   | PCIN+(A:0x0):B+(C:0x1ffff) | 30     | 1      | 17     | -      | -1     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|fft_stage   | (C' or 0)+A2*B             | 19     | 18     | 18     | -      | 35     | 1    | 0    | 1    | -    | -     | 0    | 1    | 
+|fft_stage   | -C+((D'+A2)*B2)'+1-1       | 19     | 18     | 36     | 19     | 36     | 1    | 1    | 0    | 1    | 0     | 1    | 0    | 
+|fft_stage   | PCIN+(A:0x0):B+(C:0x1ffff) | 30     | 1      | 17     | -      | -1     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|fft_cmult3  | C+((D'-A2)*B2)'            | 19     | 18     | 36     | 19     | 36     | 1    | 1    | 0    | 1    | 0     | 1    | 0    | 
+|fft_stage   | PCIN+(A:0x0):B+(C:0x1ffff) | 30     | 1      | 17     | -      | -1     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|fft_stage   | (C' or 0)+A2*B             | 19     | 18     | 18     | -      | 35     | 1    | 0    | 1    | -    | -     | 0    | 1    | 
+|fft_stage   | -C+((D'+A2)*B2)'+1-1       | 19     | 18     | 36     | 19     | 36     | 1    | 1    | 0    | 1    | 0     | 1    | 0    | 
+|fft_stage   | PCIN+(A:0x0):B+(C:0x1ffff) | 30     | 1      | 17     | -      | -1     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|fft_cmult3  | C+((D'-A2)*B2)'            | 19     | 18     | 36     | 19     | 36     | 1    | 1    | 0    | 1    | 0     | 1    | 0    | 
+|fft_stage   | PCIN+(A:0x0):B+(C:0x1ffff) | 30     | 1      | 17     | -      | -1     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|fft_stage   | (C' or 0)+A2*B             | 19     | 18     | 18     | -      | 35     | 1    | 0    | 1    | -    | -     | 0    | 1    | 
+|fft_stage   | -C+((D'+A2)*B2)'+1-1       | 19     | 18     | 36     | 19     | 36     | 1    | 1    | 0    | 1    | 0     | 1    | 0    | 
+|fft_stage   | PCIN+(A:0x0):B+(C:0x1ffff) | 30     | 1      | 17     | -      | -1     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|fft_cmult3  | C+((D'-A2)*B2)'            | 19     | 18     | 36     | 19     | 36     | 1    | 1    | 0    | 1    | 0     | 1    | 0    | 
+|fft_stage   | PCIN+(A:0x0):B+(C:0x1ffff) | 30     | 1      | 17     | -      | -1     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|fft_stage   | (C' or 0)+A2*B             | 19     | 18     | 18     | -      | 35     | 1    | 0    | 1    | -    | -     | 0    | 1    | 
+|fft_stage   | -C+((D'+A2)*B2)'+1-1       | 19     | 18     | 36     | 19     | 36     | 1    | 1    | 0    | 1    | 0     | 1    | 0    | 
+|fft_stage   | PCIN+(A:0x0):B+(C:0x1ffff) | 30     | 1      | 17     | -      | -1     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|fft_cmult3  | C+((D'-A2)*B2)'            | 19     | 18     | 36     | 19     | 36     | 1    | 1    | 0    | 1    | 0     | 1    | 0    | 
+|fft_stage   | PCIN+(A:0x0):B+(C:0x1ffff) | 30     | 1      | 17     | -      | -1     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|fft_stage   | (C' or 0)+A2*B             | 19     | 18     | 18     | -      | 35     | 1    | 0    | 1    | -    | -     | 0    | 1    | 
+|fft_stage   | -C+((D'+A2)*B2)'+1-1       | 19     | 18     | 36     | 19     | 36     | 1    | 1    | 0    | 1    | 0     | 1    | 0    | 
+|fft_stage   | PCIN+(A:0x0):B+(C:0x1ffff) | 30     | 1      | 17     | -      | -1     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|fft_cmult3  | C+((D'-A2)*B2)'            | 19     | 18     | 36     | 19     | 36     | 1    | 1    | 0    | 1    | 0     | 1    | 0    | 
+|fft_stage   | PCIN+(A:0x0):B+(C:0x1ffff) | 30     | 1      | 17     | -      | -1     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|fft_stage   | (C' or 0)+A2*B             | 19     | 18     | 18     | -      | 35     | 1    | 0    | 1    | -    | -     | 0    | 1    | 
+|fft_stage   | -C+((D'+A2)*B2)'+1-1       | 19     | 18     | 36     | 19     | 36     | 1    | 1    | 0    | 1    | 0     | 1    | 0    | 
+|fft_stage   | PCIN+(A:0x0):B+(C:0x1ffff) | 30     | 1      | 17     | -      | -1     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|fft_cmult3  | C+((D'-A2)*B2)'            | 19     | 18     | 36     | 19     | 36     | 1    | 1    | 0    | 1    | 0     | 1    | 0    | 
+|fft_stage   | PCIN+(A:0x0):B+(C:0x1ffff) | 30     | 1      | 17     | -      | -1     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
++------------+----------------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:30 ; elapsed = 00:00:32 . Memory (MB): peak = 2110.672 ; gain = 1563.344
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Block RAM: Final Mapping Report
++-------------------+---------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+-----------------+
+|Module Name        | RTL Object    | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | Cascade Heights | 
++-------------------+---------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+-----------------+
+|\g_stages[0].u_st  | g_srN.mem_reg | 1 K x 36(READ_FIRST)   | W |   | 1 K x 36(WRITE_FIRST)  |   | R | Port A and B     | 0      | 2      | 2               | 
+|\g_stages[1].u_st  | g_srN.mem_reg | 1021 x 36(READ_FIRST)  | W |   | 1021 x 36(WRITE_FIRST) |   | R | Port A and B     | 0      | 1      | 1               | 
+|\g_stages[2].u_st  | g_srN.mem_reg | 509 x 36(READ_FIRST)   | W |   | 509 x 36(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      |                 | 
+|\g_stages[3].u_st  | g_srN.mem_reg | 253 x 36(READ_FIRST)   | W |   | 253 x 36(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      |                 | 
++-------------------+---------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+-----------------+
+
+
+Distributed RAM: Final Mapping Report
++-------------------+---------------+-----------+----------------------+---------------+
+|Module Name        | RTL Object    | Inference | Size (Depth x Width) | Primitives    | 
++-------------------+---------------+-----------+----------------------+---------------+
+|\g_stages[4].u_st  | g_srN.mem_reg | Implied   | 128 x 36             | RAM64M8 x 12  | 
+|\g_stages[5].u_st  | g_srN.mem_reg | Implied   | 64 x 36              | RAM64M8 x 6   | 
+|\g_stages[6].u_st  | g_srN.mem_reg | Implied   | 32 x 36              | RAM32M16 x 3  | 
+|\g_stages[7].u_st  | g_srN.mem_reg | Implied   | 16 x 36              | RAM32M16 x 3  | 
+|\g_stages[8].u_st  | g_srN.mem_reg | Implied   | 8 x 36               | RAM32M16 x 3  | 
++-------------------+---------------+-----------+----------------------+---------------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+INFO: [Synth 8-7052] The timing for the instance g_stages[0].u_st/g_srN.mem_reg_bram_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance g_stages[0].u_st/g_rom.rom_q_reg_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance g_stages[0].u_st/g_rom.rom_q_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance g_stages[1].u_st/g_srN.mem_reg_bram_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance g_stages[1].u_st/g_rom.rom_q_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance g_stages[2].u_st/g_srN.mem_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance g_stages[2].u_st/g_rom.rom_q_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance g_stages[2].u_st/g_rom.rom_q_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance g_stages[3].u_st/g_srN.mem_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance g_stages[3].u_st/g_rom.rom_q_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance g_stages[3].u_st/g_rom.rom_q_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance g_stages[4].u_st/g_rom.rom_q_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance g_stages[4].u_st/g_rom.rom_q_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance g_stages[5].u_st/g_rom.rom_q_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance g_stages[5].u_st/g_rom.rom_q_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance g_stages[6].u_st/g_rom.rom_q_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance g_stages[6].u_st/g_rom.rom_q_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance g_stages[7].u_st/g_rom.rom_q_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance g_stages[7].u_st/g_rom.rom_q_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance g_stages[8].u_st/g_rom.rom_q_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance g_stages[8].u_st/g_rom.rom_q_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance g_stages[9].u_st/g_rom.rom_q_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:31 ; elapsed = 00:00:33 . Memory (MB): peak = 2115.684 ; gain = 1568.355
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:36 ; elapsed = 00:00:39 . Memory (MB): peak = 2325.457 ; gain = 1778.129
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:36 ; elapsed = 00:00:39 . Memory (MB): peak = 2325.457 ; gain = 1778.129
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:36 ; elapsed = 00:00:39 . Memory (MB): peak = 2325.457 ; gain = 1778.129
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:36 ; elapsed = 00:00:39 . Memory (MB): peak = 2325.457 ; gain = 1778.129
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:36 ; elapsed = 00:00:39 . Memory (MB): peak = 2325.457 ; gain = 1778.129
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:36 ; elapsed = 00:00:39 . Memory (MB): peak = 2325.457 ; gain = 1778.129
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Static Shift Register Report:
++------------+----------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|Module Name | RTL Name                         | Length | Width | Reset Signal | Pull out first Reg | Pull out last Reg | SRL16E | SRLC32E | 
++------------+----------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|fft_top     | g_stages[0].u_st/f0_reg          | 3      | 10    | NO           | NO                 | YES               | 10     | 0       | 
+|fft_top     | g_stages[11].u_st/u_cmult/v1_reg | 12     | 1     | NO           | NO                 | YES               | 1      | 0       | 
++------------+----------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+DSP Final Report (the ' indicates corresponding REG is set)
++------------+----------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name | DSP Mapping          | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++------------+----------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|fft_stage   | Dynamic              | -      | -      | -      | -      | 35     | -    | -    | -    | -    | -     | 0    | 1    | 
+|fft_stage   | not(C)+(D'+A'*B')'+1 | 30     | 18     | 48     | 27     | 36     | 1    | 1    | 0    | 1    | 0     | 1    | 0    | 
+|fft_stage   | (PCIN+A:B+C)'        | 0      | 1      | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fft_cmult3  | C+(D'-A'*B')'        | 30     | 18     | 48     | 27     | 36     | 1    | 1    | 0    | 1    | 0     | 1    | 0    | 
+|fft_stage   | (PCIN+A:B+C)'        | 0      | 1      | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fft_stage   | Dynamic              | -      | -      | -      | -      | 35     | -    | -    | -    | -    | -     | 0    | 1    | 
+|fft_stage   | not(C)+(D'+A'*B')'+1 | 30     | 18     | 48     | 27     | 36     | 1    | 1    | 0    | 1    | 0     | 1    | 0    | 
+|fft_stage   | (PCIN+A:B+C)'        | 0      | 1      | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fft_cmult3  | C+(D'-A'*B')'        | 30     | 18     | 48     | 27     | 36     | 1    | 1    | 0    | 1    | 0     | 1    | 0    | 
+|fft_stage   | (PCIN+A:B+C)'        | 0      | 1      | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fft_stage   | Dynamic              | -      | -      | -      | -      | 35     | -    | -    | -    | -    | -     | 0    | 1    | 
+|fft_stage   | not(C)+(D'+A'*B')'+1 | 30     | 18     | 48     | 27     | 36     | 1    | 1    | 0    | 1    | 0     | 1    | 0    | 
+|fft_stage   | (PCIN+A:B+C)'        | 0      | 1      | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fft_cmult3  | C+(D'-A'*B')'        | 30     | 18     | 48     | 27     | 36     | 1    | 1    | 0    | 1    | 0     | 1    | 0    | 
+|fft_stage   | (PCIN+A:B+C)'        | 0      | 1      | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fft_stage   | Dynamic              | -      | -      | -      | -      | 35     | -    | -    | -    | -    | -     | 0    | 1    | 
+|fft_stage   | not(C)+(D'+A'*B')'+1 | 30     | 18     | 48     | 27     | 36     | 1    | 1    | 0    | 1    | 0     | 1    | 0    | 
+|fft_stage   | (PCIN+A:B+C)'        | 0      | 1      | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fft_cmult3  | C+(D'-A'*B')'        | 30     | 18     | 48     | 27     | 36     | 1    | 1    | 0    | 1    | 0     | 1    | 0    | 
+|fft_stage   | (PCIN+A:B+C)'        | 0      | 1      | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fft_stage   | Dynamic              | -      | -      | -      | -      | 35     | -    | -    | -    | -    | -     | 0    | 1    | 
+|fft_stage   | not(C)+(D'+A'*B')'+1 | 30     | 18     | 48     | 27     | 36     | 1    | 1    | 0    | 1    | 0     | 1    | 0    | 
+|fft_stage   | (PCIN+A:B+C)'        | 0      | 1      | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fft_cmult3  | C+(D'-A'*B')'        | 30     | 18     | 48     | 27     | 36     | 1    | 1    | 0    | 1    | 0     | 1    | 0    | 
+|fft_stage   | (PCIN+A:B+C)'        | 0      | 1      | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fft_stage   | Dynamic              | -      | -      | -      | -      | 35     | -    | -    | -    | -    | -     | 0    | 1    | 
+|fft_stage   | not(C)+(D'+A'*B')'+1 | 30     | 18     | 48     | 27     | 36     | 1    | 1    | 0    | 1    | 0     | 1    | 0    | 
+|fft_stage   | (PCIN+A:B+C)'        | 0      | 1      | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fft_cmult3  | C+(D'-A'*B')'        | 30     | 18     | 48     | 27     | 36     | 1    | 1    | 0    | 1    | 0     | 1    | 0    | 
+|fft_stage   | (PCIN+A:B+C)'        | 0      | 1      | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fft_stage   | Dynamic              | -      | -      | -      | -      | 35     | -    | -    | -    | -    | -     | 0    | 1    | 
+|fft_stage   | not(C)+(D'+A'*B')'+1 | 30     | 18     | 48     | 27     | 36     | 1    | 1    | 0    | 1    | 0     | 1    | 0    | 
+|fft_stage   | (PCIN+A:B+C)'        | 0      | 1      | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fft_cmult3  | C+(D'-A'*B')'        | 30     | 18     | 48     | 27     | 36     | 1    | 1    | 0    | 1    | 0     | 1    | 0    | 
+|fft_stage   | (PCIN+A:B+C)'        | 0      | 1      | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fft_stage   | Dynamic              | -      | -      | -      | -      | 35     | -    | -    | -    | -    | -     | 0    | 1    | 
+|fft_stage   | not(C)+(D'+A'*B')'+1 | 30     | 18     | 48     | 27     | 36     | 1    | 1    | 0    | 1    | 0     | 1    | 0    | 
+|fft_stage   | (PCIN+A:B+C)'        | 0      | 1      | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fft_cmult3  | C+(D'-A'*B')'        | 30     | 18     | 48     | 27     | 36     | 1    | 1    | 0    | 1    | 0     | 1    | 0    | 
+|fft_stage   | (PCIN+A:B+C)'        | 0      | 1      | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fft_stage   | Dynamic              | -      | -      | -      | -      | 35     | -    | -    | -    | -    | -     | 0    | 1    | 
+|fft_stage   | not(C)+(D'+A'*B')'+1 | 30     | 18     | 48     | 27     | 36     | 1    | 1    | 0    | 1    | 0     | 1    | 0    | 
+|fft_stage   | (PCIN+A:B+C)'        | 0      | 1      | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fft_cmult3  | C+(D'-A'*B')'        | 30     | 18     | 48     | 27     | 36     | 1    | 1    | 0    | 1    | 0     | 1    | 0    | 
+|fft_stage   | (PCIN+A:B+C)'        | 0      | 1      | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fft_stage   | Dynamic              | -      | -      | -      | -      | 35     | -    | -    | -    | -    | -     | 0    | 1    | 
+|fft_stage   | not(C)+(D'+A'*B')'+1 | 30     | 18     | 48     | 27     | 36     | 1    | 1    | 0    | 1    | 0     | 1    | 0    | 
+|fft_stage   | (PCIN+A:B+C)'        | 0      | 1      | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fft_cmult3  | C+(D'-A'*B')'        | 30     | 18     | 48     | 27     | 36     | 1    | 1    | 0    | 1    | 0     | 1    | 0    | 
+|fft_stage   | (PCIN+A:B+C)'        | 0      | 1      | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 1    | 
++------------+----------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+---------+------+
+|      |Cell     |Count |
++------+---------+------+
+|1     |CARRY8   |   261|
+|2     |DSP48E2  |    50|
+|3     |LUT1     |    80|
+|4     |LUT2     |  1606|
+|5     |LUT3     |   563|
+|6     |LUT4     |    96|
+|7     |LUT5     |   417|
+|8     |LUT6     |   105|
+|9     |RAM32M16 |     9|
+|10    |RAM64M8  |    15|
+|11    |RAM64X1D |     3|
+|12    |RAMB18E2 |    10|
+|13    |RAMB36E2 |     6|
+|14    |SRL16E   |    11|
+|15    |FDRE     |  2403|
++------+---------+------+
+
+Report Instance Areas: 
++------+----------------------+---------------------------+------+
+|      |Instance              |Module                     |Cells |
++------+----------------------+---------------------------+------+
+|1     |top                   |                           |  5635|
+|2     |  \g_stages[0].u_st   |fft_stage                  |   597|
+|3     |    u_cmult           |fft_cmult3_10              |   108|
+|4     |  \g_stages[10].u_st  |fft_stage__parameterized9  |   456|
+|5     |    u_cmult           |fft_cmult3_9               |     1|
+|6     |  \g_stages[11].u_st  |fft_stage__parameterized10 |   198|
+|7     |    u_cmult           |fft_cmult3_8               |    11|
+|8     |  \g_stages[1].u_st   |fft_stage__parameterized0  |   476|
+|9     |    u_cmult           |fft_cmult3_7               |   108|
+|10    |  \g_stages[2].u_st   |fft_stage__parameterized1  |   465|
+|11    |    u_cmult           |fft_cmult3_6               |   108|
+|12    |  \g_stages[3].u_st   |fft_stage__parameterized2  |   470|
+|13    |    u_cmult           |fft_cmult3_5               |   108|
+|14    |  \g_stages[4].u_st   |fft_stage__parameterized3  |   541|
+|15    |    u_cmult           |fft_cmult3_4               |   108|
+|16    |  \g_stages[5].u_st   |fft_stage__parameterized4  |   499|
+|17    |    u_cmult           |fft_cmult3_3               |   109|
+|18    |  \g_stages[6].u_st   |fft_stage__parameterized5  |   492|
+|19    |    u_cmult           |fft_cmult3_2               |   108|
+|20    |  \g_stages[7].u_st   |fft_stage__parameterized6  |   486|
+|21    |    u_cmult           |fft_cmult3_1               |   108|
+|22    |  \g_stages[8].u_st   |fft_stage__parameterized7  |   463|
+|23    |    u_cmult           |fft_cmult3_0               |    92|
+|24    |  \g_stages[9].u_st   |fft_stage__parameterized8  |   437|
+|25    |    u_cmult           |fft_cmult3                 |    80|
++------+----------------------+---------------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:36 ; elapsed = 00:00:39 . Memory (MB): peak = 2325.457 ; gain = 1778.129
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 43 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:37 ; elapsed = 00:00:39 . Memory (MB): peak = 2325.457 ; gain = 1778.129
+Synthesis Optimization Complete : Time (s): cpu = 00:00:37 ; elapsed = 00:00:39 . Memory (MB): peak = 2325.457 ; gain = 1778.129
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.113 . Memory (MB): peak = 2348.438 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 338 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 1 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Opt 31-422] The CLOCK_DOMAINS attribute on the BRAM cell g_stages[2].u_st/g_rom.rom_q_reg has been changed from INDEPENDENT to COMMON to match the clocking topology used for the BRAM.
+INFO: [Opt 31-422] The CLOCK_DOMAINS attribute on the BRAM cell g_stages[3].u_st/g_rom.rom_q_reg has been changed from INDEPENDENT to COMMON to match the clocking topology used for the BRAM.
+INFO: [Opt 31-422] The CLOCK_DOMAINS attribute on the BRAM cell g_stages[4].u_st/g_rom.rom_q_reg has been changed from INDEPENDENT to COMMON to match the clocking topology used for the BRAM.
+INFO: [Opt 31-422] The CLOCK_DOMAINS attribute on the BRAM cell g_stages[5].u_st/g_rom.rom_q_reg has been changed from INDEPENDENT to COMMON to match the clocking topology used for the BRAM.
+INFO: [Opt 31-422] The CLOCK_DOMAINS attribute on the BRAM cell g_stages[6].u_st/g_rom.rom_q_reg has been changed from INDEPENDENT to COMMON to match the clocking topology used for the BRAM.
+INFO: [Opt 31-422] The CLOCK_DOMAINS attribute on the BRAM cell g_stages[7].u_st/g_rom.rom_q_reg has been changed from INDEPENDENT to COMMON to match the clocking topology used for the BRAM.
+INFO: [Opt 31-422] The CLOCK_DOMAINS attribute on the BRAM cell g_stages[8].u_st/g_rom.rom_q_reg has been changed from INDEPENDENT to COMMON to match the clocking topology used for the BRAM.
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 2464.789 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 77 instances were transformed.
+  DSP48E2 => DSP48E2 (DSP_ALU, DSP_A_B_DATA, DSP_C_DATA, DSP_MULTIPLIER, DSP_M_DATA, DSP_OUTPUT, DSP_PREADD, DSP_PREADD_DATA): 50 instances
+  RAM32M16 => RAM32M16 (RAMD32(x14), RAMS32(x2)): 9 instances
+  RAM64M8 => RAM64M8 (RAMD64E(x8)): 15 instances
+  RAM64X1D => RAM64X1D (RAMD64E(x2)): 3 instances
+
+Synth Design complete | Checksum: 9c4b1a49
+INFO: [Common 17-83] Releasing license: Synthesis
+96 Infos, 43 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:43 ; elapsed = 00:00:47 . Memory (MB): peak = 2464.789 ; gain = 1922.434
+# create_clock -period 3.000 -name clk [get_ports clk]
+create_clock: Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 2464.789 ; gain = 0.000
+# set_input_delay 0.2 -clock clk [all_inputs]
+WARNING: [Constraints 18-6211] Setting input delay on a clock pin 'clk' relative to clock 'clk' defined on the same pin is not supported, ignoring it
+# set_output_delay 0.2 -clock clk [all_outputs]
+# report_timing_summary -file $outdir/timing_ooc_m6_333.rpt
+WARNING: [Constraints 18-6211] Setting input delay on a clock pin 'clk' relative to clock 'clk' defined on the same pin is not supported, ignoring it
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -2, Temperature grade: I, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 2 CPUs
+WARNING: [Timing 38-242] The property HD.CLK_SRC of clock port "clk" is not set. In out-of-context mode, this prevents timing estimation for clock delay/skew
+Resolution: Set the HD.CLK_SRC property of the out-of-context port to the location of the clock buffer instance in the top-level design
+report_timing_summary: Time (s): cpu = 00:00:32 ; elapsed = 00:00:32 . Memory (MB): peak = 3507.590 ; gain = 1042.801
+# report_utilization -file $outdir/util_ooc_m6_333.rpt
+# report_control_sets -verbose -file $outdir/ctrlsets_m6_333.rpt
+report_control_sets: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.015 . Memory (MB): peak = 3507.590 ; gain = 0.000
+# report_high_fanout_nets -file $outdir/fanout_m6_333.rpt
+# check_syntax -quiet
+# puts "OOC-M6-333 DONE"
+OOC-M6-333 DONE
+INFO: [Common 17-206] Exiting Vivado at Fri Nov  6 02:49:30 2026...
